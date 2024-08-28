@@ -127,8 +127,8 @@ onMounted(() => {
           <div class="flour-massacre-line" aria-hidden="true" />
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(10670 * scale)" :top="10">
-        <Narration size="lg">
+      <PositionedContent :left="(10670 * scale)" :top="20">
+        <Narration>
           <p>
             Children under five, pregnant or breastfeeding women, the elderly, and people with disabilities suffer the most from Israel’s <strong>campaign of starvation</strong>.
           </p>
