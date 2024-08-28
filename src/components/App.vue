@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { type PropType } from 'vue'
-import Test from './Test.vue'
+import { computed, onMounted, ref, type PropType } from 'vue'
+import debounce from 'debounce'
+import ChapterStarvation from './ChapterStarvation.vue'
 import { useI18N } from '../utilities/useI18N'
 import type { I18N } from '../types/i18n'
 
@@ -15,15 +16,33 @@ const { getI18N, setI18N } = useI18N()
 setI18N(props.i18n)
 const i18n = getI18N()
 
+const maxScroll = ref<Number>(0)
+const scrollProgress = ref<Number>(0)
+const progress = computed(() => scrollProgress.value.toFixed(6) * 100)
+
+const setMaxScroll = () => {
+  maxScroll.value = document.body.clientHeight - window.innerHeight
+}
+
+onMounted(() => {
+  setMaxScroll()
+  document.addEventListener('resize', debounce(setMaxScroll, 1000))
+  document.addEventListener('scroll', () => {
+    scrollProgress.value = window.scrollY / maxScroll.value
+  })
+})
 </script>
 
 <template>
-  <main class="main">
-    <h1 class="title">{{ i18n.title }}</h1>
-    <blockquote class="quote">
-      This is a test of the Lora font.
-    </blockquote>
-    <Test />
+  <main class="outer-wrapper">
+    <div class="themes-wrapper">
+      <div class="themes" :style="{
+        transform: `translateX(-${progress}%)`
+      }">
+        <ChapterStarvation />
+        <ChapterStarvation />
+      </div>
+    </div>
   </main>
 </template>
 
@@ -34,32 +53,25 @@ body {
   scroll-behavior: smooth;
 }
 
-@media (--laptops-sm) {
-  body {
-    background: red;
-  }
+.outer-wrapper {
+  height: 8000px;
 }
 
-.title {
-  font-size: 3rem;
-  font-weight: 700;
+.themes-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  height: 100lvh;
+  overflow: hidden;
+  display: flex;
 }
 
-.main {
-
-  .quote {
-    font-family: var(--font-serif);
-    font-size: 1rem;
-  }
+.themes {
+  display: flex;
+  flex-wrap: nowrap;
 }
 
-@media (--laptops-sm) {
-
-  .main {
-
-    .quote {
-      font-size: 2rem;
-    }
-  }
-}
 </style>
