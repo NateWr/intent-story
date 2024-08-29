@@ -4,6 +4,7 @@ import debounce from 'debounce'
 import ChapterStarvation from './ChapterStarvation.vue'
 import { useI18N } from '../utilities/useI18N'
 import type { I18N } from '../types/i18n'
+import "../assets/css/variables.css"
 
 const props = defineProps({
   i18n: {
@@ -39,8 +40,8 @@ onMounted(() => {
       <div class="themes" :style="{
         transform: `translateX(-${progress}%)`
       }">
-        <ChapterStarvation />
-        <ChapterStarvation />
+        <ChapterStarvation :i18n="i18n" />
+        <ChapterStarvation :i18n="i18n" />
       </div>
     </div>
   </main>

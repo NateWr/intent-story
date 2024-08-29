@@ -1,11 +1,20 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, type PropType } from 'vue'
 import debounce from 'debounce'
+import ChapterCover from './ChapterCover.vue'
 import CityLabel from './CityLabel.vue'
 import Narration from './Narration.vue'
 import PositionedContent from './PositionedContent.vue'
 import Quote from './Quote.vue'
 import Starvation1 from './city/Starvation1.vue'
+import type { I18N } from '../types/i18n'
+
+defineProps({
+  i18n: {
+    type: Object as PropType<I18N>,
+    required: true,
+  }
+})
 
 const scale = ref<Number>(0.5)
 
@@ -23,21 +32,39 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="chapter chapter-starvation">
-    <div class="chapter-cover">
-      <h1 class="chapter-title">Starvation</h1>
-      <div class="chapter-subtitle">
+  <div
+    class="chapter chapter-starvation"
+    :style="{
+      '--color-highlight': 'var(--green-light)',
+      '--color-title': 'var(--green-lighter)',
+    }"
+  >
+    <ChapterCover>
+      <template v-slot:title>
+        <h1>{{ i18n.starvation }}</h1>
+      </template>
+      <template v-slot:subtitle>
         “deliberately inflicting on the group conditions of life calculated to bring about its physical destruction in whole or in part.”
+      </template>
+      <div
+        class="
+          text-xl
+          font-bold
+        "
+      >
+        Article II (c)
       </div>
-      <div class="chapter-article">
-        <div class="chapter-article-name">
-          Article II (c)
-        </div>
-        <div class="chapter-article-convention">
-          Convention on the Prevention and Punishment of the Crime of Genocide
-        </div>
+      <div
+        class="
+          text-sm
+          font-medium
+          leading-5
+          text-balance
+        "
+      >
+        Convention on the Prevention and Punishment of the Crime of Genocide
       </div>
-    </div>
+    </ChapterCover>
     <div class="chapter-content">
       <PositionedContent :left="(650 * scale)" :top="20">
         <Quote
@@ -189,47 +216,6 @@ onMounted(() => {
   background: linear-gradient(to bottom, #112C00, #120000);
 }
 
-.chapter-cover {
-  padding: 20vh 10vw;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.chapter-title {
-  font-size: 6rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  line-height: 1;
-  color: var(--green-lighter);
-}
-
-.chapter-subtitle {
-  max-width: 80vw;
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.chapter-article {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  max-width: 80vw;
-}
-
-.chapter-article-name {
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.chapter-article-convention {
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 1.2;
-}
-
 .chapter-content {
   position: absolute;
   top: 0;
@@ -330,27 +316,6 @@ onMounted(() => {
     & .chapter-content {
       left: 100rem;
     }
-  }
-
-  .chapter-title {
-    font-size: 13rem;
-  }
-
-  .chapter-subtitle {
-    max-width: 45rem;
-    font-size: 2rem;
-  }
-
-  .chapter-article {
-    max-width: 20rem;
-  }
-
-  .chapter-article-name {
-    font-size: 1.5rem;
-  }
-
-  .chapter-article-convention {
-    font-size: 1rem;
   }
 
   .flour-massacre-line {
