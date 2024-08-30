@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, type PropType } from 'vue'
+import { computed, onMounted, ref, type PropType } from 'vue'
 import debounce from 'debounce'
 import ChapterCover from './ChapterCover.vue'
 import CityLabel from './CityLabel.vue'
@@ -9,25 +9,35 @@ import Quote from './Quote.vue'
 import Starvation1 from './city/Starvation1.vue'
 import type { I18N } from '../types/i18n'
 
-defineProps({
+const props = defineProps({
   i18n: {
     type: Object as PropType<I18N>,
+    required: true,
+  },
+  scale: {
+    type: Number,
     required: true,
   }
 })
 
-const scale = ref<Number>(0.5)
+const CITY_WIDTH_ORIGINAL = 13400
+const cityWidth = computed(() => CITY_WIDTH_ORIGINAL * props.scale)
+const coverWidth = ref<number>(0)
+const cover = ref<InstanceType<typeof ChapterCover>>()
+const chapterWidth = computed(() => (coverWidth.value * 2) + cityWidth.value)
 
-const setScale = () => {
-  if (window.innerWidth >= 1280) {
-    scale.value = 0.75
-  } else {
-    scale.value = 0.5
+const setCoverWidth = () => {
+  if (!cover.value) {
+    coverWidth.value = 0
+    return
   }
+  coverWidth.value = cover.value.$el.clientWidth
 }
+
 onMounted(() => {
-  setScale()
-  window.addEventListener('resize', debounce(setScale, 1000))
+  setCoverWidth()
+  window.addEventListener('resize', debounce(setCoverWidth, 1000))
+
 })
 </script>
 
@@ -37,9 +47,10 @@ onMounted(() => {
     :style="{
       '--color-highlight': 'var(--green-light)',
       '--color-title': 'var(--green-lighter)',
+      width: `${chapterWidth}px`,
     }"
   >
-    <ChapterCover>
+    <ChapterCover ref="cover">
       <template v-slot:title>
         <h1>{{ i18n.starvation }}</h1>
       </template>
@@ -50,6 +61,8 @@ onMounted(() => {
         class="
           text-xl
           font-bold
+          phones-landscape:text-sm
+          laptops-sm:text-2xl
         "
       >
         Article II (c)
@@ -60,13 +73,20 @@ onMounted(() => {
           font-medium
           leading-5
           text-balance
+          phones-landscape:text-xs
+          laptops-sm:text-lg
         "
       >
         Convention on the Prevention and Punishment of the Crime of Genocide
       </div>
     </ChapterCover>
-    <div class="chapter-content">
-      <PositionedContent :left="(650 * scale)" :top="20">
+    <div
+      class="chapter-content"
+      :style="{
+        left: `${coverWidth}px`,
+      }"
+    >
+      <PositionedContent :left="(1862 * scale)" :top="20">
         <Quote
           name="Yoav Gallant"
           role="Israeli Defense Minister"
@@ -75,13 +95,13 @@ onMounted(() => {
           “I have ordered a <strong>complete siege</strong> on the Gaza Strip. There will be no electricity, no food, no fuel, everything is closed.”
         </Quote>
       </PositionedContent>
-      <PositionedContent :left="(1700 * scale)" :top="10">
+      <PositionedContent :left="(2910 * scale)" :top="10">
         <Narration>
           <p>Nine months after Gallant’s promise to control the flow of life-saving essentials, UN experts declared a <strong>state of famine</strong> across all of Gaza.</p>
           <p>During this campaign of starvation, Israeli occupation forces (IOF) burned food stocks, destroyed agricultural land, bombed flour mills, greenhouses, bakeries, and fisheries, allowed Israeli settlers to destroy aid bound for Gaza, and carried out targeted attacks on both aid seekers and aid workers.</p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(2750 * scale)" :top="20">
+      <PositionedContent :left="(3950 * scale)" :top="20">
         <Quote
           name="Itamar Ben Gvir"
           role="Israeli Minister of National Security"
@@ -90,7 +110,7 @@ onMounted(() => {
           “The only thing that needs to enter Gaza is hundreds of tons of explosives by the Air Force, and <strong>not an ounce of humanitarian aid.</strong>”
         </Quote>
       </PositionedContent>
-      <PositionedContent :left="(4190 * scale)" :top="10">
+      <PositionedContent :left="(5307 * scale)" :top="10">
         <Narration class="flour-massacre">
           <div class="flour-massacre-text">
             <p>On February 29, 2024, a crowd of starving Palestinians gathered on Al-Rashid St. to meet an incoming aid convoy.</p>
@@ -107,12 +127,12 @@ onMounted(() => {
           <div class="flour-massacre-line" aria-hidden="true" />
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(5160 * scale)" :top="30">
+      <PositionedContent :left="(6274 * scale)" :top="30">
         <Narration size="lg">
           <p>The flour massacre represents a <strong>pattern of incidents</strong> of Israeli forces targeting desperate aid seekers in Gaza.</p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(6280 * scale)" :top="20">
+      <PositionedContent :left="(7410 * scale)" :top="20">
         <Quote
           name="Boaz Bismuth"
           role="Member of the Israeli Knesset (Likud)"
@@ -126,21 +146,21 @@ onMounted(() => {
           </template>
         </Quote>
       </PositionedContent>
-      <PositionedContent :left="(7777 * scale)" :top="30" class="wck-massacre">
+      <PositionedContent :left="(8894 * scale)" :top="30" class="wck-massacre">
         <Narration>
           <p>On April 1, 2024,  a series of brutally precise Israeli strikes on a World Central Kitchen aid convoy killed 7 aid workers.</p>
           <p>The attack forced the largest aid organizations to suspend their operations in Gaza at a point when 1.1 million people––or half the population of Gaza––were experiencing <strong>catastrophic levels of hunger</strong> and at least 28 children had died of starvation.</p>
         </Narration>
         <div class="wck-massacre-line" aria-hidden="true" />
       </PositionedContent>
-      <PositionedContent :left="(8885 * scale)" :top="30">
+      <PositionedContent :left="(10000 * scale)" :top="30">
         <Narration size="lg">
           <p>
             The attack on the World Central Kitchen convoy is part of a <strong>documented pattern</strong> of the IOF knowingly targeting aid convoys and facilities.
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(9831 * scale)" :top="40">
+      <PositionedContent :left="(11000 * scale)" :top="40">
         <Narration class="flour-massacre">
           <div class="flour-massacre-text">
             <p>
@@ -154,7 +174,7 @@ onMounted(() => {
           <div class="flour-massacre-line" aria-hidden="true" />
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(10670 * scale)" :top="20">
+      <PositionedContent :left="(11795 * scale)" :top="20">
         <Narration>
           <p>
             Children under five, pregnant or breastfeeding women, the elderly, and people with disabilities suffer the most from Israel’s <strong>campaign of starvation</strong>.
@@ -164,7 +184,7 @@ onMounted(() => {
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(11785 * scale)" :top="20">
+      <PositionedContent :left="(12937 * scale)" :top="20">
         <Quote
           name="Revital Gotliv"
           role="Member of the Israeli Knesset (Likud)"
@@ -179,7 +199,7 @@ onMounted(() => {
       >
         <Starvation1 />
       </div>
-      <PositionedContent :left="(1860 * scale)">
+      <PositionedContent :left="(2980 * scale)">
         <CityLabel
           :scale="scale"
           :lineHeight="128"
@@ -188,7 +208,7 @@ onMounted(() => {
           Bakeries
         </CityLabel>
       </PositionedContent>
-      <PositionedContent :left="(2130 * scale)">
+      <PositionedContent :left="(3250 * scale)">
         <CityLabel
           :scale="scale"
           :lineHeight="128"
@@ -203,12 +223,7 @@ onMounted(() => {
 
 <style>
 .chapter-starvation {
-  width: 7000px;
   overflow-x: visible;
-
-  & .chapter-content {
-    left: 40rem;
-  }
 }
 
 .chapter {
@@ -309,14 +324,8 @@ onMounted(() => {
   transform: translateX(-50%);
 }
 
-@media (--laptops-sm) {
-  .chapter-starvation {
-    width: 12000px;
 
-    & .chapter-content {
-      left: 100rem;
-    }
-  }
+@media (--laptops-sm) {
 
   .flour-massacre-line {
     margin-bottom: 3rem;

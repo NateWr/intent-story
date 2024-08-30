@@ -3,6 +3,7 @@ import { computed, onMounted, ref, type PropType } from 'vue'
 import debounce from 'debounce'
 import ChapterStarvation from './ChapterStarvation.vue'
 import { useI18N } from '../utilities/useI18N'
+import { useScale } from '../utilities/useScale'
 import type { I18N } from '../types/i18n'
 import "../assets/css/variables.css"
 
@@ -16,6 +17,8 @@ const props = defineProps({
 const { getI18N, setI18N } = useI18N()
 setI18N(props.i18n)
 const i18n = getI18N()
+
+const { scale } = useScale()
 
 const maxScroll = ref<Number>(0)
 const scrollProgress = ref<Number>(0)
@@ -40,8 +43,8 @@ onMounted(() => {
       <div class="themes" :style="{
         transform: `translateX(-${progress}%)`
       }">
-        <ChapterStarvation :i18n="i18n" />
-        <ChapterStarvation :i18n="i18n" />
+        <ChapterStarvation :i18n="i18n" :scale="scale" />
+        <ChapterStarvation :i18n="i18n" :scale="scale" />
       </div>
     </div>
   </main>

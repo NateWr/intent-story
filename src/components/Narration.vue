@@ -2,7 +2,7 @@
 const props = defineProps({
   size: {
     type: String,
-    validator(value) {
+    validator(value: any) {
       return ['md', 'lg'].includes(value)
     },
     default() {
@@ -49,7 +49,7 @@ t
   font-size: 1.5rem;
 }
 
-@media (--tablets-sm) {
+@media (--tablets), (--laptops-sm) {
   .narration {
     max-width: 20rem;
   }

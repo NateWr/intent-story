@@ -8,13 +8,11 @@
   --font-sans: "Libre Franklin", "ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif: "Lora", "ui-serif", "Georgia", "Cambria", "Times New Roman", "Times", "serif";
 
-  @custom-media --large-phones (min-width: 564px);
-  @custom-media --tablets-sm (min-width: 720px);
-  @custom-media --tablets (min-width: 834px);
-  @custom-media --tablets-landscape (min-width: 1024px);
+  @custom-media --phones-landscape (orientation: landscape);
+  @custom-media --tablets (orientation: portrait) and (min-width: 720px);
+  @custom-media --tablets-landscape (orientation: landscape) and (min-width: 1024px);
   @custom-media --laptops-sm (min-width: 1280px);
-  @custom-media --laptops (min-width: 1400px);
-  @custom-media --laptops-lg (min-width: 1600px);
-  @custom-media --laptops-xl (min-width: 1920px);
-  @custom-media --laptops-2xl (min-width: 2300px);
+  @custom-media --laptops (min-width: 1500px);
+  @custom-media --laptops-lg (min-width: 1920px);
+  @custom-media --laptops-xl (min-width: 2300px);
 }
