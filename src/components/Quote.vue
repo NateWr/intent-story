@@ -3,11 +3,22 @@ const props = defineProps({
   name: String,
   role: String,
   date: String,
+  offsetBottom: {
+    type: String,
+    default() {
+      return '0'
+    }
+  }
 })
 </script>
 
 <template>
-  <div class="quote-wrapper">
+  <div
+    class="quote-wrapper"
+    :style="{
+      paddingBottom: offsetBottom,
+    }"
+  >
     <div class="quote-line" aria-hidden="true" />
     <blockquote class="quote">
       <div class="quote-text">
@@ -27,23 +38,26 @@ const props = defineProps({
 
 <style>
 .quote-wrapper {
-  display: grid;
-  grid-template-columns: 0.25rem minmax(0, 1fr);
-  height: 100%;
+  --gap: 1.5rem;
+  position: relative;
+  padding-left: var(--gap);
   max-width: 90vw;
-  gap: 1.5rem;
 }
 
 .quote-line {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 2px;
   background: white;
-  height: 100%;
+  height: 200%;
+  height: 200vh;
 }
 
 .quote {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--gap);
 }
 
 .quote-text {
@@ -91,10 +105,128 @@ const props = defineProps({
   letter-spacing: 0.1em;
 }
 
-@media (--laptops-sm) {
+.quote-wrapper .narration {
+  max-width: none;
+}
+
+@media (--phones-landscape) and (not (--tablets-landscape)) {
 
   .quote-wrapper {
-    max-width: 30rem;
+    --gap: 0.75rem;
+    max-width: 24rem;
+  }
+
+  .quote-text {
+    font-size: 1rem;
+  }
+
+  .quote-citation {
+    gap: 0.5rem;
+  }
+
+  .quote-name {
+    font-size: 0.875rem;
+  }
+
+  .quote-role,
+  .quote-date,
+  .quote-wrapper .narration {
+    font-size: 0.75rem;
+  }
+}
+
+@media (--tablets) {
+
+  .quote-wrapper {
+    --gap: 2rem;
+    max-width: 80vw;
+  }
+
+  .quote-text {
+    font-size: 1.5rem;
+  }
+
+  .quote-citation {
+    gap: 1rem;
+  }
+
+  .quote-author {
+    gap: 0.5rem;
+  }
+
+  .quote-name {
+    font-size: 1.5rem;
+  }
+
+  .quote-role {
+    font-size: 1.125rem;
+  }
+
+  .quote-date {
+    font-size: 1rem;
+  }
+
+  .quote-wrapper .narration {
+    max-width: 24rem;
+  }
+}
+
+@media (--tablets-landscape), (--laptops-sm) {
+
+  .quote-wrapper {
+    max-width: 32rem;
+    --gap: 2rem;
+  }
+}
+
+@media ((orientation:portrait) and (--laptops-sm)), (--laptops) {
+
+  .quote-wrapper {
+    --gap: 3rem;
+    max-width: 48rem;
+  }
+
+  .quote-text {
+    font-size: 2rem;
+  }
+
+  .quote-name {
+    font-size: 2rem;
+  }
+
+  .quote-role {
+    font-size: 1.25rem;
+  }
+
+  .quote-wrapper .narration {
+    font-size: 1.25rem;
+    max-width: 32rem;
+  }
+}
+
+@media ((orientation: portrait) and (--laptops-lg)) {
+
+  .quote-wrapper {
+    --gap: 4rem;
+    max-width: 64rem;
+  }
+
+  .quote-text {
+    font-size: 3rem;
+  }
+
+  .quote-name {
+    font-size: 3rem;
+  }
+
+  .quote-role,
+  .quote-date {
+    font-size: 1.5rem;
+  }
+
+  .quote-wrapper .narration {
+    font-size: 2rem;
+    max-width: 48rem;
   }
 }
 </style>

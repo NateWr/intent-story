@@ -7,7 +7,9 @@ export const useScale = () => {
 
   const setScale = () => {
     const isPortrait = window.innerWidth <= window.innerHeight
-    if (window.innerWidth >= 1500) {
+    if (window.innerWidth >= 1920 && isPortrait) {
+      scale.value = 1.5
+    } else if (window.innerWidth >= 1500) {
       scale.value = 1
     } else if (window.innerWidth >= 1280 && isPortrait) {
       scale.value = 1

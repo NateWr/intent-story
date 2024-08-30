@@ -1,19 +1,13 @@
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   left: Number,
-  top: {
-    type: Number,
-    default() {
-      return 15
-    }
-  }
 })
 </script>
 
 <template>
   <div
     class="positioned-content"
-    :style="`left: ${left}px; top: ${top}vh`"
+    :style="`left: ${left}px;`"
   >
     <slot />
   </div>
@@ -23,7 +17,9 @@ const props = defineProps({
 .positioned-content {
   position: absolute;
   left: 0;
-  top: 15vh;
+  top: 0;
   bottom: 0;
+  display: flex;
+  align-items: center;
 }
 </style>

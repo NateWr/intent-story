@@ -86,31 +86,33 @@ onMounted(() => {
         left: `${coverWidth}px`,
       }"
     >
-      <PositionedContent :left="(1862 * scale)" :top="20">
+      <PositionedContent :left="(1862 * scale)">
         <Quote
           name="Yoav Gallant"
           role="Israeli Defense Minister"
           date="Oct 9, 2023"
+          :offsetBottom="`${300 * scale}px`"
         >
           “I have ordered a <strong>complete siege</strong> on the Gaza Strip. There will be no electricity, no food, no fuel, everything is closed.”
         </Quote>
       </PositionedContent>
-      <PositionedContent :left="(2910 * scale)" :top="10">
+      <PositionedContent :left="(2910 * scale)">
         <Narration>
           <p>Nine months after Gallant’s promise to control the flow of life-saving essentials, UN experts declared a <strong>state of famine</strong> across all of Gaza.</p>
           <p>During this campaign of starvation, Israeli occupation forces (IOF) burned food stocks, destroyed agricultural land, bombed flour mills, greenhouses, bakeries, and fisheries, allowed Israeli settlers to destroy aid bound for Gaza, and carried out targeted attacks on both aid seekers and aid workers.</p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(3950 * scale)" :top="20">
+      <PositionedContent :left="(3950 * scale)">
         <Quote
           name="Itamar Ben Gvir"
           role="Israeli Minister of National Security"
           date="Oct 17, 2023"
+          :offsetBottom="`${200 * scale}px`"
         >
           “The only thing that needs to enter Gaza is hundreds of tons of explosives by the Air Force, and <strong>not an ounce of humanitarian aid.</strong>”
         </Quote>
       </PositionedContent>
-      <PositionedContent :left="(5307 * scale)" :top="10">
+      <PositionedContent :left="(5307 * scale)">
         <Narration class="flour-massacre">
           <div class="flour-massacre-text">
             <p>On February 29, 2024, a crowd of starving Palestinians gathered on Al-Rashid St. to meet an incoming aid convoy.</p>
@@ -127,16 +129,17 @@ onMounted(() => {
           <div class="flour-massacre-line" aria-hidden="true" />
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(6274 * scale)" :top="30">
+      <PositionedContent :left="(6274 * scale)">
         <Narration size="lg">
           <p>The flour massacre represents a <strong>pattern of incidents</strong> of Israeli forces targeting desperate aid seekers in Gaza.</p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(7410 * scale)" :top="20">
+      <PositionedContent :left="(7410 * scale)">
         <Quote
           name="Boaz Bismuth"
           role="Member of the Israeli Knesset (Likud)"
           date="Oct 16, 2023"
+          :offsetBottom="`${300 * scale}px`"
         >
           “There is no place for any humanitarian gestures – we must <strong>erase the memory of Amalek.</strong>”
           <template v-slot:footer>
@@ -146,21 +149,21 @@ onMounted(() => {
           </template>
         </Quote>
       </PositionedContent>
-      <PositionedContent :left="(8894 * scale)" :top="30" class="wck-massacre">
+      <PositionedContent :left="(8894 * scale)" class="wck-massacre">
         <Narration>
           <p>On April 1, 2024,  a series of brutally precise Israeli strikes on a World Central Kitchen aid convoy killed 7 aid workers.</p>
           <p>The attack forced the largest aid organizations to suspend their operations in Gaza at a point when 1.1 million people––or half the population of Gaza––were experiencing <strong>catastrophic levels of hunger</strong> and at least 28 children had died of starvation.</p>
         </Narration>
         <div class="wck-massacre-line" aria-hidden="true" />
       </PositionedContent>
-      <PositionedContent :left="(10000 * scale)" :top="30">
+      <PositionedContent :left="(10000 * scale)">
         <Narration size="lg">
           <p>
             The attack on the World Central Kitchen convoy is part of a <strong>documented pattern</strong> of the IOF knowingly targeting aid convoys and facilities.
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(11000 * scale)" :top="40">
+      <PositionedContent :left="(11000 * scale)">
         <Narration class="flour-massacre">
           <div class="flour-massacre-text">
             <p>
@@ -174,7 +177,7 @@ onMounted(() => {
           <div class="flour-massacre-line" aria-hidden="true" />
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(11795 * scale)" :top="20">
+      <PositionedContent :left="(11795 * scale)">
         <Narration>
           <p>
             Children under five, pregnant or breastfeeding women, the elderly, and people with disabilities suffer the most from Israel’s <strong>campaign of starvation</strong>.
@@ -184,11 +187,12 @@ onMounted(() => {
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(12937 * scale)" :top="20">
+      <PositionedContent :left="(12937 * scale)">
         <Quote
           name="Revital Gotliv"
           role="Member of the Israeli Knesset (Likud)"
           date="Oct 23, 2023"
+          :offsetBottom="`${250 * scale}px`"
         >
           “Without <strong>hunger and thirst</strong> among the Gazan population, we will not succeed…”
         </Quote>

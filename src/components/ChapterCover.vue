@@ -115,4 +115,20 @@
     font-size: 2.5rem;
   }
 }
+
+@media ((orientation: portrait) and (--laptops-lg)) {
+
+  .chapter-cover {
+    gap: 6rem;
+    max-width: 120rem;
+  }
+
+  .chapter-cover-title {
+    font-size: 24rem;
+  }
+
+  .chapter-cover-subtitle {
+    font-size: 4rem;
+  }
+}
 </style>
