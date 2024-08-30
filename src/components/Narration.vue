@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   size: {
     type: String,
     validator(value: any) {
@@ -9,28 +9,34 @@ const props = defineProps({
       return 'md'
     }
   },
-  line: {
-    type: Boolean,
+  offsetBottom: {
+    type: String,
     default() {
-      return false
+      return '0'
     }
   }
 })
 </script>
 t
 <template>
-  <div class="narration" :class="`narration-${size}`">
+  <div
+    class="narration"
+    :class="`narration-${size}`"
+    :style="{
+      paddingBottom: offsetBottom,
+    }"
+  >
     <slot />
-    <div v-if="line" class="narration-line" aria-hidden="true" />
   </div>
 </template>
 
 <style>
 .narration {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  color: var(--green-light);
+  color: var(--color-narration);
   font-weight: 500;
   line-height: 1.5;
   max-width: 90vw;
@@ -40,22 +46,61 @@ t
   }
 }
 
-.narration-line {
-  flex-grow: 1;
-  border-left: 1px solid var(--green-light);
-}
-
 .narration-lg {
   font-size: 1.5rem;
 }
 
-@media (--tablets), (--laptops-sm) {
+@media ((--phones-landscape) and (not (--tablets-landscape))) {
+
   .narration {
-    max-width: 20rem;
+    font-size: 0.875rem;
+    gap: 1rem;
+    max-width: 28rem;
   }
 
   .narration-lg {
-    max-width: 30rem;
+    font-size: 1.25rem;
+    max-width: 24rem;
+  }
+}
+
+
+@media (--tablets), (--tablets-landscape), (--laptops-sm) {
+
+  .narration {
+    font-size: 1.125rem;
+    max-width: 24rem;
+  }
+
+  .narration-lg {
+    font-size: 1.5rem;
+    max-width: 32rem;
+  }
+}
+
+@media (--laptops-lg) {
+
+  .narration {
+    font-size: 1.25rem;
+    max-width: 28rem;
+  }
+
+  .narration-lg {
+    font-size: 1.5rem;
+    max-width: 32rem;
+  }
+}
+
+@media (orientation: portrait) and (--laptops-lg) {
+
+  .narration {
+    font-size: 1.5rem;
+    max-width: 40rem;
+  }
+
+  .narration-lg {
+    font-size: 2.5rem;
+    max-width: 48rem;
   }
 }
 </style>

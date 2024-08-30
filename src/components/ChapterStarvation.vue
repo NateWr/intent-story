@@ -3,6 +3,7 @@ import { computed, onMounted, ref, type PropType } from 'vue'
 import debounce from 'debounce'
 import ChapterCover from './ChapterCover.vue'
 import CityLabel from './CityLabel.vue'
+import CallAndResponse from './CallAndResponse.vue'
 import Narration from './Narration.vue'
 import PositionedContent from './PositionedContent.vue'
 import Quote from './Quote.vue'
@@ -45,6 +46,7 @@ onMounted(() => {
   <div
     class="chapter chapter-starvation"
     :style="{
+      '--color-narration': 'var(--green-light)',
       '--color-highlight': 'var(--green-light)',
       '--color-title': 'var(--green-lighter)',
       width: `${chapterWidth}px`,
@@ -97,7 +99,7 @@ onMounted(() => {
         </Quote>
       </PositionedContent>
       <PositionedContent :left="(2910 * scale)">
-        <Narration>
+        <Narration :offsetBottom="`${350 * scale}px`">
           <p>Nine months after Gallant’s promise to control the flow of life-saving essentials, UN experts declared a <strong>state of famine</strong> across all of Gaza.</p>
           <p>During this campaign of starvation, Israeli occupation forces (IOF) burned food stocks, destroyed agricultural land, bombed flour mills, greenhouses, bakeries, and fisheries, allowed Israeli settlers to destroy aid bound for Gaza, and carried out targeted attacks on both aid seekers and aid workers.</p>
         </Narration>
@@ -111,28 +113,6 @@ onMounted(() => {
         >
           “The only thing that needs to enter Gaza is hundreds of tons of explosives by the Air Force, and <strong>not an ounce of humanitarian aid.</strong>”
         </Quote>
-      </PositionedContent>
-      <PositionedContent :left="(5307 * scale)">
-        <Narration class="flour-massacre">
-          <div class="flour-massacre-text">
-            <p>On February 29, 2024, a crowd of starving Palestinians gathered on Al-Rashid St. to meet an incoming aid convoy.</p>
-            <div class="narration-quote">
-              <p>“There was a sense of hope and even joy that we would get flour to take back to our families.”</p>
-              <p class="narration-quote-cite">Abdel Jalil Al-Fayoumi, 22</p>
-            </div>
-            <p>Then, Israeli forces opened fire on the crowd, massacring 112 people and injuring 760. The attack is remembered as the <strong>flour massacre.</strong></p>
-            <div class="narration-quote">
-              <p>“My 13-year-old cousin, Nidal, was shot dead while attempting to get a bag of flour from a truck.”</p>
-              <p class="narration-quote-cite">Salameh Rafiq Obeid, 22</p>
-            </div>
-          </div>
-          <div class="flour-massacre-line" aria-hidden="true" />
-        </Narration>
-      </PositionedContent>
-      <PositionedContent :left="(6274 * scale)">
-        <Narration size="lg">
-          <p>The flour massacre represents a <strong>pattern of incidents</strong> of Israeli forces targeting desperate aid seekers in Gaza.</p>
-        </Narration>
       </PositionedContent>
       <PositionedContent :left="(7410 * scale)">
         <Quote
@@ -149,42 +129,27 @@ onMounted(() => {
           </template>
         </Quote>
       </PositionedContent>
-      <PositionedContent :left="(8894 * scale)" class="wck-massacre">
-        <Narration>
+      <PositionedContent :left="(8894 * scale)" style="align-items: flex-end">
+        <Narration
+          class="wck-massacre"
+          :offsetBottom="`${64 * scale}px`"
+        >
           <p>On April 1, 2024,  a series of brutally precise Israeli strikes on a World Central Kitchen aid convoy killed 7 aid workers.</p>
           <p>The attack forced the largest aid organizations to suspend their operations in Gaza at a point when 1.1 million people––or half the population of Gaza––were experiencing <strong>catastrophic levels of hunger</strong> and at least 28 children had died of starvation.</p>
-        </Narration>
-        <div class="wck-massacre-line" aria-hidden="true" />
-      </PositionedContent>
-      <PositionedContent :left="(10000 * scale)">
-        <Narration size="lg">
-          <p>
-            The attack on the World Central Kitchen convoy is part of a <strong>documented pattern</strong> of the IOF knowingly targeting aid convoys and facilities.
-          </p>
+          <div class="wck-massacre-line" aria-hidden="true" />
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(11000 * scale)">
-        <Narration class="flour-massacre">
-          <div class="flour-massacre-text">
-            <p>
+      <PositionedContent :left="(10950 * scale)" style="align-items: flex-end">
+        <Narration offsetBottom="0">
+          <CallAndResponse class="starvation-aid-workers-killed">
+            <div class="car-call">
               These attacks, combined with indiscriminate aerial bombardment, made Gaza the <strong>deadliest place in the world</strong> to be an aid worker. 
-            </p>
-            <div class="narration-quote">
-              <p>At least 278 aid workers killed between Oct 7 and July 24, 2024.</p>
-              <p class="narration-quote-cite">UN OCHA</p>
             </div>
-          </div>
-          <div class="flour-massacre-line" aria-hidden="true" />
-        </Narration>
-      </PositionedContent>
-      <PositionedContent :left="(11795 * scale)">
-        <Narration>
-          <p>
-            Children under five, pregnant or breastfeeding women, the elderly, and people with disabilities suffer the most from Israel’s <strong>campaign of starvation</strong>.
-          </p>
-          <p>
-            Israeli officials said they would weaponize food and they did, causing serious bodily and mental harm to Palestinians in Gaza and inflicting on them <strong>conditions of life</strong> intended to bring about their destruction as a group.
-          </p>
+            <blockquote class="car-response">
+              <p>At least 278 aid workers killed between Oct 7 and July 24, 2024.</p>
+              <cite class="car-response-cite">UN OCHA</cite>
+            </blockquote>
+          </CallAndResponse>
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(12937 * scale)">
@@ -205,21 +170,67 @@ onMounted(() => {
       </div>
       <PositionedContent :left="(2980 * scale)">
         <CityLabel
-          :scale="scale"
-          :lineHeight="128"
-          :bottom="188"
+          :lineHeight="`${128 * scale}px`"
+          :bottom="`${188 * scale}px`"
         >
           Bakeries
         </CityLabel>
       </PositionedContent>
       <PositionedContent :left="(3250 * scale)">
         <CityLabel
-          :scale="scale"
-          :lineHeight="128"
-          :bottom="234"
+          :lineHeight="`${128 * scale}px`"
+          :bottom="`${234 * scale}px`"
         >
           Flour Mills
         </CityLabel>
+      </PositionedContent>
+      <PositionedContent :left="(5307 * scale)" style="align-items: flex-end">
+        <Narration :offsetBottom="`${64 * scale}px`">
+          <CallAndResponse class="flour-massacre">
+            <div class="car-call">
+              On February 29, 2024, a crowd of starving Palestinians gathered on Al-Rashid St. to meet an incoming aid convoy.
+            </div>
+            <blockquote class="car-response">
+              <p>“There was a sense of hope and even joy that we would get flour to take back to our families.”</p>
+              <cite class="car-response-cite">Abdel Jalil Al-Fayoumi, 22</cite>
+            </blockquote>
+            <div class="car-call">
+              Then, Israeli forces opened fire on the crowd, massacring 112 people and injuring 760. The attack is remembered as the <strong>flour massacre.</strong>
+            </div>
+            <blockquote class="car-response">
+              <p>“My 13-year-old cousin, Nidal, was shot dead while attempting to get a bag of flour from a truck.”</p>
+              <cite class="car-response-cite">Salameh Rafiq Obeid, 22</cite>
+            </blockquote>
+          </CallAndResponse>
+        </Narration>
+      </PositionedContent>
+      <PositionedContent :left="(6274 * scale)">
+        <Narration
+          size="lg"
+          :offsetBottom="`${350 * scale}px`"
+        >
+          <p>The flour massacre represents a <strong>pattern of incidents</strong> of Israeli forces targeting desperate aid seekers in Gaza.</p>
+        </Narration>
+      </PositionedContent>
+      <PositionedContent :left="(10000 * scale)">
+        <Narration
+          size="lg"
+          :offsetBottom="`${250 * scale}px`"
+        >
+          <p>
+            The attack on the World Central Kitchen convoy is part of a <strong>documented pattern</strong> of the IOF knowingly targeting aid convoys and facilities.
+          </p>
+        </Narration>
+      </PositionedContent>
+      <PositionedContent :left="(11795 * scale)">
+        <Narration :offsetBottom="`${150 * scale}px`">
+          <p>
+            Children under five, pregnant or breastfeeding women, the elderly, and people with disabilities suffer the most from Israel’s <strong>campaign of starvation</strong>.
+          </p>
+          <p>
+            Israeli officials said they would weaponize food and they did, causing serious bodily and mental harm to Palestinians in Gaza and inflicting on them <strong>conditions of life</strong> intended to bring about their destruction as a group.
+          </p>
+        </Narration>
       </PositionedContent>
     </div>
   </div>
@@ -266,77 +277,54 @@ onMounted(() => {
   stroke: var(--green-light);
 }
 
-.flour-massacre {
-  margin-left: -2rem;
-  width: 20rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.flour-massacre-text {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-
-  & p {
-    max-width: 16rem;
-  }
-
-  & .narration-quote {
-    align-self: flex-end;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    font-family: var(--font-serif);
-    text-align: end;
-    color: white;
-  }
-
-  & .narration-quote-cite {
-    font-size: 0.875rem;
-    font-family: var(--font-sans);
-    font-weight: 700;
-  }
-}
-
-.flour-massacre-line {
-  margin-left: 2rem;
+.flour-massacre .car-line {
+  height: 30vh;
   margin-top: -7rem;
-  margin-bottom: 2rem;
-  width: 2px;
-  height: 100%;
-  background: var(--green-light);
-  transform: translateX(-50%);
+}
+
+.starvation-aid-workers-killed .car-line {
+  height: 50vh;
+  margin-top: -5rem;
 }
 
 .wck-massacre {
   transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
   align-items: center;
-  gap: 1.5rem;
 }
 
 .wck-massacre-line {
   width: 2px;
-  height: 100%;
-  background: var(--green-light);
-  margin-bottom: 2rem;
+  height: 25vh;
+  background: var(--color-highlight);
   transform: translateX(-50%);
 }
 
+@media ((--phones-landscape) and (not (--tablets-landscape))) {
+  .flour-massacre .car-line {
+    margin-top: -5rem;
+    height: 25vh;
+  }
 
-@media (--laptops-sm) {
+  .starvation-aid-workers-killed {
+    max-width: 24rem;
+  }
 
-  .flour-massacre-line {
-    margin-bottom: 3rem;
+  .starvation-aid-workers-killed .car-line {
+    height: 65vh;
+  }
+}
+
+@media (orientation: portrait) and (--laptops-lg) {
+  .flour-massacre .car-line {
+    margin-top: -9rem;
   }
 
   .wck-massacre-line {
-    margin-bottom: 3rem;
+    height: 50vh;
+  }
+
+  .starvation-aid-workers-killed .car-line {
+    height: 45vh;
   }
 }
 </style>
