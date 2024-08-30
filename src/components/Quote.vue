@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { onMounted, ref, useSlots } from 'vue'
+
 defineProps({
   name: String,
   role: String,
@@ -10,28 +12,49 @@ defineProps({
     }
   }
 })
+
+const slots = useSlots()
+
+const el = ref<HTMLElement | null>(null)
+const isVisible = ref<Boolean>(false)
+
+onMounted(() => {
+  const callback = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach(entry => {
+      isVisible.value = entry.isIntersecting
+    })
+  }
+  if (el.value) {
+    const ob = new IntersectionObserver(callback, {threshold: 0.25})
+    ob.observe(el.value)
+  }
+})
 </script>
 
 <template>
   <div
     class="quote-wrapper"
+    :class="isVisible && 'quote-wrapper-visible'"
     :style="{
       paddingBottom: offsetBottom,
     }"
+    ref="el"
   >
     <div class="quote-line" aria-hidden="true" />
     <blockquote class="quote">
-      <div class="quote-text">
+      <div class="quote-text quote-slide-in">
         <slot />
       </div>
       <cite class="quote-citation">
         <div class="quote-author">
-          <div class="quote-name">{{ name }}</div>
-          <div class="quote-role">{{ role }}</div>
+          <div class="quote-name quote-slide-in">{{ name }}</div>
+          <div class="quote-role quote-slide-in">{{ role }}</div>
         </div>
-        <div class="quote-date">{{ date }}</div>
+        <div class="quote-date quote-slide-in">{{ date }}</div>
       </cite>
-      <slot name="footer" />
+      <div v-if="slots.footer" class="quote-footer quote-slide-in">
+        <slot name="footer" />
+      </div>
     </blockquote>
   </div>
 </template>
@@ -51,7 +74,10 @@ defineProps({
   width: 2px;
   background: white;
   height: 200%;
-  height: 200vh;
+  height: 100vh;
+  transform: translateY(100vh);
+  opacity: 0;
+  transition: all 0.75s;
 }
 
 .quote {
@@ -91,11 +117,13 @@ defineProps({
   font-size: 1.25rem;
   font-weight: 800;
   line-height: 1;
+  transition-delay: 0.15s;
 }
 
 .quote-role {
   font-weight: 500;
   line-height: 1;
+  transition-delay: 0.2s;
 }
 
 .quote-date {
@@ -103,10 +131,35 @@ defineProps({
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  transition-delay: 0.25s;
+}
+
+.quote-footer {
+  transition-delay: 0.3s;
 }
 
 .quote-wrapper .narration {
   max-width: none;
+}
+
+.quote-slide-in {
+  transform: translateY(2rem);
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 0.75s;
+}
+
+.quote-wrapper-visible {
+
+  & .quote-line {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  & .quote-slide-in {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @media (--phones-landscape) and (not (--tablets-landscape)) {
