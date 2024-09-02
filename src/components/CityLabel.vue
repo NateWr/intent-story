@@ -9,7 +9,7 @@ defineProps({
 
 const el = ref<HTMLElement | null>(null)
 
-const { isVisible } = useIntersectionObserver(el)
+const { isVisible } = useIntersectionObserver(el, {threshold: 0.75})
 </script>
 
 <template>
