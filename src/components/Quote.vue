@@ -30,7 +30,16 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.25})
     }"
     ref="el"
   >
-    <div class="quote-line" aria-hidden="true" />
+    <div class="quote-line" aria-hidden="true">
+      <div class="quote-line-head">
+        <svg width="7" height="31" viewBox="0 0 7 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0L7 7V31L0 24V0Z" fill="white"/>
+        </svg>
+        <svg width="7" height="31" viewBox="0 0 7 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 0L0 7V31L7 24V0Z" fill="white"/>
+        </svg>
+      </div>
+    </div>
     <blockquote class="quote">
       <div class="quote-text quote-slide-in">
         <slot />
@@ -68,6 +77,14 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.25})
   transform: translateY(100vh);
   opacity: 0;
   transition: all 0.75s;
+}
+
+.quote-line-head {
+  position: absolute;
+  bottom: 100%;
+  display: flex;
+  gap: 4px;
+  transform: translate(-8px, 24px);
 }
 
 .quote {
