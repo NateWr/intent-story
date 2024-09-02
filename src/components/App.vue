@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, type PropType } from 'vue'
 import debounce from 'debounce'
+import ChapterIntro from './ChapterIntro.vue'
 import ChapterStarvation from './ChapterStarvation.vue'
 import { useI18N } from '../utilities/useI18N'
 import { useScale } from '../utilities/useScale'
@@ -44,7 +45,7 @@ onMounted(() => {
       <div class="themes" :style="{
         transform: `translateX(-${progress}%)`
       }">
-        <ChapterStarvation :i18n="i18n" :scale="scale" />
+        <ChapterIntro :i18n="i18n" :scale="scale" />
         <ChapterStarvation :i18n="i18n" :scale="scale" />
       </div>
     </div>

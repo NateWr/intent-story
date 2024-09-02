@@ -60,6 +60,7 @@ onMounted(() => {
       '--color-narration': 'var(--green-light)',
       '--color-highlight': 'var(--green-light)',
       '--color-title': 'var(--green-lighter)',
+      '--color-subtitle-highlight': 'var(--green-light)',
       width: `${chapterWidth}px`,
     }"
   >
@@ -273,12 +274,11 @@ onMounted(() => {
 <style>
 .chapter-starvation {
   overflow-x: visible;
+  background: linear-gradient(to bottom, rgba(124, 199, 79, 0.2), rgba(124, 199, 79, 0.01));
 }
 
 .chapter {
   position: relative;
-  background: linear-gradient(to bottom, #112C00, #120000);
-  background: linear-gradient(to bottom, rgba(124, 199, 79, 0.2), rgba(124, 199, 79, 0.01));
 }
 
 .chapter-content {
@@ -295,16 +295,6 @@ onMounted(() => {
   bottom: 0;
   right: 0;
   transform-origin: bottom left;
-}
-
-.chapter-city-building {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-.chapter-city-building-highlight {
-  z-index: 9999;
 }
 
 .flour-massacre .car-line {

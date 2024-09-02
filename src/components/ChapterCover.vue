@@ -37,7 +37,12 @@
   font-family: var(--font-serif);
   font-size: 1.25rem;
   font-weight: 700;
+  font-style: italic;
   line-height: 1.5;
+
+  & strong {
+    color: var(--color-subtitle-highlight);
+  }
 }
 
 .chapter-cover-details {
