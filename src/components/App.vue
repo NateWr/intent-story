@@ -40,6 +40,7 @@ onMounted(() => {
 <template>
   <main class="outer-wrapper">
     <div class="themes-wrapper">
+      <div class="city-bg" :style="`--offset: -${progress * 10}px`" />
       <div class="themes" :style="{
         transform: `translateX(-${progress}%)`
       }">
@@ -78,4 +79,15 @@ body {
   flex-wrap: nowrap;
 }
 
+.city-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.05;
+  background-image: url('/city-bg.png');
+  background-repeat: repeat-x;
+  background-position: var(--offset) bottom;
+}
 </style>

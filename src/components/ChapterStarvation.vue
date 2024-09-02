@@ -278,6 +278,7 @@ onMounted(() => {
 .chapter {
   position: relative;
   background: linear-gradient(to bottom, #112C00, #120000);
+  background: linear-gradient(to bottom, rgba(124, 199, 79, 0.2), rgba(124, 199, 79, 0.01));
 }
 
 .chapter-content {
