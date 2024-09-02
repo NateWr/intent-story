@@ -1,34 +1,11 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
-import { useIntersectionObserver } from '../../utilities/useIntersectionObserver'
-
 defineProps({
-  highlights: Array,
+  showBakeries: Boolean,
+  showMills: Boolean,
+  showFlourMassacre: Boolean,
+  showWckMassacre: Boolean,
+  showDeadlyAidWork: Boolean,
 })
-
-const emit = defineEmits<{
-  toggle: [name: string],
-}>()
-
-const bakeries = ref<SVGPathElement | null>(null)
-const { isVisible: isBakeriesVisible } = useIntersectionObserver(bakeries, {threshold: 0.5})
-watch(isBakeriesVisible, (newVal, oldVal) => newVal !== oldVal && emit('toggle', 'bakeries'))
-
-const mills = ref<SVGPathElement | null>(null)
-const { isVisible: isMillsVisible } = useIntersectionObserver(mills, {threshold: 0.5})
-watch(isMillsVisible, (newVal, oldVal) => newVal !== oldVal && emit('toggle', 'mills'))
-
-const flourMassacre = ref<SVGCircleElement | null>(null)
-const { isVisible: isFlourMassacre } = useIntersectionObserver(flourMassacre, {threshold: 0.1})
-watch(isFlourMassacre, (newVal, oldVal) => newVal !== oldVal && emit('toggle', 'flourMassacre'))
-
-const wckMassacre = ref<SVGCircleElement | null>(null)
-const { isVisible: isWckMassacreVisible } = useIntersectionObserver(wckMassacre, {threshold: 0.1})
-watch(isWckMassacreVisible, (newVal, oldVal) => newVal !== oldVal && emit('toggle', 'wckMassacre'))
-
-const deadlyAidWork = ref<SVGPathElement | null>(null)
-const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidWork, {threshold: 0.1})
-watch(isDeadlyAidWorkVisible, (newVal, oldVal) => newVal !== oldVal && emit('toggle', 'deadlyAidWork'))
 </script>
 
 <template>
@@ -48,7 +25,7 @@ watch(isDeadlyAidWorkVisible, (newVal, oldVal) => newVal !== oldVal && emit('tog
   <path
     ref="mills"
     class="city-highlight"
-    :class="highlights?.includes('mills') && 'city-highlight-visible'"
+    :class="showMills && 'city-highlight-visible'"
     d="M3151 654.5V856.5H3377.5V654.5L3287.5 597.5H3237L3151 654.5Z"
     fill="var(--color-highlight)"
     stroke="var(--color-highlight)"
@@ -69,7 +46,7 @@ watch(isDeadlyAidWorkVisible, (newVal, oldVal) => newVal !== oldVal && emit('tog
   <path
     ref="bakeries"
     class="city-highlight"
-    :class="highlights?.includes('bakeries') && 'city-highlight-visible'"
+    :class="showBakeries && 'city-highlight-visible'"
     d="M3079.48 701.5V886V901.5L2786.5 955C2783.5 944 2779.3 920.3 2786.5 913.5C2795.5 905 2808.5 858.5 2819.5 845C2830.5 831.5 2825.5 787.5 2884.5 785C2931.7 783 2923.81 746.167 2931.98 739V644.5H3019.98V681.5L3079.48 701.5Z"
     fill="var(--color-highlight)"
     stroke="var(--color-highlight)"
@@ -80,7 +57,7 @@ watch(isDeadlyAidWorkVisible, (newVal, oldVal) => newVal !== oldVal && emit('tog
   <path
     ref="deadlyAidWork"
     class="city-highlight"
-    :class="highlights?.includes('deadlyAidWork') && 'city-highlight-visible'"
+    :class="showDeadlyAidWork && 'city-highlight-visible'"
     d="M10937.5 785.5L10845 763.5L10812 801L10695.5 814L10641 856H11383.5L11247.5 801L11045 763.5L10937.5 785.5Z"
     fill="var(--color-highlight)"
     stroke="var(--color-highlight)"
@@ -102,7 +79,7 @@ watch(isDeadlyAidWorkVisible, (newVal, oldVal) => newVal !== oldVal && emit('tog
   <circle
     ref="flourMassacre"
     class="city-highlight"
-    :class="highlights?.includes('flourMassacre') && 'city-highlight-visible'"
+    :class="showFlourMassacre && 'city-highlight-visible'"
     cx="5307"
     cy="832"
     r="31.5"
@@ -111,9 +88,8 @@ watch(isDeadlyAidWorkVisible, (newVal, oldVal) => newVal !== oldVal && emit('tog
   />
   <circle cx="8894" cy="832" r="31.5" fill="black" stroke="#FF7CAC"/>
   <circle
-    ref="wckMassacre"
     class="city-highlight"
-    :class="highlights?.includes('wckMassacre') && 'city-highlight-visible'"
+    :class="showWckMassacre && 'city-highlight-visible'"
     cx="8894"
     cy="832"
     r="31.5"

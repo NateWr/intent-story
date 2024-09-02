@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { useIntersectionObserver } from '../utilities/useIntersectionObserver'
-
 defineProps({
   lineHeight: String,
   bottom: String,
@@ -14,7 +11,6 @@ defineProps({
     class="city-label"
     :class="isVisible && 'city-label-visible'"
     :style="{bottom}"
-    ref="el"
   >
     <div class="city-label-text">
       <slot />

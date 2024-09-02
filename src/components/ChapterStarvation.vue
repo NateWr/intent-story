@@ -8,6 +8,7 @@ import Narration from './Narration.vue'
 import PositionedContent from './PositionedContent.vue'
 import Quote from './Quote.vue'
 import Starvation1 from './city/Starvation1.vue'
+import { useIntersectionObserver } from '../utilities/useIntersectionObserver'
 import type { I18N } from '../types/i18n'
 
 const props = defineProps({
@@ -27,8 +28,6 @@ const coverWidth = ref<number>(0)
 const cover = ref<InstanceType<typeof ChapterCover>>()
 const chapterWidth = computed(() => (coverWidth.value * 2) + cityWidth.value)
 
-const svgHighlights = ref<string[]>([])
-
 const setCoverWidth = () => {
   if (!cover.value) {
     coverWidth.value = 0
@@ -37,13 +36,16 @@ const setCoverWidth = () => {
   coverWidth.value = cover.value.$el.clientWidth
 }
 
-const toggleSvgHighlights = (name: string) => {
-  if (svgHighlights.value.includes(name)) {
-    svgHighlights.value = svgHighlights.value.filter(n => n !== name)
-  } else {
-    svgHighlights.value.push(name)
-  }
-}
+const bakeries = ref<typeof CityLabel | null>(null)
+const { isVisible: isBakeriesVisible } = useIntersectionObserver(bakeries, {threshold: 0.5})
+const mills = ref<typeof CityLabel | null>(null)
+const { isVisible: isMillsVisible } = useIntersectionObserver(mills, {threshold: 0.5})
+const flourMassacre = ref<typeof CallAndResponse | null>(null)
+const { isVisible: isFlourMassacreVisible } = useIntersectionObserver(flourMassacre, {threshold: 0.1})
+const wckMassacre = ref<HTMLElement | null>(null)
+const { isVisible: isWckMassacreVisible } = useIntersectionObserver(wckMassacre)
+const deadlyAidWork = ref<HTMLElement | null>(null)
+const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidWork, {threshold: 0.1})
 
 onMounted(() => {
   setCoverWidth()
@@ -146,8 +148,9 @@ onMounted(() => {
           <p>On April 1, 2024,  a series of brutally precise Israeli strikes on a World Central Kitchen aid convoy killed 7 aid workers.</p>
           <p>The attack forced the largest aid organizations to suspend their operations in Gaza at a point when 1.1 million people––or half the population of Gaza––were experiencing <strong>catastrophic levels of hunger</strong> and at least 28 children had died of starvation.</p>
           <div
+            ref="wckMassacre"
             class="wck-massacre-line"
-            :class="svgHighlights.includes('wckMassacre') && 'wck-massacre-line-visible'"
+            :class="isWckMassacreVisible && 'wck-massacre-line-visible'"
             aria-hidden="true"
           />
         </Narration>
@@ -155,8 +158,9 @@ onMounted(() => {
       <PositionedContent :left="(10950 * scale)" style="align-items: flex-end">
         <Narration offsetBottom="0">
           <CallAndResponse
+            ref="deadlyAidWork"
             class="starvation-aid-workers-killed"
-            :isVisible="svgHighlights.includes('deadlyAidWork')"
+            :isVisible="isDeadlyAidWorkVisible"
           >
             <div class="car-call">
               These attacks, combined with indiscriminate aerial bombardment, made Gaza the <strong>deadliest place in the world</strong> to be an aid worker. 
@@ -183,24 +187,29 @@ onMounted(() => {
         :style="`transform: scale(${scale})`"
       >
         <Starvation1
-          :highlights="svgHighlights"
-          @toggle="toggleSvgHighlights"
+          :showBakeries="isBakeriesVisible"
+          :showMills="isMillsVisible"
+          :showFlourMassacre="isFlourMassacreVisible"
+          :showWckMassacre="isWckMassacreVisible"
+          :showDeadlyAidWork="isDeadlyAidWorkVisible"
         />
       </div>
       <PositionedContent :left="(2980 * scale)">
         <CityLabel
+          ref="bakeries"
           :lineHeight="`${128 * scale}px`"
           :bottom="`${188 * scale}px`"
-          :isVisible="svgHighlights.includes('bakeries')"
+          :isVisible="isBakeriesVisible"
         >
           Bakeries
         </CityLabel>
       </PositionedContent>
       <PositionedContent :left="(3250 * scale)">
         <CityLabel
+          ref="mills"
           :lineHeight="`${128 * scale}px`"
           :bottom="`${234 * scale}px`"
-          :isVisible="svgHighlights.includes('mills')"
+          :isVisible="isMillsVisible"
         >
           Flour Mills
         </CityLabel>
@@ -208,8 +217,9 @@ onMounted(() => {
       <PositionedContent :left="(5307 * scale)" style="align-items: flex-end">
         <Narration :offsetBottom="`${64 * scale}px`">
           <CallAndResponse
+            ref="flourMassacre"
             class="flour-massacre"
-            :isVisible="svgHighlights.includes('flourMassacre')"
+            :isVisible="isFlourMassacreVisible"
           >
             <div class="car-call">
               On February 29, 2024, a crowd of starving Palestinians gathered on Al-Rashid St. to meet an incoming aid convoy.
