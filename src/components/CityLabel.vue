@@ -1,16 +1,23 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { ref } from 'vue'
+import { useIntersectionObserver } from '../utilities/useIntersectionObserver'
 
-const props = defineProps({
+defineProps({
   lineHeight: String,
   bottom: String,
 })
+
+const el = ref<HTMLElement | null>(null)
+
+const { isVisible } = useIntersectionObserver(el)
 </script>
 
 <template>
   <div
     class="city-label"
+    :class="isVisible && 'city-label-visible'"
     :style="{bottom}"
+    ref="el"
   >
     <div class="city-label-text">
       <slot />
@@ -43,11 +50,31 @@ const props = defineProps({
   text-transform: uppercase;
   letter-spacing: 0.1em;
   white-space: nowrap;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: all 0.5s 0.3s;
 }
 
 .city-label-line {
   width: 2px;
   background: var(--green-light);
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  transition: all 0.5s;
+}
+
+.city-label-visible {
+
+  & .city-label-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  & .city-label-line {
+    opacity: 1;
+    transform: scaleY(1);
+  }
 }
 
 @media ((--phones-landscape) and (not (--tablets-landscape))) {

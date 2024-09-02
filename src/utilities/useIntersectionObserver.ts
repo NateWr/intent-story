@@ -7,7 +7,7 @@ type IntersectionObserverOptions = {
   threshold?: number | [number],
 }
 
-export const useIntersectionObserver = (el: Ref<HTMLElement | null>, options: IntersectionObserverOptions) => {
+export const useIntersectionObserver = (el: Ref<HTMLElement | null>, options?: IntersectionObserverOptions) => {
 
   const isVisible = ref<Boolean>(false)
 
@@ -19,7 +19,7 @@ export const useIntersectionObserver = (el: Ref<HTMLElement | null>, options: In
 
   onMounted(() => {
     if (el.value) {
-      const ob = new IntersectionObserver(callback, options)
+      const ob = new IntersectionObserver(callback, options ?? {})
       ob.observe(el.value)
     }
   })

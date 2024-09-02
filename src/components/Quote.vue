@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, useSlots } from 'vue'
+import { ref, useSlots } from 'vue'
 import { useIntersectionObserver } from '../utilities/useIntersectionObserver'
 
 defineProps({
