@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref, useSlots } from 'vue'
+import { useIntersectionObserver } from '../utilities/useIntersectionObserver'
 
 defineProps({
   name: String,
@@ -16,19 +17,8 @@ defineProps({
 const slots = useSlots()
 
 const el = ref<HTMLElement | null>(null)
-const isVisible = ref<Boolean>(false)
 
-onMounted(() => {
-  const callback = (entries: IntersectionObserverEntry[]) => {
-    entries.forEach(entry => {
-      isVisible.value = entry.isIntersecting
-    })
-  }
-  if (el.value) {
-    const ob = new IntersectionObserver(callback, {threshold: 0.25})
-    ob.observe(el.value)
-  }
-})
+const { isVisible } = useIntersectionObserver(el, {threshold: 0.25})
 </script>
 
 <template>
