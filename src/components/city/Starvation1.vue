@@ -1,5 +1,38 @@
+<script setup lang="ts">
+import { ref, watch } from 'vue'
+import { useIntersectionObserver } from '../../utilities/useIntersectionObserver'
+
+defineProps({
+  highlights: Array,
+})
+
+const emit = defineEmits<{
+  toggle: [name: string],
+}>()
+
+const bakeries = ref<SVGPathElement | null>(null)
+const { isVisible: isBakeriesVisible } = useIntersectionObserver(bakeries, {threshold: 0.5})
+watch(isBakeriesVisible, (newVal, oldVal) => newVal !== oldVal && emit('toggle', 'bakeries'))
+
+const mills = ref<SVGPathElement | null>(null)
+const { isVisible: isMillsVisible } = useIntersectionObserver(mills, {threshold: 0.5})
+watch(isMillsVisible, (newVal, oldVal) => newVal !== oldVal && emit('toggle', 'mills'))
+
+const flourMassacre = ref<SVGCircleElement | null>(null)
+const { isVisible: isFlourMassacre } = useIntersectionObserver(flourMassacre, {threshold: 0.1})
+watch(isFlourMassacre, (newVal, oldVal) => newVal !== oldVal && emit('toggle', 'flourMassacre'))
+
+const wckMassacre = ref<SVGCircleElement | null>(null)
+const { isVisible: isWckMassacreVisible } = useIntersectionObserver(wckMassacre, {threshold: 0.1})
+watch(isWckMassacreVisible, (newVal, oldVal) => newVal !== oldVal && emit('toggle', 'wckMassacre'))
+
+const deadlyAidWork = ref<SVGPathElement | null>(null)
+const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidWork, {threshold: 0.1})
+watch(isDeadlyAidWorkVisible, (newVal, oldVal) => newVal !== oldVal && emit('toggle', 'deadlyAidWork'))
+</script>
+
 <template>
-  <svg width="13981" height="832" viewBox="0 0 13981 832" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg class="city-svg" width="13981" height="832" viewBox="0 0 13981 832" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M926 594.5V999H1141V383H974.5V594.5H926Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
   <path d="M576.5 588V899.5L1161.5 895V588H1197.5L1161.5 557.5H1104C1097.67 544.667 1075 519 1035 519C995 519 971.333 544.667 964.5 557.5H775.5C766.667 544.667 740.2 519 705 519C669.8 519 636 544.667 623.5 557.5H576.5L543 588H576.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
   <path d="M476.5 684H565V884H173.5V717.5H104L173.5 684H270.5V634H343V684H418V634H476.5V684Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
@@ -11,7 +44,16 @@
   <path d="M12705 756.5V1161H12343V545H12623.3V756.5H12705Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
   <path d="M1117 654.5C1117.83 706.667 1119 815.4 1117 833H1519.5V545H1233.5V654.5H1117Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
   <path d="M1750.5 615.5V927L2335.5 922.5V615.5H2371.5L2335.5 585H2278C2271.67 572.167 2249 546.5 2209 546.5C2169 546.5 2145.33 572.167 2138.5 585H1949.5C1940.67 572.167 1914.2 546.5 1879 546.5C1843.8 546.5 1810 572.167 1797.5 585H1750.5L1717 615.5H1750.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-  <path id="city-bakeries" class="city-highlight" d="M3151 654.5V856.5H3377.5V654.5L3287.5 597.5H3237L3151 654.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
+  <path d="M3151 654.5V856.5H3377.5V654.5L3287.5 597.5H3237L3151 654.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
+  <path
+    ref="mills"
+    class="city-highlight"
+    :class="highlights?.includes('mills') && 'city-highlight-visible'"
+    d="M3151 654.5V856.5H3377.5V654.5L3287.5 597.5H3237L3151 654.5Z"
+    fill="var(--color-highlight)"
+    stroke="var(--color-highlight)"
+    stroke-width="2"
+  />
   <path d="M1557 697.5H1468.5V897.5H1860V731H1929.5L1860 697.5H1763V647.5H1690.5V697.5H1615.5V647.5H1557V697.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
   <path d="M3582.5 656.5H3671V856.5H3279.5V690H3210L3279.5 656.5H3376.5V606.5H3449V656.5H3524V606.5H3582.5V656.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
   <path d="M2081.5 894V722V628.5H2289V722H2410V894H2081.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
@@ -23,9 +65,27 @@
   <path d="M6594 707V909H6820.5V707L6730.5 650H6680L6594 707Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
   <path d="M2373 701.5V886V901.5H2722.5C2725.5 890.5 2729.7 866.8 2722.5 860C2713.5 851.5 2700.5 805 2689.5 791.5C2678.5 778 2663 765.5 2604 763C2556.8 761 2528.67 746.167 2520.5 739V644.5H2432.5V681.5L2373 701.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
   <path d="M3913.5 701.5V886V901.5H4263C4266 890.5 4270.2 866.8 4263 860C4254 851.5 4241 805 4230 791.5C4219 778 4203.5 765.5 4144.5 763C4097.3 761 4069.17 746.167 4061 739V644.5H3973V681.5L3913.5 701.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-  <path id="city-mills" class="city-highlight" d="M3079.48 701.5V886V901.5L2786.5 955C2783.5 944 2779.3 920.3 2786.5 913.5C2795.5 905 2808.5 858.5 2819.5 845C2830.5 831.5 2825.5 787.5 2884.5 785C2931.7 783 2923.81 746.167 2931.98 739V644.5H3019.98V681.5L3079.48 701.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
+  <path d="M3079.48 701.5V886V901.5L2786.5 955C2783.5 944 2779.3 920.3 2786.5 913.5C2795.5 905 2808.5 858.5 2819.5 845C2830.5 831.5 2825.5 787.5 2884.5 785C2931.7 783 2923.81 746.167 2931.98 739V644.5H3019.98V681.5L3079.48 701.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
+  <path
+    ref="bakeries"
+    class="city-highlight"
+    :class="highlights?.includes('bakeries') && 'city-highlight-visible'"
+    d="M3079.48 701.5V886V901.5L2786.5 955C2783.5 944 2779.3 920.3 2786.5 913.5C2795.5 905 2808.5 858.5 2819.5 845C2830.5 831.5 2825.5 787.5 2884.5 785C2931.7 783 2923.81 746.167 2931.98 739V644.5H3019.98V681.5L3079.48 701.5Z"
+    fill="var(--color-highlight)"
+    stroke="var(--color-highlight)"
+    stroke-width="2"
+  />
   <path d="M4411.5 785.5L4319 763.5L4286 801L4169.5 814L4115 856H4857.5L4721.5 801L4519 763.5L4411.5 785.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-  <path id="deadly-aid-work" class="city-highlight" d="M10937.5 785.5L10845 763.5L10812 801L10695.5 814L10641 856H11383.5L11247.5 801L11045 763.5L10937.5 785.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
+  <path d="M10937.5 785.5L10845 763.5L10812 801L10695.5 814L10641 856H11383.5L11247.5 801L11045 763.5L10937.5 785.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
+  <path
+    ref="deadlyAidWork"
+    class="city-highlight"
+    :class="highlights?.includes('deadlyAidWork') && 'city-highlight-visible'"
+    d="M10937.5 785.5L10845 763.5L10812 801L10695.5 814L10641 856H11383.5L11247.5 801L11045 763.5L10937.5 785.5Z"
+    fill="var(--color-highlight)"
+    stroke="var(--color-highlight)"
+    stroke-width="2"
+  />
   <path d="M6245 786L6337.5 764L6370.5 801.5L6487 814.5L6541.5 856.5H5799L5935 801.5L6137.5 764L6245 786Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
   <path d="M6080 795L5981 845.5H6293L6185.5 795H6080Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
   <path d="M6934 477.5V882H7149V266H6982.5V477.5H6934Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
@@ -38,8 +98,28 @@
   <path d="M7301 654V838.5V854H7650.5C7653.5 843 7657.7 819.3 7650.5 812.5C7641.5 804 7628.5 757.5 7617.5 744C7606.5 730.5 7591 718 7532 715.5C7484.8 713.5 7456.67 698.667 7448.5 691.5V597H7360.5V634L7301 654Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
   <path d="M6417 701.5V886V901.5H6766.5C6769.5 890.5 6773.7 866.8 6766.5 860C6757.5 851.5 6744.5 805 6733.5 791.5C6722.5 778 6707 765.5 6648 763C6600.8 761 6572.67 746.167 6564.5 739V644.5H6476.5V681.5L6417 701.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
   <path d="M8141 893.5V721.5V628H8348.5V721.5H8469.5V893.5H8141Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-  <circle id="flour-massacre" class="city-highlight" cx="5307" cy="832" r="31.5" fill="black" stroke="#FF7CAC"/>
-  <circle id="wck-massacre" class="city-highlight" cx="8894" cy="832" r="31.5" fill="black" stroke="#FF7CAC"/>
+  <circle cx="5307" cy="832" r="31.5" fill="black" stroke="#FF7CAC"/>
+  <circle
+    ref="flourMassacre"
+    class="city-highlight"
+    :class="highlights?.includes('flourMassacre') && 'city-highlight-visible'"
+    cx="5307"
+    cy="832"
+    r="31.5"
+    fill="var(--color-highlight)"
+    stroke="var(--color-highlight)"
+  />
+  <circle cx="8894" cy="832" r="31.5" fill="black" stroke="#FF7CAC"/>
+  <circle
+    ref="wckMassacre"
+    class="city-highlight"
+    :class="highlights?.includes('wckMassacre') && 'city-highlight-visible'"
+    cx="8894"
+    cy="832"
+    r="31.5"
+    fill="var(--color-highlight)"
+    stroke="var(--color-highlight)"
+  />
   <path d="M9660 487.5V892H9875V276H9708.5V487.5H9660Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
   <path d="M9407 692.5C9407.83 744.667 9409 853.4 9407 871H9809.5V583H9523.5V692.5H9407Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
   <path d="M10040.5 653.5V965L10625.5 960.5V653.5H10661.5L10625.5 623H10568C10561.7 610.167 10539 584.5 10499 584.5C10459 584.5 10435.3 610.167 10428.5 623H10239.5C10230.7 610.167 10204.2 584.5 10169 584.5C10133.8 584.5 10100 610.167 10087.5 623H10040.5L10007 653.5H10040.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
@@ -57,3 +137,14 @@
   <path d="M11296 696V880.5V896L11003 949.5C11000 938.5 10995.8 914.8 11003 908C11012 899.5 11025 853 11036 839.5C11047 826 11042 782 11101 779.5C11148.2 777.5 11140.3 740.667 11148.5 733.5V639H11236.5V676L11296 696Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
 </svg>
 </template>
+
+<style>
+.city-highlight {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.city-highlight-visible {
+  opacity: 1;
+}
+</style>

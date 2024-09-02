@@ -7,7 +7,7 @@ type IntersectionObserverOptions = {
   threshold?: number | [number],
 }
 
-export const useIntersectionObserver = (el: Ref<HTMLElement | null>, options?: IntersectionObserverOptions) => {
+export const useIntersectionObserver = (el: Ref<HTMLElement | SVGElement | null>, options?: IntersectionObserverOptions) => {
 
   const isVisible = ref<Boolean>(false)
 

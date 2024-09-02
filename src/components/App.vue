@@ -22,7 +22,7 @@ const { scale } = useScale()
 
 const maxScroll = ref<Number>(0)
 const scrollProgress = ref<Number>(0)
-const progress = computed(() => scrollProgress.value.toFixed(6) * 100)
+const progress = computed(() => scrollProgress.value.toFixed(6) * 50)
 
 const setMaxScroll = () => {
   maxScroll.value = document.body.clientHeight - window.innerHeight
@@ -58,7 +58,7 @@ body {
 }
 
 .outer-wrapper {
-  height: 8000px;
+  height: 16000px;
 }
 
 .themes-wrapper {

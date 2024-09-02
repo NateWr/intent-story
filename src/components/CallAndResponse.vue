@@ -1,8 +1,15 @@
+<script setup lang="ts">
+defineProps({
+  isVisible: Boolean,
+})
+</script>
+
 <template>
   <div class="car">
     <slot />
     <div
       class="car-line"
+      :class="isVisible && 'car-line-visible'"
       aria-hidden="true"
     />
   </div>
@@ -47,7 +54,15 @@
   width: 2px;
   height: 25vh;
   background: var(--color-highlight);
-  transform: translateX(-50%);
+  opacity: 0;
+  transform: scale(0) translateX(-50%);
+  transform-origin: bottom center;
+  transition: all 0.5s 0.3s;
+}
+
+.car-line-visible {
+  opacity: 1;
+  transform: scale(1) translateX(-50%);
 }
 
 @media (orientation: portrait) and (--laptops-lg) {

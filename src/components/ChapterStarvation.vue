@@ -27,6 +27,8 @@ const coverWidth = ref<number>(0)
 const cover = ref<InstanceType<typeof ChapterCover>>()
 const chapterWidth = computed(() => (coverWidth.value * 2) + cityWidth.value)
 
+const svgHighlights = ref<string[]>([])
+
 const setCoverWidth = () => {
   if (!cover.value) {
     coverWidth.value = 0
@@ -35,10 +37,17 @@ const setCoverWidth = () => {
   coverWidth.value = cover.value.$el.clientWidth
 }
 
+const toggleSvgHighlights = (name: string) => {
+  if (svgHighlights.value.includes(name)) {
+    svgHighlights.value = svgHighlights.value.filter(n => n !== name)
+  } else {
+    svgHighlights.value.push(name)
+  }
+}
+
 onMounted(() => {
   setCoverWidth()
   window.addEventListener('resize', debounce(setCoverWidth, 1000))
-
 })
 </script>
 
@@ -136,12 +145,19 @@ onMounted(() => {
         >
           <p>On April 1, 2024,  a series of brutally precise Israeli strikes on a World Central Kitchen aid convoy killed 7 aid workers.</p>
           <p>The attack forced the largest aid organizations to suspend their operations in Gaza at a point when 1.1 million people––or half the population of Gaza––were experiencing <strong>catastrophic levels of hunger</strong> and at least 28 children had died of starvation.</p>
-          <div class="wck-massacre-line" aria-hidden="true" />
+          <div
+            class="wck-massacre-line"
+            :class="svgHighlights.includes('wckMassacre') && 'wck-massacre-line-visible'"
+            aria-hidden="true"
+          />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(10950 * scale)" style="align-items: flex-end">
         <Narration offsetBottom="0">
-          <CallAndResponse class="starvation-aid-workers-killed">
+          <CallAndResponse
+            class="starvation-aid-workers-killed"
+            :isVisible="svgHighlights.includes('deadlyAidWork')"
+          >
             <div class="car-call">
               These attacks, combined with indiscriminate aerial bombardment, made Gaza the <strong>deadliest place in the world</strong> to be an aid worker. 
             </div>
@@ -166,12 +182,16 @@ onMounted(() => {
         class="chapter-city"
         :style="`transform: scale(${scale})`"
       >
-        <Starvation1 />
+        <Starvation1
+          :highlights="svgHighlights"
+          @toggle="toggleSvgHighlights"
+        />
       </div>
       <PositionedContent :left="(2980 * scale)">
         <CityLabel
           :lineHeight="`${128 * scale}px`"
           :bottom="`${188 * scale}px`"
+          :isVisible="svgHighlights.includes('bakeries')"
         >
           Bakeries
         </CityLabel>
@@ -180,13 +200,17 @@ onMounted(() => {
         <CityLabel
           :lineHeight="`${128 * scale}px`"
           :bottom="`${234 * scale}px`"
+          :isVisible="svgHighlights.includes('mills')"
         >
           Flour Mills
         </CityLabel>
       </PositionedContent>
       <PositionedContent :left="(5307 * scale)" style="align-items: flex-end">
         <Narration :offsetBottom="`${64 * scale}px`">
-          <CallAndResponse class="flour-massacre">
+          <CallAndResponse
+            class="flour-massacre"
+            :isVisible="svgHighlights.includes('flourMassacre')"
+          >
             <div class="car-call">
               On February 29, 2024, a crowd of starving Palestinians gathered on Al-Rashid St. to meet an incoming aid convoy.
             </div>
@@ -272,11 +296,6 @@ onMounted(() => {
   z-index: 9999;
 }
 
-.city-highlight {
-  fill: var(--green-light);
-  stroke: var(--green-light);
-}
-
 .flour-massacre .car-line {
   height: 30vh;
   margin-top: -7rem;
@@ -296,7 +315,15 @@ onMounted(() => {
   width: 2px;
   height: 25vh;
   background: var(--color-highlight);
-  transform: translateX(-50%);
+  opacity: 0;
+  transform: scaleY(0) translateX(-50%);
+  transform-origin: bottom center;
+  transition: all 0.5s 0.3s;
+}
+
+.wck-massacre-line-visible {
+  opacity: 1;
+  transform: scaleY(1) translateX(-50%);
 }
 
 @media ((--phones-landscape) and (not (--tablets-landscape))) {

@@ -5,11 +5,8 @@ import { useIntersectionObserver } from '../utilities/useIntersectionObserver'
 defineProps({
   lineHeight: String,
   bottom: String,
+  isVisible: Boolean,
 })
-
-const el = ref<HTMLElement | null>(null)
-
-const { isVisible } = useIntersectionObserver(el, {threshold: 0.75})
 </script>
 
 <template>
@@ -52,7 +49,7 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.75})
   white-space: nowrap;
   opacity: 0;
   transform: translateY(1rem);
-  transition: all 0.5s 0.3s;
+  transition: all 0.5s 0.6s;
 }
 
 .city-label-line {
@@ -61,7 +58,7 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.75})
   opacity: 0;
   transform: scaleY(0);
   transform-origin: bottom center;
-  transition: all 0.5s;
+  transition: all 0.5s 0.3s;
 }
 
 .city-label-visible {
