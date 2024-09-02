@@ -72,11 +72,9 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.25})
   left: 0;
   width: 2px;
   background: white;
-  height: 200%;
-  height: 100vh;
-  transform: translateY(100vh);
+  height: 0;
   opacity: 0;
-  transition: all 0.75s;
+  transition: all 0.5s;
 }
 
 .quote-line-head {
@@ -97,6 +95,7 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.25})
   font-family: var(--font-serif);
   font-size: 1.25rem;
   font-weight: 500;
+  transition-delay: 0.5s;
 
   & strong {
     font-weight: 700;
@@ -124,13 +123,13 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.25})
   font-size: 1.25rem;
   font-weight: 800;
   line-height: 1;
-  transition-delay: 0.15s;
+  transition-delay: .65s;
 }
 
 .quote-role {
   font-weight: 500;
   line-height: 1;
-  transition-delay: 0.2s;
+  transition-delay: 0.7s;
 }
 
 .quote-date {
@@ -138,11 +137,11 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.25})
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  transition-delay: 0.25s;
+  transition-delay: 0.75s;
 }
 
 .quote-footer {
-  transition-delay: 0.3s;
+  transition-delay: 0.8s;
 }
 
 .quote-wrapper .narration {
@@ -160,7 +159,7 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.25})
 
   & .quote-line {
     opacity: 1;
-    transform: translateY(0);
+    height: 100vh;
   }
 
   & .quote-slide-in {
