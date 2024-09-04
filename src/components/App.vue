@@ -21,8 +21,9 @@ const i18n = getI18N()
 
 const { scale } = useScale()
 
-const maxScroll = ref<Number>(0)
-const scrollProgress = ref<Number>(0)
+const scrollStarted = ref<boolean>(false)
+const maxScroll = ref<number>(0)
+const scrollProgress = ref<number>(0)
 const progress = computed(() => scrollProgress.value.toFixed(6) * 100)
 
 const setMaxScroll = () => {
@@ -35,6 +36,7 @@ onMounted(() => {
   document.addEventListener('scroll', () => {
     scrollProgress.value = window.scrollY / maxScroll.value
   })
+  document.addEventListener('scroll', () => scrollStarted.value = true, {once: true})
 })
 </script>
 
@@ -45,7 +47,7 @@ onMounted(() => {
       <div class="themes" :style="{
         transform: `translateX(-${progress}%)`
       }">
-        <ChapterIntro :i18n="i18n" :scale="scale" />
+        <ChapterIntro :i18n="i18n" :scale="scale" :scrollStarted="scrollStarted" />
         <ChapterStarvation :i18n="i18n" :scale="scale" />
       </div>
     </div>

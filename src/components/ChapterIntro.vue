@@ -17,6 +17,10 @@ const props = defineProps({
   scale: {
     type: Number,
     required: true,
+  },
+  scrollStarted: {
+    type: Boolean,
+    required: true,
   }
 })
 
@@ -34,9 +38,17 @@ const setCoverWidth = () => {
   coverWidth.value = cover.value.$el.clientWidth
 }
 
+const scrollPrompt = ref<boolean>(false)
+
 onMounted(() => {
   setCoverWidth()
   window.addEventListener('resize', debounce(setCoverWidth, 1000))
+
+  setTimeout(() => {
+    if (!props.scrollStarted) {
+      scrollPrompt.value = true
+    }
+  }, 6000)
 })
 </script>
 
@@ -58,7 +70,7 @@ onMounted(() => {
       <template v-slot:subtitle>
         Under international law, the crime of genocide requires <strong>acts of genocide</strong> and the <strong>intent</strong> to destroy a group of people, or a part of that group.
       </template>
-      <div class="scroll-prompt">
+      <div v-if="scrollPrompt" class="scroll-prompt">
         <IconScroll aria-hidden="true" />
         scroll down
       </div>
@@ -138,12 +150,17 @@ onMounted(() => {
 }
 
 .scroll-prompt {
+  margin-top: 2rem;
   display: flex;
   align-items: center;
   gap: 1rem;
   text-transform: uppercase;
+  font-size: 0.75rem;
   font-weight: 900;
   letter-spacing: 0.1em;
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 
 .chapter-content {
@@ -160,5 +177,26 @@ onMounted(() => {
   bottom: 0;
   right: 0;
   transform-origin: bottom left;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@media (--tablets) {
+
+  .scroll-prompt {
+    margin-top: 4rem;
+  }
 }
 </style>
