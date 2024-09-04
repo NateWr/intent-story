@@ -32,11 +32,11 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.25})
   >
     <div class="quote-line" aria-hidden="true">
       <div class="quote-line-head">
-        <svg width="7" height="31" viewBox="0 0 7 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 0L7 7V31L0 24V0Z" fill="white"/>
+        <svg width="6" height="27" viewBox="0 0 6 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0L6 6V26.5714L0 20.5714V0Z" fill="white"/>
         </svg>
-        <svg width="7" height="31" viewBox="0 0 7 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7 0L0 7V31L7 24V0Z" fill="white"/>
+        <svg width="6" height="27" viewBox="0 0 6 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 0L0 6V26.5714L6 20.5714V0Z" fill="white"/>
         </svg>
       </div>
     </div>
@@ -81,7 +81,7 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.25})
   bottom: 100%;
   display: flex;
   gap: 4px;
-  transform: translate(-8px, 24px);
+  transform: translate(-7px, 20px);
 }
 
 .quote {

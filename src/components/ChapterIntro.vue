@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, type PropType } from 'vue'
 import debounce from 'debounce'
+import Arrow from './Arrow.vue'
 import ChapterCover from './ChapterCover.vue'
 import IconScroll from './IconScroll.vue'
 import Narration from './Narration.vue'
@@ -106,6 +107,75 @@ onMounted(() => {
         >
           <p>This sentiment has been <strong>adopted and amplified</strong> by hundreds of individual soldiers, journalists and public figures across Israeli society.</p>
         </Narration>
+      </PositionedContent>
+      <PositionedContent :left="(6300 * scale)">
+        <Arrow offsetTop="30" :layer="3" />
+      </PositionedContent>
+      <PositionedContent :left="(6600 * scale)">
+        <Arrow offsetTop="-10" :layer="3" />
+      </PositionedContent>
+      <PositionedContent :left="(6700 * scale)">
+        <Arrow offsetTop="0" :layer="2" />
+      </PositionedContent>
+      <PositionedContent :left="(6740 * scale)">
+        <Arrow offsetTop="25" :layer="3" />
+      </PositionedContent>
+      <PositionedContent :left="(6810 * scale)">
+        <Arrow offsetTop="15" :layer="3" />
+      </PositionedContent>
+      <PositionedContent :left="(7120 * scale)">
+        <Arrow offsetTop="10" :layer="3" />
+      </PositionedContent>
+      <PositionedContent :left="(7150 * scale)">
+        <Arrow offsetTop="40" :layer="3" />
+      </PositionedContent>
+      <PositionedContent :left="(7350 * scale)">
+        <Arrow offsetTop="43" :layer="3" />
+      </PositionedContent>
+      <PositionedContent :left="(7390 * scale)">
+        <Arrow offsetTop="28" :layer="3" />
+      </PositionedContent>
+      <PositionedContent :left="(7480 * scale)">
+        <Arrow offsetTop="-60" :layer="3" />
+      </PositionedContent>
+      <PositionedContent :left="(7510 * scale)">
+        <Arrow offsetTop="60" :layer="3" />
+      </PositionedContent>
+      <PositionedContent :left="(7650 * scale)">
+        <Arrow offsetTop="45" :layer="2" />
+      </PositionedContent>
+      <PositionedContent :left="(7800 * scale)">
+        <Arrow offsetTop="0" :layer="3" />
+      </PositionedContent>
+      <PositionedContent :left="(7830 * scale)">
+        <Arrow offsetTop="20" :layer="3" />
+      </PositionedContent>
+      <PositionedContent :left="(7940 * scale)">
+        <Arrow offsetTop="38" :layer="3" />
+      </PositionedContent>
+      <PositionedContent :left="(7960 * scale)">
+        <Arrow offsetTop="27" :layer="3" />
+      </PositionedContent>
+      <PositionedContent :left="(8100 * scale)">
+        <Arrow offsetTop="0" :layer="2" />
+      </PositionedContent>
+      <PositionedContent :left="(8155 * scale)">
+        <Arrow offsetTop="0" :layer="3" />
+      </PositionedContent>
+      <PositionedContent :left="(8300 * scale)">
+        <Arrow offsetTop="25" :layer="3" />
+      </PositionedContent>
+      <PositionedContent :left="(8365 * scale)">
+        <Arrow offsetTop="40" :layer="3" />
+      </PositionedContent>
+      <PositionedContent :left="(8385 * scale)">
+        <Arrow offsetTop="20" :layer="2" />
+      </PositionedContent>
+      <PositionedContent :left="(8460 * scale)">
+        <Arrow offsetTop="10" :layer="3" />
+      </PositionedContent>
+      <PositionedContent :left="(8600 * scale)">
+        <Arrow offsetTop="60" :layer="3" />
       </PositionedContent>
       <PositionedContent :left="(7231 * scale)">
         <Quote
