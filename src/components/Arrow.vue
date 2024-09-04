@@ -80,7 +80,7 @@ const { isVisible } = useIntersectionObserver(el)
   height: 100%;
   transform: scaleY(0);
   transform-origin: top center;
-  transition: all 0.5s 0.1s;
+  transition: all 1.5s 0.3s;
 }
 
 .arrow-head {
@@ -90,7 +90,7 @@ const { isVisible } = useIntersectionObserver(el)
   gap: 4px;
   opacity: 0;
   transform: translate(-7px, 20px);
-  transition: opacity 0.3s;
+  transition: opacity 0.5s 0.3s;
 }
 
 .arrow-visible {
