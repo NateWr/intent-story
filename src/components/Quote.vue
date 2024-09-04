@@ -73,7 +73,6 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.25})
   width: 2px;
   background: white;
   height: 0;
-  opacity: 0;
   transition: all 0.5s;
 }
 
@@ -158,7 +157,6 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.25})
 .quote-wrapper-visible {
 
   & .quote-line {
-    opacity: 1;
     height: 100vh;
   }
 
