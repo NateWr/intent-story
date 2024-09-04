@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, type PropType } from 'vue'
 import debounce from 'debounce'
+import ChapterBridge from './ChapterBridge.vue'
 import ChapterIntro from './ChapterIntro.vue'
 import ChapterStarvation from './ChapterStarvation.vue'
 import { useI18N } from '../utilities/useI18N'
@@ -48,6 +49,15 @@ onMounted(() => {
         transform: `translateX(-${progress}%)`,
       }">
         <ChapterIntro :i18n="i18n" :scale="scale" :scrollStarted="scrollStarted" />
+        <ChapterBridge
+          :style="{
+            '--bridge-color': 'var(--green-light)',
+            '--from': 'linear-gradient(to bottom, rgba(133, 0, 255, 0.2), rgba(133, 0, 255, 0.01))',
+            '--to': 'linear-gradient(to bottom, rgba(124, 199, 79, 0.2), rgba(124, 199, 79, 0.01))',
+          }"
+        >
+          Chapter II
+        </ChapterBridge>
         <ChapterStarvation :i18n="i18n" :scale="scale" />
       </div>
     </div>
