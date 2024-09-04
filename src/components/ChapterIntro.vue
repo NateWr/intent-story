@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, type PropType } from 'vue'
-import debounce from 'debounce'
+import { onMounted, ref, type PropType } from 'vue'
 import Arrow from './Arrow.vue'
+import Chapter from './Chapter.vue'
 import ChapterCover from './ChapterCover.vue'
 import IconScroll from './IconScroll.vue'
 import Narration from './Narration.vue'
@@ -25,26 +25,9 @@ const props = defineProps({
   }
 })
 
-const CITY_WIDTH_ORIGINAL = 12205
-const cityWidth = computed(() => CITY_WIDTH_ORIGINAL * props.scale)
-const coverWidth = ref<number>(0)
-const cover = ref<InstanceType<typeof ChapterCover>>()
-const chapterWidth = computed(() => (coverWidth.value * 2) + cityWidth.value)
-
-const setCoverWidth = () => {
-  if (!cover.value) {
-    coverWidth.value = 0
-    return
-  }
-  coverWidth.value = cover.value.$el.clientWidth
-}
-
 const scrollPrompt = ref<boolean>(false)
 
 onMounted(() => {
-  setCoverWidth()
-  window.addEventListener('resize', debounce(setCoverWidth, 1000))
-
   setTimeout(() => {
     if (!props.scrollStarted) {
       scrollPrompt.value = true
@@ -54,34 +37,30 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    class="chapter chapter-intro"
+  <Chapter
+    class="chapter-intro"
     :style="{
       '--color-narration': 'var(--purple)',
       '--color-highlight': 'var(--purple)',
       '--color-title': 'var(--red)',
       '--color-subtitle-highlight': 'var(--green-light)',
-      width: `${chapterWidth}px`,
     }"
   >
-    <ChapterCover ref="cover">
-      <template v-slot:title>
-        <h1>{{ i18n.intent }}</h1>
-      </template>
-      <template v-slot:subtitle>
-        Under international law, the crime of genocide requires <strong>acts of genocide</strong> and the <strong>intent</strong> to destroy a group of people, or a part of that group.
-      </template>
-      <div v-if="scrollPrompt" class="scroll-prompt">
-        <IconScroll aria-hidden="true" />
-        scroll down
-      </div>
-    </ChapterCover>
-    <div
-      class="chapter-content"
-      :style="{
-        left: `${coverWidth}px`,
-      }"
-    >
+    <template #cover>
+      <ChapterCover ref="cover">
+        <template #title>
+          <h1>{{ i18n.intent }}</h1>
+        </template>
+        <template #subtitle>
+          Under international law, the crime of genocide requires <strong>acts of genocide</strong> and the <strong>intent</strong> to destroy a group of people, or a part of that group.
+        </template>
+        <div v-if="scrollPrompt" class="scroll-prompt">
+          <IconScroll aria-hidden="true" />
+          scroll down
+        </div>
+      </ChapterCover>
+    </template>
+    <template #back>
       <PositionedContent :left="(1723 * scale)">
         <Narration
           size="lg"
@@ -203,19 +182,13 @@ onMounted(() => {
           <p>The following examples, from a database of more than 400 statements, show how this incitement led to specific <strong>acts of genocide</strong> in Gaza.</p>
         </Narration>
       </PositionedContent>
-      <div
-        class="chapter-city"
-        :style="`transform: scale(${scale})`"
-      >
-        <Intro />
-      </div>
-    </div>
-  </div>
+    </template>
+    <Intro :scale="scale" />
+  </Chapter>
 </template>
 
 <style>
 .chapter-intro {
-  overflow-x: visible;
   background: linear-gradient(to bottom, rgba(133, 0, 255, 0.2), rgba(133, 0, 255, 0.01));
 }
 
@@ -231,22 +204,6 @@ onMounted(() => {
   animation-name: pulse;
   animation-duration: 2s;
   animation-iteration-count: infinite;
-}
-
-.chapter-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.chapter-city {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  transform-origin: bottom left;
 }
 
 @keyframes pulse {

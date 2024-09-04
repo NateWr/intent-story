@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, type PropType } from 'vue'
-import debounce from 'debounce'
+import { ref, type PropType } from 'vue'
+import Chapter from './Chapter.vue'
 import ChapterCover from './ChapterCover.vue'
 import CityLabel from './CityLabel.vue'
 import CallAndResponse from './CallAndResponse.vue'
 import Narration from './Narration.vue'
 import PositionedContent from './PositionedContent.vue'
 import Quote from './Quote.vue'
-import Starvation1 from './city/Starvation1.vue'
+import Starvation from './city/Starvation.vue'
 import { useIntersectionObserver } from '../utilities/useIntersectionObserver'
 import type { I18N } from '../types/i18n'
 
-const props = defineProps({
+defineProps({
   i18n: {
     type: Object as PropType<I18N>,
     required: true,
@@ -21,20 +21,6 @@ const props = defineProps({
     required: true,
   }
 })
-
-const CITY_WIDTH_ORIGINAL = 13400
-const cityWidth = computed(() => CITY_WIDTH_ORIGINAL * props.scale)
-const coverWidth = ref<number>(0)
-const cover = ref<InstanceType<typeof ChapterCover>>()
-const chapterWidth = computed(() => (coverWidth.value * 2) + cityWidth.value)
-
-const setCoverWidth = () => {
-  if (!cover.value) {
-    coverWidth.value = 0
-    return
-  }
-  coverWidth.value = cover.value.$el.clientWidth
-}
 
 const bakeries = ref<typeof CityLabel | null>(null)
 const { isVisible: isBakeriesVisible } = useIntersectionObserver(bakeries, {threshold: 0.5})
@@ -46,60 +32,37 @@ const wckMassacre = ref<HTMLElement | null>(null)
 const { isVisible: isWckMassacreVisible } = useIntersectionObserver(wckMassacre)
 const deadlyAidWork = ref<HTMLElement | null>(null)
 const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidWork, {threshold: 0.1})
-
-onMounted(() => {
-  setCoverWidth()
-  window.addEventListener('resize', debounce(setCoverWidth, 1000))
-})
 </script>
 
 <template>
-  <div
-    class="chapter chapter-starvation"
+  <Chapter
+    class="chapter-starvation"
     :style="{
       '--color-narration': 'var(--green-light)',
       '--color-highlight': 'var(--green-light)',
       '--color-title': 'var(--green-lighter)',
       '--color-subtitle-highlight': 'var(--green-light)',
-      width: `${chapterWidth}px`,
     }"
   >
-    <ChapterCover ref="cover">
-      <template v-slot:title>
-        <h1>{{ i18n.starvation }}</h1>
-      </template>
-      <template v-slot:subtitle>
-        “deliberately inflicting on the group conditions of life calculated to bring about its physical destruction in whole or in part.”
-      </template>
-      <div
-        class="
-          text-xl
-          font-bold
-          phones-landscape:text-sm
-          laptops-sm:text-2xl
-        "
-      >
-        Article II (c)
-      </div>
-      <div
-        class="
-          text-sm
-          font-medium
-          leading-5
-          text-balance
-          phones-landscape:text-xs
-          laptops-sm:text-lg
-        "
-      >
-        Convention on the Prevention and Punishment of the Crime of Genocide
-      </div>
-    </ChapterCover>
-    <div
-      class="chapter-content"
-      :style="{
-        left: `${coverWidth}px`,
-      }"
-    >
+
+    <template #cover>
+      <ChapterCover>
+        <template #title>
+          <h1>{{ i18n.starvation }}</h1>
+        </template>
+        <template #subtitle>
+          “deliberately inflicting on the group conditions of life calculated to bring about its physical destruction in whole or in part.”
+        </template>
+        <div class="chapter-starvation-cover-article">
+          Article II (c)
+        </div>
+        <div class="chapter-starvation-cover-convention">
+          Convention on the Prevention and Punishment of the Crime of Genocide
+        </div>
+      </ChapterCover>
+    </template>
+
+    <template #back>
       <PositionedContent :left="(1862 * scale)">
         <Quote
           name="Yoav Gallant"
@@ -134,7 +97,7 @@ onMounted(() => {
           :offsetBottom="`${300 * scale}px`"
         >
           “There is no place for any humanitarian gestures – we must <strong>erase the memory of Amalek.</strong>”
-          <template v-slot:footer>
+          <template #footer>
             <Narration>
               <p>In the Torah, the ancient Israelites were said to be commanded by God to commit genocide against the people of “Amalek”.</p>
             </Narration>
@@ -183,18 +146,18 @@ onMounted(() => {
           “Without <strong>hunger and thirst</strong> among the Gazan population, we will not succeed…”
         </Quote>
       </PositionedContent>
-      <div
-        class="chapter-city"
-        :style="`transform: scale(${scale})`"
-      >
-        <Starvation1
-          :showBakeries="isBakeriesVisible"
-          :showMills="isMillsVisible"
-          :showFlourMassacre="isFlourMassacreVisible"
-          :showWckMassacre="isWckMassacreVisible"
-          :showDeadlyAidWork="isDeadlyAidWorkVisible"
-        />
-      </div>
+    </template>
+
+    <Starvation
+      :scale="scale"
+      :showBakeries="isBakeriesVisible"
+      :showMills="isMillsVisible"
+      :showFlourMassacre="isFlourMassacreVisible"
+      :showWckMassacre="isWckMassacreVisible"
+      :showDeadlyAidWork="isDeadlyAidWorkVisible"
+    />
+
+    <template #front>
       <PositionedContent :left="(2980 * scale)">
         <CityLabel
           ref="bakeries"
@@ -267,34 +230,26 @@ onMounted(() => {
           </p>
         </Narration>
       </PositionedContent>
-    </div>
-  </div>
+    </template>
+  </Chapter>
 </template>
 
 <style>
 .chapter-starvation {
-  overflow-x: visible;
   background: linear-gradient(to bottom, rgba(124, 199, 79, 0.2), rgba(124, 199, 79, 0.01));
 }
 
-.chapter {
-  position: relative;
+.chapter-starvation-cover-article {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25rem;
 }
 
-.chapter-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.chapter-city {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  transform-origin: bottom left;
+.chapter-starvation-cover-convention {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  text-wrap: balance;
 }
 
 .flour-massacre .car-line {
@@ -327,6 +282,16 @@ onMounted(() => {
   transform: scaleY(1) translateX(-50%);
 }
 
+@media (--phones-landscape) {
+  .chapter-starvation-cover-article {
+    font-size: 0.875rem;
+  }
+
+  .chapter-starvation-cover-convention {
+    font-size: 0.75rem;
+  }
+}
+
 @media ((--phones-landscape) and (not (--tablets-landscape))) {
   .flour-massacre .car-line {
     margin-top: -5rem;
@@ -339,6 +304,16 @@ onMounted(() => {
 
   .starvation-aid-workers-killed .car-line {
     height: 65vh;
+  }
+}
+
+@media (--laptops-sm) {
+  .chapter-starvation-cover-article {
+    font-size: 1.5rem;
+  }
+
+  .chapter-starvation-cover-convention {
+    font-size: 1.125rem;
   }
 }
 

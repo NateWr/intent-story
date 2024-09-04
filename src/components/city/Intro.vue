@@ -1,5 +1,11 @@
+<script setup lang="ts">
+defineProps({
+  scale: Number,
+})
+</script>
+
 <template>
-  <svg width="12205" height="603" viewBox="0 0 12205 603" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg :width="(12205 * scale).toFixed()" :height="(603 * scale).toFixed(0)" viewBox="0 0 12205 603" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M845 365.5V770H1060V154H893.5V365.5H845Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
     <path d="M495.5 359V670.5L1080.5 666V359H1116.5L1080.5 328.5H1023C1016.67 315.667 994 290 954 290C914 290 890.333 315.667 883.5 328.5H694.5C685.667 315.667 659.2 290 624 290C588.8 290 555 315.667 542.5 328.5H495.5L462 359H495.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
     <path d="M395.5 455H484V655H92.5V488.5H23L92.5 455H189.5V405H262V455H337V405H395.5V455Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>

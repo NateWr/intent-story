@@ -1,5 +1,6 @@
 <script setup lang="ts">
 defineProps({
+  scale: Number,
   showBakeries: Boolean,
   showMills: Boolean,
   showFlourMassacre: Boolean,
@@ -9,7 +10,7 @@ defineProps({
 </script>
 
 <template>
-  <svg class="city-svg" width="13981" height="832" viewBox="0 0 13981 832" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg class="city-svg" :width="(13981 * scale).toFixed(0)" :height="(832 * scale).toFixed()" viewBox="0 0 13981 832" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M926 594.5V999H1141V383H974.5V594.5H926Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
   <path d="M576.5 588V899.5L1161.5 895V588H1197.5L1161.5 557.5H1104C1097.67 544.667 1075 519 1035 519C995 519 971.333 544.667 964.5 557.5H775.5C766.667 544.667 740.2 519 705 519C669.8 519 636 544.667 623.5 557.5H576.5L543 588H576.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
   <path d="M476.5 684H565V884H173.5V717.5H104L173.5 684H270.5V634H343V684H418V634H476.5V684Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>

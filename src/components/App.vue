@@ -45,7 +45,7 @@ onMounted(() => {
     <div class="themes-wrapper">
       <div class="city-bg" :style="`--offset: -${progress * 10}px`" />
       <div class="themes" :style="{
-        transform: `translateX(-${progress}%)`
+        transform: `translateX(-${progress}%)`,
       }">
         <ChapterIntro :i18n="i18n" :scale="scale" :scrollStarted="scrollStarted" />
         <ChapterStarvation :i18n="i18n" :scale="scale" />
