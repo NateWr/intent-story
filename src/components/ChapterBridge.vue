@@ -18,12 +18,12 @@
 }
 
 .chapter-bridge-start {
-  width: 500px;
+  width: 75vw;
   background: var(--from);
 }
 
 .chapter-bridge-end {
-  width: 500px;
+  width: 75vw;
   background: var(--to);
 }
 
