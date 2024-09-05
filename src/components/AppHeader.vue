@@ -1,22 +1,32 @@
 <script setup lang="ts">
-import { type PropType } from 'vue'
+import { computed, type PropType } from 'vue'
 import IconShare from './IconShare.vue'
 import IconInfo from './IconInfo.vue'
+import type { Chapter } from '../types/chapter'
 import type { I18N } from '../types/i18n'
 
-defineProps({
+const props = defineProps({
+  chapters: {
+    type: Object as PropType<Chapter[]>,
+    required: true,
+  },
   i18n: {
     type: Object as PropType<I18N>,
     required: true,
   },
 })
 
-defineEmits(['goto'])
+const show = computed(() => {
+  return props.chapters[0].progress > 0.9
+})
 </script>
 
 
 <template>
-  <header class="header">
+  <header
+    class="header"
+    :class="show && 'header-visible'"
+  >
     <div class="header-title">
       <h1>{{ i18n.intent }}</h1>
       <div v-html="i18n.titleWithHighlight"></div>
@@ -102,7 +112,35 @@ defineEmits(['goto'])
   }
 }
 
+.header-title,
+.header-buttons {
+  transform: translateY(-5rem);
+  transition: all 0.5s;
+}
+
+.header-visible {
+
+  .header-title,
+  .header-buttons {
+    transform: translateY(0);
+  }
+}
+
 @media (--laptops-sm) {
+
+  .header {
+    transform: translateY(-5rem);
+    transition: all 0.5s;
+  }
+
+  .header-title,
+  .header-buttons {
+    transform: translateY(0);
+  }
+
+  .header-visible {
+    transform: translateY(0);
+  }
 
   .header-title {
 

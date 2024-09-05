@@ -8,7 +8,6 @@ defineProps({
     type: Object as PropType<Chapter[]>,
     required: true,
   },
-  current: String,
   i18n: {
     type: Object as PropType<I18N>,
     required: true,
@@ -26,7 +25,7 @@ defineEmits(['goto'])
         :key="chapter.id"
       >
         <a
-          :aria-current="current === chapter.id"
+          :aria-current="chapter.progress > 0 && chapter.progress < 1"
           class="app-nav-link"
           :class="chapter.progress > 0 && 'app-nav-link-active'"
           :href="`#${chapter.id}`"

@@ -1,8 +1,8 @@
-import { ref } from 'vue'
+import { onMounted, ref, type Ref } from 'vue'
 import type { I18N } from '../types/i18n'
 import type { Chapter } from '../types/chapter'
 
-export const useChapters = (i18n: I18N) => {
+export const useChapters = (i18n: I18N, chapterRefs: {id: string, ref: Ref<any | null>}[]) => {
 
   const chapters = ref<Chapter[]>([
     {
@@ -21,7 +21,7 @@ export const useChapters = (i18n: I18N) => {
       id: 'infrastructure',
       title: i18n.infrastructure,
       progress: 0,
-      color: 'var(--red)'
+      color: 'var(--red-light)'
     },
     {
       id: 'displacement',
@@ -51,8 +51,32 @@ export const useChapters = (i18n: I18N) => {
     chapters.value[i].progress = progress
   }
 
+  onMounted(() => {
+    chapterRefs.forEach(chapterRef => {
+      document.addEventListener('scroll', () => {
+        if (!chapterRef.ref.value) {
+          return
+        }
+        const bounds = chapterRef.ref.value.$el.getBoundingClientRect()
+        const start = window.innerWidth * 0.5
+        const end = bounds.width - start
+        if (bounds.x >= start) {
+          chapterRef.ref.value = 0
+        } else if (-bounds.x >= end) {
+          chapterRef.ref.value = 1
+        } else {
+          if (bounds.x <= 0) {
+            chapterRef.ref.value = -(bounds.x - start) / (end + start)
+          } else {
+            chapterRef.ref.value = (-bounds.x + start) / end
+          }
+        }
+        setChapterProgress(chapterRef.id, chapterRef.ref.value)
+      })
+    })
+  })
+
   return {
     chapters,
-    setChapterProgress,
   }
 }

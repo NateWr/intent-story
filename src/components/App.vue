@@ -34,7 +34,24 @@ const setMaxScroll = () => {
   maxScroll.value = document.body.clientHeight - window.innerHeight
 }
 
-const { chapters, setChapterProgress } = useChapters(i18n.value)
+
+const intro = ref<typeof ChapterIntro | null>(null)
+const starvation = ref<typeof ChapterStarvation | null>(null)
+const infrastructure = ref<typeof ChapterStarvation | null>(null)
+const displacement = ref<typeof ChapterStarvation | null>(null)
+const civilianHarm = ref<typeof ChapterStarvation | null>(null)
+const end = ref<typeof ChapterIntro | null>(null)
+
+const chapterRefs = [
+  {id: 'intro', ref: intro},
+  {id: 'starvation', ref: starvation},
+  {id: 'infrastructure', ref: infrastructure},
+  {id: 'displacement', ref: displacement},
+  {id: 'civilianHarm', ref: civilianHarm},
+  {id: 'end', ref: end},
+]
+
+const { chapters } = useChapters(i18n.value, chapterRefs)
 
 onMounted(() => {
   setMaxScroll()
@@ -50,6 +67,7 @@ onMounted(() => {
   <main class="outer-wrapper">
     <div class="chapters-wrapper">
       <AppHeader
+        :chapters="chapters"
         :i18n="i18n"
       >
         <AppNav
@@ -62,7 +80,12 @@ onMounted(() => {
       <div class="chapters" :style="{
         transform: `translateX(-${progress}%)`,
       }">
-        <ChapterIntro :i18n="i18n" :scale="scale" :scrollStarted="scrollStarted" />
+        <ChapterIntro
+          ref="intro"
+          :i18n="i18n"
+          :scale="scale"
+          :scrollStarted="scrollStarted"
+        />
         <ChapterBridge
           :style="{
             '--bridge-color': 'var(--green-light)',
@@ -72,7 +95,67 @@ onMounted(() => {
         >
           Chapter II
         </ChapterBridge>
-        <ChapterStarvation :i18n="i18n" :scale="scale" />
+        <ChapterStarvation
+          ref="starvation"
+          :i18n="i18n"
+          :scale="scale"
+        />
+        <ChapterBridge
+          :style="{
+            '--bridge-color': 'var(--blue)',
+            '--from': 'linear-gradient(to bottom, rgba(124, 199, 79, 0.2), rgba(124, 199, 79, 0.01))',
+            '--to': 'linear-gradient(to bottom, rgba(82, 203, 255, 0.2), rgba(82, 203, 255, 0.01))',
+          }"
+        >
+          Chapter III
+        </ChapterBridge>
+        <ChapterStarvation
+          ref="infrastructure"
+          :i18n="i18n"
+          :scale="scale"
+        />
+        <ChapterBridge
+          :style="{
+            '--bridge-color': 'var(--orange)',
+            '--from': 'linear-gradient(to bottom, rgba(82, 203, 255, 0.2), rgba(82, 203, 255, 0.01))',
+            '--to': 'linear-gradient(to bottom, rgba(255, 194, 82, 0.2), rgba(255, 194, 82, 0.01))',
+          }"
+        >
+          Chapter IV
+        </ChapterBridge>
+        <ChapterStarvation
+          ref="displacement"
+          :i18n="i18n"
+          :scale="scale"
+        />
+        <ChapterBridge
+          :style="{
+            '--bridge-color': 'var(--red-light)',
+            '--from': 'linear-gradient(to bottom, rgba(255, 194, 82, 0.2), rgba(255, 194, 82, 0.01))',
+            '--to': 'linear-gradient(to bottom, rgba(255, 118, 118, 0.2), rgba(255, 118, 118, 0.01))',
+          }"
+        >
+          Chapter V
+        </ChapterBridge>
+        <ChapterStarvation
+          ref="civilianHarm"
+          :i18n="i18n"
+          :scale="scale"
+        />
+        <ChapterBridge
+          :style="{
+            '--bridge-color': 'var(--slate)',
+            '--from': 'linear-gradient(to bottom, rgba(242, 65, 65, 0.2), rgba(242, 65, 65, 0.01))',
+            '--to': 'linear-gradient(to bottom, rgba(168, 168, 187, 0.2), rgba(168, 168, 187, 0.01))',
+          }"
+        >
+          Chapter V
+        </ChapterBridge>
+        <ChapterIntro
+          ref="end"
+          :i18n="i18n"
+          :scale="scale"
+        />
       </div>
     </div>
   </main>

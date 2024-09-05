@@ -9,7 +9,7 @@ type IntersectionObserverOptions = {
 
 export const useIntersectionObserver = (el: Ref<any | null>, options?: IntersectionObserverOptions) => {
 
-  const isVisible = ref<Boolean>(false)
+  const isVisible = ref<boolean>(false)
 
   const callback = (entries: IntersectionObserverEntry[]) => {
     entries.forEach(entry => {
