@@ -18,12 +18,12 @@
 }
 
 .chapter-bridge-start {
-  width: 75vw;
+  width: 100vw;
   background: var(--from);
 }
 
 .chapter-bridge-end {
-  width: 75vw;
+  width: 100vw;
   background: var(--to);
 }
 
@@ -46,5 +46,13 @@
   letter-spacing: 0.1em;
   color: var(--bridge-color, white);
   opacity: 0.65;
+}
+
+@media (--laptops-sm) {
+
+  .chapter-bridge-start,
+  .chapter-bridge-end {
+    width: 75vw;
+  }
 }
 </style>

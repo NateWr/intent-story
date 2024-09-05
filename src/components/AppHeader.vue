@@ -17,7 +17,7 @@ const props = defineProps({
 })
 
 const show = computed(() => {
-  return props.chapters[0].progress > 0.9
+  return props.chapters[0].progress > 0.99
 })
 </script>
 
