@@ -1,43 +1,46 @@
 import { onMounted, ref, type Ref } from 'vue'
-import type { I18N } from '../types/i18n'
+import { useI18N } from '../utilities/useI18N'
 import type { Chapter } from '../types/chapter'
 
-export const useChapters = (i18n: I18N, chapterRefs: {id: string, ref: Ref<any | null>}[]) => {
+export const useChapters = (chapterRefs: {id: string, ref: Ref<any | null>}[]) => {
+
+  const { getI18N } = useI18N()
+  const i18n = getI18N()
 
   const chapters = ref<Chapter[]>([
     {
       id: 'intro',
-      title: i18n.intro,
+      title: i18n.value.intro,
       progress: 0,
       color: 'var(--purple)'
     },
     {
       id: 'starvation',
-      title: i18n.starvation,
+      title: i18n.value.starvation,
       progress: 0,
       color: 'var(--green-light)'
     },
     {
       id: 'infrastructure',
-      title: i18n.infrastructure,
+      title: i18n.value.infrastructure,
       progress: 0,
       color: 'var(--red-light)'
     },
     {
       id: 'displacement',
-      title: i18n.displacement,
+      title: i18n.value.displacement,
       progress: 0,
       color: 'var(--blue)'
     },
     {
       id: 'civilianHarm',
-      title: i18n.civilianHarm,
+      title: i18n.value.civilianHarm,
       progress: 0,
       color: 'var(--orange)'
     },
     {
       id: 'end',
-      title: i18n.end,
+      title: i18n.value.end,
       progress: 0,
       color: 'var(--slate)'
     },
@@ -49,6 +52,10 @@ export const useChapters = (i18n: I18N, chapterRefs: {id: string, ref: Ref<any |
       return
     }
     chapters.value[i].progress = progress
+  }
+
+  const getChapterRef = (id: string) => {
+    return chapterRefs.find(c => c.id === id)?.ref
   }
 
   onMounted(() => {
@@ -78,5 +85,6 @@ export const useChapters = (i18n: I18N, chapterRefs: {id: string, ref: Ref<any |
 
   return {
     chapters,
+    getChapterRef,
   }
 }

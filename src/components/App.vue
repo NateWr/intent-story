@@ -34,7 +34,7 @@ const setMaxScroll = () => {
   maxScroll.value = document.body.clientHeight - window.innerHeight
 }
 
-
+const chapterWrapper = ref<HTMLElement | null>(null)
 const intro = ref<typeof ChapterIntro | null>(null)
 const starvation = ref<typeof ChapterStarvation | null>(null)
 const infrastructure = ref<typeof ChapterStarvation | null>(null)
@@ -51,7 +51,21 @@ const chapterRefs = [
   {id: 'end', ref: end},
 ]
 
-const { chapters } = useChapters(i18n.value, chapterRefs)
+const { chapters, getChapterRef } = useChapters(chapterRefs)
+
+const scrollToChapter = (id: string) => {
+  const chapterRef = getChapterRef(id)
+  if (!chapterRef) {
+    return
+  }
+  const left = chapterRef.value?.$el?.offsetLeft ?? 0
+  const width = chapterWrapper.value?.clientWidth ?? 0
+  const scrollToY = maxScroll.value * (left / width)
+  window.scrollTo({
+    top: scrollToY,
+    behavior: 'smooth',
+  })
+}
 
 onMounted(() => {
   setMaxScroll()
@@ -74,12 +88,17 @@ onMounted(() => {
           :chapters="chapters"
           current="intro"
           :i18n="i18n"
+          @goto="scrollToChapter"
         />
       </AppHeader>
       <div class="city-bg" :style="`--offset: -${progress * 10}px`" />
-      <div class="chapters" :style="{
-        transform: `translateX(-${progress}%)`,
-      }">
+      <div
+        class="chapters"
+        ref="chapterWrapper"
+        :style="{
+          transform: `translateX(-${progress}%)`,
+        }"
+      >
         <ChapterIntro
           ref="intro"
           :i18n="i18n"

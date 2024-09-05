@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { type PropType } from 'vue'
-import type { I18N } from '../types/i18n'
+import { useI18N } from '../utilities/useI18N'
 import type { Chapter } from '../types/chapter'
 
 defineProps({
@@ -8,13 +8,12 @@ defineProps({
     type: Object as PropType<Chapter[]>,
     required: true,
   },
-  i18n: {
-    type: Object as PropType<I18N>,
-    required: true,
-  },
 })
 
 defineEmits(['goto'])
+
+const { getI18N } = useI18N()
+const i18n = getI18N()
 </script>
 
 <template>
@@ -95,9 +94,12 @@ defineEmits(['goto'])
     opacity: 1;
     color: var(--chapter-color);
 
-    & .app-nav-dot,
-    & .app-nav-line {
+    & .app-nav-dot {
       background: var(--chapter-color);
+    }
+
+    & .app-nav-line {
+      opacity: 0.35;
     }
   }
 
