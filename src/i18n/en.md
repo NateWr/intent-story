@@ -6,7 +6,7 @@ titleWithHighlight: the road to <strong>genocide</strong>
 chapters: Chapters
 intro: Intro
 starvation: Starvation
-infrastructure: Infrastucture
+infrastructure: Infrastructure
 displacement: Displacement
 civilianHarm: Civilian Harm
 end: End
