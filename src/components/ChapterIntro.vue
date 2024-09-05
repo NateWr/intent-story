@@ -54,7 +54,10 @@ onMounted(() => {
         <template #subtitle>
           Under international law, the crime of genocide requires <strong>acts of genocide</strong> and the <strong>intent</strong> to destroy a group of people, or a part of that group.
         </template>
-        <div v-if="scrollPrompt" class="scroll-prompt">
+        <div
+          class="scroll-prompt"
+          :class="scrollPrompt && 'scroll-prompt-visible'"
+        >
           <IconScroll aria-hidden="true" />
           scroll down
         </div>
@@ -201,6 +204,12 @@ onMounted(() => {
   font-size: 0.75rem;
   font-weight: 900;
   letter-spacing: 0.1em;
+  opacity: 0;
+  transition: opacity 0.3s 0.5s;
+}
+
+.scroll-prompt-visible {
+  opacity: 1;
   animation-name: pulse;
   animation-duration: 2s;
   animation-iteration-count: infinite;
@@ -217,6 +226,20 @@ onMounted(() => {
 
   to {
     opacity: 0;
+  }
+}
+
+@media (--phones-landscape) {
+
+  .scroll-prompt {
+    margin-top: 0.5rem;
+    gap: 0.5rem;
+    font-size: 0.675rem;
+
+    & svg {
+      width: 0.75rem;
+      height: auto;
+    }
   }
 }
 

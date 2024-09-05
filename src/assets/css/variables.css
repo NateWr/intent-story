@@ -1,10 +1,13 @@
 :root {
+  --blue: #52CBFF;
   --green-light: #7CC74F;
   --green-lighter: #9FFF65;
   --green-dark: #112C00;
   --purple: #D097FF;
   --red: #C60000;
+  --orange: #FFC252;
   --yellow: #FFE945;
+  --slate: #A8A8BB;
 
   --font-sans: "Libre Franklin", "ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif: "Lora", "ui-serif", "Georgia", "Cambria", "Times New Roman", "Times", "serif";

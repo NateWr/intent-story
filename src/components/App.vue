@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, type PropType } from 'vue'
 import debounce from 'debounce'
+import AppHeader from './AppHeader.vue'
+import AppNav from './AppNav.vue'
 import ChapterBridge from './ChapterBridge.vue'
 import ChapterIntro from './ChapterIntro.vue'
 import ChapterStarvation from './ChapterStarvation.vue'
+import { useChapters } from '../utilities/useChapters'
 import { useI18N } from '../utilities/useI18N'
 import { useScale } from '../utilities/useScale'
 import type { I18N } from '../types/i18n'
@@ -31,6 +34,8 @@ const setMaxScroll = () => {
   maxScroll.value = document.body.clientHeight - window.innerHeight
 }
 
+const { chapters, setChapterProgress } = useChapters(i18n.value)
+
 onMounted(() => {
   setMaxScroll()
   document.addEventListener('resize', debounce(setMaxScroll, 1000))
@@ -43,9 +48,18 @@ onMounted(() => {
 
 <template>
   <main class="outer-wrapper">
-    <div class="themes-wrapper">
+    <div class="chapters-wrapper">
+      <AppHeader
+        :i18n="i18n"
+      >
+        <AppNav
+          :chapters="chapters"
+          current="intro"
+          :i18n="i18n"
+        />
+      </AppHeader>
       <div class="city-bg" :style="`--offset: -${progress * 10}px`" />
-      <div class="themes" :style="{
+      <div class="chapters" :style="{
         transform: `translateX(-${progress}%)`,
       }">
         <ChapterIntro :i18n="i18n" :scale="scale" :scrollStarted="scrollStarted" />
@@ -75,7 +89,7 @@ body {
   height: 24000px;
 }
 
-.themes-wrapper {
+.chapters-wrapper {
   position: fixed;
   top: 0;
   left: 0;
@@ -87,14 +101,19 @@ body {
   display: flex;
 }
 
-.themes {
+.chapters {
+  position: fixed;
+  bottom: 0;
+  height: 100vh;
+  height: 100lvh;
   display: flex;
   flex-wrap: nowrap;
+  margin-bottom: 4rem;
 }
 
 .city-bg {
-  position: absolute;
-  top: 0;
+  position: fixed;
+  bottom: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
@@ -102,5 +121,23 @@ body {
   background-image: url('/city-bg.png');
   background-repeat: repeat-x;
   background-position: var(--offset) bottom;
+}
+
+@media ((--phones-landscape) and (not (--tablets-landscape))) {
+
+  .chapters {
+    margin-bottom: 0;
+  }
+
+  .city-bg {
+    background-position: var(--offset) 50vh;
+  }
+}
+
+@media (--laptops-sm) {
+
+  .chapters {
+    margin-bottom: 0;
+  }
 }
 </style>

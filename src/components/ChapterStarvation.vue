@@ -242,13 +242,13 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
 .chapter-starvation-cover-article {
   font-size: 1.25rem;
   font-weight: 700;
-  line-height: 1.25rem;
+  line-height: 1.25;
 }
 
 .chapter-starvation-cover-convention {
   font-size: 0.875rem;
   font-weight: 500;
-  line-height: 1.25rem;
+  line-height: 1.25;
   text-wrap: balance;
 }
 

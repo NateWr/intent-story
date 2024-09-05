@@ -6,7 +6,7 @@
     <div class="chapter-cover-subtitle">
       <slot name="subtitle" />
     </div>
-    <div class="chapter-cover-details">
+    <div v-if="$slots.default" class="chapter-cover-details">
       <slot />
     </div>
   </div>
@@ -16,10 +16,10 @@
 .chapter-cover {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 2rem;
   width: 100vw;
-  padding: 3rem 1.5rem;
-  padding: 20vh 10vw;
+  padding: 10vh 10vw;
   overflow: visible;
 }
 
