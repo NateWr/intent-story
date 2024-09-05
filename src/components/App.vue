@@ -168,7 +168,7 @@ onMounted(() => {
             '--to': 'linear-gradient(to bottom, rgba(168, 168, 187, 0.2), rgba(168, 168, 187, 0.01))',
           }"
         >
-          Chapter V
+          End
         </ChapterBridge>
         <ChapterIntro
           ref="end"
