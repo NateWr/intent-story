@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, type PropType } from 'vue'
+import { computed, nextTick, onMounted, ref, type PropType } from 'vue'
 import debounce from 'debounce'
 import AppHeader from './AppHeader.vue'
 import AppNav from './AppNav.vue'
@@ -32,6 +32,10 @@ const progress = computed(() => scrollProgress.value.toFixed(6) * 100)
 
 const setMaxScroll = () => {
   maxScroll.value = document.body.clientHeight - window.innerHeight
+}
+
+const setScrollProgress = () => {
+  scrollProgress.value = window.scrollY / maxScroll.value
 }
 
 const chapterWrapper = ref<HTMLElement | null>(null)
@@ -70,9 +74,8 @@ const scrollToChapter = (id: string) => {
 onMounted(() => {
   setMaxScroll()
   document.addEventListener('resize', debounce(setMaxScroll, 1000))
-  document.addEventListener('scroll', () => {
-    scrollProgress.value = window.scrollY / maxScroll.value
-  })
+  nextTick(() => setScrollProgress())
+  document.addEventListener('scroll', setScrollProgress)
   document.addEventListener('scroll', () => scrollStarted.value = true, {once: true})
 })
 </script>
@@ -174,21 +177,18 @@ onMounted(() => {
           ref="end"
           :i18n="i18n"
           :scale="scale"
+          :scrollStarted="scrollStarted"
         />
       </div>
     </div>
   </main>
 </template>
 
-<style is:global>
+<style>
 body {
   color: white;
   background: black;
   scroll-behavior: smooth;
-}
-
-.outer-wrapper {
-  height: 24000px;
 }
 
 .chapters-wrapper {

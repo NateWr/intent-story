@@ -1,4 +1,4 @@
-import { onMounted, ref, type Ref } from 'vue'
+import { nextTick, onMounted, ref, type Ref } from 'vue'
 import { useI18N } from '../utilities/useI18N'
 import type { Chapter } from '../types/chapter'
 
@@ -58,27 +58,35 @@ export const useChapters = (chapterRefs: {id: string, ref: Ref<any | null>}[]) =
     return chapterRefs.find(c => c.id === id)?.ref
   }
 
-  onMounted(() => {
+  const setAllChaptersProgress = () => {
     chapterRefs.forEach(chapterRef => {
-      document.addEventListener('scroll', () => {
-        if (!chapterRef.ref.value) {
-          return
-        }
-        const bounds = chapterRef.ref.value.$el.getBoundingClientRect()
-        const start = window.innerWidth * 0.5
-        const end = bounds.width - start
-        if (bounds.x >= start) {
-          chapterRef.ref.value = 0
-        } else if (-bounds.x >= end) {
-          chapterRef.ref.value = 1
+      if (!chapterRef.ref.value) {
+        return
+      }
+      let progress = 0
+      const bounds = chapterRef.ref.value.$el.getBoundingClientRect()
+      const start = window.innerWidth * 0.5
+      const end = bounds.width - start
+      if (bounds.x >= start) {
+        progress = 0
+      } else if (-bounds.x >= end) {
+        progress = 1
+      } else {
+        if (bounds.x <= 0) {
+          progress = -(bounds.x - start) / (end + start)
         } else {
-          if (bounds.x <= 0) {
-            chapterRef.ref.value = -(bounds.x - start) / (end + start)
-          } else {
-            chapterRef.ref.value = (-bounds.x + start) / end
-          }
+          progress = (-bounds.x + start) / end
         }
-        setChapterProgress(chapterRef.id, chapterRef.ref.value)
+      }
+      setChapterProgress(chapterRef.id, progress)
+    })
+  }
+
+  onMounted(() => {
+    document.addEventListener('scroll', setAllChaptersProgress)
+    nextTick(() => {
+      nextTick(() => {
+        nextTick(() => setAllChaptersProgress())
       })
     })
   })
