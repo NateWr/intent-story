@@ -161,12 +161,12 @@ onMounted(() => {
       </PositionedContent>
       <PositionedContent :left="(7231 * scale)">
         <Quote
-          name="Temp Name"
-          role="Temp role"
-          date="Temp, 2023"
+          name="Yehuda Shlezinger"
+          role="Israeli Journalist"
+          date="Apr 19, 2024"
           :offsetBottom="`${200 * scale}px`"
         >
-          “Lorem ipsum <strong>dolor</strong> sit amet.”
+          “These people there [in Gaza] deserve death. A hard death, an agonizing death... There are <strong>no innocent people</strong> there.”
         </Quote>
       </PositionedContent>
       <PositionedContent :left="(9156 * scale)">
