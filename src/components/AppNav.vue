@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { type PropType } from 'vue'
+import { computed, nextTick, ref, watch, type PropType } from 'vue'
 import { useI18N } from '../utilities/useI18N'
 import type { Chapter } from '../types/chapter'
 
-defineProps({
+const props = defineProps({
   chapters: {
     type: Object as PropType<Chapter[]>,
     required: true,
@@ -14,17 +14,39 @@ defineEmits(['goto'])
 
 const { getI18N } = useI18N()
 const i18n = getI18N()
+
+const currentIndex = computed(() => {
+  return props.chapters.findIndex(chapter => chapter.progress > 0 && chapter.progress < 1)
+})
+
+const listRef = ref<HTMLElement | null>(null)
+
+watch(currentIndex, (newVal) => {
+  if (newVal < 0) {
+    return
+  }
+  nextTick(() => {
+    if (!listRef.value) {
+      return
+    }
+    const currentEl = listRef.value.querySelector('[aria-current="true"]')
+    if (!currentEl) {
+      return
+    }
+    currentEl?.parentElement?.scrollIntoView()
+  })
+})
 </script>
 
 <template>
   <nav class="app-nav" :aria-label="i18n.chapters">
-    <ol>
+    <ol ref="listRef">
       <li
         v-for="(chapter, index) in chapters"
         :key="chapter.id"
       >
         <a
-          :aria-current="chapter.progress > 0 && chapter.progress < 1"
+          :aria-current="index === currentIndex"
           class="app-nav-link"
           :class="chapter.progress > 0 && 'app-nav-link-active'"
           :href="`#${chapter.id}`"
@@ -60,13 +82,19 @@ const i18n = getI18N()
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
-    padding-left: 1rem;
-    padding-right: 1rem;
 
     &:focus-visible {
       outline: 2px solid;
       outline-offset: -4px;
     }
+  }
+
+  & li:first-child {
+    padding-left: 1rem;
+  }
+
+  & li:last-child {
+    padding-right: 1rem;
   }
 
   & li:not(:last-child) .app-nav-link {
