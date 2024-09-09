@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { ref, type PropType } from 'vue'
-import Chapter from './Chapter.vue'
-import ChapterCover from './ChapterCover.vue'
-import CityLabel from './CityLabel.vue'
-import CallAndResponse from './CallAndResponse.vue'
-import Narration from './Narration.vue'
-import PositionedContent from './PositionedContent.vue'
-import Quote from './Quote.vue'
-import Starvation from './city/Starvation.vue'
-import { useIntersectionObserver } from '../utilities/useIntersectionObserver'
-import type { I18N } from '../types/i18n'
+import Chapter from '../Chapter.vue'
+import ChapterCover from '../ChapterCover.vue'
+import CityLabel from '../CityLabel.vue'
+import CallAndResponse from '../CallAndResponse.vue'
+import Narration from '../Narration.vue'
+import PositionedContent from '../PositionedContent.vue'
+import Quote from '../Quote.vue'
+import CityStarvation from './CityStarvation.vue'
+import { useIntersectionObserver } from '../../utilities/useIntersectionObserver'
+import type { I18N } from '../../types/i18n'
 
 defineProps({
   i18n: {
@@ -148,7 +148,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
       </PositionedContent>
     </template>
 
-    <Starvation
+    <CityStarvation
       :scale="scale"
       :showBakeries="isBakeriesVisible"
       :showMills="isMillsVisible"
@@ -236,7 +236,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
 
 <style>
 .chapter-starvation {
-  background: linear-gradient(to bottom, rgba(124, 199, 79, 0.2), rgba(124, 199, 79, 0.01));
+  background: var(--starvation-gradient);
 }
 
 .chapter-starvation-cover-article {

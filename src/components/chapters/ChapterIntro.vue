@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { onMounted, ref, type PropType } from 'vue'
-import Arrow from './Arrow.vue'
-import Chapter from './Chapter.vue'
-import ChapterCover from './ChapterCover.vue'
-import IconScroll from './IconScroll.vue'
-import Narration from './Narration.vue'
-import PositionedContent from './PositionedContent.vue'
-import Quote from './Quote.vue'
-import Intro from './city/Intro.vue'
-import type { I18N } from '../types/i18n'
+import Arrow from '../Arrow.vue'
+import Chapter from '../Chapter.vue'
+import ChapterCover from '../ChapterCover.vue'
+import IconScroll from '../IconScroll.vue'
+import Narration from '../Narration.vue'
+import PositionedContent from '../PositionedContent.vue'
+import Quote from '../Quote.vue'
+import CityIntro from './CityIntro.vue'
+import type { I18N } from '../../types/i18n'
 
 const props = defineProps({
   i18n: {
@@ -186,13 +186,13 @@ onMounted(() => {
         </Narration>
       </PositionedContent>
     </template>
-    <Intro :scale="scale" />
+    <CityIntro :scale="scale" />
   </Chapter>
 </template>
 
 <style>
 .chapter-intro {
-  background: linear-gradient(to bottom, rgba(133, 0, 255, 0.2), rgba(133, 0, 255, 0.01));
+  background: var(--intro-gradient);
 }
 
 .scroll-prompt {

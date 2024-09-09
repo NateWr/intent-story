@@ -15,6 +15,12 @@ export const useChapters = (chapterRefs: {id: string, ref: Ref<any | null>}[]) =
       color: 'var(--purple)'
     },
     {
+      id: 'civilianHarm',
+      title: i18n.value.civilianHarm,
+      progress: 0,
+      color: 'var(--red-light)'
+    },
+    {
       id: 'starvation',
       title: i18n.value.starvation,
       progress: 0,
@@ -24,25 +30,19 @@ export const useChapters = (chapterRefs: {id: string, ref: Ref<any | null>}[]) =
       id: 'infrastructure',
       title: i18n.value.infrastructure,
       progress: 0,
-      color: 'var(--red-light)'
+      color: 'var(--blue)'
     },
     {
       id: 'displacement',
       title: i18n.value.displacement,
       progress: 0,
-      color: 'var(--blue)'
-    },
-    {
-      id: 'civilianHarm',
-      title: i18n.value.civilianHarm,
-      progress: 0,
-      color: 'var(--orange)'
+      color: 'var(--orange-light)'
     },
     {
       id: 'end',
       title: i18n.value.end,
       progress: 0,
-      color: 'var(--slate)'
+      color: 'var(--slate-light)'
     },
   ])
 
