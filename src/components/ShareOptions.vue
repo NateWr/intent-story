@@ -95,7 +95,7 @@ const { canCopy, copyMessage, copyToClipboard } = useClipboard(props.i18n?.copie
 }
 
 .share-title {
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -105,7 +105,7 @@ const { canCopy, copyMessage, copyToClipboard } = useClipboard(props.i18n?.copie
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.25rem;
+  gap: 0.5rem;
   margin-left: -0.25rem;
   color: var(--green-lighter);
 
@@ -113,6 +113,10 @@ const { canCopy, copyMessage, copyToClipboard } = useClipboard(props.i18n?.copie
     display: block;
     height: 4rem;
     width: 4rem;
+  }
+
+  & a:focus-visible {
+    outline: 2px solid white;
   }
 }
 
@@ -131,6 +135,12 @@ const { canCopy, copyMessage, copyToClipboard } = useClipboard(props.i18n?.copie
   & svg {
     width: 2rem;
     height: 2rem;
+  }
+
+  &:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+    border-radius: 0;
   }
 }
 

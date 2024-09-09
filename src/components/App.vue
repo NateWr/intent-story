@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onMounted, ref, type PropType } from 'vue'
+import { computed, nextTick, onMounted, ref, watch, type PropType } from 'vue'
 import debounce from 'debounce'
 import AppHeader from './AppHeader.vue'
 import AppNav from './AppNav.vue'
@@ -17,6 +17,7 @@ import type { I18N } from '../types/i18n'
 import "../assets/css/variables.css"
 import Modal from './Modal.vue'
 import ShareOptions from './ShareOptions.vue'
+import AboutModal from './AboutModal.vue'
 
 const props = defineProps({
   i18n: {
@@ -84,6 +85,14 @@ const scrollToChapter = (id: string) => {
 const aboutOpen = ref<boolean>(false)
 const shareOpen = ref<boolean>(false)
 const isModalOpen = computed(() => aboutOpen.value || shareOpen.value)
+
+watch(isModalOpen, newVal => {
+  if (newVal) {
+    document.body.classList.add('overflow-hidden')
+  } else {
+    document.body.classList.remove('overflow-hidden')
+  }
+})
 
 onMounted(() => {
   setMaxScroll()
@@ -211,6 +220,11 @@ onMounted(() => {
     <Transition appear>
       <Modal v-if="shareOpen" @close="shareOpen = false">
         <ShareOptions :i18n="i18n" :url="shareUrl" />
+      </Modal>
+    </Transition>
+    <Transition appear>
+      <Modal v-if="aboutOpen" @close="aboutOpen = false">
+        <AboutModal :i18n="i18n" />
       </Modal>
     </Transition>
   </main>

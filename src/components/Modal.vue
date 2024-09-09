@@ -23,15 +23,17 @@ defineEmits(['close'])
   left: 0;
   right: 0;
   bottom: 0;
-  width: auto;
-  height: auto;
+  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.8);
+  align-items: flex-start;
+  overflow-y: auto;
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  background: rgba(0, 0, 0, 0.6);
   opacity: 1;
   transition: opacity 0.25s;
-  z-index: 99999;
+  z-index: 9999;
 }
 
 .modal-content {
@@ -39,7 +41,7 @@ defineEmits(['close'])
   max-width: 40rem;
   background: black;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 1.5rem;
   opacity: 1;
   transform: translateY(0);
@@ -79,6 +81,11 @@ defineEmits(['close'])
   & svg {
     width: 1.5rem;
     height: 1.5rem;
+  }
+
+  &:focus-visible {
+    outline: 2px solid;
+    outline-offset: -1px;
   }
 }
 </style>
