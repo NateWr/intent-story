@@ -32,7 +32,7 @@ const { scale } = useScale()
 const scrollStarted = ref<boolean>(false)
 const maxScroll = ref<number>(0)
 const scrollProgress = ref<number>(0)
-const progress = computed(() => scrollProgress.value.toFixed(6) * 100)
+const progress = computed(() => Math.min(100, scrollProgress.value.toFixed(6) * 100))
 
 const setMaxScroll = () => {
   maxScroll.value = document.body.clientHeight - window.innerHeight
@@ -78,6 +78,7 @@ const scrollToChapter = (id: string) => {
 onMounted(() => {
   setMaxScroll()
   document.addEventListener('resize', debounce(setMaxScroll, 1000))
+  document.addEventListener('resize', debounce(setScrollProgress, 1000))
   nextTick(() => setScrollProgress())
   document.addEventListener('scroll', setScrollProgress)
   document.addEventListener('scroll', () => scrollStarted.value = true, {once: true})
@@ -180,6 +181,19 @@ onMounted(() => {
           :i18n="i18n"
           :scale="scale"
         />
+        <div class="chapters-last-frame">
+          <div class="chapters-last-frame-content">
+            <div>
+              Made by Visualizing Palestine.
+            </div>
+            <div>
+              Based on research by Law for Palestine.
+            </div>
+            <div>
+              Share and Take Action
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </main>
@@ -212,6 +226,28 @@ body {
   display: flex;
   flex-wrap: nowrap;
   margin-bottom: 4rem;
+}
+
+.chapters-last-frame {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  background: var(--end-gradient);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10vw;
+}
+
+.chapters-last-frame-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 20rem;
+  text-align: center;
 }
 
 .city-bg {
