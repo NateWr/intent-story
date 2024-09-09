@@ -16,6 +16,8 @@ const props = defineProps({
   },
 })
 
+defineEmits(['open-about', 'open-share'])
+
 const show = computed(() => {
   return props.chapters[0].progress > 0.99
 })
@@ -33,11 +35,11 @@ const show = computed(() => {
     </div>
     <slot />
     <div class="header-buttons">
-      <button class="header-button">
+      <button class="header-button" @click="$emit('open-share')">
         <IconShare aria-hidden="true" />
         <span class="sr-only">{{ i18n.share }}</span>
       </button>
-      <button class="header-button">
+      <button class="header-button" @click="$emit('open-about')">
         <IconInfo aria-hidden="true" />
         <span class="sr-only">{{ i18n.about }}</span>
       </button>

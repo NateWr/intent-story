@@ -15,10 +15,16 @@ import { useI18N } from '../utilities/useI18N'
 import { useScale } from '../utilities/useScale'
 import type { I18N } from '../types/i18n'
 import "../assets/css/variables.css"
+import Modal from './Modal.vue'
+import ShareOptions from './ShareOptions.vue'
 
 const props = defineProps({
   i18n: {
     type: Object as PropType<I18N>,
+    required: true,
+  },
+  shareUrl: {
+    type: String,
     required: true,
   }
 })
@@ -75,6 +81,10 @@ const scrollToChapter = (id: string) => {
   })
 }
 
+const aboutOpen = ref<boolean>(false)
+const shareOpen = ref<boolean>(false)
+const isModalOpen = computed(() => aboutOpen.value || shareOpen.value)
+
 onMounted(() => {
   setMaxScroll()
   document.addEventListener('resize', debounce(setMaxScroll, 1000))
@@ -91,6 +101,8 @@ onMounted(() => {
       <AppHeader
         :chapters="chapters"
         :i18n="i18n"
+        @open-about="aboutOpen = true"
+        @open-share="shareOpen = true"
       >
         <AppNav
           :chapters="chapters"
@@ -196,6 +208,11 @@ onMounted(() => {
         </div>
       </div>
     </div>
+    <Transition appear>
+      <Modal v-if="shareOpen" @close="shareOpen = false">
+        <ShareOptions :i18n="i18n" :url="shareUrl" />
+      </Modal>
+    </Transition>
   </main>
 </template>
 

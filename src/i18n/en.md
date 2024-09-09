@@ -10,6 +10,16 @@ infrastructure: Infrastructure
 displacement: Displacement
 civilianHarm: Civilian Harm
 end: End
-share: Share
 about: About
+share: Share
+facebook: Facebook
+twitter: Twitter
+email: Email
+whatsApp: WhatsApp
+reddit: Reddit
+telegram: Telegram
+linkedIn: LinkedIn
+copyToClipboard: Copy to clipboard
+copied: Copied!
+couldNotCopy: Could not copy
 ---
