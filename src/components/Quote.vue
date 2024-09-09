@@ -73,7 +73,7 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.25})
   width: 2px;
   background: white;
   height: 0;
-  transition: all 0.5s;
+  transition: all 1s;
 }
 
 .quote-line-head {
@@ -81,7 +81,9 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.25})
   bottom: 100%;
   display: flex;
   gap: 4px;
+  opacity: 0;
   transform: translate(-7px, 20px);
+  transition: opacity 0.25s;
 }
 
 .quote {
@@ -158,6 +160,10 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.25})
 
   & .quote-line {
     height: 100vh;
+  }
+
+  & .quote-line-head {
+    opacity: 1;
   }
 
   & .quote-slide-in {
