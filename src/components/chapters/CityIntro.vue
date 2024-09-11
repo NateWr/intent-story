@@ -5,7 +5,7 @@ defineProps({
 </script>
 
 <template>
-  <svg :width="(12205 * scale).toFixed()" :height="(603 * scale).toFixed(0)" viewBox="0 0 12205 603" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg :width="(13474 * scale).toFixed()" :height="(603 * scale).toFixed(0)" viewBox="0 0 13474 603" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M845 365.5V770H1060V154H893.5V365.5H845Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
     <path d="M495.5 359V670.5L1080.5 666V359H1116.5L1080.5 328.5H1023C1016.67 315.667 994 290 954 290C914 290 890.333 315.667 883.5 328.5H694.5C685.667 315.667 659.2 290 624 290C588.8 290 555 315.667 542.5 328.5H495.5L462 359H495.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
     <path d="M395.5 455H484V655H92.5V488.5H23L92.5 455H189.5V405H262V455H337V405H395.5V455Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
@@ -64,6 +64,11 @@ defineProps({
     <path d="M10196 618.5V446.5V353H9988.48V446.5H9867.48V618.5H10196Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
     <path d="M10947 467V651.5V667H11296.5C11299.5 656 11303.7 632.3 11296.5 625.5C11287.5 617 11274.5 570.5 11263.5 557C11252.5 543.5 11237 531 11178 528.5C11130.8 526.5 11102.6 511.667 11094.5 504.5V410H11006.5V447L10947 467Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
     <path d="M10113 467V651.5V667L9819.98 720.5C9816.98 709.5 9812.78 685.8 9819.98 679C9828.98 670.5 9841.98 624 9852.98 610.5C9863.98 597 9858.98 553 9917.98 550.5C9965.18 548.5 9957.28 511.667 9965.45 504.5V410H10053.5V447L10113 467Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
+    <path d="M12402 485.5V890H12040V274H12320.3V485.5H12402Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
+    <path d="M12884.5 520.5C12883.7 572.667 12882.5 681.4 12884.5 699H12482V411H12768V520.5H12884.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
+    <path d="M12421.5 443.5H12510V643.5H12118.5V477H12049L12118.5 443.5H12215.5V393.5H12288V443.5H12363V393.5H12421.5V443.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
+    <path d="M12751 695V523.324V430H13111.7V523.324H13322V695H12751Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
+    <path d="M12634 420V604.5V620H12983.5C12986.5 609 12990.7 585.3 12983.5 578.5C12974.5 570 12961.5 523.5 12950.5 510C12939.5 496.5 12924 484 12865 481.5C12817.8 479.5 12789.7 464.667 12781.5 457.5V363H12693.5V400L12634 420Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
     <use xlink:href="#svg-buildings" :transform="`translate(1240, -${(629 - 603)})`" width="1112" height="629"/>
   </svg>
 </template>

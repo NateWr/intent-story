@@ -171,18 +171,26 @@ onMounted(() => {
       </PositionedContent>
       <PositionedContent :left="(9156 * scale)">
         <Narration
-          :offsetBottom="`${350 * scale}px`"
+          size="lg"
+          :offsetBottom="`${150 * scale}px`"
         >
-          <p>By ignoring, undermining, or outright attacking the distinction between combatants and civilians, these statements justify the <strong>unrestrained killing</strong> of all Palestinians.</p>
-          <p>Each act of incitement tears away at the fabric of international law, which was founded in the aftermath of genocide in order to enforce these restraints.</p>
+          <p>These statements justify the unrestrained killing of all Palestinians as a <strong>group of people</strong>.</p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(10755 * scale)">
+      <PositionedContent :left="(10930 * scale)">
+        <Narration
+          :offsetBottom="`${350 * scale}px`"
+        >
+          <p>The crime of genocide can be committed by killing or harming members of a group, as well as inflicting on it <strong>conditions of life</strong> that will bring about its destruction.</p>
+          <p>Israel has starved the people of Gaza, destroyed life-sustaining infrastructure, and forcibly displaced and killed residents en masse, leading dozens of experts to conclude that Israel is committing genocide in Gaza.</p>
+        </Narration>
+      </PositionedContent>
+      <PositionedContent :left="(12750 * scale)">
         <Narration
           size="lg"
           :offsetBottom="`${350 * scale}px`"
         >
-          <p>The following examples, from a database of more than 400 statements, show how this incitement led to specific <strong>acts of genocide</strong> in Gaza.</p>
+          <p>The following examples of incitement, from a database of more than 400 statements, show that israel <strong>intended to commit genocide</strong> in Gaza.</p>
         </Narration>
       </PositionedContent>
     </template>
