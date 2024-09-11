@@ -129,7 +129,7 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.25})
 
 .quote-role {
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.2;
   transition-delay: 0.7s;
 }
 

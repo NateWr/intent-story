@@ -1,5 +1,11 @@
 <script setup lang="ts">
 defineProps({
+  line: {
+    type: Boolean,
+    default() {
+      return true
+    }
+  },
   isVisible: Boolean,
 })
 </script>
@@ -8,6 +14,7 @@ defineProps({
   <div class="car">
     <slot />
     <div
+      v-if="line"
       class="car-line"
       :class="isVisible && 'car-line-visible'"
       aria-hidden="true"

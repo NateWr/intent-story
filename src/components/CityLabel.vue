@@ -33,7 +33,7 @@ defineProps({
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  color: var(--green-light);
+  color: var(--color-highlight);
   min-width: 12rem;
 }
 
@@ -50,7 +50,7 @@ defineProps({
 
 .city-label-line {
   width: 2px;
-  background: var(--green-light);
+  background: var(--color-highlight);
   opacity: 0;
   transform: scaleY(0);
   transform-origin: bottom center;
