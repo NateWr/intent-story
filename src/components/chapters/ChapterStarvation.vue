@@ -63,7 +63,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
     </template>
 
     <template #back>
-      <PositionedContent :left="(1862 * scale)">
+      <PositionedContent :left="(1660 * scale)">
         <Quote
           name="Yoav Gallant"
           role="Israeli Defense Minister"
@@ -73,13 +73,13 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           “I have ordered a <strong>complete siege</strong> on the Gaza Strip. There will be no electricity, no food, no fuel, everything is closed.”
         </Quote>
       </PositionedContent>
-      <PositionedContent :left="(2910 * scale)">
+      <PositionedContent :left="(3305 * scale)">
         <Narration :offsetBottom="`${350 * scale}px`">
           <p>Nine months after Gallant’s promise to control the flow of life-saving essentials, UN experts declared a <strong>state of famine</strong> across all of Gaza.</p>
           <p>During this campaign of starvation, Israeli occupation forces (IOF) burned food stocks, destroyed agricultural land, bombed flour mills, greenhouses, bakeries, and fisheries, allowed Israeli settlers to destroy aid bound for Gaza, and carried out targeted attacks on both aid seekers and aid workers.</p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(3950 * scale)">
+      <PositionedContent :left="(5020 * scale)">
         <Quote
           name="Itamar Ben Gvir"
           role="Israeli Minister of National Security"
@@ -89,7 +89,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           “The only thing that needs to enter Gaza is hundreds of tons of explosives by the Air Force, and <strong>not an ounce of humanitarian aid.</strong>”
         </Quote>
       </PositionedContent>
-      <PositionedContent :left="(7410 * scale)">
+      <PositionedContent :left="(10628 * scale)">
         <Quote
           name="Boaz Bismuth"
           role="Member of the Israeli Knesset (Likud)"
@@ -104,7 +104,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           </template>
         </Quote>
       </PositionedContent>
-      <PositionedContent :left="(8894 * scale)" style="align-items: flex-end">
+      <PositionedContent :left="(12468 * scale)" style="align-items: flex-end">
         <Narration
           class="wck-massacre"
           :offsetBottom="`${64 * scale}px`"
@@ -119,7 +119,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           />
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(10950 * scale)" style="align-items: flex-end">
+      <PositionedContent :left="(15880 * scale)" style="align-items: flex-end">
         <Narration offsetBottom="0">
           <CallAndResponse
             ref="deadlyAidWork"
@@ -136,7 +136,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           </CallAndResponse>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(12937 * scale)">
+      <PositionedContent :left="(19370 * scale)">
         <Quote
           name="Revital Gotliv"
           role="Member of the Israeli Knesset (Likud)"
@@ -158,7 +158,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
     />
 
     <template #front>
-      <PositionedContent :left="(2980 * scale)">
+      <PositionedContent :left="(3349 * scale)">
         <CityLabel
           ref="bakeries"
           :lineHeight="`${128 * scale}px`"
@@ -168,7 +168,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           Bakeries
         </CityLabel>
       </PositionedContent>
-      <PositionedContent :left="(3250 * scale)">
+      <PositionedContent :left="(3560 * scale)">
         <CityLabel
           ref="mills"
           :lineHeight="`${128 * scale}px`"
@@ -178,7 +178,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           Flour Mills
         </CityLabel>
       </PositionedContent>
-      <PositionedContent :left="(5307 * scale)" style="align-items: flex-end">
+      <PositionedContent :left="(7119 * scale)" style="align-items: flex-end">
         <Narration :offsetBottom="`${64 * scale}px`">
           <CallAndResponse
             ref="flourMassacre"
@@ -202,7 +202,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           </CallAndResponse>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(6274 * scale)">
+      <PositionedContent :left="(8980 * scale)">
         <Narration
           size="lg"
           :offsetBottom="`${350 * scale}px`"
@@ -210,7 +210,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           <p>The flour massacre represents a <strong>pattern of incidents</strong> of Israeli forces targeting desperate aid seekers in Gaza.</p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(10000 * scale)">
+      <PositionedContent :left="(13970 * scale)">
         <Narration
           size="lg"
           :offsetBottom="`${250 * scale}px`"
@@ -220,7 +220,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(11795 * scale)">
+      <PositionedContent :left="(17660 * scale)">
         <Narration :offsetBottom="`${150 * scale}px`">
           <p>
             Children under five, pregnant or breastfeeding women, the elderly, and people with disabilities suffer the most from Israel’s <strong>campaign of starvation</strong>.
