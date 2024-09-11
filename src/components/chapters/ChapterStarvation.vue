@@ -51,13 +51,13 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           <h1>{{ i18n.starvation }}</h1>
         </template>
         <template #subtitle>
-          “deliberately inflicting on the group conditions of life calculated to bring about its physical destruction in whole or in part.”
+          “Never in post-war history had a population been made to go hungry so quickly and so completely as was the case for the 2.3 million Palestinians living in Gaza.”
         </template>
         <div class="chapter-starvation-cover-article">
-          Article II (c)
+          Michael Fakhri
         </div>
         <div class="chapter-starvation-cover-convention">
-          Convention on the Prevention and Punishment of the Crime of Genocide
+          UN Special Rapporteur on the Right to Food
         </div>
       </ChapterCover>
     </template>
