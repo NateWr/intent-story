@@ -182,7 +182,7 @@ onMounted(() => {
           :offsetBottom="`${350 * scale}px`"
         >
           <p>The crime of genocide can be committed by killing or harming members of a group, as well as inflicting on it <strong>conditions of life</strong> that will bring about its destruction.</p>
-          <p>Israel has starved the people of Gaza, destroyed life-sustaining infrastructure, and forcibly displaced and killed residents en masse, leading dozens of experts to conclude that Israel is committing genocide in Gaza.</p>
+          <p>Israel has starved the people of Gaza, destroyed life-sustaining infrastructure, and forcibly displaced and killed residents at a shocking rate, leading dozens of experts to conclude that Israel is committing genocide in Gaza.</p>
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(12750 * scale)">
