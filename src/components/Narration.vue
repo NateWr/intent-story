@@ -50,6 +50,30 @@ t
   font-size: 1.5rem;
 }
 
+.narration-center {
+  transform: translateX(-50%);
+  align-items: center;
+}
+
+.narration-center-line {
+  width: 2px;
+  height: 35vh;
+  background: var(--color-highlight);
+  opacity: 0;
+  transform: scaleY(0) translateX(-50%);
+  transform-origin: bottom center;
+  transition: all 0.5s 0.3s;
+}
+
+.narration-center-line-visible {
+  opacity: 1;
+  transform: scaleY(1) translateX(-50%);
+}
+
+.narration-dated-date {
+  font-weight: 900;
+}
+
 @media ((--phones-landscape) and (not (--tablets-landscape))) {
 
   .narration {
@@ -101,6 +125,10 @@ t
   .narration-lg {
     font-size: 2.5rem;
     max-width: 48rem;
+  }
+
+  .narration-center-line {
+    height: 50vh;
   }
 }
 </style>

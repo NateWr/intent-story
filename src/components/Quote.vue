@@ -47,9 +47,9 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.25})
       <cite class="quote-citation">
         <div class="quote-author">
           <div class="quote-name quote-slide-in">{{ name }}</div>
-          <div class="quote-role quote-slide-in">{{ role }}</div>
+          <div v-if="role" class="quote-role quote-slide-in">{{ role }}</div>
         </div>
-        <div class="quote-date quote-slide-in">{{ date }}</div>
+        <div v-if="date" class="quote-date quote-slide-in">{{ date }}</div>
       </cite>
       <div v-if="slots.footer" class="quote-footer quote-slide-in">
         <slot name="footer" />

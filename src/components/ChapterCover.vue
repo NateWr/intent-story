@@ -39,6 +39,7 @@
   font-weight: 700;
   font-style: italic;
   line-height: 1.5;
+  text-wrap: balance;
 
   & strong {
     color: var(--color-subtitle-highlight);

@@ -10,7 +10,7 @@ defineProps({
 </script>
 
 <template>
-  <svg class="city-svg" :width="(20786 * scale).toFixed(0)" :height="(600 * scale).toFixed()" viewBox="0 0 20786 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg :width="(20786 * scale).toFixed(0)" :height="(600 * scale).toFixed()" viewBox="0 0 20786 600" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M926 362.5V767H1141V151H974.5V362.5H926Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
     <path d="M576.5 356V667.5L1161.5 663V356H1197.5L1161.5 325.5H1104C1097.67 312.667 1075 287 1035 287C995 287 971.333 312.667 964.5 325.5H775.5C766.667 312.667 740.2 287 705 287C669.8 287 636 312.667 623.5 325.5H576.5L543 356H576.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
     <path d="M476.5 452H565V652H173.5V485.5H104L173.5 452H270.5V402H343V452H418V402H476.5V452Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>

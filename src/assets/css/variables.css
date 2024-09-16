@@ -9,6 +9,8 @@
   --orange-light: #FFC252;
   --yellow: #FFE945;
   --slate-light: #A8A8BB;
+  --watermelon: #FF3D40;
+  --watermelon-light: #FF7070;
 
   --intro-gradient: linear-gradient(to bottom, rgba(133, 0, 255, 0.2), rgba(133, 0, 255, 0.01));
   --civilian-harm-gradient: linear-gradient(to bottom, rgba(242, 65, 65, 0.2), rgba(242, 65, 65, 0.01));

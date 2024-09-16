@@ -49,7 +49,7 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
     <template #cover>
       <ChapterCover ref="cover">
         <template #title>
-          <h1>{{ i18n.displacement }}</h1>
+          <h2>{{ i18n.displacement }}</h2>
         </template>
         <template #subtitle>
           More than <strong>four out of five</strong> Palestinians in Gaza were driven from their homes by Israeli forces in the first two months. Israeli leaders and public figures have called for their permanent exile.
@@ -289,26 +289,6 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
   align-items: flex-end;
 }
 
-.narration-center {
-  transform: translateX(-50%);
-  align-items: center;
-}
-
-.narration-center-line {
-  width: 2px;
-  height: 35vh;
-  background: var(--color-highlight);
-  opacity: 0;
-  transform: scaleY(0) translateX(-50%);
-  transform-origin: bottom center;
-  transition: all 0.5s 0.3s;
-}
-
-.narration-center-line-visible {
-  opacity: 1;
-  transform: scaleY(1) translateX(-50%);
-}
-
 .road-car .car-line {
   height: 50vh;
   margin-top: -8rem;
@@ -320,12 +300,5 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
 
 .second-tent-bombing .car-line {
   margin-top: -4rem;
-}
-
-@media (orientation: portrait) and (--laptops-lg) {
-
-  .narration-center-line {
-    height: 50vh;
-  }
 }
 </style>

@@ -136,7 +136,7 @@ onMounted(() => {
         />
         <ChapterBridge
           :style="{
-            '--bridge-color': 'var(--red-light)',
+            '--bridge-color': 'var(--watermelon)',
             '--from': 'var(--intro-gradient)',
             '--to': 'var(--civilian-harm-gradient)',
           }"

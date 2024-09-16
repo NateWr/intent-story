@@ -33,7 +33,7 @@ defineProps({
     <template #cover>
       <ChapterCover ref="cover">
         <template #title>
-          <h1>{{ i18n.infrastructure }}</h1>
+          <h2>{{ i18n.infrastructure }}</h2>
         </template>
         <template #subtitle>
           Lorem ipsum <strong>dolor sit amet</strong>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

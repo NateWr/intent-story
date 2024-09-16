@@ -48,7 +48,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
     <template #cover>
       <ChapterCover>
         <template #title>
-          <h1>{{ i18n.starvation }}</h1>
+          <h2>{{ i18n.starvation }}</h2>
         </template>
         <template #subtitle>
           “Never in post-war history had a population been made to go hungry so quickly and so completely as was the case for the 2.3 million Palestinians living in Gaza.”
