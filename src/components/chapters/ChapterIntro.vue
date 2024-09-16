@@ -174,7 +174,7 @@ onMounted(() => {
           size="lg"
           :offsetBottom="`${150 * scale}px`"
         >
-          <p>These statements justify the unrestrained killing of all Palestinians as a <strong>group of people</strong>.</p>
+          <p>These statements attempt to justify the unrestrained killing of all Palestinians as a <strong>group of people</strong>.</p>
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(10930 * scale)">
