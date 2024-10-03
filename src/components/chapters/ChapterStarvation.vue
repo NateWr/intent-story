@@ -96,7 +96,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           date="Oct 16, 2023"
           :offsetBottom="`${300 * scale}px`"
         >
-          “There is no place for any humanitarian gestures – we must <strong>erase the memory of Amalek.</strong>”
+          “There is no place for any humanitarian gestures — we must <strong>erase the memory of Amalek.</strong>”
           <template #footer>
             <Narration>
               <p>In the Torah, the ancient Israelites were said to be commanded by God to commit genocide against the people of “Amalek”.</p>
@@ -110,7 +110,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           :offsetBottom="`${64 * scale}px`"
         >
           <p>On April 1, 2024,  a series of brutally precise Israeli strikes on a World Central Kitchen aid convoy killed 7 aid workers.</p>
-          <p>The attack forced the largest aid organizations to suspend their operations in Gaza at a point when 1.1 million people––or half the population of Gaza––were experiencing <strong>catastrophic levels of hunger</strong> and at least 28 children had died of starvation.</p>
+          <p>The attack forced the largest aid organizations to suspend their operations in Gaza at a point when 1.1 million people — or half the population of Gaza — were experiencing <strong>catastrophic levels of hunger</strong> and at least 28 children had died of starvation.</p>
           <div
             ref="wckMassacre"
             class="wck-massacre-line"
