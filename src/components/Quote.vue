@@ -100,7 +100,6 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.25})
 
   & strong {
     font-weight: 700;
-    font-style: italic;
     background: var(--yellow);
     padding: 0 0.1em;
     color: black;

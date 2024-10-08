@@ -76,7 +76,6 @@ const show = computed(() => {
     font-family: var(--font-serif);
     font-size: 0.875rem;
     font-weight: 700;
-    font-style: italic;
 
     & strong {
       color: var(--green-light);
