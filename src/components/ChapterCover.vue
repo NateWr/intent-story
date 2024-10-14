@@ -19,7 +19,7 @@
   justify-content: center;
   gap: 2rem;
   width: 100vw;
-  padding: 10vh 10vw;
+  padding: 10vh 5vw;
   overflow: visible;
 }
 

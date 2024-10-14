@@ -69,6 +69,6 @@ defineProps({
     <path d="M12421.5 443.5H12510V643.5H12118.5V477H12049L12118.5 443.5H12215.5V393.5H12288V443.5H12363V393.5H12421.5V443.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
     <path d="M12751 695V523.324V430H13111.7V523.324H13322V695H12751Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
     <path d="M12634 420V604.5V620H12983.5C12986.5 609 12990.7 585.3 12983.5 578.5C12974.5 570 12961.5 523.5 12950.5 510C12939.5 496.5 12924 484 12865 481.5C12817.8 479.5 12789.7 464.667 12781.5 457.5V363H12693.5V400L12634 420Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <use xlink:href="#svg-buildings" :transform="`translate(1240, -${(629 - 603)})`" width="1112" height="629"/>
+    <use xlink:href="#svg-buildings" :transform="`translate(1240, ${603-330})`" width="1432" height="330"/>
   </svg>
 </template>
