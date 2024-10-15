@@ -121,7 +121,7 @@ defineProps({
           date="Feb 14, 2024"
           :offsetBottom="`${150 * scale}px`"
         >
-          “There are no uninvolved people in Gaza... everyone is involved.”
+          “There are no uninvolved people in Gaza... <strong>everyone is involved</strong>.”
         </Quote>
       </PositionedContent>
       <PositionedContent :left="(15448 * scale)">
