@@ -16,7 +16,7 @@ defineProps({
     }"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="21166" height="628" y="562" fill="#111800" />
+    <rect width="21166" height="628" y="562" fill="#030502" />
     <image href="city-bg-1.png" width="329" height="341" x="8072" y="218" />
     <image href="city-bg-1.png" width="272" height="282" transform="matrix(-1 0 0 1 9829 287)"/>
     <image href="city-bg-2.png" width="380" height="443" x="8325" y="116" />

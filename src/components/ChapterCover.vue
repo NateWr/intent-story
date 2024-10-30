@@ -14,6 +14,7 @@
 
 <style>
 .chapter-cover {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;

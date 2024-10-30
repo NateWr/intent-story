@@ -208,7 +208,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
 
 <style>
 .chapter-starvation {
-  background: var(--starvation-background);
+  background: var(--starvation-gradient);
 }
 
 .chapter-starvation-cover-article {
