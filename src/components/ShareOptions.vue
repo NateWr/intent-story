@@ -107,7 +107,7 @@ const { canCopy, copyMessage, copyToClipboard } = useClipboard(props.i18n?.copie
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-left: -0.25rem;
-  color: var(--green-lighter);
+  color: var(--green-light);
 
   & svg {
     display: block;
@@ -123,7 +123,7 @@ const { canCopy, copyMessage, copyToClipboard } = useClipboard(props.i18n?.copie
 .share-button {
   position: relative;
   color: black;
-  background: var(--green-lighter);
+  background: var(--green-light);
   margin: 0.25rem;
   width: 3.5rem;
   height: 3.5rem;
@@ -150,7 +150,7 @@ const { canCopy, copyMessage, copyToClipboard } = useClipboard(props.i18n?.copie
   left: 50%;
   transform: translateX(-50%);
   opacity: 1;
-  background:var(--green-lighter);
+  background:var(--green-light);
   color: #000;
   padding: 0.25em;
   border-radius: 0.25em;

@@ -22,10 +22,6 @@ defineProps({
   }
 })
 
-const bakeries = ref<typeof CityLabel | null>(null)
-const { isVisible: isBakeriesVisible } = useIntersectionObserver(bakeries, {threshold: 0.5})
-const mills = ref<typeof CityLabel | null>(null)
-const { isVisible: isMillsVisible } = useIntersectionObserver(mills, {threshold: 0.5})
 const flourMassacre = ref<typeof CallAndResponse | null>(null)
 const { isVisible: isFlourMassacreVisible } = useIntersectionObserver(flourMassacre, {threshold: 0.1})
 const wckMassacre = ref<HTMLElement | null>(null)
@@ -40,7 +36,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
     :style="{
       '--color-narration': 'var(--green-light)',
       '--color-highlight': 'var(--green-light)',
-      '--color-title': 'var(--green-lighter)',
+      '--color-title': 'var(--green-light)',
       '--color-subtitle-highlight': 'var(--green-light)',
     }"
   >
@@ -63,23 +59,17 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
     </template>
 
     <template #back>
-      <PositionedContent :left="(1660 * scale)">
+      <PositionedContent :left="(1730 * scale)">
         <Quote
           name="Yoav Gallant"
           role="Israeli Defense Minister"
           date="Oct 9, 2023"
-          :offsetBottom="`${300 * scale}px`"
+          :offsetBottom="`${200 * scale}px`"
         >
           “I have ordered a <strong>complete siege</strong> on the Gaza Strip. There will be no electricity, no food, no fuel, everything is closed.”
         </Quote>
       </PositionedContent>
-      <PositionedContent :left="(3305 * scale)">
-        <Narration :offsetBottom="`${350 * scale}px`">
-          <p>Nine months after Gallant’s promise to control the flow of life-saving essentials, UN experts declared a <strong>state of famine</strong> across all of Gaza.</p>
-          <p>During this campaign of starvation, Israeli occupation forces (IOF) burned food stocks, destroyed agricultural land, bombed flour mills, greenhouses, bakeries, and fisheries, allowed Israeli settlers to destroy aid bound for Gaza, and carried out targeted attacks on both aid seekers and aid workers.</p>
-        </Narration>
-      </PositionedContent>
-      <PositionedContent :left="(5020 * scale)">
+      <PositionedContent :left="(5100 * scale)">
         <Quote
           name="Itamar Ben Gvir"
           role="Israeli Minister of National Security"
@@ -94,7 +84,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           name="Boaz Bismuth"
           role="Member of the Israeli Knesset (Likud)"
           date="Oct 16, 2023"
-          :offsetBottom="`${300 * scale}px`"
+          :offsetBottom="`${150 * scale}px`"
         >
           “There is no place for any humanitarian gestures — we must <strong>erase the memory of Amalek.</strong>”
           <template #footer>
@@ -104,22 +94,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           </template>
         </Quote>
       </PositionedContent>
-      <PositionedContent :left="(12468 * scale)" style="align-items: flex-end">
-        <Narration
-          class="wck-massacre"
-          :offsetBottom="`${64 * scale}px`"
-        >
-          <p>On April 1, 2024,  a series of brutally precise Israeli strikes on a World Central Kitchen aid convoy killed 7 aid workers.</p>
-          <p>The attack forced the largest aid organizations to suspend their operations in Gaza at a point when 1.1 million people — or half the population of Gaza — were experiencing <strong>catastrophic levels of hunger</strong> and at least 28 children had died of starvation.</p>
-          <div
-            ref="wckMassacre"
-            class="wck-massacre-line"
-            :class="isWckMassacreVisible && 'wck-massacre-line-visible'"
-            aria-hidden="true"
-          />
-        </Narration>
-      </PositionedContent>
-      <PositionedContent :left="(15880 * scale)" style="align-items: flex-end">
+      <PositionedContent :left="(15900 * scale)" style="align-items: flex-end">
         <Narration offsetBottom="0">
           <CallAndResponse
             ref="deadlyAidWork"
@@ -149,37 +124,19 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
     </template>
 
     <CityStarvation
+      class="chapter-starvation-city"
       :scale="scale"
-      :showBakeries="isBakeriesVisible"
-      :showMills="isMillsVisible"
-      :showFlourMassacre="isFlourMassacreVisible"
-      :showWckMassacre="isWckMassacreVisible"
-      :showDeadlyAidWork="isDeadlyAidWorkVisible"
     />
 
     <template #front>
-      <PositionedContent :left="(3349 * scale)">
-        <CityLabel
-          ref="bakeries"
-          :lineHeight="`${128 * scale}px`"
-          :bottom="`${188 * scale}px`"
-          :isVisible="isBakeriesVisible"
-        >
-          Bakeries
-        </CityLabel>
+      <PositionedContent :left="(3205 * scale)">
+        <Narration :offsetBottom="`${150 * scale}px`">
+          <p>Nine months after Gallant’s promise to control the flow of life-saving essentials, UN experts declared a <strong>state of famine</strong> across all of Gaza.</p>
+          <p>During this campaign of starvation, Israeli occupation forces (IOF) burned food stocks, destroyed agricultural land, bombed flour mills, greenhouses, bakeries, and fisheries, allowed Israeli settlers to destroy aid bound for Gaza, and carried out targeted attacks on both aid seekers and aid workers.</p>
+        </Narration>
       </PositionedContent>
-      <PositionedContent :left="(3560 * scale)">
-        <CityLabel
-          ref="mills"
-          :lineHeight="`${128 * scale}px`"
-          :bottom="`${234 * scale}px`"
-          :isVisible="isMillsVisible"
-        >
-          Flour Mills
-        </CityLabel>
-      </PositionedContent>
-      <PositionedContent :left="(7119 * scale)" style="align-items: flex-end">
-        <Narration :offsetBottom="`${64 * scale}px`">
+      <PositionedContent :left="(7100 * scale)" style="align-items: flex-end">
+        <Narration :offsetBottom="`${200 * scale}px`">
           <CallAndResponse
             ref="flourMassacre"
             class="flour-massacre"
@@ -210,6 +167,21 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           <p>The flour massacre represents a <strong>pattern of incidents</strong> of Israeli forces targeting desperate aid seekers in Gaza.</p>
         </Narration>
       </PositionedContent>
+      <PositionedContent :left="(12800 * scale)" style="align-items: flex-end">
+        <Narration
+          class="wck-massacre"
+          :offsetBottom="`${200 * scale}px`"
+        >
+          <p>On April 1, 2024,  a series of brutally precise Israeli strikes on a World Central Kitchen aid convoy killed 7 aid workers.</p>
+          <p>The attack forced the largest aid organizations to suspend their operations in Gaza at a point when 1.1 million people — or half the population of Gaza — were experiencing <strong>catastrophic levels of hunger</strong> and at least 28 children had died of starvation.</p>
+          <div
+            ref="wckMassacre"
+            class="wck-massacre-line"
+            :class="isWckMassacreVisible && 'wck-massacre-line-visible'"
+            aria-hidden="true"
+          />
+        </Narration>
+      </PositionedContent>
       <PositionedContent :left="(13970 * scale)">
         <Narration
           size="lg"
@@ -236,7 +208,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
 
 <style>
 .chapter-starvation {
-  background: var(--starvation-gradient);
+  background: var(--starvation-background);
 }
 
 .chapter-starvation-cover-article {
@@ -253,7 +225,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
 }
 
 .flour-massacre .car-line {
-  height: 30vh;
+  height: 15vh;
   margin-top: -7rem;
 }
 
@@ -269,7 +241,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
 
 .wck-massacre-line {
   width: 2px;
-  height: 25vh;
+  height: 15vh;
   background: var(--color-highlight);
   opacity: 0;
   transform: scaleY(0) translateX(-50%);
@@ -294,8 +266,8 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
 
 @media ((--phones-landscape) and (not (--tablets-landscape))) {
   .flour-massacre .car-line {
-    margin-top: -5rem;
-    height: 25vh;
+    margin-top: -4rem;
+    height: 5vh;
   }
 
   .starvation-aid-workers-killed {
@@ -303,7 +275,8 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
   }
 
   .starvation-aid-workers-killed .car-line {
-    height: 65vh;
+    margin-top: -3rem;
+    height: 55vh;
   }
 }
 
@@ -314,6 +287,12 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
 
   .chapter-starvation-cover-convention {
     font-size: 1.125rem;
+  }
+}
+
+@media (--laptops-lg) {
+  .flour-massacre .car-line {
+    height: 25vh;
   }
 }
 

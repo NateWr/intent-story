@@ -72,6 +72,12 @@ defineProps({
   transform: scale(1) translateX(-50%);
 }
 
+@media ((--phones-landscape) and (not (--tablets-landscape))) {
+  .car {
+    gap: 0.25rem;
+  }
+}
+
 @media (orientation: portrait) and (--laptops-lg) {
 
   .car {

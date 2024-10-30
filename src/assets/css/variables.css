@@ -1,16 +1,17 @@
 :root {
   --blue: #52CBFF;
-  --green-light: #7CC74F;
-  --green-lighter: #9FFF65;
+  --green-light: #96B475;
   --green-dark: #112C00;
   --purple: #D097FF;
   --red: #C60000;
   --red-light: #FF3F3F;
   --orange-light: #FFC252;
-  --yellow: #FFE945;
+  --yellow: #DCDE95;
   --slate-light: #A8A8BB;
   --watermelon: #FF3D40;
   --watermelon-light: #FF7070;
+
+  --starvation-background: #111800;
 
   --intro-gradient: linear-gradient(to bottom, rgba(133, 0, 255, 0.2), rgba(133, 0, 255, 0.01));
   --civilian-harm-gradient: linear-gradient(to bottom, rgba(242, 65, 65, 0.2), rgba(242, 65, 65, 0.01));

@@ -1,154 +1,201 @@
 <script setup lang="ts">
 defineProps({
   scale: Number,
-  showBakeries: Boolean,
-  showMills: Boolean,
-  showFlourMassacre: Boolean,
-  showWckMassacre: Boolean,
-  showDeadlyAidWork: Boolean,
 })
 </script>
 
 <template>
-  <svg :width="(20786 * scale).toFixed(0)" :height="(600 * scale).toFixed()" viewBox="0 0 20786 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M926 362.5V767H1141V151H974.5V362.5H926Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M576.5 356V667.5L1161.5 663V356H1197.5L1161.5 325.5H1104C1097.67 312.667 1075 287 1035 287C995 287 971.333 312.667 964.5 325.5H775.5C766.667 312.667 740.2 287 705 287C669.8 287 636 312.667 623.5 325.5H576.5L543 356H576.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M476.5 452H565V652H173.5V485.5H104L173.5 452H270.5V402H343V452H418V402H476.5V452Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M688.475 428V612.5V628H338.975C335.975 617 331.775 593.3 338.975 586.5C347.975 578 360.975 531.5 371.975 518C382.975 504.5 398.475 492 457.475 489.5C504.675 487.5 532.809 472.667 540.975 465.5V371H628.975V408L688.475 428Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M597 666V421.766V289H804.816V421.766H926V666H597Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M1370 217.5V622H1585V6H1418.5V217.5H1370Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M2812 435V839.5H2597V223.5H2763.5V435H2812Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M1117 422.5C1117.83 474.667 1119 583.4 1117 601H1519.5V313H1233.5V422.5H1117Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M1750.5 383.5V695L2335.5 690.5V383.5H2371.5L2335.5 353H2278C2271.67 340.167 2249 314.5 2209 314.5C2169 314.5 2145.33 340.167 2138.5 353H1949.5C1940.67 340.167 1914.2 314.5 1879 314.5C1843.8 314.5 1810 340.167 1797.5 353H1750.5L1717 383.5H1750.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M3498.48 407V609H3724.98V407L3634.98 350H3584.48L3498.48 407Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path
-      class="city-highlight"
-      :class="showMills && 'city-highlight-visible'"
-      d="M3498.48 407V609H3724.98V407L3634.98 350H3584.48L3498.48 407Z"
-      fill="var(--color-highlight)"
-      stroke="var(--color-highlight)"
-      stroke-width="2"
-    />
-
-    <path d="M1557 465.5H1468.5V665.5H1860V499H1929.5L1860 465.5H1763V415.5H1690.5V465.5H1615.5V415.5H1557V465.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M3929.98 424.5H4018.48V624.5H3626.98V458H3557.48L3626.98 424.5H3723.98V374.5H3796.48V424.5H3871.48V374.5H3929.98V424.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M2081.5 662V490V396.5H2289V490H2410V662H2081.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M3969.48 662V490V396.5H4176.98V490H4297.98V662H3969.48Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M3162.5 621V449V355.5H2955V449H2834V621H3162.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M3509.98 632.5V460.5V367H3302.48V460.5H3181.48V632.5H3509.98Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M2616 422.5V624.5H2842.5V422.5L2752.5 365.5H2702L2616 422.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M2373 469.5V654V669.5H2722.5C2725.5 658.5 2729.7 634.8 2722.5 628C2713.5 619.5 2700.5 573 2689.5 559.5C2678.5 546 2663 533.5 2604 531C2556.8 529 2528.67 514.167 2520.5 507V412.5H2432.5V449.5L2373 469.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M3079.48 469.5V654V669.5L2786.5 723C2783.5 712 2779.3 688.3 2786.5 681.5C2795.5 673 2808.5 626.5 2819.5 613C2830.5 599.5 2825.5 555.5 2884.5 553C2931.7 551 2923.81 514.167 2931.98 507V412.5H3019.98V449.5L3079.48 469.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M3426.95 469.5V654V669.5L3133.98 723C3130.98 712 3126.78 688.3 3133.98 681.5C3142.98 673 3155.98 626.5 3166.98 613C3177.98 599.5 3172.98 555.5 3231.98 553C3279.18 551 3271.28 514.167 3279.45 507V412.5H3367.45V449.5L3426.95 469.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path
-      class="city-highlight"
-      :class="showBakeries && 'city-highlight-visible'"
-      d="M3426.95 469.5V654V669.5L3133.98 723C3130.98 712 3126.78 688.3 3133.98 681.5C3142.98 673 3155.98 626.5 3166.98 613C3177.98 599.5 3172.98 555.5 3231.98 553C3279.18 551 3271.28 514.167 3279.45 507V412.5H3367.45V449.5L3426.95 469.5Z"
-      fill="var(--color-highlight)"
-      stroke="var(--color-highlight)"
-      stroke-width="2"
-    />
-    <path d="M3227.5 553.5L3135 531.5L3102 569L2985.5 582L2931 624H3673.5L3537.5 569L3335 531.5L3227.5 553.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M4551 217.5V622H4766V6H4599.5V217.5H4551Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M4298 422.5C4298.83 474.667 4300 583.4 4298 601H4700.5V313H4414.5V422.5H4298Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M4931.5 383.5V695L5516.5 690.5V383.5H5552.5L5516.5 353H5459C5452.67 340.167 5430 314.5 5390 314.5C5350 314.5 5326.33 340.167 5319.5 353H5130.5C5121.67 340.167 5095.2 314.5 5060 314.5C5024.8 314.5 4991 340.167 4978.5 353H4931.5L4898 383.5H4931.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M5490 422.5V624.5H5716.5V422.5L5626.5 365.5H5576L5490 422.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M4738 465.5H4649.5V665.5H5041V499H5110.5L5041 465.5H4944V415.5H4871.5V465.5H4796.5V415.5H4738V465.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M5921.5 424.5H6010V624.5H5618.5V458H5549L5618.5 424.5H5715.5V374.5H5788V424.5H5863V374.5H5921.5V424.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M5262.5 662V490V396.5H5470V490H5591V662H5262.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M5961 662V490V396.5H6168.5V490H6289.5V662H5961Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M6252.5 469.5V654V669.5H6602C6605 658.5 6609.2 634.8 6602 628C6593 619.5 6580 573 6569 559.5C6558 546 6542.5 533.5 6483.5 531C6436.3 529 6408.17 514.167 6400 507V412.5H6312V449.5L6252.5 469.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M5581.95 469.5V654V669.5L5288.98 723C5285.98 712 5281.78 688.3 5288.98 681.5C5297.98 673 5310.98 626.5 5321.98 613C5332.98 599.5 5327.98 555.5 5386.98 553C5434.18 551 5426.28 514.167 5434.45 507V412.5H5522.45V449.5L5581.95 469.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <circle cx="7120" cy="600" r="31.5" fill="black" stroke="#FF7CAC"/>
-    <circle
-      class="city-highlight"
-      :class="showFlourMassacre && 'city-highlight-visible'"
-      cx="7120"
-      cy="600"
-      r="31.5"
-      fill="var(--color-highlight)"
-      stroke="var(--color-highlight)"
-    />
-    <path d="M8576 697V525.324V432H8936.68V525.324H9147V697H8576Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M8651.48 422V606.5V622H8301.98C8298.98 611 8294.78 587.3 8301.98 580.5C8310.98 572 8323.98 525.5 8334.98 512C8345.98 498.5 8361.48 486 8420.48 483.5C8467.68 481.5 8495.81 466.667 8503.98 459.5V365H8591.98V402L8651.48 422Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M10265 524.5V929H9903V313H10183.3V524.5H10265Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M9737.5 626.5V454.5V361H9530V454.5H9409V626.5H9737.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M9790 475V677H10016.5V475L9926.5 418H9876L9790 475Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M9441 554L9533.5 532L9566.5 569.5L9683 582.5L9737.5 624.5H8995L9131 569.5L9333.5 532L9441 554Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M9276 563L9177 613.5H9489L9381.5 563H9276Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M10130 245.5V650H10345V34H10178.5V245.5H10130Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M10747.5 522.5C10746.7 574.667 10745.5 683.4 10747.5 701H10345V413H10631V522.5H10747.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M10891.5 358V669.5L11476.5 665V358H11512.5L11476.5 327.5H11419C11412.7 314.667 11390 289 11350 289C11310 289 11286.3 314.667 11279.5 327.5H11090.5C11081.7 314.667 11055.2 289 11020 289C10984.8 289 10951 314.667 10938.5 327.5H10891.5L10858 358H10891.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M10284.5 445.5H10373V645.5H9981.5V479H9912L9981.5 445.5H10078.5V395.5H10151V445.5H10226V395.5H10284.5V445.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M10614 697V525.324V432H10974.7V525.324H11185V697H10614Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M10497 422V606.5V622H10846.5C10849.5 611 10853.7 587.3 10846.5 580.5C10837.5 572 10824.5 525.5 10813.5 512C10802.5 498.5 10787 486 10728 483.5C10680.8 481.5 10652.7 466.667 10644.5 459.5V365H10556.5V402L10497 422Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M9613 469.5V654V669.5H9962.5C9965.5 658.5 9969.7 634.8 9962.5 628C9953.5 619.5 9940.5 573 9929.5 559.5C9918.5 546 9903 533.5 9844 531C9796.8 529 9768.67 514.167 9760.5 507V412.5H9672.5V449.5L9613 469.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M11337 661.5V489.5V396H11544.5V489.5H11665.5V661.5H11337Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <circle cx="12468" cy="600" r="31.5" fill="black" stroke="#FF7CAC"/>
-    <circle
-      class="city-highlight"
-      :class="showWckMassacre && 'city-highlight-visible'"
-      cx="12468"
-      cy="600"
-      r="31.5"
-      fill="var(--color-highlight)"
-      stroke="var(--color-highlight)"
-    />
-    <path d="M19139 524.5V929H18777V313H19057.3V524.5H19139Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M17371.5 553.5L17279 531.5L17246 569L17129.5 582L17075 624H17817.5L17681.5 569L17479 531.5L17371.5 553.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M19004 245.5V650H19219V34H19052.5V245.5H19004Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M19158.5 445.5H19247V645.5H18855.5V479H18786L18855.5 445.5H18952.5V395.5H19025V445.5H19100V395.5H19158.5V445.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M16450 255.5V660H16665V44H16498.5V255.5H16450Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M16474.5 421.5V733L17059.5 728.5V421.5H17095.5L17059.5 391H17002C16995.7 378.167 16973 352.5 16933 352.5C16893 352.5 16869.3 378.167 16862.5 391H16673.5C16664.7 378.167 16638.2 352.5 16603 352.5C16567.8 352.5 16534 378.167 16521.5 391H16474.5L16441 421.5H16474.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M19142.5 379V690.5L19727.5 686V379H19763.5L19727.5 348.5H19670C19663.7 335.667 19641 310 19601 310C19561 310 19537.3 335.667 19530.5 348.5H19341.5C19332.7 335.667 19306.2 310 19271 310C19235.8 310 19202 335.667 19189.5 348.5H19142.5L19109 379H19142.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M16281 503.5H16192.5V703.5H16584V537H16653.5L16584 503.5H16487V453.5H16414.5V503.5H16339.5V453.5H16281V503.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M16805.5 700V528V434.5H17013V528H17134V700H16805.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M19473.5 657.5V485.5V392H19681V485.5H19802V657.5H19473.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M17097 507.5V692V707.5H17446.5C17449.5 696.5 17453.7 672.8 17446.5 666C17437.5 657.5 17424.5 611 17413.5 597.5C17402.5 584 17387 571.5 17328 569C17280.8 567 17252.7 552.167 17244.5 545V450.5H17156.5V487.5L17097 507.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M19765 465V649.5V665H20114.5C20117.5 654 20121.7 630.3 20114.5 623.5C20105.5 615 20092.5 568.5 20081.5 555C20070.5 541.5 20055 529 19996 526.5C19948.8 524.5 19920.7 509.667 19912.5 502.5V408H19824.5V445L19765 465Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M17801.5 417V619H18028V417L17938 360H17887.5L17801.5 417Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M18233 419H18321.5V619H17930V452.5H17860.5L17930 419H18027V369H18099.5V419H18174.5V369H18233V419Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M18272.5 656.5V484.5V391H18480V484.5H18601V656.5H18272.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M17813 615.5V443.5V350H17605.5V443.5H17484.5V615.5H17813Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M18564 464V648.5V664H18913.5C18916.5 653 18920.7 629.3 18913.5 622.5C18904.5 614 18891.5 567.5 18880.5 554C18869.5 540.5 18854 528 18795 525.5C18747.8 523.5 18719.6 508.667 18711.5 501.5V407H18623.5V444L18564 464Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M17730 464V648.5V664L17437 717.5C17434 706.5 17429.8 682.8 17437 676C17446 667.5 17459 621 17470 607.5C17481 594 17476 550 17535 547.5C17582.2 545.5 17574.3 508.667 17582.5 501.5V407H17670.5V444L17730 464Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M15863.5 545.5L15771 523.5L15738 561L15621.5 574L15567 616H16309.5L16173.5 561L15971 523.5L15863.5 545.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path
-      class="city-highlight"
-      :class="showDeadlyAidWork && 'city-highlight-visible'"
-      d="M15863.5 545.5L15771 523.5L15738 561L15621.5 574L15567 616H16309.5L16173.5 561L15971 523.5L15863.5 545.5Z"
-      fill="var(--color-highlight)"
-      stroke="var(--color-highlight)"
-      stroke-width="2"
-    />
-    <path d="M15589 507.5V692V707.5H15938.5C15941.5 696.5 15945.7 672.8 15938.5 666C15929.5 657.5 15916.5 611 15905.5 597.5C15894.5 584 15879 571.5 15820 569C15772.8 567 15744.7 552.167 15736.5 545V450.5H15648.5V487.5L15589 507.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M16509.5 615.5V443.5V350H16302V443.5H16181V615.5H16509.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M16222 464V648.5V664L15929 717.5C15926 706.5 15921.8 682.8 15929 676C15938 667.5 15951 621 15962 607.5C15973 594 15968 550 16027 547.5C16074.2 545.5 16066.3 508.667 16074.5 501.5V407H16162.5V444L16222 464Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M14800.5 553.5L14708 531.5L14675 569L14558.5 582L14504 624H15246.5L15110.5 569L14908 531.5L14800.5 553.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M13523 255.5V660H13738V44H13571.5V255.5H13523Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M13270 460.5C13270.8 512.667 13272 621.4 13270 639H13672.5V351H13386.5V460.5H13270Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M13903.5 421.5V733L14488.5 728.5V421.5H14524.5L14488.5 391H14431C14424.7 378.167 14402 352.5 14362 352.5C14322 352.5 14298.3 378.167 14291.5 391H14102.5C14093.7 378.167 14067.2 352.5 14032 352.5C13996.8 352.5 13963 378.167 13950.5 391H13903.5L13870 421.5H13903.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M13710 503.5H13621.5V703.5H14013V537H14082.5L14013 503.5H13916V453.5H13843.5V503.5H13768.5V453.5H13710V503.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M14234.5 700V528V434.5H14442V528H14563V700H14234.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M14526 507.5V692V707.5H14875.5C14878.5 696.5 14882.7 672.8 14875.5 666C14866.5 657.5 14853.5 611 14842.5 597.5C14831.5 584 14816 571.5 14757 569C14709.8 567 14681.7 552.167 14673.5 545V450.5H14585.5V487.5L14526 507.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M15230.5 417V619H15457V417L15367 360H15316.5L15230.5 417Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M15662 419H15750.5V619H15359V452.5H15289.5L15359 419H15456V369H15528.5V419H15603.5V369H15662V419Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M15242 615.5V443.5V350H15034.5V443.5H14913.5V615.5H15242Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M15159 464V648.5V664L14866 717.5C14863 706.5 14858.8 682.8 14866 676C14875 667.5 14888 621 14899 607.5C14910 594 14905 550 14964 547.5C15011.2 545.5 15003.3 508.667 15011.5 501.5V407H15099.5V444L15159 464Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M20010.5 419H20099V619H19707.5V452.5H19638L19707.5 419H19804.5V369H19877V419H19952V369H20010.5V419Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M20050 656.5V484.5V391H20257.5V484.5H20378.5V656.5H20050Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M20341.5 464V648.5V664H20691C20694 653 20698.2 629.3 20691 622.5C20682 614 20669 567.5 20658 554C20647 540.5 20631.5 528 20572.5 525.5C20525.3 523.5 20497.2 508.667 20489 501.5V407H20401V444L20341.5 464Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
+  <svg
+    width="21166"
+    height="628"
+    viewBox="0 0 21166 628"
+    fill="none"
+    :style="{
+      width: `${(21166 * scale).toFixed()}px`,
+      height: 'auto',
+    }"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="21166" height="628" y="562" fill="#111800" />
+    <image href="city-bg-1.png" width="329" height="341" x="8072" y="218" />
+    <image href="city-bg-1.png" width="272" height="282" transform="matrix(-1 0 0 1 9829 287)"/>
+    <image href="city-bg-2.png" width="380" height="443" x="8325" y="116" />
+    <image href="city-bg-3.png" width="284" height="364" x="9762" y="215" />
+    <image href="city-bg-5.png" width="220" height="338" x="5227" y="236" />
+    <image href="city-bg-4.png" width="278" height="286" x="8595" y="252" />
+    <image href="city-bg-2.png" width="302.549" height="238.295" x="12397.6" y="296" transform="rotate(.139 12397.6 296)"/>
+    <image href="city-bg-1.png" width="314" height="324" transform="matrix(-1 0 0 1 13811 255)"/>
+    <image href="city-bg-1.png" width="314" height="324" transform="matrix(-1 0 0 1 17276 255)"/>
+    <image href="city-fg-1.png" width="198" height="62" x="12525" y="514" />
+    <image href="city-bg-4.png" width="164" height="169" x="3921" y="238" />
+    <image href="starvation-food-stocks.png" width="1259" height="576" x="2964" y="116" />
+    <image href="city-bg-3.png" width="290" height="373" x="20192" y="193" />
+    <image href="city-bg-4.png" width="289.578" height="297.818" x="20466.3" y="270.635" transform="rotate(3.684 20466.3 270.635)"/>
+    <image href="city-fg-14.png" width="323" height="268" transform="matrix(-1 0 0 1 20327 304)"/>
+    <image href="city-bg-2.png" width="392" height="457" x="19750" y="124" />
+    <image href="city-fg-6.png" width="344" height="253" x="20290.3" y="356" transform="rotate(3.23 20290.3 356)"/>
+    <image href="city-fg-8.png" width="359" height="151" x="20715" y="453" transform="rotate(.758 20715 453)"/>
+    <image href="city-fg-22.png" width="143" height="306" x="20805" y="276" />
+    <image href="city-bg-5.png" width="291" height="451" x="17302" y="142" />
+    <image href="city-md-4.png" width="180" height="272" transform="matrix(-1 0 0 1 19999 318)"/>
+    <image href="city-md-2.png" width="248" height="253" x="20571" y="329" />
+    <image href="city-bg-1.png" width="645" height="220" x="18811" y="328" />
+    <image href="city-fg-22.png" width="152" height="326" x="19194.1" y="261.568" transform="rotate(13.813 19194.1 261.568)"/>
+    <image href="city-bg-1.png" width="441" height="455" x="18547" y="142" />
+    <image href="city-fg-2.png" width="418" height="531" x="18811" y="80" />
+    <image href="city-fg-19.png" width="70" height="300" x="17538" y="301" />
+    <image href="city-fg-14.png" width="323" height="268" transform="matrix(-1 0 0 1 18645 324)"/>
+    <image href="city-md-3.png" width="260" height="377" x="18444" y="238" />
+    <image href="city-md-2.png" width="311" height="317" transform="matrix(-.99995 .00959 .00959 .99995 17653 291)"/>
+    <image href="city-fg-20.png" width="353" height="246" transform="matrix(-1 0 0 1 18924 345)"/>
+    <image href="city-fg-7.png" width="289" height="184" x="17455" y="488" />
+    <image href="city-fg-7.png" width="310" height="198" x="20856" y="422" />
+    <image href="city-bg-2.png" width="392" height="457" transform="matrix(-1 0 0 1 15168 120)"/>
+    <image href="city-bg-3.png" width="269" height="346" x="15141" y="217" />
+    <image href="city-bg-1.png" width="314" height="324" x="14249" y="239" />
+    <image href="city-md-3.png" width="204" height="296" x="15294" y="286" />
+    <image href="city-md-2.png" width="271" height="276" transform="matrix(-1 0 0 1 14092 318)"/>
+    <image href="city-bg-4.png" width="246" height="253" x="14945" y="310" />
+    <image href="city-fg-14.png" width="297" height="246" x="15028" y="327" />
+    <image href="city-bg-1.png" width="475" height="162" x="14458" y="365" />
+    <image href="city-md-3.png" width="204" height="296" x="14461" y="286" />
+    <image href="city-md-2.png" width="271" height="276" transform="matrix(-1 0 0 1 14980 301)"/>
+    <image href="city-fg-22.png" width="143" height="306" x="14649" y="297" />
+    <image href="city-fg-19.png" width="70" height="300" x="14410" y="318" />
+    <image href="city-fg-7.png" width="264" height="168" x="14503" y="452" />
+    <image href="city-fg-13.png" width="216" height="261" x="14259" y="352" />
+    <image href="city-fg-20.png" width="319" height="222" x="13791" y="372" />
+    <image href="city-fg-11.png" width="262" height="272" x="13957" y="363" />
+    <image href="city-bg-2.png" width="392" height="457" transform="matrix(-1 0 0 1 16920 138)"/>
+    <image href="city-fg-14.png" width="297" height="246" transform="matrix(-1 0 0 1 16557 333)"/>
+    <image href="city-md-4.png" width="217" height="328" x="16435" y="283" />
+    <image href="city-bg-5.png" width="248.146" height="368.048" x="2756.45" y="143" transform="rotate(3.965 2756.45 143)"/>
+    <image href="city-bg-5.png" width="248.146" height="368.048" x="2208.45" y="229" transform="rotate(3.965 2208.45 229)"/>
+    <image href="city-bg-2.png" width="229" height="266" transform="matrix(-1 0 0 1 3156 147)"/>
+    <image href="city-md-4.png" width="239" height="356" x="2625.94" y="208.277" transform="rotate(-10.583 2625.94 208.277)"/>
+    <image href="city-md-3.png" width="230" height="334" x="2849" y="226" />
+    <image href="city-bg-2.png" width="427" height="498" x="1146" y="71" />
+    <image href="city-bg-2.png" width="381" height="444" x="722" y="126" />
+    <image href="city-bg-5.png" width="244" height="378" x="1003" y="173" />
+    <image href="city-bg-3.png" width="269" height="346" x="183" y="205" />
+    <image href="city-md-2.png" width="296" height="301" transform="matrix(-1 0 0 1 331 274)"/>
+    <image href="city-md-2.png" width="296" height="301" transform="scale(-1 1) rotate(-7.125 1143.99 18235.853)"/>
+    <image href="city-md-3.png" width="242" height="351" x="930" y="241" />
+    <image href="city-bg-4.png" width="246" height="253" x="528" y="298" />
+    <image href="city-fg-14.png" width="318" height="263" transform="matrix(-1 0 0 1 318 317)"/>
+    <image href="city-fg-22.png" width="158" height="338" x="588" y="274" />
+    <image href="city-fg-2.png" width="494" height="628" x="277" />
+    <image href="city-md-2.png" width="350" height="356" x="1287" y="247" />
+    <image href="city-fg-24.png" width="307" height="230" x="1179" y="362" />
+    <image href="city-fg-20.png" width="362" height="252" x="857" y="348" />
+    <image href="city-fg-4.png" width="253" height="238" x="694" y="374" />
+    <image href="city-fg-19.png" width="83" height="355" x="1565" y="264" />
+    <image href="city-md-3.png" width="239" height="347" x="1704" y="247" />
+    <image href="city-fg-9.png" width="349" height="65" x="1660" y="512" />
+    <image href="city-fg-18.png" width="350" height="266" x="1888" y="311" />
+    <image href="city-fg-8.png" width="214.233" height="88.6093" x="15715" y="486" transform="rotate(1.537 15815.4 486)"/>
+    <image href="city-fg-9.png" width="349" height="65" x="15764" y="530" />
+    <image href="starvation-medics.png" width="279" height="229" x="15799" y="388" />
+    <image href="city-fg-17.png" width="384" height="236" x="16680" y="375" />
+    <image href="city-bg-2.png" width="339" height="394" x="4002" y="118" />
+    <image href="city-bg-1.png" width="394" height="406" x="4554" y="151" />
+    <image href="city-bg-2.png" width="427" height="498" x="6103" y="77" />
+    <image href="city-bg-2.png" width="381" height="444" x="5318" y="138" />
+    <image href="city-bg-3.png" width="269" height="346" x="5725" y="211" />
+    <image href="city-bg-3.png" width="269" height="346" x="7582" y="230" />
+    <image href="city-bg-5.png" width="244" height="378" x="5960" y="179" />
+    <image href="city-bg-3.png" width="305" height="472" transform="matrix(-1 0 0 1 8040 104)"/>
+    <image href="city-md-2.png" width="296" height="301" transform="matrix(-1 0 0 1 5589 280)"/>
+    <image href="city-md-3.png" width="204" height="296" x="5908" y="280" />
+    <image href="city-md-3.png" width="251" height="364" x="8327" y="234" />
+    <image href="city-md-4.png" width="180" height="272" x="8122" y="304" />
+    <image href="city-md-4.png" width="239" height="356" x="6365" y="231" />
+    <image href="city-md-3.png" width="204" height="296" x="7835" y="302" />
+    <image href="city-md-3.png" width="173" height="251" x="9640.94" y="329.559" transform="rotate(5.29 9640.94 329.559)"/>
+    <image href="city-md-4.png" width="193.923" height="293.039" x="9469.43" y="313.287" transform="rotate(-4.356 9469.43 313.287)"/>
+    <image href="city-fg-4.png" width="201" height="189" x="5709" y="362" />
+    <image href="city-fg-14.png" width="297" height="246" transform="matrix(-1 0 0 1 5970 340)"/>
+    <image href="city-fg-19.png" width="83" height="355" x="4755" y="249" />
+    <image href="city-fg-22.png" width="158" height="338" x="5239" y="269" />
+    <image href="city-fg-24.png" width="307" height="230" x="6060" y="362" />
+    <image href="city-fg-26.png" width="333" height="230" x="6300" y="376" />
+    <image href="city-fg-26.png" width="333" height="230" x="7835" y="376" />
+    <image href="city-fg-26.png" width="333" height="230" transform="matrix(-1 0 0 1 8842 356)"/>
+    <image href="city-fg-10.png" width="247" height="340" x="7987" y="281" />
+    <image href="city-fg-8.png" width="191" height="79" x="7473.09" y="501.453" transform="rotate(1.537 7473.09 501.453)"/>
+    <image href="city-fg-12.png" width="324" height="315" x="7567" y="294" />
+    <image href="city-fg-14.png" width="313" height="259" x="9261" y="339" />
+    <image href="city-fg-22.png" width="138" height="295" x="9698" y="316" />
+    <image href="city-fg-5.png" width="157.825" height="250.091" x="8244.6" y="361.207" transform="rotate(-4.778 8244.6 361.207)"/>
+    <image href="city-fg-24.png" width="351" height="263" x="8581" y="339" />
+    <image href="city-fg-4.png" width="235" height="223" x="9374" y="394" />
+    <image href="city-fg-15.png" width="210" height="107" transform="matrix(-1 0 0 1 9306 506)"/>
+    <image href="city-bg-2.png" width="392" height="457" transform="matrix(-1 0 0 1 12099 122)"/>
+    <image href="city-bg-2.png" width="392" height="457" transform="matrix(-1 0 0 1 13636 131)"/>
+    <image href="city-bg-5.png" width="244" height="378" x="12307" y="187" />
+    <image href="city-bg-3.png" width="269" height="346" x="12072" y="219" />
+    <image href="city-bg-1.png" width="314" height="324" x="11180" y="241" />
+    <image href="city-bg-1.png" width="314" height="324" x="13034" y="241" />
+    <image href="city-md-3.png" width="204" height="296" x="12225" y="288" />
+    <image href="city-md-3.png" width="204" height="296" x="13609" y="310" />
+    <image href="city-md-3.png" width="204" height="296" x="17148" y="310" />
+    <image href="city-md-2.png" width="271" height="276" transform="matrix(-1 0 0 1 11052 303)"/>
+    <image href="city-bg-4.png" width="246" height="253" x="11876" y="312" />
+    <image href="city-md-4.png" width="180" height="272" x="11982" y="312" />
+    <image href="city-md-2.png" width="271" height="276" transform="scale(-1 1) rotate(-3.252 -636.89 222329.886)"/>
+    <image href="city-md-4.png" width="180" height="272" x="13416" y="329" />
+    <image href="city-fg-14.png" width="297" height="246" x="11959" y="344" />
+    <image href="city-fg-4.png" width="201" height="189" x="12185" y="410" />
+    <image href="city-md-3.png" width="204" height="296" x="11392" y="288" />
+    <image href="city-md-2.png" width="271" height="276" transform="matrix(-1 0 0 1 11911 303)"/>
+    <image href="city-fg-2.png" width="318" height="404" x="11802" y="199" />
+    <image href="city-md-4.png" width="239" height="356" x="13177" y="241" />
+    <image href="city-fg-26.png" width="333" height="230" x="13337" y="374" />
+    <image href="city-fg-26.png" width="333" height="230" x="16831" y="388" />
+    <image href="city-fg-22.png" width="143" height="306" x="11580" y="299" />
+    <image href="city-fg-7.png" width="264" height="168" x="11434" y="454" />
+    <image href="city-fg-13.png" width="216" height="261" x="11190" y="354" />
+    <image href="city-fg-20.png" width="319" height="222" x="10722" y="374" />
+    <image href="city-fg-19.png" width="70" height="300" x="11149" y="320" />
+    <image href="city-bg-5.png" width="305" height="472" transform="matrix(-1 0 0 1 10582 106)"/>
+    <image href="city-bg-3.png" width="269" height="346" x="10124" y="232" />
+    <image href="city-md-3.png" width="204" height="296" x="10377" y="304" />
+    <image href="city-fg-21.png" width="314" height="305" x="10140" y="318" />
+    <image href="city-fg-26.png" width="333" height="230" x="10377" y="378" />
+    <image href="city-fg-8.png" width="191" height="79" x="9950.12" y="499" transform="rotate(1.537 9950.12 499)"/>
+    <image href="city-fg-10.png" width="247" height="340" x="10547" y="283" />
+    <image href="city-fg-20.png" width="260" height="183" x="9961" y="388" />
+    <image href="city-fg-11.png" width="249" height="258" x="9791" y="374" />
+    <image href="city-fg-11.png" width="262" height="272" x="10888" y="365" />
+    <image href="starvation-flour-massacre-civilians.png" width="376" height="174" x="7218" y="433" />
+    <image href="starvation-wck-massacre.png" width="399" height="178" x="12571" y="438" />
+    <image href="city-fg-24.png" width="360" height="270" x="12957" y="329" />
+    <image href="city-fg-24.png" width="384" height="288" transform="matrix(-1 0 0 1 2656 315)"/>
+    <image href="city-fg-22.png" width="149" height="319" x="2606" y="294" />
+    <image href="city-bg-5.png" width="248.146" height="368.048" x="3965.45" y="118" transform="rotate(3.965 3965.45 118)"/>
+    <image href="city-fg-1.png" width="625" height="197" transform="matrix(-1 0 0 1 3178 463)"/>
+    <image href="city-fg-1.png" width="384" height="121" transform="matrix(-1 0 0 1 2300 468)"/>
+    <image href="city-md-4.png" width="128" height="190" x="3846" y="212" />
+    <image href="city-fg-9.png" width="513" height="94" x="3908" y="389" />
+    <image href="city-md-2.png" width="313" height="319" x="4142.94" y="221.723" />
+    <image href="city-fg-11.png" width="294" height="305" x="4015" y="283" />
+    <image href="city-fg-29.png" width="430.258" height="103.029" x="4271" y="412.021" transform="rotate(-1.073 4271 412.021)"/>
+    <image href="city-fg-13.png" width="273" height="330" x="4967" y="289" />
+    <image href="city-fg-20.png" width="362" height="252" x="4340" y="305" />
+    <image href="city-fg-4.png" width="310" height="291" x="4425" y="301" />
+    <image href="city-md-3.png" width="204" height="296" x="4784" y="288" />
+    <image href="city-fg-2.png" width="358" height="455" x="5486" y="141" />
+    <image href="city-fg-1.png" width="311" height="98" x="4271" y="486" />
+    <image href="city-fg-1.png" width="149" height="47" x="7254" y="537" />
+    <image href="city-fg-8.png" width="601" height="252" x="6284" y="435" />
+    <image href="city-fg-9.png" width="664" height="123" x="6643" y="533" />
+    <image href="starvation-flour-massacre-soldier.png" width="299" height="235" x="6970" y="408" />
+    <image href="city-fg-1.png" width="373" height="118" x="19286" y="467" />
+    <image href="city-fg-5.png" width="195" height="308" x="19985" y="287" />
+    <image href="city-fg-19.png" width="70" height="300" x="15449" y="317" />
+    <image href="city-fg-29.png" width="300" height="72" x="18330" y="507" />
+    <image href="city-fg-1.png" width="689" height="217" x="15008" y="456" />
+    <image href="city-fg-29.png" width="605" height="133" x="3977" y="520" />
+    <image href="city-fg-15.png" width="379" height="195" x="12135" y="478" />
   </svg>
-
 </template>
-
-<style>
-.city-highlight {
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-
-.city-highlight-visible {
-  opacity: 1;
-}
-</style>
