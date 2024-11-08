@@ -47,7 +47,7 @@ t
 }
 
 .narration-lg {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .narration-center {
@@ -83,7 +83,6 @@ t
   }
 
   .narration-lg {
-    font-size: 1.25rem;
     max-width: 24rem;
   }
 }

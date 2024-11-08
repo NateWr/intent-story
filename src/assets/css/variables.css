@@ -1,5 +1,5 @@
 :root {
-  --blue: #52CBFF;
+  --blue: #78ACAF;
   --green-light: #96B475;
   --green-dark: #112C00;
   --purple: #D097FF;
@@ -14,7 +14,7 @@
   --starvation-background: #111800;
 
   --intro-gradient: linear-gradient(to bottom, rgba(133, 0, 255, 0.2), rgba(133, 0, 255, 0.01));
-  --civilian-harm-gradient: linear-gradient(to bottom, rgba(242, 65, 65, 0.2), rgba(242, 65, 65, 0.01));
+  --civilian-harm-gradient: linear-gradient(to bottom, rgba(120, 172, 175, 0.2), rgba(120, 172, 175, 0.01));
   --starvation-gradient: linear-gradient(to bottom, rgba(124, 199, 79, 0.2), rgba(124, 199, 79, 0.01));
   --infrastructure-gradient: linear-gradient(to bottom, rgba(82, 203, 255, 0.2), rgba(82, 203, 255, 0.01));
   --displacement-gradient: linear-gradient(to bottom, rgba(255, 194, 82, 0.2), rgba(255, 194, 82, 0.01));

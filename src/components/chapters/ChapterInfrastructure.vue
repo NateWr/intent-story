@@ -23,8 +23,6 @@ defineProps({
 
 const allSectors = ref<HTMLElement | null>(null)
 const { isVisible: isAllSectorsVisible } = useIntersectionObserver(allSectors)
-const telecomms = ref<HTMLElement | null>(null)
-const { isVisible: isTelecommsVisible } = useIntersectionObserver(telecomms)
 const engineerBuilding = ref<HTMLElement | null>(null)
 const { isVisible: isEngineerBuildingVisible } = useIntersectionObserver(engineerBuilding)
 const flattened = ref<HTMLElement | null>(null)
@@ -56,7 +54,7 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
       </ChapterCover>
     </template>
     <template #back>
-      <PositionedContent :left="(1620 * scale)">
+      <PositionedContent :left="(2000 * scale)">
         <Quote
           name="Daniel Hagari"
           role="IDF spokesperson"
@@ -78,6 +76,22 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
           </p>
         </Narration>
       </PositionedContent>
+      <PositionedContent :left="(5725 * scale)" class="positioned-anchor-bottom">
+        <Narration
+          class="narration-center"
+          offsetBottom="0px"
+        >
+          <p>
+            Israeli forces didn’t spare a single life-sustaining sector in Gaza. Its housing, education, health, transportation, telecommunication, cultural, agricultural, and environmental systems <strong>all lie in rubble</strong>, the realization of genocidal intent.
+          </p>
+          <div
+            ref="allSectors"
+            class="narration-center-line"
+            :class="isAllSectorsVisible && 'narration-center-line-visible'"
+            aria-hidden="true"
+          />
+        </Narration>
+      </PositionedContent>
       <PositionedContent :left="(7168 * scale)">
         <Quote
           name="Nissim Vaturi"
@@ -87,6 +101,16 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
         >
           “All the preoccupation with whether or not there is internet in Gaza…We are too humane. <strong>Burn Gaza now</strong> no less!”
         </Quote>
+      </PositionedContent>
+      <PositionedContent :left="(9620 * scale)" class="positioned-anchor-bottom">
+        <Narration
+          class="narration-center"
+          :offsetBottom="`${600 * scale}px`"
+        >
+          <p>
+            On October 31st, Israel imposed a <strong>total blackout</strong> on Gaza, cutting all telecommunication and internet services.
+          </p>
+        </Narration>
       </PositionedContent>
       <PositionedContent :left="(10927 * scale)">
         <Narration
@@ -98,7 +122,7 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(12512 * scale)" class="positioned-anchor-bottom">
+      <PositionedContent :left="(12550 * scale)" class="positioned-anchor-bottom">
         <Narration offsetBottom="60px">
           <CallAndResponse
             ref="engineerBuilding"
@@ -114,7 +138,7 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
           </CallAndResponse>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(14292 * scale)" class="positioned-anchor-bottom">
+      <PositionedContent :left="(14100 * scale)" class="positioned-anchor-bottom">
         <Narration offsetBottom="30px">
           <CallAndResponse
             ref="flattened"
@@ -144,7 +168,7 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(17962 * scale)">
+      <PositionedContent :left="(17940 * scale)">
         <Quote
           name="Ehud Barak"
           role="Former Israeli Prime Minister"
@@ -157,87 +181,15 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
       <PositionedContent :left="(19688 * scale)">
         <Narration
           size="lg"
-          :offsetBottom="`${150 & scale}px`"
+          :offsetBottom="`${150 * scale}px`"
         >
           <p>
             Shortly after Barak’s statement, Israeli forces surrounded Gaza’s largest hospital, Al-Shifa, and held it <strong>under siege</strong> for two weeks.
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(24910 * scale)">
-        <Narration
-          :offsetBottom="`${150 & scale}px`"
-        >
-          <p>
-            Israel has repeatedly killed, maimed, and arrested health workers in more than 500 separate attacks on sites of care.
-          </p>
-          <p>
-            By June 1, 2024, 84% of health facilities in Gaza were damaged or destroyed. Less than half of all hospitals were partially functional, preventing Palestinians from accessing care amid bombardment, starvation, and disease.
-          </p>
-        </Narration>
-      </PositionedContent>
-      <PositionedContent :left="(26649 * scale)">
-        <Quote
-          name="Bezalel Smotrich"
-          role="Israeli Minister of Finance"
-          date="Apr 29, 2024"
-          offsetBottom="0"
-        >
-          “We must destroy Rafah, Nuseirat, and Deir al-Balah… There's no half- measure… <strong>absolute destruction</strong>.”
-        </Quote>
-      </PositionedContent>
-      <PositionedContent :left="(28653 * scale)">
-        <Narration
-          size="lg"
-          offsetBottom="0px"
-        >
-          <p>
-            Israel's campaign of mass destruction embodies the crime of genocide.
-          </p>
-          <p>
-            By striking at the very foundations of Palestinian society, it undermines their existence on the land and their ability to return home in the future.
-          </p>
-        </Narration>
-      </PositionedContent>
-    </template>
-
-    <CityInfrastructure :scale="scale" />
-
-    <template #front>
-      <PositionedContent :left="(5357 * scale)" class="positioned-anchor-bottom">
-        <Narration
-          class="narration-center"
-          offsetBottom="0px"
-        >
-          <p>
-            Israeli forces didn’t spare a single life-sustaining sector in Gaza. Its housing, education, health, transportation, telecommunication, cultural, agricultural, and environmental systems <strong>all lie in rubble</strong>, the realization of genocidal intent.
-          </p>
-          <div
-            ref="allSectors"
-            class="narration-center-line"
-            :class="isAllSectorsVisible && 'narration-center-line-visible'"
-            aria-hidden="true"
-          />
-        </Narration>
-      </PositionedContent>
-      <PositionedContent :left="(9500 * scale)" class="positioned-anchor-bottom">
-        <Narration
-          class="narration-center"
-          offsetBottom="0px"
-        >
-          <p>
-            On October 31st, Israel imposed a <strong>total blackout</strong> on Gaza, cutting all telecommunication and internet services.
-          </p>
-          <div
-            ref="telecomms"
-            class="narration-center-line"
-            :class="isTelecommsVisible && 'narration-center-line-visible'"
-            aria-hidden="true"
-          />
-        </Narration>
-      </PositionedContent>
-      <PositionedContent :left="(21547 * scale)" class="positioned-anchor-bottom">
-        <Narration offsetBottom="90px">
+      <PositionedContent :left="(21570 * scale)" class="positioned-anchor-bottom">
+        <Narration :offsetBottom="`${250 * scale}px`">
           <CallAndResponse
             ref="shifaSiege"
             :isVisible="isShifaSiegeVisible"
@@ -260,8 +212,8 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
           </CallAndResponse>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(23204 * scale)" class="positioned-anchor-bottom">
-        <Narration offsetBottom="40px">
+      <PositionedContent :left="(23550 * scale)" class="positioned-anchor-bottom">
+        <Narration :offsetBottom="`${(75 * scale)}px`">
           <CallAndResponse
             ref="shifaDestroyed"
             :isVisible="isShifaDestroyedVisible"
@@ -284,7 +236,48 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
           </CallAndResponse>
         </Narration>
       </PositionedContent>
+      <PositionedContent :left="(24910 * scale)">
+        <Narration
+          :offsetBottom="`${150 & scale}px`"
+        >
+          <p>
+            Israel has repeatedly killed, maimed, and arrested health workers in more than 500 separate attacks on sites of care.
+          </p>
+          <p>
+            By June 1, 2024, 84% of health facilities in Gaza were damaged or destroyed. Less than half of all hospitals were partially functional, preventing Palestinians from accessing care amid bombardment, starvation, and disease.
+          </p>
+        </Narration>
+      </PositionedContent>
+      <PositionedContent :left="(26649 * scale)">
+        <Quote
+          name="Bezalel Smotrich"
+          role="Israeli Minister of Finance"
+          date="Apr 29, 2024"
+          offsetBottom="0"
+        >
+          “We must destroy Rafah, Nuseirat, and Deir al-Balah… There's no half-measure… <strong>absolute destruction</strong>.”
+        </Quote>
+      </PositionedContent>
+      <PositionedContent :left="(28653 * scale)">
+        <Narration
+          size="lg"
+          offsetBottom="0px"
+        >
+          <p>
+            Israel's campaign of mass destruction embodies the crime of genocide.
+          </p>
+          <p>
+            By striking at the very foundations of Palestinian society, it undermines their existence on the land and their ability to return home in the future.
+          </p>
+        </Narration>
+      </PositionedContent>
     </template>
+
+    <CityInfrastructure
+      class="chapter-infrastructure-city"
+      :scale="scale"
+    />
+
   </Chapter>
 </template>
 
