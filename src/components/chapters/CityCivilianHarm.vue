@@ -5,95 +5,152 @@ defineProps({
 </script>
 
 <template>
-  <svg  :width="(20655 * scale).toFixed(0)" :height="(600 * scale).toFixed()" viewBox="0 0 20655 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M879 447.5V852H1094V236H927.5V447.5H879Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M529.5 441V752.5L1114.5 748V441H1150.5L1114.5 410.5H1057C1050.67 397.667 1028 372 988 372C948 372 924.333 397.667 917.5 410.5H728.5C719.667 397.667 693.2 372 658 372C622.8 372 589 397.667 576.5 410.5H529.5L496 441H529.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M429.5 537H518V737H126.5V570.5H57L126.5 537H223.5V487H296V537H371V487H429.5V537Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M641.476 513V697.5V713H291.976C288.976 702 284.776 678.3 291.976 671.5C300.976 663 313.976 616.5 324.976 603C335.976 589.5 351.476 577 410.476 574.5C457.676 572.5 485.809 557.667 493.976 550.5V456H581.976V493L641.476 513Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M550 751V506.766V374H757.816V506.766H879V751H550Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M1323 302.5V707H1538V91H1371.5V302.5H1323Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M2765 520V924.5H2550V308.5H2716.5V520H2765Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M1070 507.5C1070.83 559.667 1072 668.4 1070 686H1472.5V398H1186.5V507.5H1070Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M1703.5 468.5V780L2288.5 775.5V468.5H2324.5L2288.5 438H2231C2224.67 425.167 2202 399.5 2162 399.5C2122 399.5 2098.33 425.167 2091.5 438H1902.5C1893.67 425.167 1867.2 399.5 1832 399.5C1796.8 399.5 1763 425.167 1750.5 438H1703.5L1670 468.5H1703.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M3104 507.5V709.5H3330.5V507.5L3240.5 450.5H3190L3104 507.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M1510 550.5H1421.5V750.5H1813V584H1882.5L1813 550.5H1716V500.5H1643.5V550.5H1568.5V500.5H1510V550.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M3535.5 509.5H3624V709.5H3232.5V543H3163L3232.5 509.5H3329.5V459.5H3402V509.5H3477V459.5H3535.5V509.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M2034.5 747V575V481.5H2242V575H2363V747H2034.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M4102 545H3992V699H4102L4189.5 584.5L4102 545Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M3575 747V575V481.5H3782.5V575H3903.5V747H3575Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M3115.5 706V534V440.5H2908V534H2787V706H3115.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M2569 507.5V709.5H2795.5V507.5L2705.5 450.5H2655L2569 507.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M2326 554.5V739V754.5H2675.5C2678.5 743.5 2682.7 719.8 2675.5 713C2666.5 704.5 2653.5 658 2642.5 644.5C2631.5 631 2616 618.5 2557 616C2509.8 614 2481.67 599.167 2473.5 592V497.5H2385.5V534.5L2326 554.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M3866.5 554.5V739V754.5H4216C4219 743.5 4223.2 719.8 4216 713C4207 704.5 4194 658 4183 644.5C4172 631 4156.5 618.5 4097.5 616C4050.3 614 4022.17 599.167 4014 592V497.5H3926V534.5L3866.5 554.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M3032.48 554.5V739V754.5L2739.5 808C2736.5 797 2732.3 773.3 2739.5 766.5C2748.5 758 2761.5 711.5 2772.5 698C2783.5 684.5 2778.5 640.5 2837.5 638C2884.7 636 2876.81 599.167 2884.98 592V497.5H2972.98V534.5L3032.48 554.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M4284.48 505V689.5V705H3934.98C3931.98 694 3927.78 670.3 3934.98 663.5C3943.98 655 3956.98 608.5 3967.98 595C3978.98 581.5 3994.48 569 4053.48 566.5C4100.68 564.5 4128.81 549.667 4136.98 542.5V448H4224.98V485L4284.48 505Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M4193 743V498.766V366H4400.82V498.766H4522V743H4193Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M4460.5 417.5V822H4245.5V206H4412V417.5H4460.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M6999 550.5V955H6637V339H6917.34V550.5H6999Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M3864 499.5C3864.83 551.667 3866 660.4 3864 678H4266.5V390H3980.5V499.5H3864Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M5903.5 460.5V772L6488.5 767.5V460.5H6524.5L6488.5 430H6431C6424.67 417.167 6402 391.5 6362 391.5C6322 391.5 6298.33 417.167 6291.5 430H6102.5C6093.67 417.167 6067.2 391.5 6032 391.5C5996.8 391.5 5963 417.167 5950.5 430H5903.5L5870 460.5H5903.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M6318 542.5H6229.5V742.5H6621V576H6690.5L6621 542.5H6524V492.5H6451.5V542.5H6376.5V492.5H6318V542.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M6403.5 653.5V481.5V388H6611V481.5H6732V653.5H6403.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M10869.5 653.5V481.5V388H10662V481.5H10541V653.5H10869.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M5768.5 652.5V480.5V387H5561V480.5H5440V652.5H5768.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M11195.5 652.5V480.5V387H11403V480.5H11524V652.5H11195.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M3698.5 579.5L3606 557.5L3573 595L3456.5 608L3402 650H4144.5L4008.5 595L3806 557.5L3698.5 579.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M4911 547L5003.5 525L5036.5 562.5L5153 575.5L5207.5 617.5H4465L4601 562.5L4803.5 525L4911 547Z" fill="#FF7070" stroke="#FF7070" stroke-width="2"/>
-    <path d="M12053 547L11960.5 525L11927.5 562.5L11811 575.5L11756.5 617.5H12499L12363 562.5L12160.5 525L12053 547Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M6413 271.5V676H6628V60H6461.5V271.5H6413Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M10551 271.5V676H10336V60H10502.5V271.5H10551Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M6838.5 548.5C6837.67 600.667 6836.5 709.4 6838.5 727H6436V439H6722V548.5H6838.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M10125.5 548.5C10126.3 600.667 10127.5 709.4 10125.5 727H10528V439H10242V548.5H10125.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M6982.5 384V695.5L7567.5 691V384H7603.5L7567.5 353.5H7510C7503.67 340.667 7481 315 7441 315C7401 315 7377.33 340.667 7370.5 353.5H7181.5C7172.67 340.667 7146.2 315 7111 315C7075.8 315 7042 340.667 7029.5 353.5H6982.5L6949 384H6982.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M9981.5 384V695.5L9396.5 691V384H9360.5L9396.5 353.5H9454C9460.33 340.667 9483 315 9523 315C9563 315 9586.67 340.667 9593.5 353.5H9782.5C9791.33 340.667 9817.8 315 9853 315C9888.2 315 9922 340.667 9934.5 353.5H9981.5L10015 384H9981.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M6705 723V551.324V458H7065.68V551.324H7276V723H6705Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M10259 723V551.324V458H9898.32V551.324H9688V723H10259Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M7537 448V632.5V648H7886.5C7889.5 637 7893.7 613.3 7886.5 606.5C7877.5 598 7864.5 551.5 7853.5 538C7842.5 524.5 7827 512 7768 509.5C7720.8 507.5 7692.67 492.667 7684.5 485.5V391H7596.5V428L7537 448Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M9427 448V632.5V648H9077.5C9074.5 637 9070.3 613.3 9077.5 606.5C9086.5 598 9099.5 551.5 9110.5 538C9121.5 524.5 9137 512 9196 509.5C9243.2 507.5 9271.33 492.667 9279.5 485.5V391H9367.5V428L9427 448Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M5762 433V617.5V633H6111.5C6114.5 622 6118.7 598.3 6111.5 591.5C6102.5 583 6089.5 536.5 6078.5 523C6067.5 509.5 6052 497 5993 494.5C5945.8 492.5 5917.67 477.667 5909.5 470.5V376H5821.5V413L5762 433Z" fill="#FF7070" stroke="#FF7070" stroke-width="2"/>
-    <path d="M11202 433V617.5V633H10852.5C10849.5 622 10845.3 598.3 10852.5 591.5C10861.5 583 10874.5 536.5 10885.5 523C10896.5 509.5 10912 497 10971 494.5C11018.2 492.5 11046.3 477.667 11054.5 470.5V376H11142.5V413L11202 433Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M7850 687.5V515.5V422H8057.5V515.5H8178.5V687.5H7850Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M9114 687.5V515.5V422H8906.5V515.5H8785.5V687.5H9114Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M8374 260.5V665H8589V49H8422.5V260.5H8374Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M8014 486.5C8014.83 538.667 8016 647.4 8014 665H8416.5V377H8130.5V486.5H8014Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M8950 486.5C8949.17 538.667 8948 647.4 8950 665H8547.5V377H8833.5V486.5H8950Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M5391 563L5292 613.5H5604L5496.5 563H5391Z" fill="#FF7070" stroke="#FF7070" stroke-width="2"/>
-    <path d="M11573 563L11672 613.5H11360L11467.5 563H11573Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M5078 523V707.5V723H5427.5C5430.5 712 5434.7 688.3 5427.5 681.5C5418.5 673 5405.5 626.5 5394.5 613C5383.5 599.5 5368 587 5309 584.5C5261.8 582.5 5233.67 567.667 5225.5 560.5V466H5137.5V503L5078 523Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M11886 523V707.5V723H11536.5C11533.5 712 11529.3 688.3 11536.5 681.5C11545.5 673 11558.5 626.5 11569.5 613C11580.5 599.5 11596 587 11655 584.5C11702.2 582.5 11730.3 567.667 11738.5 560.5V466H11826.5V503L11886 523Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M5510 501V703H5736.5V501L5646.5 444H5596L5510 501Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M11454 501V703H11227.5V501L11317.5 444H11368L11454 501Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M13924 723V551.324V458H13563.3V551.324H13353V723H13924Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M13265.5 579.5L13358 557.5L13391 595L13507.5 608L13562 650H12819.5L12955.5 595L13158 557.5L13265.5 579.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M13981 563L14080 613.5H13768L13875.5 563H13981Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M15594.5 652.5V480.5V387H15387V480.5H15266V652.5H15594.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M14737 547L14829.5 525L14862.5 562.5L14979 575.5L15033.5 617.5H14291L14427 562.5L14629.5 525L14737 547Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M15588 433V617.5V633H15937.5C15940.5 622 15944.7 598.3 15937.5 591.5C15928.5 583 15915.5 536.5 15904.5 523C15893.5 509.5 15878 497 15819 494.5C15771.8 492.5 15743.7 477.667 15735.5 470.5V376H15647.5V413L15588 433Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M15217 563L15118 613.5H15430L15322.5 563H15217Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M14904 523V707.5V723H15253.5C15256.5 712 15260.7 688.3 15253.5 681.5C15244.5 673 15231.5 626.5 15220.5 613C15209.5 599.5 15194 587 15135 584.5C15087.8 582.5 15059.7 567.667 15051.5 560.5V466H14963.5V503L14904 523Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M15336 501V703H15562.5V501L15472.5 444H15422L15336 501Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M13924.5 413V724.5L14509.5 720V413H14545.5L14509.5 382.5H14452C14445.7 369.667 14423 344 14383 344C14343 344 14319.3 369.667 14312.5 382.5H14123.5C14114.7 369.667 14088.2 344 14053 344C14017.8 344 13984 369.667 13971.5 382.5H13924.5L13891 413H13924.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M19950 520.5V925H19588V309H19868.3V520.5H19950Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M19969.5 441.5H20058V641.5H19666.5V475H19597L19666.5 441.5H19763.5V391.5H19836V441.5H19911V391.5H19969.5V441.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M19257 241.5V646H19472V30H19305.5V241.5H19257Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M16378 470.5H16289.5V670.5H16681V504H16750.5L16681 470.5H16584V420.5H16511.5V470.5H16436.5V420.5H16378V470.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M15800.5 667V495V401.5H16008V495H16129V667H15800.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M16092 474.5V659V674.5H16441.5C16444.5 663.5 16448.7 639.8 16441.5 633C16432.5 624.5 16419.5 578 16408.5 564.5C16397.5 551 16382 538.5 16323 536C16275.8 534 16247.7 519.167 16239.5 512V417.5H16151.5V454.5L16092 474.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M16920 373.367V644H17147V373.367L17056.8 297H17006.2L16920 373.367Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M17228 435H17316.5V635H16925V468.5H16855.5L16925 435H17022V385H17094.5V435H17169.5V385H17228V435Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M16960 625V370.401V232H16752.2V370.401H16631V625H16960Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M16725 431V615.5V631L16432 684.5C16429 673.5 16424.8 649.8 16432 643C16441 634.5 16454 588 16465 574.5C16476 561 16471 517 16530 514.5C16577.2 512.5 16569.3 475.667 16577.5 468.5V374H16665.5V411L16725 431Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M17285.5 417.5V729L17870.5 724.5V417.5H17906.5L17870.5 387H17813C17806.7 374.167 17784 348.5 17744 348.5C17704 348.5 17680.3 374.167 17673.5 387H17484.5C17475.7 374.167 17449.2 348.5 17414 348.5C17378.8 348.5 17345 374.167 17332.5 387H17285.5L17252 417.5H17285.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M18194 499.5H18105.5V699.5H18497V533H18566.5L18497 499.5H18400V449.5H18327.5V499.5H18252.5V449.5H18194V499.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M17616.5 696V524V430.5H17824V524H17945V696H17616.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M17908 503.5V688V703.5H18257.5C18260.5 692.5 18264.7 668.8 18257.5 662C18248.5 653.5 18235.5 607 18224.5 593.5C18213.5 580 18198 567.5 18139 565C18091.8 563 18063.7 548.167 18055.5 541V446.5H17967.5V483.5L17908 503.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M18612.5 413V615H18839V413L18749 356H18698.5L18612.5 413Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M19044 415H19132.5V615H18741V448.5H18671.5L18741 415H18838V365H18910.5V415H18985.5V365H19044V415Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M19083.5 652.5V480.5V387H19291V480.5H19412V652.5H19083.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M18624 611.5V439.5V346H18416.5V439.5H18295.5V611.5H18624Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M19375 460V644.5V660H19724.5C19727.5 649 19731.7 625.3 19724.5 618.5C19715.5 610 19702.5 563.5 19691.5 550C19680.5 536.5 19665 524 19606 521.5C19558.8 519.5 19530.6 504.667 19522.5 497.5V403H19434.5V440L19375 460Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M18541 460V644.5V660L18248 713.5C18245 702.5 18240.8 678.8 18248 672C18257 663.5 18270 617 18281 603.5C18292 590 18287 546 18346 543.5C18393.2 541.5 18385.3 504.667 18393.5 497.5V403H18481.5V440L18541 460Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <path d="M19953.5 375V686.5L20538.5 682V375H20574.5L20538.5 344.5H20481C20474.7 331.667 20452 306 20412 306C20372 306 20348.3 331.667 20341.5 344.5H20152.5C20143.7 331.667 20117.2 306 20082 306C20046.8 306 20013 331.667 20000.5 344.5H19953.5L19920 375H19953.5Z" fill="black" stroke="#FF7CAC" stroke-width="2"/>
-    <circle cx="12529" cy="600" r="32" fill="#FF7070"/>
+  <svg
+    width="20962"
+    height="1139"
+    viewBox="0 0 20962 1139"
+    fill="none"
+    :style="{
+      width: `${(20962 * scale).toFixed()}px`,
+      height: 'auto',
+    }"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="20962" height="65" y="1074" fill="#040201"/>
+    <image id="city-bg-1" href="city-bg-1.png" x="8068" y="745" width="329" height="341" />
+    <image id="city-bg-5" href="city-bg-5.png" x="4846" y="747" width="220" height="338" />
+    <image id="city-bg-3" href="city-bg-3.png" x="19941" y="704" width="290" height="373" />
+    <image id="city-fg-14" href="city-fg-14.png" width="323" height="268" transform="matrix(-1 0 0 1 20076 815)" />
+    <image id="city-bg-1" href="city-bg-1.png" x="18413" y="839" width="645" height="220" />
+    <image id="city-fg-22" href="city-fg-22.png" x="18796.1" y="772.568" width="152" height="326" transform="rotate(13.8131 18796.1 772.568)" />
+    <image id="city-bg-5" href="city-bg-5.png" x="2228.45" y="740" width="248.146" height="368.048" transform="rotate(3.96481 2228.45 740)" />
+    <image id="city-bg-5" href="city-bg-5.png" x="1023" y="684" width="244" height="378" />
+    <image id="city-bg-3" href="city-bg-3.png" x="203" y="716" width="269" height="346" />
+    <image id="city-md-3" href="city-md-3.png" x="950" y="752" width="242" height="351" />
+    <image id="city-bg-4" href="city-bg-4.png" x="548" y="809" width="246" height="253" />
+    <image id="city-fg-14" href="city-fg-14.png" width="318" height="263" transform="matrix(-1 0 0 1 318 817)" />
+    <image id="city-fg-22" href="city-fg-22.png" x="420" y="785" width="158" height="338" />
+    <image id="city-fg-20" href="city-fg-20.png" x="877" y="859" width="362" height="252" />
+    <image id="city-fg-9" href="city-fg-9.png" x="1825" y="1025" width="349" height="65" />
+    <image id="city-fg-18" href="city-fg-18.png" x="1908" y="822" width="350" height="266" />
+    <image id="city-bg-1" href="city-bg-1.png" x="3971" y="662" width="394" height="406" />
+    <image id="city-bg-2" href="city-bg-2.png" x="5782" y="649" width="381" height="444" />
+    <image id="city-bg-5" href="city-bg-5.png" x="6470" y="694" width="244" height="378" />
+    <image id="city-fg-19" href="city-fg-19.png" x="4222" y="760" width="83" height="355" />
+    <image id="city-fg-22" href="city-fg-22.png" x="4950" y="780" width="158" height="338" />
+    <image id="city-fg-26" href="city-fg-26.png" x="7855" y="887" width="333" height="230" />
+    <image id="city-fg-5" href="city-fg-5.png" x="8264.6" y="872.207" width="157.825" height="250.091" transform="rotate(-4.77795 8264.6 872.207)" />
+    <image id="city-bg-1" href="city-bg-1.png" x="11035" y="765" width="314" height="324" />
+    <image id="city-fg-19" href="city-fg-19.png" x="11230" y="831" width="70" height="300" />
+    <image id="city-bg-5" href="city-bg-5.png" width="305" height="472" transform="matrix(-1 0 0 1 10602 617)" />
+    <image id="city-bg-3" href="city-bg-3.png" x="10144" y="743" width="269" height="346" />
+    <image id="city-md-3" href="city-md-3.png" x="10397" y="815" width="204" height="296" />
+    <image id="city-fg-21" href="city-fg-21.png" x="10160" y="829" width="314" height="305" />
+    <image id="city-fg-24" href="city-fg-24.png" width="384" height="288" transform="matrix(-1 0 0 1 2676 826)" />
+    <image id="city-fg-22" href="city-fg-22.png" x="2626" y="805" width="149" height="319" />
+    <image id="city-fg-4" href="city-fg-4.png" x="3797" y="816" width="310" height="291" />
+    <image id="city-md-3" href="city-md-3.png" x="2732" y="807" width="230" height="334" />
+    <image id="civharm-frame-3" href="civharm-frame-3.png" x="5667" y="880" width="265" height="255" />
+    <image id="civharm-orphans" href="civharm-orphans.png" x="16015" y="944" width="253" height="178" />
+    <image id="city-bg-7" href="city-bg-7.png" x="3018" y="807" width="412" height="283" />
+    <image id="city-bg-8" href="city-bg-8.png" x="714" y="681" width="211" height="375" />
+    <image id="city-fg-4" href="city-fg-4.png" x="632" y="885" width="253" height="238" />
+    <image id="city-fg-33" href="city-fg-33.png" x="220" y="946" width="236" height="142" />
+    <image id="city-bg-6" href="city-bg-6.png" x="1289" y="740" width="356" height="316" />
+    <image id="city-fg-32" href="city-fg-32.png" x="1215" y="932" width="271" height="150" />
+    <image id="city-fg-19" href="city-fg-19.png" x="1562" y="775" width="83" height="355" />
+    <image id="city-fg-35" href="city-fg-35.png" x="1714" y="932" width="475" height="187" />
+    <image id="city-fg-31" href="city-fg-31.png" x="2949" y="966" width="262" height="148" />
+    <image id="city-bg-9" href="city-bg-9.png" x="4390" y="747" width="338" height="338" />
+    <image id="city-fg-30" href="city-fg-30.png" x="4286.29" y="912.406" width="214" height="185" transform="rotate(5.36222 4286.29 912.406)" />
+    <image id="civharm-frame-1" href="civharm-frame-1.png" x="4646" y="823" width="328" height="316" />
+    <image id="city-fg-38" href="city-fg-38.png" x="4530" y="938" width="560" height="229" />
+    <image id="city-bg-8" href="city-bg-8.png" x="3659" y="849" width="112" height="199" />
+    <image id="city-fg-20" href="city-fg-20.png" x="3499" y="855" width="362" height="252" />
+    <image id="city-fg-36" href="city-fg-36.png" x="3236" y="932" width="462" height="242" />
+    <image id="city-fg-34" href="city-fg-34.png" width="262" height="141" transform="matrix(-1 0 0 1 6832 963)" />
+    <image id="city-fg-36" href="city-fg-36.png" x="5376" y="935" width="385" height="183" />
+    <image id="civharm-frame-2" href="civharm-frame-2.png" x="5129" y="861" width="374" height="325" />
+    <image id="city-bg-7" href="city-bg-7.png" x="6104" y="749" width="445" height="307" />
+    <image id="city-fg-4" href="city-fg-4.png" x="6030" y="895" width="232" height="218" />
+    <image id="city-md-3" href="city-md-3.png" x="6374" y="771" width="222" height="322" />
+    <image id="city-fg-14" href="city-fg-14.png" width="297" height="246" transform="matrix(-1 0 0 1 6549 851)" />
+    <image id="city-fg-31" href="city-fg-31.png" x="6374" y="981" width="207" height="117" />
+    <image id="city-bg-6" href="city-bg-6.png" x="7045" y="670" width="480" height="428" />
+    <image id="city-fg-26" href="city-fg-26.png" x="6807" y="887" width="333" height="230" />
+    <image id="city-bg-8" href="city-bg-8.png" width="192" height="339" transform="matrix(-1 0 0 1 7825 733)" />
+    <image id="city-fg-1" href="city-fg-1.png" width="536" height="169" transform="matrix(-1 0 0 1 7901 940)" />
+    <image id="city-fg-8" href="city-fg-8.png" x="6922" y="946" width="601" height="252" />
+    <image id="city-fg-9" href="city-fg-9.png" x="7281" y="1002" width="891" height="165" />
+    <image id="city-bg-10" href="city-bg-10.png" x="8473" y="755" width="255" height="316" />
+    <image id="city-fg-24" href="city-fg-24.png" x="8705" y="861" width="351" height="263" />
+    <image id="city-fg-26" href="city-fg-26.png" width="333" height="230" transform="matrix(-1 0 0 1 8730 867)" />
+    <image id="city-bg-9" href="city-bg-9.png" x="9117" y="853" width="244" height="239" />
+    <image id="city-bg-8" href="city-bg-8.png" width="160" height="275" transform="matrix(-1 0 0 1 9656 800)" />
+    <image id="city-bg-8" href="city-bg-8.png" x="12081" y="742" width="166" height="288" />
+    <image id="city-bg-7" href="city-bg-7.png" x="9726" y="795" width="415" height="278" />
+    <image id="city-bg-7" href="city-bg-7.png" x="13122" y="760" width="433" height="289" />
+    <image id="city-bg-6" href="city-bg-6.png" x="10612" y="763" width="358" height="310" />
+    <image id="city-md-3" href="city-md-3.png" x="9660.94" y="840.559" width="173" height="251" transform="rotate(5.2903 9660.94 840.559)" />
+    <image id="city-fg-14" href="city-fg-14.png" x="9536" y="866" width="313" height="259" />
+    <image id="city-fg-20" href="city-fg-20.png" x="9981" y="899" width="260" height="183" />
+    <image id="city-fg-8" href="city-fg-8.png" x="9970.12" y="1010" width="191" height="79" transform="rotate(1.53679 9970.12 1010)" />
+    <image id="city-fg-11" href="city-fg-11.png" x="9833" y="885" width="249" height="258" />
+    <image id="city-fg-26" href="city-fg-26.png" x="10397" y="889" width="333" height="230" />
+    <image id="city-fg-35" href="city-fg-35.png" x="9111" y="953" width="414" height="163" />
+    <image id="city-fg-32" href="city-fg-32.png" x="11100" y="988" width="165" height="91" />
+    <image id="city-fg-30" href="city-fg-30.png" x="10810" y="988" width="116.692" height="100.314" transform="rotate(3.40651 10810 988)" />
+    <image id="city-fg-31" href="city-fg-31.png" x="10865" y="956" width="291" height="164" />
+    <image id="city-bg-9" href="city-bg-9.png" x="11478" y="824" width="248" height="249" />
+    <image id="city-fg-22" href="city-fg-22.png" x="12003" y="824" width="127" height="271" />
+    <image id="city-fg-37" href="city-fg-37.png" x="11822" y="900" width="228" height="188" />
+    <image id="city-fg-36" href="city-fg-36.png" x="12672" y="1022" width="193" height="101" />
+    <image id="city-fg-38" href="city-fg-38.png" x="12185" y="889" width="391" height="160" />
+    <image id="civharm-cemetery" href="civharm-cemetery.png" x="12151" y="900" width="773" height="244" />
+    <image id="city-fg-30" href="city-fg-30.png" x="11467.1" y="956.527" width="167.432" height="143.933" transform="rotate(3.40651 11467.1 956.527)" />
+    <image id="city-fg-34" href="city-fg-34.png" x="11155" y="929" width="378" height="202" />
+    <image id="city-fg-26" href="city-fg-26.png" x="13126" y="884" width="333" height="230" />
+    <image id="city-bg-10" href="city-bg-10.png" x="13569" y="707" width="311" height="387" />
+    <image id="city-bg-9" href="city-bg-9.png" x="13992" y="843" width="262" height="263" />
+    <image id="city-bg-7" href="city-bg-7.png" x="14482" y="753" width="511" height="353" />
+    <image id="city-bg-6" href="city-bg-6.png" x="15288" y="712" width="453" height="404" />
+    <image id="city-fg-22" href="city-fg-22.png" x="14835" y="795" width="158" height="338" />
+    <image id="city-fg-31" href="city-fg-31.png" x="14627" y="975" width="254" height="143" />
+    <image id="city-fg-24" href="city-fg-24.png" width="451" height="338" transform="matrix(-1 0 0 1 15965 795)" />
+    <image id="city-fg-19" href="city-fg-19.png" x="15474" y="778" width="83" height="355" />
+    <image id="city-fg-35" href="city-fg-35.png" x="14981" y="931" width="493" height="193" />
+    <image id="city-fg-37" href="city-fg-37.png" x="14285" y="890" width="284" height="234" />
+    <image id="city-fg-36" href="city-fg-36.png" x="13616" y="938" width="345" height="180" />
+    <image id="city-fg-35" href="city-fg-35.png" x="12938" y="931" width="493" height="193" />
+    <image id="civharm-rubbish" href="civharm-rubbish.png" x="13293" y="922" width="512" height="267" />
+    <image id="city-bg-10" href="city-bg-10.png" x="16556" y="781" width="248" height="309" />
+    <image id="city-fg-14" href="city-fg-14.png" width="297" height="246" transform="matrix(-1 0 0 1 16662 866)" />
+    <image id="city-fg-33" href="city-fg-33.png" x="16337" y="956" width="274" height="162" />
+    <image id="city-bg-7" href="city-bg-7.png" x="17057" y="737" width="511" height="353" />
+    <image id="city-fg-19" href="city-fg-19.png" x="17651" y="812" width="70" height="300" />
+    <image id="city-md-2" href="city-md-2.png" width="311" height="317" transform="matrix(-0.999954 0.00958818 0.00958818 0.999954 17715 805)" />
+    <image id="city-md-3" href="city-md-3.png" x="17139" y="841" width="204" height="296" />
+    <image id="city-fg-26" href="city-fg-26.png" x="16837" y="888" width="333" height="230" />
+    <image id="city-fg-1" href="city-fg-1.png" width="455" height="143" transform="matrix(-1 0 0 1 17084 1028)" />
+    <image id="city-fg-31" href="city-fg-31.png" x="17343" y="989" width="218" height="123" />
+    <image id="city-bg-7" href="city-bg-7.png" x="20268" y="732" width="473" height="327" />
+    <image id="city-fg-22" href="city-fg-22.png" x="20520" y="787" width="143" height="306" />
+    <image id="city-fg-6" href="city-fg-6.png" x="20039.3" y="867" width="344" height="253" transform="rotate(3.23073 20039.3 867)" />
+    <image id="city-bg-8" href="city-bg-8.png" x="19519" y="723" width="189" height="335" />
+    <image id="city-fg-5" href="city-fg-5.png" x="19631" y="798" width="195" height="308" />
+    <image id="city-bg-9" href="city-bg-9.png" x="19113" y="830" width="262" height="263" />
+    <image id="city-fg-1" href="city-fg-1.png" x="18888" y="978" width="373" height="118" />
+    <image id="city-fg-14" href="city-fg-14.png" width="359" height="297" transform="matrix(-1 0 0 1 19554 827)" />
+    <image id="city-fg-9" href="city-fg-9.png" width="479" height="89" transform="matrix(-1 0 0 1 20962 977)" />
+    <image id="city-fg-34" href="city-fg-34.png" x="20383" y="961" width="257" height="137" />
+    <image id="city-fg-31" href="city-fg-31.png" x="20635" y="963" width="254" height="143" />
+    <image id="city-fg-31" href="city-fg-31.png" x="17601" y="1002.01" width="188" height="106" />
+    <image id="city-bg-6" href="city-bg-6.png" x="18153" y="684" width="455" height="406" />
+    <image id="city-fg-14" href="city-fg-14.png" width="306" height="254" transform="matrix(-1 0 0 1 18224 842)" />
+    <image id="city-fg-20" href="city-fg-20.png" width="353" height="246" transform="matrix(-1 0 0 1 18634 856)" />
+    <image id="city-fg-30" href="city-fg-30.png" x="17804.4" y="914" width="238.651" height="205.703" transform="rotate(3.18622 17804.4 914)" />
+    <image id="city-fg-2" href="city-fg-2.png" x="18413" y="591" width="418" height="531" />
+    <image id="city-fg-1" href="city-fg-1.png" x="19826" y="1016" width="466" height="147" />
+    <image id="civharm-tree" href="civharm-tree.png" x="11314" width="1551" height="1139" />
   </svg>
 </template>

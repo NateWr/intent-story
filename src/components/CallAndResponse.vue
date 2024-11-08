@@ -51,7 +51,7 @@ defineProps({
 .car-response-cite {
   font-size: 0.875em;
   font-family: var(--font-sans);
-  font-weight: 700;
+  font-weight: 900;
   font-style: normal;
 }
 

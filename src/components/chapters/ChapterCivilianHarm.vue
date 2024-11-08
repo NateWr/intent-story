@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, type PropType } from 'vue'
+import { onMounted, ref, type PropType } from 'vue'
 import CallAndResponse from '../CallAndResponse.vue'
 import Chapter from '../Chapter.vue'
 import ChapterCover from '../ChapterCover.vue'
@@ -29,16 +29,42 @@ const familyHome3 = ref<HTMLElement | null>(null)
 const { isVisible: isFamilyHome3Visible } = useIntersectionObserver(familyHome3)
 const gunnedDown = ref<HTMLElement | null>(null)
 const { isVisible: isGunnedDownVisible } = useIntersectionObserver(gunnedDown)
+const orphans = ref<HTMLElement | null>(null)
+const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
+
+const tree = ref<HTMLElement | null>(null)
+const treeScrollProgress = ref<number>(0)
+
+const setTreeScrollProgress = () => {
+  let coords = tree.value?.getBoundingClientRect()
+  if (!coords) {
+    return
+  }
+
+  let scrollProgress = (window.innerWidth - coords.left)
+  if (scrollProgress <= 0) {
+    treeScrollProgress.value = 0
+    return
+  }
+
+  let scrollEnd = coords.width + window.innerWidth
+  treeScrollProgress.value = Math.min(1, scrollProgress / scrollEnd)
+}
+
+onMounted(() => {
+  window.onscroll = setTreeScrollProgress;
+})
 </script>
 
 <template>
   <Chapter
     class="chapter-civilian-harm"
     :style="{
-      '--color-narration': 'var(--watermelon-light)',
-      '--color-highlight': 'var(--watermelon-light)',
+      '--color-narration': 'var(--watermelon)',
+      '--color-highlight': 'var(--watermelon)',
       '--color-title': 'var(--watermelon)',
-      '--color-subtitle-highlight': 'var(--watermelon-light)',
+      '--color-subtitle-highlight': 'var(--watermelon)',
+      '--tree-scroll-progress': treeScrollProgress,
     }"
   >
     <template #cover>
@@ -52,7 +78,18 @@ const { isVisible: isGunnedDownVisible } = useIntersectionObserver(gunnedDown)
       </ChapterCover>
     </template>
     <template #back>
-      <PositionedContent :left="(1750 * scale)">
+      <div
+        ref="tree"
+        class="civharm-tree-scroll"
+        :style="{
+          position: 'absolute',
+          left: `${(scale * 11314).toFixed(0)}px`,
+          width: `${(scale * 1551).toFixed(0)}px`,
+          bottom: `50%`,
+          height: '20px',
+        }"
+      />
+      <PositionedContent :left="(1800 * scale)">
         <Quote
           name="Isaac Herzog"
           role="Israeli President"
@@ -70,7 +107,7 @@ const { isVisible: isGunnedDownVisible } = useIntersectionObserver(gunnedDown)
           <p>Airwars documented hundreds of attacks on Palestinian family homes and residential towers.</p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(4880 * scale)" class="positioned-anchor-bottom">
+      <PositionedContent :left="(4810 * scale)" class="positioned-anchor-bottom">
         <Narration
           ref="familyHome1"
           class="narration-center family-home-one"
@@ -91,7 +128,7 @@ const { isVisible: isGunnedDownVisible } = useIntersectionObserver(gunnedDown)
           />
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(5400 * scale)" class="positioned-anchor-bottom">
+      <PositionedContent :left="(5320 * scale)" class="positioned-anchor-bottom">
         <Narration
           ref="familyHome2"
           class="narration-center family-home-two"
@@ -112,7 +149,7 @@ const { isVisible: isGunnedDownVisible } = useIntersectionObserver(gunnedDown)
           />
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(5865 * scale)" class="positioned-anchor-bottom">
+      <PositionedContent :left="(5800 * scale)" class="positioned-anchor-bottom">
         <Narration
           ref="familyHome3"
           class="narration-center family-home-three"
@@ -133,7 +170,7 @@ const { isVisible: isGunnedDownVisible } = useIntersectionObserver(gunnedDown)
           />
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(7325 * scale)">
+      <PositionedContent :left="(7150 * scale)">
         <Narration
           size="lg"
           :offsetBottom="`${150 * scale}px`"
@@ -143,7 +180,7 @@ const { isVisible: isGunnedDownVisible } = useIntersectionObserver(gunnedDown)
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(9070 * scale)">
+      <PositionedContent :left="(9215 * scale)">
         <Quote
           name="Israeli Intelligence Officer"
           role=""
@@ -163,8 +200,8 @@ const { isVisible: isGunnedDownVisible } = useIntersectionObserver(gunnedDown)
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(12529 * scale)" class="positioned-anchor-bottom">
-        <Narration :offsetBottom="`${64 * scale}px`">
+      <PositionedContent :left="(12550 * scale)" class="positioned-anchor-bottom">
+        <Narration :offsetBottom="`${220 * scale}px`">
           <CallAndResponse
             ref="gunnedDown"
             :isVisible="isGunnedDownVisible"
@@ -193,7 +230,7 @@ const { isVisible: isGunnedDownVisible } = useIntersectionObserver(gunnedDown)
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(18380 * scale)">
+      <PositionedContent :left="(17900 * scale)">
         <Quote
           name="Nissim Maturin"
           role="Deputy Speaker of Knesset (Likud)"
@@ -213,16 +250,20 @@ const { isVisible: isGunnedDownVisible } = useIntersectionObserver(gunnedDown)
         </Narration>
       </PositionedContent>
     </template>
-    <CityCivilianHarm :scale="scale" />
+
+    <CityCivilianHarm
+      :scale="scale"
+    />
+
     <template #front>
-      <PositionedContent :left="(16080 * scale)">
+      <PositionedContent :left="(16140 * scale)" class="positioned-anchor-bottom">
         <Narration
-          offsetBottom="0"
           class="civ-punishment-campaigns"
+          :offsetBottom="`${230 * scale}px`"
         >
           <CallAndResponse
-            :line="false"
-            :isVisible="false"
+            ref="orphans"
+            :isVisible="isOrphansVisible"
           >
             <div class="car-call">
               The Israeli military carried out "one of the most intense <strong>civilian punishment campaigns</strong> in history," according to military historian Robert Pape.
@@ -269,6 +310,11 @@ const { isVisible: isGunnedDownVisible } = useIntersectionObserver(gunnedDown)
 
 .gunned-down .car-line {
   margin-top: -7rem;
+  height: 20vh;
+}
+
+.chapter-civilian-harm #civharm-tree {
+  transform: translateX(calc(125vh + (-1 * 200vh * var(--tree-scroll-progress))));
 }
 
 @media ((--phones-landscape) and (not (--tablets-landscape))) {
@@ -276,9 +322,19 @@ const { isVisible: isGunnedDownVisible } = useIntersectionObserver(gunnedDown)
   .gunned-down .car-line {
     margin-top: -4rem;
   }
+}
 
-  .civ-punishment-campaigns {
-    margin-bottom: 2rem;
+@media (--tablets) {
+
+  .family-home-two {
+    margin-bottom: 5vh;
+  }
+}
+
+@media (--tablets-landscape) {
+
+  .family-home-two {
+    margin-bottom: 7vh;
   }
 }
 </style>
