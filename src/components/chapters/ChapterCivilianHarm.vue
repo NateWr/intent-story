@@ -52,7 +52,7 @@ const setTreeScrollProgress = () => {
 }
 
 onMounted(() => {
-  window.onscroll = setTreeScrollProgress;
+  window.addEventListener('scroll', setTreeScrollProgress)
 })
 </script>
 

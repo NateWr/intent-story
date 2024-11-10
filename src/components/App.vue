@@ -302,6 +302,22 @@ body {
   margin-bottom: 4rem;
 }
 
+.city-bg-far,
+.city-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.city-bg-far {
+  filter: brightness(0.65);
+  transform: translateX(calc(var(--city-bg-far-scroll-distance) * var(--city-progress)));
+}
+
+.city-bg {
+  transform: translateX(calc(var(--city-bg-scroll-distance) * var(--city-progress)));
+}
+
 .chapters-last-frame {
   position: absolute;
   left: 100%;
