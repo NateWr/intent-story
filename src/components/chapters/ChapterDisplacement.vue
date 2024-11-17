@@ -35,8 +35,6 @@ const cityBgScrollDistance = computed(() => (cityWidth.value - cityBgWidth.value
 
 const massArrest = ref<HTMLElement | null>(null)
 const { isVisible: isMassArrestVisible } = useIntersectionObserver(massArrest)
-const leaveHome = ref<HTMLElement | null>(null)
-const { isVisible: isLeaveHomeVisible } = useIntersectionObserver(leaveHome)
 const road = ref<HTMLElement | null>(null)
 const { isVisible: isRoadVisible } = useIntersectionObserver(road)
 const secondTentBombing = ref<HTMLElement | null>(null)
