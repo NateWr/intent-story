@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { ref, type PropType } from 'vue'
+import { computed, ref, type PropType } from 'vue'
 import CallAndResponse from '../CallAndResponse.vue'
 import Chapter from '../Chapter.vue'
 import ChapterCover from '../ChapterCover.vue'
-import CityLabel from '../CityLabel.vue'
 import Narration from '../Narration.vue'
 import PositionedContent from '../PositionedContent.vue'
 import Quote from '../Quote.vue'
 import CityDisplacement from './CityDisplacement.vue'
 import type { I18N } from '../../types/i18n'
 import { useIntersectionObserver } from '../../utilities/useIntersectionObserver'
+import { useIntersectionProgress } from '../../utilities/useIntersectionProgress'
 
-defineProps({
+const props = defineProps({
   i18n: {
     type: Object as PropType<I18N>,
     required: true,
@@ -22,16 +22,23 @@ defineProps({
   },
 })
 
+
+type CityIntroType = InstanceType<typeof CityDisplacement>
+const city = ref<CityIntroType | null>(null)
+const { progress: cityProgress } = useIntersectionProgress(city);
+
+const cityWidth = computed(() => 27746 * props.scale)
+const cityBgFarWidth = computed(() => 13873 * props.scale)
+const cityBgFarScrollDistance = computed(() => (cityWidth.value - cityBgFarWidth.value) / cityBgFarWidth.value)
+const cityBgWidth = computed(() => 20058 * props.scale)
+const cityBgScrollDistance = computed(() => (cityWidth.value - cityBgWidth.value) / cityBgWidth.value)
+
 const massArrest = ref<HTMLElement | null>(null)
 const { isVisible: isMassArrestVisible } = useIntersectionObserver(massArrest)
 const leaveHome = ref<HTMLElement | null>(null)
 const { isVisible: isLeaveHomeVisible } = useIntersectionObserver(leaveHome)
-const school = ref<HTMLElement | null>(null)
-const { isVisible: isSchoolVisible } = useIntersectionObserver(school)
 const road = ref<HTMLElement | null>(null)
 const { isVisible: isRoadVisible } = useIntersectionObserver(road)
-const tentMassacre = ref<HTMLElement | null>(null)
-const { isVisible: isTentMassacreVisible } = useIntersectionObserver(tentMassacre)
 const secondTentBombing = ref<HTMLElement | null>(null)
 const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(secondTentBombing)
 </script>
@@ -44,6 +51,9 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
       '--color-highlight': 'var(--orange-light)',
       '--color-title': 'var(--orange-light)',
       '--color-subtitle-highlight': 'var(--orange-light)',
+      '--city-progress': cityProgress,
+      '--city-bg-far-scroll-distance': `${(cityBgFarScrollDistance * 100).toFixed(4)}%`,
+      '--city-bg-scroll-distance': `${(cityBgScrollDistance * 100).toFixed(4)}%`,
     }"
   >
     <template #cover>
@@ -57,6 +67,63 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
       </ChapterCover>
     </template>
     <template #back>
+      <svg
+        class="city-bg-far"
+        :style="{
+          width: `${(cityBgFarWidth).toFixed()}px`,
+          height: 'auto',
+        }"
+        xmlns="http://www.w3.org/2000/svg"
+        width="13873"
+        height="582"
+        fill="none"
+        viewBox="0 0 13873 582"
+      >
+        <image id="city-bg-5" href="city-bg-5.png" width="186" height="287" x="2197.5" y="241" />
+        <image id="city-bg-4" href="city-bg-4.png" width="260" height="267" x="1920.5" y="261" />
+        <image id="city-bg-1" href="city-bg-1.png" width="327" height="339" x="1799.5" y="195" />
+        <image id="city-bg-3" href="city-bg-3.png" width="297" height="381" x="2102.5" y="148" />
+        <image id="city-bg-3" href="city-bg-3.png" width="302" height="387" x="4289" y="161" />
+        <image id="city-bg-1" href="city-bg-1.png" width="397" height="411" x="4440" y="147" />
+        <image id="city-bg-2" href="city-bg-2.png" width="471" height="550" x="4658" />
+      </svg>
+      <svg
+        class="city-bg"
+        :style="{
+          width: `${(cityBgWidth).toFixed()}px`,
+          height: 'auto',
+        }"
+        xmlns="http://www.w3.org/2000/svg"
+        width="20058"
+        height="486"
+        fill="none"
+        viewBox="0 0 20058 486"
+      >
+        <image id="city-bg-9" href="city-bg-9.png" width="262" height="263" x="6146" y="162" />
+        <image id="city-bg-8" href="city-bg-8.png" width="172" height="304"  transform="matrix(-1 0 0 1 6699 103)"/>
+        <image id="city-bg-7" href="city-bg-7.png" width="445" height="307" x="5131" y="136" />
+        <image id="city-bg-6" href="city-bg-6.png" width="331" height="295" x="6716" y="146" />
+        <image id="city-bg-10" href="city-bg-10.png" width="273" height="340" x="17877" y="60" />
+        <image id="city-bg-8" href="city-bg-8.png" width="198" height="350" x="17122" y="64" />
+        <image id="city-bg-7" href="city-bg-7.png" width="428" height="296" x="14539" y="130" />
+        <image id="city-bg-6" href="city-bg-6.png" width="453" height="404" x="15138" y="34" />
+        <image id="city-bg-6" href="city-bg-6.png" width="480" height="428" x="1155" y="21" />
+        <image id="city-bg-8" href="city-bg-8.png" width="192" height="339"  transform="matrix(-1 0 0 1 1997 84)"/>
+        <image id="city-bg-10" href="city-bg-10.png" width="255" height="316" x="2807.4" y="106" />
+        <image id="city-bg-10" href="city-bg-10.png" width="255" height="316" x="661" y="106" />
+        <image id="city-bg-6" href="city-bg-6.png" width="453" height="404" x="10974" />
+        <image id="city-bg-8" href="city-bg-8.png" width="160" height="275"  transform="matrix(-1 0 0 1 3708 151)"/>
+        <image id="city-bg-8" href="city-bg-8.png" width="160" height="275"  transform="matrix(-1 0 0 1 2467 163)"/>
+        <image id="city-bg-10" href="city-bg-10.png" width="240" height="299" x="13834" y="139" />
+        <image id="city-bg-7" href="city-bg-7.png" width="415" height="278" x="3898" y="146" />
+        <image id="city-bg-6" href="city-bg-6.png" width="358" height="310" x="4784" y="114" />
+        <image id="city-bg-8" href="city-bg-8.png" width="172" height="304"  transform="matrix(-1 0 0 1 11031 68)"/>
+        <image id="city-bg-6" href="city-bg-6.png" width="331" height="295" x="11509" y="88" />
+        <image id="city-bg-9" href="city-bg-9.png" width="262" height="263" x="16414" y="163" />
+        <image id="city-bg-7" href="city-bg-7.png" width="461" height="318" x="11944" y="97" />
+        <image id="city-bg-7" href="city-bg-7.png" width="445" height="307" x="12930" y="102" />
+        <image id="city-bg-9" href="city-bg-9.png" width="262" height="263" x="12722" y="152" />
+      </svg>
       <PositionedContent :left="(1780 * scale)">
         <Quote
           name="Benny Gantz"
@@ -76,10 +143,25 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
           </p>
         </Narration>
       </PositionedContent>
+      <PositionedContent :left="(5488 * scale)" class="positioned-anchor-bottom">
+        <Narration
+          class="narration-center"
+          offsetBottom="0"
+        >
+          <p>
+            Those who were <strong>unable or unwilling to leave</strong> north Gaza, or who tried to return to their homes, were labeled “accomplices in a terrorist organization” by the Israeli military and subjected to denial of aid, execution-style killings, and mass arbitrary arrests.
+          </p>
+          <div
+            ref="massArrest"
+            class="narration-center-line"
+            :class="isMassArrestVisible && 'narration-center-line-visible'"
+            aria-hidden="true"
+          />
+        </Narration>
+      </PositionedContent>
       <PositionedContent :left="(9270 * scale)">
         <Narration :offsetBottom="`${100 * scale}px`">
           <CallAndResponse
-            ref="school"
             :line="false"
             :isVisible="false"
           >
@@ -142,11 +224,11 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(17950 * scale)" class="positioned-anchor-bottom">
-        <Narration :offsetBottom="`${128 * scale}px`">
+      <PositionedContent :left="(17950 * scale)">
+        <Narration :offsetBottom="`${100 * scale}px`">
           <CallAndResponse
-            ref="tentMassacre"
-            :isVisible="isTentMassacreVisible"
+            :isVisible="false"
+            :line="false"
             class="tent-massacre"
           >
             <div class="car-call">
@@ -232,49 +314,22 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
       </PositionedContent>
     </template>
 
-    <CityDisplacement :scale="scale" />
+    <CityDisplacement
+      ref="city"
+      :width="cityWidth"
+    />
 
     <template #front>
-      <PositionedContent :left="(5485 * scale)" class="positioned-anchor-bottom">
+      <PositionedContent :left="(7355 * scale)">
         <Narration
           class="narration-center"
-          offsetBottom="0"
-        >
-          <p>
-            Those who were <strong>unable or unwilling to leave</strong> north Gaza, or who tried to return to their homes, were labeled “accomplices in a terrorist organization” by the Israeli military and subjected to denial of aid, execution-style killings, and mass arbitrary arrests.
-          </p>
-          <div
-            ref="massArrest"
-            class="narration-center-line"
-            :class="isMassArrestVisible && 'narration-center-line-visible'"
-            aria-hidden="true"
-          />
-        </Narration>
-      </PositionedContent>
-      <PositionedContent :left="(7355 * scale)" class="positioned-anchor-bottom">
-        <Narration
-          class="narration-center"
+          size="lg"
           offsetBottom="0"
         >
           <p>
             In October 2023, Mohammad Al-Absi fled with his family from their home in Jabalia refugee camp.
           </p>
-          <div
-            ref="leaveHome"
-            class="narration-center-line"
-            :class="isLeaveHomeVisible && 'narration-center-line-visible'"
-            aria-hidden="true"
-          />
         </Narration>
-      </PositionedContent>
-      <PositionedContent :left="(9300 * scale)">
-        <CityLabel
-          :lineHeight="`${150 * scale}px`"
-          :bottom="`${120 * scale}px`"
-          :isVisible="isSchoolVisible"
-        >
-          School
-        </CityLabel>
       </PositionedContent>
     </template>
   </Chapter>
