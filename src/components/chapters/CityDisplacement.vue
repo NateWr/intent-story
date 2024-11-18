@@ -128,15 +128,15 @@ defineProps({
     <image id="city-fg-9" href="city-fg-9.png" width="811" height="150" x="11256" y="505" />
     <image id="city-fg-15" href="city-fg-15.png" width="435" height="212" x="12289" y="469" />
     <image id="city-fg-15" href="city-fg-15.png" width="327" height="159" x="14553" y="522" />
-    <image id="displacement-soldiers" href="displacement-soldiers-watching.png" width="414" height="555" x="10701" y="321" />
-    <image id="displacement-family" href="displacement-family.png" width="1326" height="333" x="6816" y="361" />
-    <image id="displacement-soldier" href="displacement-soldier.png" width="302" height="288" x="12256" y="373" />
-    <image id="city-dark-2" href="city-dark-2.png" width="446" height="446" x="3725" y="233" />
-    <image id="city-dark-1" href="city-dark-1.png" width="575" height="541" x="1058" y="146" />
-    <image id="city-dark-4" href="city-dark-4.png" width="816" height="566" x="5926" y="183" />
-    <image id="city-dark-3" href="city-dark-3.png" width="535" height="477" x="16733" y="174" />
-    <image id="city-dark-3" href="city-dark-3.png" width="806" height="719" x="24174" />
-    <image id="city-dark-5" href="city-dark-5.png" width="369" height="653" x="20436" y="49" />
+    <image id="displacement-family" href="displacement-family.png" width="1326" height="333" x="6416" y="361" />
+    <image id="displacement-soldiers-watching" href="displacement-soldiers-watching.png" width="414" height="555" x="10000" y="321" />
+    <image id="displacement-soldier" href="displacement-soldier.png" width="302" height="288" x="12350" y="373" />
+    <image id="displacement-city-dark-a" class="city-dark" href="city-dark-2.png" width="446" height="446" x="3725" y="233" />
+    <image id="displacement-city-dark-b" class="city-dark" href="city-dark-1.png" width="575" height="541" x="1058" y="146" />
+    <image id="displacement-city-dark-c" class="city-dark" href="city-dark-4.png" width="816" height="566" x="5926" y="183" />
+    <image id="displacement-city-dark-d" class="city-dark" href="city-dark-3.png" width="535" height="477" x="16733" y="174" />
+    <image id="displacement-city-dark-e" class="city-dark" href="city-dark-3.png" width="806" height="719" x="24174" />
+    <image id="displacement-city-dark-f" class="city-dark" href="city-dark-5.png" width="369" height="653" x="20836" y="49" />
     <image id="displacement-brothers" href="displacement-brothers.png" width="975" height="410" x="21192" y="235" />
   </svg>
 </template>

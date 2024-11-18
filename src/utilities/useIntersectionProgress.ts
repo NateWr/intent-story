@@ -8,7 +8,7 @@ export const useIntersectionProgress = (el: Ref<any | null>) => {
 
   const getCoords = () => {
     return typeof el?.value?.getBoundingClientRect !== 'undefined'
-      ? el.value.getBoundingClientReat()
+      ? el.value.getBoundingClientRect()
       : el?.value?.$el?.getBoundingClientRect()
   }
 

@@ -151,6 +151,6 @@ defineProps({
     <image id="city-fg-30" href="city-fg-30.png" x="17804.4" y="914" width="238.651" height="205.703" transform="rotate(3.18622 17804.4 914)" />
     <image id="city-fg-2" href="city-fg-2.png" x="18413" y="591" width="418" height="531" />
     <image id="city-fg-1" href="city-fg-1.png" x="19826" y="1016" width="466" height="147" />
-    <image id="civharm-tree" href="civharm-tree.png" x="11314" width="1551" height="1139" />
+    <image id="civharm-tree" href="civharm-tree.png" x="10200" width="1551" height="1139" />
   </svg>
 </template>

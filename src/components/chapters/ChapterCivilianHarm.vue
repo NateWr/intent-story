@@ -9,6 +9,7 @@ import Quote from '../Quote.vue'
 import CityCivilianHarm from './CityCivilianHarm.vue'
 import type { I18N } from '../../types/i18n'
 import { useIntersectionObserver } from '../../utilities/useIntersectionObserver'
+import { useIntersectionProgress } from '../../utilities/useIntersectionProgress'
 
 defineProps({
   i18n: {
@@ -33,27 +34,7 @@ const orphans = ref<HTMLElement | null>(null)
 const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
 
 const tree = ref<HTMLElement | null>(null)
-const treeScrollProgress = ref<number>(0)
-
-const setTreeScrollProgress = () => {
-  let coords = tree.value?.getBoundingClientRect()
-  if (!coords) {
-    return
-  }
-
-  let scrollProgress = (window.innerWidth - coords.left)
-  if (scrollProgress <= 0) {
-    treeScrollProgress.value = 0
-    return
-  }
-
-  let scrollEnd = coords.width + window.innerWidth
-  treeScrollProgress.value = Math.min(1, scrollProgress / scrollEnd)
-}
-
-onMounted(() => {
-  window.addEventListener('scroll', setTreeScrollProgress)
-})
+const { progress: treeScrollProgress } = useIntersectionProgress(tree)
 </script>
 
 <template>
@@ -314,7 +295,8 @@ onMounted(() => {
 }
 
 .chapter-civilian-harm #civharm-tree {
-  transform: translateX(calc(125vh + (-1 * 200vh * var(--tree-scroll-progress))));
+  --width: calc(3000px * var(--scale));
+  transform: translateX(calc(var(--width) - calc(calc(var(--width) * var(--scale)) * var(--tree-scroll-progress))));
 }
 
 @media ((--phones-landscape) and (not (--tablets-landscape))) {

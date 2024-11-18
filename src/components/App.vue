@@ -162,6 +162,7 @@ onMounted(() => {
         class="chapters"
         ref="chapterWrapper"
         :style="{
+          '--scale': scale,
           transform: `translateX(-${progress}%)`,
         }"
       >

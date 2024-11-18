@@ -39,6 +39,27 @@ const road = ref<HTMLElement | null>(null)
 const { isVisible: isRoadVisible } = useIntersectionObserver(road)
 const secondTentBombing = ref<HTMLElement | null>(null)
 const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(secondTentBombing)
+
+const family = ref<HTMLElement | null>(null)
+const { progress: familyProgress } = useIntersectionProgress(family)
+const soldiersWatching = ref<HTMLElement | null>(null)
+const { progress: soldiersWatchingProgress } = useIntersectionProgress(soldiersWatching)
+const soldier = ref<HTMLElement | null>(null)
+const { progress: soldierProgress } = useIntersectionProgress(soldier)
+const brothers = ref<HTMLElement | null>(null)
+const { progress: brothersProgress } = useIntersectionProgress(brothers)
+const cityDarkA = ref<HTMLElement | null>(null)
+const { progress: cityDarkAProgress } = useIntersectionProgress(cityDarkA)
+const cityDarkB = ref<HTMLElement | null>(null)
+const { progress: cityDarkBProgress } = useIntersectionProgress(cityDarkB)
+const cityDarkC = ref<HTMLElement | null>(null)
+const { progress: cityDarkCProgress } = useIntersectionProgress(cityDarkC)
+const cityDarkD = ref<HTMLElement | null>(null)
+const { progress: cityDarkDProgress } = useIntersectionProgress(cityDarkD)
+const cityDarkE = ref<HTMLElement | null>(null)
+const { progress: cityDarkEProgress } = useIntersectionProgress(cityDarkE)
+const cityDarkF = ref<HTMLElement | null>(null)
+const { progress: cityDarkFProgress } = useIntersectionProgress(cityDarkF)
 </script>
 
 <template>
@@ -52,6 +73,16 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
       '--city-progress': cityProgress,
       '--city-bg-far-scroll-distance': `${(cityBgFarScrollDistance * 100).toFixed(4)}%`,
       '--city-bg-scroll-distance': `${(cityBgScrollDistance * 100).toFixed(4)}%`,
+      '--family-progress': familyProgress,
+      '--soldiers-watching-progress': soldiersWatchingProgress,
+      '--soldier-progress': soldierProgress,
+      '--brothers-progress': brothersProgress,
+      '--city-dark-a-progress': cityDarkAProgress,
+      '--city-dark-b-progress': cityDarkBProgress,
+      '--city-dark-c-progress': cityDarkCProgress,
+      '--city-dark-d-progress': cityDarkDProgress,
+      '--city-dark-e-progress': cityDarkEProgress,
+      '--city-dark-f-progress': cityDarkFProgress,
     }"
   >
     <template #cover>
@@ -65,6 +96,106 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
       </ChapterCover>
     </template>
     <template #back>
+      <div
+        ref="family"
+        :style="{
+          position: 'absolute',
+          left: `${(scale * 6416).toFixed(0)}px`,
+          width: `${(scale * 1326).toFixed(0)}px`,
+          bottom: `50%`,
+          height: '20px',
+        }"
+      />
+      <div
+        ref="soldiersWatching"
+        :style="{
+          position: 'absolute',
+          left: `${(scale * 10000).toFixed(0)}px`,
+          width: `${(scale * 600).toFixed(0)}px`,
+          bottom: `50%`,
+          height: '20px',
+        }"
+      />
+      <div
+        ref="soldier"
+        :style="{
+          position: 'absolute',
+          left: `${(scale * 12350).toFixed(0)}px`,
+          width: `${(scale * 600).toFixed(0)}px`,
+          bottom: `50%`,
+          height: '20px',
+        }"
+      />
+      <div
+        ref="brothers"
+        :style="{
+          position: 'absolute',
+          left: `${(scale * 21192).toFixed(0)}px`,
+          width: `${(scale * 975).toFixed(0)}px`,
+          bottom: `50%`,
+          height: '20px',
+        }"
+      />
+      <div
+        ref="cityDarkA"
+        :style="{
+          position: 'absolute',
+          left: `${(scale * 3725).toFixed(0)}px`,
+          width: `${(scale * 446).toFixed(0)}px`,
+          bottom: `50%`,
+          height: '20px',
+        }"
+      />
+      <div
+        ref="cityDarkB"
+        :style="{
+          position: 'absolute',
+          left: `${(scale * 1058).toFixed(0)}px`,
+          width: `${(scale * 575).toFixed(0)}px`,
+          bottom: `50%`,
+          height: '20px',
+        }"
+      />
+      <div
+        ref="cityDarkC"
+        :style="{
+          position: 'absolute',
+          left: `${(scale * 5926).toFixed(0)}px`,
+          width: `${(scale * 816).toFixed(0)}px`,
+          bottom: `50%`,
+          height: '20px',
+        }"
+      />
+      <div
+        ref="cityDarkD"
+        :style="{
+          position: 'absolute',
+          left: `${(scale * 16733).toFixed(0)}px`,
+          width: `${(scale * 535).toFixed(0)}px`,
+          bottom: `50%`,
+          height: '20px',
+        }"
+      />
+      <div
+        ref="cityDarkE"
+        :style="{
+          position: 'absolute',
+          left: `${(scale * 24174).toFixed(0)}px`,
+          width: `${(scale * 806).toFixed(0)}px`,
+          bottom: `50%`,
+          height: '20px',
+        }"
+      />
+      <div
+        ref="cityDarkF"
+        :style="{
+          position: 'absolute',
+          left: `${(scale * 20836).toFixed(0)}px`,
+          width: `${(scale * 600).toFixed(0)}px`,
+          bottom: `50%`,
+          height: '20px',
+        }"
+      />
       <svg
         class="city-bg-far"
         :style="{
@@ -354,4 +485,66 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
 .second-tent-bombing .car-line {
   margin-top: -4rem;
 }
+
+.chapter-displacement #displacement-family {
+  --width: calc(750px * var(--scale));
+  transform: translateX(calc(var(--width) - calc(var(--width) * var(--family-progress))));
+}
+
+.chapter-displacement #displacement-soldiers-watching {
+  --width: calc(1500px * var(--scale));
+  transform: translateX(calc(var(--width) - calc(var(--width) * var(--soldiers-watching-progress))));
+}
+
+.chapter-displacement #displacement-soldier {
+  --width: calc(2000px * var(--scale));
+  transform: translateX(
+    calc(
+      calc(-0.5 * var(--width))
+      + calc(
+        var(--width)
+        - calc(
+          var(--width) * var(--soldier-progress)
+        )
+      )
+    )
+  );
+}
+
+.chapter-displacement #displacement-brothers {
+  --width: calc(2000px * var(--scale));
+  transform: translateX(
+    calc(
+      calc(-0.5 * var(--width))
+      + calc(
+        var(--width)
+        - calc(
+          var(--width) * var(--brothers-progress)
+        )
+      )
+    )
+  );
+}
+
+.chapter-displacement .city-dark {
+  --width: calc(1000px * var(--scale));
+  transform: translateX(
+    calc(
+      calc(-0.5 * var(--width))
+      + calc(
+        var(--width)
+        - calc(
+          var(--width) * var(--city-dark-progress)
+        )
+      )
+    )
+  );
+}
+
+#displacement-city-dark-a { --city-dark-progress: var(--city-dark-a-progress); }
+#displacement-city-dark-b { --city-dark-progress: var(--city-dark-b-progress); }
+#displacement-city-dark-c { --city-dark-progress: var(--city-dark-c-progress); }
+#displacement-city-dark-d { --city-dark-progress: var(--city-dark-d-progress); }
+#displacement-city-dark-e { --city-dark-progress: var(--city-dark-e-progress); }
+#displacement-city-dark-f { --city-dark-progress: var(--city-dark-f-progress); }
 </style>

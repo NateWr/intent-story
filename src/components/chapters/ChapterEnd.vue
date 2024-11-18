@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { type PropType } from 'vue'
+import CallAndResponse from '../CallAndResponse.vue'
 import Chapter from '../Chapter.vue'
 import Narration from '../Narration.vue'
 import PositionedContent from '../PositionedContent.vue'
