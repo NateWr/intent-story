@@ -45,8 +45,6 @@ defineProps({
     <image id="city-md-3" href="city-md-3.png" width="204" height="296" x="4977" y="312" />
     <image id="city-fg-26" href="city-fg-26.png" width="333" height="230" x="4977" y="386" />
     <image id="city-fg-26" href="city-fg-26.png" width="333" height="230" x="2435" y="384" />
-    <image id="city-fg-33" href="city-fg-33.png" width="118" height="70" x="9322" y="505" />
-    <image id="city-fg-32" href="city-fg-32.png" width="125" height="68" x="9239" y="498" />
     <image id="displacement-school" href="displacement-school.png" width="739.964" height="240.831" x="9084.32" y="337.172"  transform="rotate(.791 9084.32 337.172)"/>
     <image id="city-fg-35" href="city-fg-35.png" width="493" height="193" x="10203" y="379" />
     <image id="city-fg-19" href="city-fg-19.png" width="83" height="355" x="10859" y="245" />
@@ -67,7 +65,7 @@ defineProps({
     <image id="city-fg-30" href="city-fg-30.png" width="116.692" height="100.314" x="7251.96" y="460"  transform="rotate(3.407 7251.96 460)"/>
     <image id="city-fg-36" href="city-fg-36.png" width="357" height="186" x="8115" y="406" />
     <image id="city-fg-30" href="city-fg-30.png" width="167.432" height="143.933" x="7909.06" y="428.527"  transform="rotate(3.407 7909.06 428.527)"/>
-    <image id="city-fg-32" href="city-fg-32.png" width="165" height="91" x="7542" y="460" />
+    <image id="city-fg-32" href="city-fg-32.png" width="165" height="91" x="7542" y="480" />
     <image id="city-fg-32" href="city-fg-32.png" width="249" height="137" x="6189" y="440" />
     <image id="city-fg-18" href="city-fg-18.png" width="350" height="266" x="6360" y="300" />
     <image id="city-fg-1" href="city-fg-1.png" width="305" height="95" x="11914" y="442" />
@@ -81,7 +79,7 @@ defineProps({
     <image id="city-fg-33" href="city-fg-33.png" width="185" height="110" x="8957" y="479" />
     <image id="city-fg-31" href="city-fg-31.png" width="291" height="164" x="6022" y="452" />
     <image id="city-fg-37" href="city-fg-37.png" width="284" height="234" x="17033" y="384" />
-    <image id="city-fg-32" href="city-fg-32.png" width="165" height="91" x="21141" y="464" />
+    <image id="city-fg-32" href="city-fg-32.png" width="165" height="91" x="21141" y="485" />
     <image id="city-fg-8" href="city-fg-8.png" width="441" height="187" x="14161" y="494" />
     <image id="city-fg-8" href="city-fg-8.png" width="141" height="58"  transform="matrix(-1 0 0 1 14723 446)"/>
     <image id="city-fg-31" href="city-fg-31.png" width="187" height="105" x="8577" y="497" />

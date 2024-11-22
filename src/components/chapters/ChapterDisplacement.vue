@@ -233,7 +233,7 @@ const { progress: cityDarkFProgress } = useIntersectionProgress(cityDarkF)
         <image id="city-bg-7" href="city-bg-7.png" width="445" height="307" x="5131" y="136" />
         <image id="city-bg-6" href="city-bg-6.png" width="331" height="295" x="6716" y="146" />
         <image id="city-bg-10" href="city-bg-10.png" width="273" height="340" x="17877" y="60" />
-        <image id="city-bg-8" href="city-bg-8.png" width="198" height="350" x="17122" y="64" />
+        <image id="city-bg-8" href="city-bg-8.png" width="198" height="350" x="17122" y="50" />
         <image id="city-bg-7" href="city-bg-7.png" width="428" height="296" x="14539" y="130" />
         <image id="city-bg-6" href="city-bg-6.png" width="453" height="404" x="15138" y="34" />
         <image id="city-bg-6" href="city-bg-6.png" width="480" height="428" x="1155" y="21" />
