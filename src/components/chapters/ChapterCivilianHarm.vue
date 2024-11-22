@@ -9,7 +9,9 @@ import Quote from '../Quote.vue'
 import CityCivilianHarm from './CityCivilianHarm.vue'
 import type { I18N } from '../../types/i18n'
 import { useIntersectionObserver } from '../../utilities/useIntersectionObserver'
-import { useIntersectionProgress } from '../../utilities/useIntersectionProgress'
+import CityCivilianHarmBg from './CityCivilianHarmBg.vue'
+import CityCivilianHarmBgFar from './CityCivilianHarmBgFar.vue'
+import CityCivilianHarmFront from './CityCivilianHarmFront.vue'
 
 const props = defineProps({
   i18n: {
@@ -22,7 +24,15 @@ const props = defineProps({
   },
 })
 
-const cityWidth = computed(() => 20962 * props.scale)
+const FG_SPEED = 2;
+
+const cityWidth = computed(() => 21063 * props.scale)
+const cityBgFarWidth = computed(() => 9322 * props.scale)
+const cityBgFarScrollDistance = computed(() => (cityWidth.value - cityBgFarWidth.value) / cityBgFarWidth.value)
+const cityBgWidth = computed(() => 14717 * props.scale)
+const cityBgScrollDistance = computed(() => (cityWidth.value - cityBgWidth.value) / cityBgWidth.value)
+const cityFgWidth = computed(() => cityWidth.value * FG_SPEED)
+const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value) / cityFgWidth.value)
 
 const familyHome1 = ref<HTMLElement | null>(null)
 const { isVisible: isFamilyHome1Visible } = useIntersectionObserver(familyHome1)
@@ -34,9 +44,6 @@ const gunnedDown = ref<HTMLElement | null>(null)
 const { isVisible: isGunnedDownVisible } = useIntersectionObserver(gunnedDown)
 const orphans = ref<HTMLElement | null>(null)
 const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
-
-const tree = ref<HTMLElement | null>(null)
-const { progress: treeScrollProgress } = useIntersectionProgress(tree)
 </script>
 
 <template>
@@ -48,7 +55,9 @@ const { progress: treeScrollProgress } = useIntersectionProgress(tree)
       '--color-highlight': 'var(--watermelon)',
       '--color-title': 'var(--watermelon)',
       '--color-subtitle-highlight': 'var(--watermelon)',
-      '--tree-scroll-progress': treeScrollProgress,
+      '--city-bg-far-scroll-distance': `${(cityBgFarScrollDistance * 100).toFixed(0)}%`,
+      '--city-bg-scroll-distance': `${(cityBgScrollDistance * 100).toFixed(0)}%`,
+      '--city-fg-scroll-distance': `${(cityFgScrollDistance * -100).toFixed(0)}%`,
     }"
   >
     <template #cover>
@@ -61,6 +70,15 @@ const { progress: treeScrollProgress } = useIntersectionProgress(tree)
         </template>
       </ChapterCover>
     </template>
+
+    <template #bg-far>
+      <CityCivilianHarmBgFar :width="cityBgFarWidth" />
+    </template>
+
+    <template #bg>
+      <CityCivilianHarmBg :width="cityBgWidth" />
+    </template>
+
     <template #back>
       <div
         ref="tree"
@@ -236,7 +254,7 @@ const { progress: treeScrollProgress } = useIntersectionProgress(tree)
     </template>
 
     <CityCivilianHarm
-      :scale="scale"
+      :width="cityWidth"
     />
 
     <template #front>
@@ -263,6 +281,13 @@ const { progress: treeScrollProgress } = useIntersectionProgress(tree)
         </Narration>
       </PositionedContent>
     </template>
+
+  <template #city-fg>
+    <CityCivilianHarmFront
+      :width="cityWidth"
+      :speed="FG_SPEED"
+    />
+  </template>
   </Chapter>
 </template>
 
