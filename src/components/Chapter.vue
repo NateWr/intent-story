@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useIntersectionObserver } from '../utilities/useIntersectionObserver'
+import { useIntersectionProgress } from '../utilities/useIntersectionProgress';
 
 defineProps({
   cityWidth: Number,
@@ -8,12 +9,18 @@ defineProps({
 
 const root = ref<HTMLElement | null>(null)
 const { isVisible } = useIntersectionObserver(root, {rootMargin: '500px 500px 500px 500px'})
+
+const city = ref<HTMLElement | null>(null)
+const { progress } = useIntersectionProgress(city)
 </script>
 
 <template>
   <div
-    class="chapter"
     ref="root"
+    class="chapter"
+    :style="{
+      '--city-progress': progress,
+    }"
   >
     <slot name="cover" />
     <div class="chapter-content">
@@ -24,7 +31,11 @@ const { isVisible } = useIntersectionObserver(root, {rootMargin: '500px 500px 50
         <slot name="bg" />
       </div>
       <slot name="back" />
-      <div class="chapter-city" :style="{width: `${cityWidth}px`}">
+      <div
+        ref="city"
+        class="chapter-city"
+        :style="{width: `${cityWidth}px`}"
+      >
         <div v-if="isVisible">
           <slot />
         </div>

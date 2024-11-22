@@ -9,7 +9,6 @@ import Quote from '../Quote.vue'
 import CityDisplacement from './CityDisplacement.vue'
 import type { I18N } from '../../types/i18n'
 import { useIntersectionObserver } from '../../utilities/useIntersectionObserver'
-import { useIntersectionProgress } from '../../utilities/useIntersectionProgress'
 import CityDisplacementFront from './CityDisplacementFront.vue'
 import CityDisplacementBgFar from './CityDisplacementBgFar.vue'
 import CityDisplacementBg from './CityDisplacementBg.vue'
@@ -26,10 +25,6 @@ const props = defineProps({
 })
 
 const FG_SPEED = 2
-
-type CityIntroType = InstanceType<typeof CityDisplacement>
-const city = ref<CityIntroType | null>(null)
-const { progress: cityProgress } = useIntersectionProgress(city);
 
 const cityWidth = computed(() => 27746 * props.scale)
 const cityBgFarWidth = computed(() => 13873 * props.scale)
@@ -52,7 +47,6 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
     class="chapter-displacement"
     :cityWidth="cityWidth"
     :style="{
-      '--city-progress': cityProgress,
       '--city-bg-far-scroll-distance': `${(cityBgFarScrollDistance * 100).toFixed(0)}%`,
       '--city-bg-scroll-distance': `${(cityBgScrollDistance * 100).toFixed(0)}%`,
       '--city-fg-scroll-distance': `${(cityFgScrollDistance * -100).toFixed(0)}%`,
@@ -269,7 +263,6 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
     </template>
 
     <CityDisplacement
-      ref="city"
       :width="cityWidth"
     />
 
