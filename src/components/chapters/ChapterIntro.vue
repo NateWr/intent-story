@@ -49,10 +49,6 @@ onMounted(() => {
     class="chapter-intro"
     :cityWidth="cityWidth"
     :style="{
-      '--color-narration': 'var(--purple)',
-      '--color-highlight': 'var(--purple)',
-      '--color-title': 'var(--red)',
-      '--color-subtitle-highlight': 'var(--green-light)',
       '--city-bg-far-scroll-distance': `${(cityBgFarScrollDistance * 100).toFixed(0)}%`,
       '--city-bg-scroll-distance': `${(cityBgScrollDistance * 100).toFixed(0)}%`,
     }"
@@ -223,6 +219,10 @@ onMounted(() => {
 
 <style>
 .chapter-intro {
+  --color-narration: var(--purple);
+  --color-highlight: var(--purple);
+  --color-title: var(--red);
+  --color-subtitle-highlight: var(--green-light);
   background: var(--intro-gradient);
 }
 
