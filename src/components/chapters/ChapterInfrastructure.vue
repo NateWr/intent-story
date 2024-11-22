@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, type PropType } from 'vue'
+import { computed, ref, type PropType } from 'vue'
 import Chapter from '../Chapter.vue'
 import ChapterCover from '../ChapterCover.vue'
 import Narration from '../Narration.vue'
@@ -10,7 +10,7 @@ import CityInfrastructure from './CityInfrastructure.vue'
 import type { I18N } from '../../types/i18n'
 import { useIntersectionObserver } from '../../utilities/useIntersectionObserver'
 
-defineProps({
+const props = defineProps({
   i18n: {
     type: Object as PropType<I18N>,
     required: true,
@@ -20,6 +20,8 @@ defineProps({
     required: true,
   },
 })
+
+const cityWidth = computed(() => 30387 * props.scale)
 
 const allSectors = ref<HTMLElement | null>(null)
 const { isVisible: isAllSectorsVisible } = useIntersectionObserver(allSectors)
@@ -36,6 +38,7 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
 <template>
   <Chapter
     class="chapter-infrastructure"
+    :cityWidth="cityWidth"
     :style="{
       '--color-narration': 'var(--blue)',
       '--color-highlight': 'var(--blue)',

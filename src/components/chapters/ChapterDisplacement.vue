@@ -50,6 +50,7 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
 <template>
   <Chapter
     class="chapter-displacement"
+    :cityWidth="cityWidth"
     :style="{
       '--city-progress': cityProgress,
       '--city-bg-far-scroll-distance': `${(cityBgFarScrollDistance * 100).toFixed(0)}%`,

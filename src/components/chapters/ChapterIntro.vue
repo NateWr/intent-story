@@ -29,9 +29,8 @@ const props = defineProps({
 const scrollPrompt = ref<boolean>(false)
 
 type CityIntroType = InstanceType<typeof CityIntro>
-const cityIntro = ref<CityIntroType | null>(null)
-const { progress: cityProgress } = useIntersectionProgress(cityIntro);
-
+const city = ref<CityIntroType | null>(null)
+const { progress: cityProgress } = useIntersectionProgress(city);
 
 const cityWidth = computed(() => 13427 * props.scale)
 const cityBgFarWidth = computed(() => 7007 * props.scale)
@@ -51,6 +50,7 @@ onMounted(() => {
 <template>
   <Chapter
     class="chapter-intro"
+    :cityWidth="cityWidth"
     :style="{
       '--color-narration': 'var(--purple)',
       '--color-highlight': 'var(--purple)',
@@ -274,7 +274,7 @@ onMounted(() => {
     </template>
 
     <CityIntro
-      ref="cityIntro"
+      ref="city"
       :width="cityWidth"
     />
   </Chapter>

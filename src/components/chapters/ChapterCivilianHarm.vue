@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, type PropType } from 'vue'
+import { computed, ref, type PropType } from 'vue'
 import CallAndResponse from '../CallAndResponse.vue'
 import Chapter from '../Chapter.vue'
 import ChapterCover from '../ChapterCover.vue'
@@ -11,7 +11,7 @@ import type { I18N } from '../../types/i18n'
 import { useIntersectionObserver } from '../../utilities/useIntersectionObserver'
 import { useIntersectionProgress } from '../../utilities/useIntersectionProgress'
 
-defineProps({
+const props = defineProps({
   i18n: {
     type: Object as PropType<I18N>,
     required: true,
@@ -21,6 +21,8 @@ defineProps({
     required: true,
   },
 })
+
+const cityWidth = computed(() => 20962 * props.scale)
 
 const familyHome1 = ref<HTMLElement | null>(null)
 const { isVisible: isFamilyHome1Visible } = useIntersectionObserver(familyHome1)
@@ -40,6 +42,7 @@ const { progress: treeScrollProgress } = useIntersectionProgress(tree)
 <template>
   <Chapter
     class="chapter-civilian-harm"
+    :cityWidth="cityWidth"
     :style="{
       '--color-narration': 'var(--watermelon)',
       '--color-highlight': 'var(--watermelon)',

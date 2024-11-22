@@ -1,19 +1,36 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useIntersectionObserver } from '../utilities/useIntersectionObserver'
+
+defineProps({
+  cityWidth: Number,
+})
+
+const root = ref<HTMLElement | null>(null)
+const { isVisible } = useIntersectionObserver(root, {rootMargin: '500px 500px 500px 500px'})
+</script>
+
 <template>
-  <div class="chapter">
+  <div
+    class="chapter"
+    ref="root"
+  >
     <slot name="cover" />
     <div class="chapter-content">
-      <div class="city-bg-far">
+      <div class="city-bg-far" v-if="isVisible">
         <slot name="bg-far" />
       </div>
-      <div class="city-bg">
+      <div class="city-bg" v-if="isVisible">
         <slot name="bg" />
       </div>
       <slot name="back" />
-      <div class="chapter-city">
-        <slot />
+      <div class="chapter-city" :style="{width: `${cityWidth}px`}">
+        <div v-if="isVisible">
+          <slot />
+        </div>
       </div>
       <slot name="front" />
-      <div class="city-fg">
+      <div class="city-fg" v-if="isVisible">
         <slot name="city-fg" />
       </div>
     </div>

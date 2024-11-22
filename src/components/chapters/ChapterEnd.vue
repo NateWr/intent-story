@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type PropType } from 'vue'
+import { computed, type PropType } from 'vue'
 import CallAndResponse from '../CallAndResponse.vue'
 import Chapter from '../Chapter.vue'
 import Narration from '../Narration.vue'
@@ -8,7 +8,7 @@ import Quote from '../Quote.vue'
 import CityEnd from './CityEnd.vue'
 import type { I18N } from '../../types/i18n'
 
-defineProps({
+const props = defineProps({
   i18n: {
     type: Object as PropType<I18N>,
     required: true,
@@ -18,11 +18,14 @@ defineProps({
     required: true,
   },
 })
+
+const cityWidth = computed(() => 20834 * props.scale)
 </script>
 
 <template>
   <Chapter
     class="chapter-end"
+    :cityWidth="cityWidth"
     :style="{
       '--color-narration': 'var(--slate-light)',
       '--color-highlight': 'var(--slate-light)',

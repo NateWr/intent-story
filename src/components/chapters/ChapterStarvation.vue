@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, type PropType } from 'vue'
+import { computed, ref, type PropType } from 'vue'
 import Chapter from '../Chapter.vue'
 import ChapterCover from '../ChapterCover.vue'
 import CityLabel from '../CityLabel.vue'
@@ -11,7 +11,7 @@ import CityStarvation from './CityStarvation.vue'
 import { useIntersectionObserver } from '../../utilities/useIntersectionObserver'
 import type { I18N } from '../../types/i18n'
 
-defineProps({
+const props = defineProps({
   i18n: {
     type: Object as PropType<I18N>,
     required: true,
@@ -21,6 +21,8 @@ defineProps({
     required: true,
   }
 })
+
+const cityWidth = computed(() => 21166 * props.scale)
 
 const flourMassacre = ref<typeof CallAndResponse | null>(null)
 const { isVisible: isFlourMassacreVisible } = useIntersectionObserver(flourMassacre, {threshold: 0.1})
@@ -33,6 +35,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
 <template>
   <Chapter
     class="chapter-starvation"
+    :cityWidth="cityWidth"
     :style="{
       '--color-narration': 'var(--green-light)',
       '--color-highlight': 'var(--green-light)',
