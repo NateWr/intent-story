@@ -13,6 +13,7 @@ import ChapterStarvation from './chapters/ChapterStarvation.vue'
 import { useChapters } from '../utilities/useChapters'
 import { useI18N } from '../utilities/useI18N'
 import { useScale } from '../utilities/useScale'
+import { usePerformance } from '../utilities/usePerformance'
 import type { I18N } from '../types/i18n'
 import "../assets/css/variables.css"
 import Modal from './Modal.vue'
@@ -29,6 +30,8 @@ const props = defineProps({
     required: true,
   }
 })
+
+const { fps } = usePerformance();
 
 const { getI18N, setI18N } = useI18N()
 setI18N(props.i18n)
@@ -266,6 +269,19 @@ onMounted(() => {
       </Modal>
     </Transition>
   </main>
+  <div
+    style="
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0.5rem;
+      background: white;
+      color: black;
+    "
+  >
+    {{ fps.toFixed(1) }}
+  </div>
 </template>
 
 <style>
@@ -301,22 +317,6 @@ body {
   display: flex;
   flex-wrap: nowrap;
   margin-bottom: 4rem;
-}
-
-.city-bg-far,
-.city-bg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-.city-bg-far {
-  filter: brightness(0.65);
-  transform: translateX(calc(var(--city-bg-far-scroll-distance) * var(--city-progress)));
-}
-
-.city-bg {
-  transform: translateX(calc(var(--city-bg-scroll-distance) * var(--city-progress)));
 }
 
 .chapters-last-frame {

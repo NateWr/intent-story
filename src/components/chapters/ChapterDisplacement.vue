@@ -10,6 +10,9 @@ import CityDisplacement from './CityDisplacement.vue'
 import type { I18N } from '../../types/i18n'
 import { useIntersectionObserver } from '../../utilities/useIntersectionObserver'
 import { useIntersectionProgress } from '../../utilities/useIntersectionProgress'
+import CityDisplacementFront from './CityDisplacementFront.vue'
+import CityDisplacementBgFar from './CityDisplacementBgFar.vue'
+import CityDisplacementBg from './CityDisplacementBg.vue'
 
 const props = defineProps({
   i18n: {
@@ -22,6 +25,7 @@ const props = defineProps({
   },
 })
 
+const FG_SPEED = 2
 
 type CityIntroType = InstanceType<typeof CityDisplacement>
 const city = ref<CityIntroType | null>(null)
@@ -32,6 +36,8 @@ const cityBgFarWidth = computed(() => 13873 * props.scale)
 const cityBgFarScrollDistance = computed(() => (cityWidth.value - cityBgFarWidth.value) / cityBgFarWidth.value)
 const cityBgWidth = computed(() => 20058 * props.scale)
 const cityBgScrollDistance = computed(() => (cityWidth.value - cityBgWidth.value) / cityBgWidth.value)
+const cityFgWidth = computed(() => cityWidth.value * FG_SPEED)
+const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value) / cityFgWidth.value)
 
 const massArrest = ref<HTMLElement | null>(null)
 const { isVisible: isMassArrestVisible } = useIntersectionObserver(massArrest)
@@ -39,50 +45,16 @@ const road = ref<HTMLElement | null>(null)
 const { isVisible: isRoadVisible } = useIntersectionObserver(road)
 const secondTentBombing = ref<HTMLElement | null>(null)
 const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(secondTentBombing)
-
-const family = ref<HTMLElement | null>(null)
-const { progress: familyProgress } = useIntersectionProgress(family)
-const soldiersWatching = ref<HTMLElement | null>(null)
-const { progress: soldiersWatchingProgress } = useIntersectionProgress(soldiersWatching)
-const soldier = ref<HTMLElement | null>(null)
-const { progress: soldierProgress } = useIntersectionProgress(soldier)
-const brothers = ref<HTMLElement | null>(null)
-const { progress: brothersProgress } = useIntersectionProgress(brothers)
-const cityDarkA = ref<HTMLElement | null>(null)
-const { progress: cityDarkAProgress } = useIntersectionProgress(cityDarkA)
-const cityDarkB = ref<HTMLElement | null>(null)
-const { progress: cityDarkBProgress } = useIntersectionProgress(cityDarkB)
-const cityDarkC = ref<HTMLElement | null>(null)
-const { progress: cityDarkCProgress } = useIntersectionProgress(cityDarkC)
-const cityDarkD = ref<HTMLElement | null>(null)
-const { progress: cityDarkDProgress } = useIntersectionProgress(cityDarkD)
-const cityDarkE = ref<HTMLElement | null>(null)
-const { progress: cityDarkEProgress } = useIntersectionProgress(cityDarkE)
-const cityDarkF = ref<HTMLElement | null>(null)
-const { progress: cityDarkFProgress } = useIntersectionProgress(cityDarkF)
 </script>
 
 <template>
   <Chapter
     class="chapter-displacement"
     :style="{
-      '--color-narration': 'var(--orange-light)',
-      '--color-highlight': 'var(--orange-light)',
-      '--color-title': 'var(--orange-light)',
-      '--color-subtitle-highlight': 'var(--orange-light)',
       '--city-progress': cityProgress,
-      '--city-bg-far-scroll-distance': `${(cityBgFarScrollDistance * 100).toFixed(4)}%`,
-      '--city-bg-scroll-distance': `${(cityBgScrollDistance * 100).toFixed(4)}%`,
-      '--family-progress': familyProgress,
-      '--soldiers-watching-progress': soldiersWatchingProgress,
-      '--soldier-progress': soldierProgress,
-      '--brothers-progress': brothersProgress,
-      '--city-dark-a-progress': cityDarkAProgress,
-      '--city-dark-b-progress': cityDarkBProgress,
-      '--city-dark-c-progress': cityDarkCProgress,
-      '--city-dark-d-progress': cityDarkDProgress,
-      '--city-dark-e-progress': cityDarkEProgress,
-      '--city-dark-f-progress': cityDarkFProgress,
+      '--city-bg-far-scroll-distance': `${(cityBgFarScrollDistance * 100).toFixed(0)}%`,
+      '--city-bg-scroll-distance': `${(cityBgScrollDistance * 100).toFixed(0)}%`,
+      '--city-fg-scroll-distance': `${(cityFgScrollDistance * -100).toFixed(0)}%`,
     }"
   >
     <template #cover>
@@ -95,164 +67,16 @@ const { progress: cityDarkFProgress } = useIntersectionProgress(cityDarkF)
         </template>
       </ChapterCover>
     </template>
+
+    <template #bg-far>
+      <CityDisplacementBgFar :width="cityBgFarWidth" />
+    </template>
+
+    <template #bg>
+      <CityDisplacementBg :width="cityBgWidth" />
+    </template>
+
     <template #back>
-      <div
-        ref="family"
-        :style="{
-          position: 'absolute',
-          left: `${(scale * 6416).toFixed(0)}px`,
-          width: `${(scale * 1326).toFixed(0)}px`,
-          bottom: `50%`,
-          height: '20px',
-        }"
-      />
-      <div
-        ref="soldiersWatching"
-        :style="{
-          position: 'absolute',
-          left: `${(scale * 10000).toFixed(0)}px`,
-          width: `${(scale * 600).toFixed(0)}px`,
-          bottom: `50%`,
-          height: '20px',
-        }"
-      />
-      <div
-        ref="soldier"
-        :style="{
-          position: 'absolute',
-          left: `${(scale * 12350).toFixed(0)}px`,
-          width: `${(scale * 600).toFixed(0)}px`,
-          bottom: `50%`,
-          height: '20px',
-        }"
-      />
-      <div
-        ref="brothers"
-        :style="{
-          position: 'absolute',
-          left: `${(scale * 21192).toFixed(0)}px`,
-          width: `${(scale * 975).toFixed(0)}px`,
-          bottom: `50%`,
-          height: '20px',
-        }"
-      />
-      <div
-        ref="cityDarkA"
-        :style="{
-          position: 'absolute',
-          left: `${(scale * 3725).toFixed(0)}px`,
-          width: `${(scale * 446).toFixed(0)}px`,
-          bottom: `50%`,
-          height: '20px',
-        }"
-      />
-      <div
-        ref="cityDarkB"
-        :style="{
-          position: 'absolute',
-          left: `${(scale * 1058).toFixed(0)}px`,
-          width: `${(scale * 575).toFixed(0)}px`,
-          bottom: `50%`,
-          height: '20px',
-        }"
-      />
-      <div
-        ref="cityDarkC"
-        :style="{
-          position: 'absolute',
-          left: `${(scale * 5926).toFixed(0)}px`,
-          width: `${(scale * 816).toFixed(0)}px`,
-          bottom: `50%`,
-          height: '20px',
-        }"
-      />
-      <div
-        ref="cityDarkD"
-        :style="{
-          position: 'absolute',
-          left: `${(scale * 16733).toFixed(0)}px`,
-          width: `${(scale * 535).toFixed(0)}px`,
-          bottom: `50%`,
-          height: '20px',
-        }"
-      />
-      <div
-        ref="cityDarkE"
-        :style="{
-          position: 'absolute',
-          left: `${(scale * 24174).toFixed(0)}px`,
-          width: `${(scale * 806).toFixed(0)}px`,
-          bottom: `50%`,
-          height: '20px',
-        }"
-      />
-      <div
-        ref="cityDarkF"
-        :style="{
-          position: 'absolute',
-          left: `${(scale * 20836).toFixed(0)}px`,
-          width: `${(scale * 600).toFixed(0)}px`,
-          bottom: `50%`,
-          height: '20px',
-        }"
-      />
-      <svg
-        class="city-bg-far"
-        :style="{
-          width: `${(cityBgFarWidth).toFixed()}px`,
-          height: 'auto',
-        }"
-        xmlns="http://www.w3.org/2000/svg"
-        width="13873"
-        height="582"
-        fill="none"
-        viewBox="0 0 13873 582"
-      >
-        <image id="city-bg-5" href="city-bg-5.png" width="186" height="287" x="2197.5" y="241" />
-        <image id="city-bg-4" href="city-bg-4.png" width="260" height="267" x="1920.5" y="261" />
-        <image id="city-bg-1" href="city-bg-1.png" width="327" height="339" x="1799.5" y="195" />
-        <image id="city-bg-3" href="city-bg-3.png" width="297" height="381" x="2102.5" y="148" />
-        <image id="city-bg-3" href="city-bg-3.png" width="302" height="387" x="4289" y="161" />
-        <image id="city-bg-1" href="city-bg-1.png" width="397" height="411" x="4440" y="147" />
-        <image id="city-bg-2" href="city-bg-2.png" width="471" height="550" x="4658" />
-      </svg>
-      <svg
-        class="city-bg"
-        :style="{
-          width: `${(cityBgWidth).toFixed()}px`,
-          height: 'auto',
-        }"
-        xmlns="http://www.w3.org/2000/svg"
-        width="20058"
-        height="486"
-        fill="none"
-        viewBox="0 0 20058 486"
-      >
-        <image id="city-bg-9" href="city-bg-9.png" width="262" height="263" x="6146" y="162" />
-        <image id="city-bg-8" href="city-bg-8.png" width="172" height="304"  transform="matrix(-1 0 0 1 6699 103)"/>
-        <image id="city-bg-7" href="city-bg-7.png" width="445" height="307" x="5131" y="136" />
-        <image id="city-bg-6" href="city-bg-6.png" width="331" height="295" x="6716" y="146" />
-        <image id="city-bg-10" href="city-bg-10.png" width="273" height="340" x="17877" y="60" />
-        <image id="city-bg-8" href="city-bg-8.png" width="198" height="350" x="17122" y="50" />
-        <image id="city-bg-7" href="city-bg-7.png" width="428" height="296" x="14539" y="130" />
-        <image id="city-bg-6" href="city-bg-6.png" width="453" height="404" x="15138" y="34" />
-        <image id="city-bg-6" href="city-bg-6.png" width="480" height="428" x="1155" y="21" />
-        <image id="city-bg-8" href="city-bg-8.png" width="192" height="339"  transform="matrix(-1 0 0 1 1997 84)"/>
-        <image id="city-bg-10" href="city-bg-10.png" width="255" height="316" x="2807.4" y="106" />
-        <image id="city-bg-10" href="city-bg-10.png" width="255" height="316" x="661" y="106" />
-        <image id="city-bg-6" href="city-bg-6.png" width="453" height="404" x="10974" />
-        <image id="city-bg-8" href="city-bg-8.png" width="160" height="275"  transform="matrix(-1 0 0 1 3708 151)"/>
-        <image id="city-bg-8" href="city-bg-8.png" width="160" height="275"  transform="matrix(-1 0 0 1 2467 163)"/>
-        <image id="city-bg-10" href="city-bg-10.png" width="240" height="299" x="13834" y="139" />
-        <image id="city-bg-7" href="city-bg-7.png" width="415" height="278" x="3898" y="146" />
-        <image id="city-bg-6" href="city-bg-6.png" width="358" height="310" x="4784" y="114" />
-        <image id="city-bg-8" href="city-bg-8.png" width="172" height="304"  transform="matrix(-1 0 0 1 11031 68)"/>
-        <image id="city-bg-6" href="city-bg-6.png" width="331" height="295" x="11509" y="88" />
-        <image id="city-bg-9" href="city-bg-9.png" width="262" height="263" x="16414" y="163" />
-        <image id="city-bg-7" href="city-bg-7.png" width="461" height="318" x="11944" y="97" />
-        <image id="city-bg-7" href="city-bg-7.png" width="445" height="307" x="12930" y="102" />
-        <image id="city-bg-9" href="city-bg-9.png" width="262" height="263" x="12722" y="152" />
-      </svg>
       <PositionedContent :left="(1780 * scale)">
         <Quote
           name="Benny Gantz"
@@ -461,11 +285,22 @@ const { progress: cityDarkFProgress } = useIntersectionProgress(cityDarkF)
         </Narration>
       </PositionedContent>
     </template>
+
+    <template #city-fg>
+      <CityDisplacementFront
+        :width="cityWidth"
+        :speed="FG_SPEED"
+      />
+    </template>
   </Chapter>
 </template>
 
 <style>
 .chapter-displacement {
+  --color-narration: var(--orange-light);
+  --color-highlight: var(--orange-light);
+  --color-title: var(--orange-light);
+  --color-subtitle-highlight: var(--orange-light);
   background: var(--displacement-gradient);
 }
 
@@ -485,66 +320,4 @@ const { progress: cityDarkFProgress } = useIntersectionProgress(cityDarkF)
 .second-tent-bombing .car-line {
   margin-top: -4rem;
 }
-
-.chapter-displacement #displacement-family {
-  --width: calc(750px * var(--scale));
-  transform: translateX(calc(var(--width) - calc(var(--width) * var(--family-progress))));
-}
-
-.chapter-displacement #displacement-soldiers-watching {
-  --width: calc(1500px * var(--scale));
-  transform: translateX(calc(var(--width) - calc(var(--width) * var(--soldiers-watching-progress))));
-}
-
-.chapter-displacement #displacement-soldier {
-  --width: calc(2000px * var(--scale));
-  transform: translateX(
-    calc(
-      calc(-0.5 * var(--width))
-      + calc(
-        var(--width)
-        - calc(
-          var(--width) * var(--soldier-progress)
-        )
-      )
-    )
-  );
-}
-
-.chapter-displacement #displacement-brothers {
-  --width: calc(2000px * var(--scale));
-  transform: translateX(
-    calc(
-      calc(-0.5 * var(--width))
-      + calc(
-        var(--width)
-        - calc(
-          var(--width) * var(--brothers-progress)
-        )
-      )
-    )
-  );
-}
-
-.chapter-displacement .city-dark {
-  --width: calc(1000px * var(--scale));
-  transform: translateX(
-    calc(
-      calc(-0.5 * var(--width))
-      + calc(
-        var(--width)
-        - calc(
-          var(--width) * var(--city-dark-progress)
-        )
-      )
-    )
-  );
-}
-
-#displacement-city-dark-a { --city-dark-progress: var(--city-dark-a-progress); }
-#displacement-city-dark-b { --city-dark-progress: var(--city-dark-b-progress); }
-#displacement-city-dark-c { --city-dark-progress: var(--city-dark-c-progress); }
-#displacement-city-dark-d { --city-dark-progress: var(--city-dark-d-progress); }
-#displacement-city-dark-e { --city-dark-progress: var(--city-dark-e-progress); }
-#displacement-city-dark-f { --city-dark-progress: var(--city-dark-f-progress); }
 </style>
