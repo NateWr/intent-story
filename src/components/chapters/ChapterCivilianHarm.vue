@@ -91,7 +91,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
           height: '20px',
         }"
       />
-      <PositionedContent :left="(1800 * scale)">
+      <PositionedContent :left="(1900 * scale)">
         <Quote
           name="Isaac Herzog"
           role="Israeli President"
@@ -101,7 +101,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
           “It’s an <strong>entire nation</strong> out there that is responsible.”
         </Quote>
       </PositionedContent>
-      <PositionedContent :left="(3300 * scale)">
+      <PositionedContent :left="(3400 * scale)">
         <Narration
           :offsetBottom="`${150 * scale}px`"
         >
@@ -109,7 +109,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
           <p>Airwars documented hundreds of attacks on family homes and residential towers in the first few weeks alone.</p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(4810 * scale)" class="positioned-anchor-bottom">
+      <PositionedContent :left="(4910 * scale)" class="positioned-anchor-bottom">
         <Narration
           ref="familyHome1"
           class="narration-center family-home-one"
@@ -130,7 +130,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
           />
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(5320 * scale)" class="positioned-anchor-bottom">
+      <PositionedContent :left="(5420 * scale)" class="positioned-anchor-bottom">
         <Narration
           ref="familyHome2"
           class="narration-center family-home-two"
@@ -151,7 +151,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
           />
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(5800 * scale)" class="positioned-anchor-bottom">
+      <PositionedContent :left="(5900 * scale)" class="positioned-anchor-bottom">
         <Narration
           ref="familyHome3"
           class="narration-center family-home-three"
@@ -172,7 +172,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
           />
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(7150 * scale)">
+      <PositionedContent :left="(7250 * scale)">
         <Narration
           size="lg"
           :offsetBottom="`${150 * scale}px`"
@@ -182,7 +182,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(9215 * scale)">
+      <PositionedContent :left="(9315 * scale)">
         <Quote
           name="Israeli Intelligence Officer"
           role=""
@@ -192,7 +192,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
           “When a 3-year-old girl is killed in a home in Gaza, it’s because someone in the army decided it <strong>wasn’t a big deal</strong> for her to be killed.”
         </Quote>
       </PositionedContent>
-      <PositionedContent :left="(10795 * scale)">
+      <PositionedContent :left="(10895 * scale)">
         <Narration
           size="lg"
           :offsetBottom="`${150 * scale}px`"
@@ -202,7 +202,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(12550 * scale)" class="positioned-anchor-bottom">
+      <PositionedContent :left="(12650 * scale)" class="positioned-anchor-bottom">
         <Narration :offsetBottom="`${220 * scale}px`">
           <CallAndResponse
             ref="gunnedDown"
@@ -222,7 +222,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
           </CallAndResponse>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(14250 * scale)">
+      <PositionedContent :left="(14450 * scale)">
         <Narration
           size="lg"
           :offsetBottom="`${150 * scale}px`"
@@ -232,7 +232,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(17900 * scale)">
+      <PositionedContent :left="(18000 * scale)">
         <Quote
           name="Nissim Maturin"
           role="Deputy Speaker of Knesset (Likud)"
@@ -258,7 +258,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
     />
 
     <template #front>
-      <PositionedContent :left="(16140 * scale)" class="positioned-anchor-bottom">
+      <PositionedContent :left="(16240 * scale)" class="positioned-anchor-bottom">
         <Narration
           class="civ-punishment-campaigns"
           :offsetBottom="`${230 * scale}px`"
