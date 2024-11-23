@@ -80,6 +80,10 @@ const { progress } = useIntersectionProgress(city)
 .city-fg {
   left: 50vw;
   transform: translateX(calc(var(--city-fg-scroll-distance) * var(--city-progress)));
+
+  & svg {
+    overflow: visible;
+  }
 }
 
 @media (orientation: landscape) {

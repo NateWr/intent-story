@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps({
-  scale: Number,
+  width: Number,
 })
 </script>
 
@@ -11,7 +11,7 @@ defineProps({
     viewBox="0 0 21066 489"
     fill="none"
     :style="{
-      width: `${(21066 * scale).toFixed()}px`,
+      width: `${width.toFixed()}px`,
       height: 'auto',
     }"
     xmlns="http://www.w3.org/2000/svg"

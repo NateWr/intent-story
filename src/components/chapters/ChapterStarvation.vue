@@ -135,8 +135,7 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
     </template>
 
     <CityStarvation
-      class="chapter-starvation-city"
-      :scale="scale"
+      :width="cityWidth"
     />
 
     <template #front>
