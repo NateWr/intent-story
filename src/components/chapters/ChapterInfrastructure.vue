@@ -8,7 +8,8 @@ import Quote from '../Quote.vue'
 import CallAndResponse from '../CallAndResponse.vue'
 import CityInfrastructure from './CityInfrastructure.vue'
 import type { I18N } from '../../types/i18n'
-import { useIntersectionObserver } from '../../utilities/useIntersectionObserver'
+import CityInfrastructureBg from './CityInfrastructureBg.vue'
+import CityInfrastructureFront from './CityInfrastructureFront.vue'
 
 const props = defineProps({
   i18n: {
@@ -21,18 +22,13 @@ const props = defineProps({
   },
 })
 
-const cityWidth = computed(() => 30387 * props.scale)
+const FG_SPEED = 2
 
-const allSectors = ref<HTMLElement | null>(null)
-const { isVisible: isAllSectorsVisible } = useIntersectionObserver(allSectors)
-const engineerBuilding = ref<HTMLElement | null>(null)
-const { isVisible: isEngineerBuildingVisible } = useIntersectionObserver(engineerBuilding)
-const flattened = ref<HTMLElement | null>(null)
-const { isVisible: isFlattenedVisible } = useIntersectionObserver(flattened)
-const shifaSiege = ref<HTMLElement | null>(null)
-const { isVisible: isShifaSiegeVisible } = useIntersectionObserver(shifaSiege)
-const shifaDestroyed = ref<HTMLElement | null>(null)
-const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDestroyed)
+const cityWidth = computed(() => 30402 * props.scale)
+const cityBgWidth = computed(() => 20215 * props.scale)
+const cityBgScrollDistance = computed(() => (cityWidth.value - cityBgWidth.value) / cityBgWidth.value)
+const cityFgWidth = computed(() => cityWidth.value * FG_SPEED)
+const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value) / cityFgWidth.value)
 </script>
 
 <template>
@@ -40,10 +36,8 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
     class="chapter-infrastructure"
     :cityWidth="cityWidth"
     :style="{
-      '--color-narration': 'var(--blue)',
-      '--color-highlight': 'var(--blue)',
-      '--color-title': 'var(--blue)',
-      '--color-subtitle-highlight': 'var(--blue)',
+      '--city-bg-scroll-distance': `${(cityBgScrollDistance * 100).toFixed(0)}%`,
+      '--city-fg-scroll-distance': `${(cityFgScrollDistance * -100).toFixed(0)}%`,
     }"
   >
     <template #cover>
@@ -56,8 +50,13 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
         </template>
       </ChapterCover>
     </template>
+
+    <template #bg>
+      <CityInfrastructureBg :width="cityBgWidth" />
+    </template>
+
     <template #back>
-      <PositionedContent :left="(2000 * scale)">
+      <PositionedContent :left="(1800 * scale)">
         <Quote
           name="Daniel Hagari"
           role="IDF spokesperson"
@@ -79,23 +78,16 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(5725 * scale)" class="positioned-anchor-bottom">
+      <PositionedContent :left="(5100 * scale)">
         <Narration
-          class="narration-center"
-          offsetBottom="0px"
+          :offsetBottom="`${100 * scale}px`"
         >
           <p>
             Israeli forces didn’t spare a single life-sustaining sector in Gaza. Its housing, education, health, transportation, telecommunication, cultural, agricultural, and environmental systems <strong>all lie in rubble</strong>.
           </p>
-          <div
-            ref="allSectors"
-            class="narration-center-line"
-            :class="isAllSectorsVisible && 'narration-center-line-visible'"
-            aria-hidden="true"
-          />
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(7168 * scale)">
+      <PositionedContent :left="(7000 * scale)">
         <Quote
           name="Nissim Vaturi"
           role="Deputy Speaker of Knesset (Likud)"
@@ -105,10 +97,9 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
           “All the preoccupation with whether or not there is internet in Gaza…We are too humane. <strong>Burn Gaza now</strong> no less!”
         </Quote>
       </PositionedContent>
-      <PositionedContent :left="(9620 * scale)" class="positioned-anchor-bottom">
+      <PositionedContent :left="(9170 * scale)">
         <Narration
-          class="narration-center"
-          :offsetBottom="`${600 * scale}px`"
+          :offsetBottom="`${200 * scale}px`"
         >
           <p>
             On October 31st, Israel imposed a <strong>total blackout</strong> on Gaza, cutting all telecommunication and internet services.
@@ -125,12 +116,11 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(12550 * scale)" class="positioned-anchor-bottom">
-        <Narration offsetBottom="60px">
+      <PositionedContent :left="(12320 * scale)">
+        <Narration>
           <CallAndResponse
-            ref="engineerBuilding"
-            :isVisible="isEngineerBuildingVisible"
-            class="engineer-building"
+            :line="false"
+            :isVisible="false"
           >
             <div class="car-call">
               In one attack, Israeli airstrikes brought down a six-story residential building in central Gaza, killing at least 136 residents, including 54 children.
@@ -141,12 +131,11 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
           </CallAndResponse>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(14100 * scale)" class="positioned-anchor-bottom">
-        <Narration offsetBottom="30px">
+      <PositionedContent :left="(14000 * scale)">
+        <Narration>
           <CallAndResponse
-            ref="flattened"
-            :isVisible="isFlattenedVisible"
-            class="flattened-infrastructure"
+            :line="false"
+            :isVisible="false"
           >
             <div class="car-call">
               During the blackout, Israel bombed high-rise blocks, public buildings, and critical infrastructure across Gaza, from Jabalia in the north to Rafah in the south.
@@ -181,7 +170,7 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
           “We are determined to destroy [Al-Shifa Hospital].”
         </Quote>
       </PositionedContent>
-      <PositionedContent :left="(19688 * scale)">
+      <PositionedContent :left="(19488 * scale)">
         <Narration
           size="lg"
           :offsetBottom="`${150 * scale}px`"
@@ -191,12 +180,11 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(21570 * scale)" class="positioned-anchor-bottom">
-        <Narration :offsetBottom="`${250 * scale}px`">
+      <PositionedContent :left="(21300 * scale)">
+        <Narration offsetBottom="0px">
           <CallAndResponse
-            ref="shifaSiege"
-            :isVisible="isShifaSiegeVisible"
-            class="shifa-siege"
+            :line="false"
+            :isVisible="false"
           >
             <div class="car-call">
               Hundreds of staff, 1500 displaced people, and 600 patients, including 39 premature babies, were trapped inside.
@@ -215,12 +203,11 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
           </CallAndResponse>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(23550 * scale)" class="positioned-anchor-bottom">
-        <Narration :offsetBottom="`${(75 * scale)}px`">
+      <PositionedContent :left="(23000 * scale)">
+        <Narration offsetBottom="0px">
           <CallAndResponse
-            ref="shifaDestroyed"
-            :isVisible="isShifaDestroyedVisible"
-            class="shifa-destroyed"
+            :line="false"
+            :isVisible="false"
           >
             <div class="car-call">
               Israel eventually invaded Al-Shifa, destroying much of its life-saving equipment and leaving large sections in ruins.
@@ -251,7 +238,7 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(26649 * scale)">
+      <PositionedContent :left="(26449 * scale)">
         <Quote
           name="Bezalel Smotrich"
           role="Israeli Minister of Finance"
@@ -277,33 +264,25 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
     </template>
 
     <CityInfrastructure
-      class="chapter-infrastructure-city"
-      :scale="scale"
+      :width="cityWidth"
     />
+
+    <template #city-fg>
+      <CityInfrastructureFront
+        :width="cityWidth"
+        :speed="FG_SPEED"
+      />
+    </template>
 
   </Chapter>
 </template>
 
 <style>
 .chapter-infrastructure {
+  --color-narration: var(--blue);
+  --color-highlight: var(--blue);
+  --color-title: var(--blue);
+  --color-subtitle-highlight: var(--blue);
   background: var(--infrastructure-gradient);
-}
-
-.engineer-building .car-line {
-  margin-top: 0;
-}
-
-.flattened-infrastructure .car-line {
-  margin-top: -8rem;
-  height: 40vh;
-}
-
-.shifa-siege .car-line {
-  margin-top: -5.5rem;
-}
-
-.shifa-destroyed .car-line {
-  margin-top: -6.5rem;
-  height: 35vh;
 }
 </style>
