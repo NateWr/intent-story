@@ -2,14 +2,15 @@
 import { computed, ref, type PropType } from 'vue'
 import Chapter from '../Chapter.vue'
 import ChapterCover from '../ChapterCover.vue'
-import CityLabel from '../CityLabel.vue'
 import CallAndResponse from '../CallAndResponse.vue'
 import Narration from '../Narration.vue'
 import PositionedContent from '../PositionedContent.vue'
 import Quote from '../Quote.vue'
 import CityStarvation from './CityStarvation.vue'
-import { useIntersectionObserver } from '../../utilities/useIntersectionObserver'
 import type { I18N } from '../../types/i18n'
+import CityStarvationBgFar from './CityStarvationBgFar.vue'
+import CityStarvationBg from './CityStarvationBg.vue'
+import CityStarvationFront from './CityStarvationFront.vue'
 
 const props = defineProps({
   i18n: {
@@ -22,14 +23,15 @@ const props = defineProps({
   }
 })
 
-const cityWidth = computed(() => 21166 * props.scale)
+const FG_SPEED = 2
 
-const flourMassacre = ref<typeof CallAndResponse | null>(null)
-const { isVisible: isFlourMassacreVisible } = useIntersectionObserver(flourMassacre, {threshold: 0.1})
-const wckMassacre = ref<HTMLElement | null>(null)
-const { isVisible: isWckMassacreVisible } = useIntersectionObserver(wckMassacre)
-const deadlyAidWork = ref<HTMLElement | null>(null)
-const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidWork, {threshold: 0.1})
+const cityWidth = computed(() => 21066 * props.scale)
+const cityBgFarWidth = computed(() => 10587 * props.scale)
+const cityBgFarScrollDistance = computed(() => (cityWidth.value - cityBgFarWidth.value) / cityBgFarWidth.value)
+const cityBgWidth = computed(() => 15714 * props.scale)
+const cityBgScrollDistance = computed(() => (cityWidth.value - cityBgWidth.value) / cityBgWidth.value)
+const cityFgWidth = computed(() => cityWidth.value * FG_SPEED)
+const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value) / cityFgWidth.value)
 </script>
 
 <template>
@@ -37,10 +39,9 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
     class="chapter-starvation"
     :cityWidth="cityWidth"
     :style="{
-      '--color-narration': 'var(--green-light)',
-      '--color-highlight': 'var(--green-light)',
-      '--color-title': 'var(--green-light)',
-      '--color-subtitle-highlight': 'var(--green-light)',
+      '--city-bg-far-scroll-distance': `${(cityBgFarScrollDistance * 100).toFixed(0)}%`,
+      '--city-bg-scroll-distance': `${(cityBgScrollDistance * 100).toFixed(0)}%`,
+      '--city-fg-scroll-distance': `${(cityFgScrollDistance * -100).toFixed(0)}%`,
     }"
   >
 
@@ -61,8 +62,16 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
       </ChapterCover>
     </template>
 
+    <template #bg-far>
+      <CityStarvationBgFar :width="cityBgFarWidth" />
+    </template>
+
+    <template #bg>
+      <CityStarvationBg :width="cityBgWidth" />
+    </template>
+
     <template #back>
-      <PositionedContent :left="(1730 * scale)">
+      <PositionedContent :left="(1580 * scale)">
         <Quote
           name="Yoav Gallant"
           role="Israeli Defense Minister"
@@ -72,7 +81,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           “I have ordered a <strong>complete siege</strong> on the Gaza Strip. There will be no electricity, no food, no fuel, everything is closed.”
         </Quote>
       </PositionedContent>
-      <PositionedContent :left="(5100 * scale)">
+      <PositionedContent :left="(5400 * scale)">
         <Quote
           name="Itamar Ben Gvir"
           role="Israeli Minister of National Security"
@@ -97,12 +106,11 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           </template>
         </Quote>
       </PositionedContent>
-      <PositionedContent :left="(15900 * scale)" style="align-items: flex-end">
+      <PositionedContent :left="(15550 * scale)">
         <Narration offsetBottom="0">
           <CallAndResponse
-            ref="deadlyAidWork"
-            class="starvation-aid-workers-killed"
-            :isVisible="isDeadlyAidWorkVisible"
+            :line="false"
+            :isVisible="false"
           >
             <div class="car-call">
               These attacks, combined with indiscriminate aerial bombardment, made Gaza the <strong>deadliest place in the world</strong> to be an aid worker. 
@@ -132,18 +140,17 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
     />
 
     <template #front>
-      <PositionedContent :left="(3205 * scale)">
+      <PositionedContent :left="(3405 * scale)">
         <Narration :offsetBottom="`${150 * scale}px`">
           <p>Nine months after Gallant’s promise to cease the flow of life-saving essentials, UN experts declared a <strong>state of famine</strong> across all of Gaza.</p>
           <p>During this campaign of starvation, Israeli occupation forces (IOF) burned food stocks, destroyed agricultural land, bombed flour mills, greenhouses, bakeries, and fisheries, allowed Israeli settlers to destroy aid bound for Gaza, and carried out targeted attacks on both aid seekers and aid workers.</p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(7100 * scale)" style="align-items: flex-end">
+      <PositionedContent :left="(6900 * scale)" style="align-items: flex-end">
         <Narration :offsetBottom="`${200 * scale}px`">
           <CallAndResponse
-            ref="flourMassacre"
-            class="flour-massacre"
-            :isVisible="isFlourMassacreVisible"
+            :isVisible="false"
+            :line="false"
           >
             <div class="car-call">
               On February 29, 2024, a crowd of starving Palestinians gathered on Al-Rashid St. to meet an incoming aid convoy.
@@ -170,19 +177,12 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           <p>The flour massacre represents a <strong>pattern of incidents</strong> of Israeli forces targeting desperate aid seekers in Gaza.</p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(12800 * scale)" style="align-items: flex-end">
+      <PositionedContent :left="(12370 * scale)">
         <Narration
-          class="wck-massacre"
           :offsetBottom="`${200 * scale}px`"
         >
           <p>On April 1, 2024,  a series of Israeli strikes targeted a World Central Kitchen aid convoy, killing 7 aid workers.</p>
           <p>The attack forced the largest aid organizations to suspend their operations in Gaza at a point when 1.1 million people — or half the population of Gaza — were experiencing <strong>catastrophic levels of hunger</strong> and at least 28 children had died of starvation.</p>
-          <div
-            ref="wckMassacre"
-            class="wck-massacre-line"
-            :class="isWckMassacreVisible && 'wck-massacre-line-visible'"
-            aria-hidden="true"
-          />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(13970 * scale)">
@@ -206,11 +206,22 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
         </Narration>
       </PositionedContent>
     </template>
+
+    <template #city-fg>
+      <CityStarvationFront
+        :width="cityWidth"
+        :speed="FG_SPEED"
+      />
+    </template>
   </Chapter>
 </template>
 
 <style>
 .chapter-starvation {
+  --color-narration: var(--green-light);
+  --color-highlight: var(--green-light);
+  --color-title: var(--green-light);
+  --color-subtitle-highlight: var(--green-light);
   background: var(--starvation-gradient);
 }
 
@@ -227,35 +238,6 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
   text-wrap: balance;
 }
 
-.flour-massacre .car-line {
-  height: 15vh;
-  margin-top: -7rem;
-}
-
-.starvation-aid-workers-killed .car-line {
-  height: 50vh;
-  margin-top: -5rem;
-}
-
-.wck-massacre {
-  transform: translateX(-50%);
-  align-items: center;
-}
-
-.wck-massacre-line {
-  width: 2px;
-  height: 15vh;
-  background: var(--color-highlight);
-  opacity: 0;
-  transform: scaleY(0) translateX(-50%);
-  transform-origin: bottom center;
-  transition: all 0.5s 0.3s;
-}
-
-.wck-massacre-line-visible {
-  opacity: 1;
-  transform: scaleY(1) translateX(-50%);
-}
 
 @media (--phones-landscape) {
   .chapter-starvation-cover-article {
@@ -267,22 +249,6 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
   }
 }
 
-@media ((--phones-landscape) and (not (--tablets-landscape))) {
-  .flour-massacre .car-line {
-    margin-top: -4rem;
-    height: 5vh;
-  }
-
-  .starvation-aid-workers-killed {
-    max-width: 24rem;
-  }
-
-  .starvation-aid-workers-killed .car-line {
-    margin-top: -3rem;
-    height: 55vh;
-  }
-}
-
 @media (--laptops-sm) {
   .chapter-starvation-cover-article {
     font-size: 1.5rem;
@@ -290,26 +256,6 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
 
   .chapter-starvation-cover-convention {
     font-size: 1.125rem;
-  }
-}
-
-@media (--laptops-lg) {
-  .flour-massacre .car-line {
-    height: 25vh;
-  }
-}
-
-@media (orientation: portrait) and (--laptops-lg) {
-  .flour-massacre .car-line {
-    margin-top: -9rem;
-  }
-
-  .wck-massacre-line {
-    height: 50vh;
-  }
-
-  .starvation-aid-workers-killed .car-line {
-    height: 45vh;
   }
 }
 </style>
