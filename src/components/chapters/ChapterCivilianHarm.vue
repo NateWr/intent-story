@@ -66,7 +66,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
           <h2>{{ i18n.civilianHarm }}</h2>
         </template>
         <template #subtitle>
-          Israeli forces made Gaza the deadliest place in the world to be a child, journalist, health worker, or aid worker. The mass killing was encouraged by Israelis at every level of society.
+          Israeli forces made Gaza the deadliest place in the world to be a child, journalist, health worker, or aid worker. The mass killing has been encouraged by Israelis at every level of society.
         </template>
       </ChapterCover>
     </template>
@@ -105,8 +105,8 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
         <Narration
           :offsetBottom="`${150 * scale}px`"
         >
-          <p>In the first few weeks of Israel's bombing campaign, entire Palestinian families, from <strong>great-grandparents to infants</strong>, were killed together.</p>
-          <p>Airwars documented hundreds of attacks on Palestinian family homes and residential towers.</p>
+          <p>In the first year of Israel's bombing campaign, more than 900 Palestinian families, from <strong>great-grandparents to infants</strong>, were killed in their entirety. Another 4,836 families were survived by one or two members.</p>
+          <p>Airwars documented hundreds of attacks on family homes and residential towers in the first few weeks alone.</p>
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(4810 * scale)" class="positioned-anchor-bottom">
@@ -178,7 +178,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
           :offsetBottom="`${150 * scale}px`"
         >
           <p>
-            There are <strong>hundreds of stories</strong> like these.
+            There are <strong>thousands of stories</strong> like these.
           </p>
         </Narration>
       </PositionedContent>
@@ -210,7 +210,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
             class="gunned-down"
           >
             <div class="car-call">
-              Six members of the Abu Salah family were returning from the cemetery, where they had just buried their teenage nephew, when they were gunned down by Israeli forces.
+              Six members of the Abu Salah family were gunned down by Israeli forces on their way back from the cemetery, where they had just buried their teenage nephew.
             </div>
             <div class="car-call">
               Their remains were bulldozed into a pile of rubbish and only discovered after Israeli forces left.
@@ -228,7 +228,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
           :offsetBottom="`${150 * scale}px`"
         >
           <p>
-            Palestinians who <strong>survived</strong> faced the destruction of home and family, injury, disease, and starvation.
+            Palestinians who <strong>survived</strong> faced the destruction of their homes and families, injury, disease, and starvation.
           </p>
         </Narration>
       </PositionedContent>
@@ -247,7 +247,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
           :offsetBottom="`${200 * scale}px`"
         >
           <p>
-            Dehumanizing statements like this have been translated into civilian harm so irrefutably shocking that some of the world’s largest humanitarian organizations declared “<strong>we have seen nothing like the siege of Gaza</strong>.”
+            Dehumanizing statements like this have been translated into civilian harm so irrefutably shocking that some of the world’s largest humanitarian organizations declared: “<strong>We have seen nothing like the siege of Gaza</strong>.”
           </p>
         </Narration>
       </PositionedContent>

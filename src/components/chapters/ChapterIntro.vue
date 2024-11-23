@@ -85,7 +85,7 @@ onMounted(() => {
           size="lg"
           :offsetBottom="`${350 * scale}px`"
         >
-          <p>Israeli leaders have made and continue to make <strong>clear statements</strong> of their intent to commit genocide.</p>
+          <p>Israeli leaders have made and continue to make <strong>clear statements</strong> of their intent to commit genocide against Palestinians.</p>
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(3563 * scale)">
@@ -103,7 +103,7 @@ onMounted(() => {
           size="lg"
           :offsetBottom="`${350 * scale}px`"
         >
-          <p>This sentiment has been <strong>adopted and amplified</strong> by hundreds of individual soldiers, journalists and public figures across Israeli society.</p>
+          <p>This sentiment has been <strong>adopted and amplified</strong> by individual soldiers, journalists and public figures across Israeli society.</p>
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(6300 * scale)">
@@ -190,14 +190,14 @@ onMounted(() => {
           size="lg"
           :offsetBottom="`${150 * scale}px`"
         >
-          <p>These statements attempt to justify the unrestrained killing of all Palestinians as a <strong>group of people</strong>.</p>
+          <p>These statements attempt to justify the destruction of all Palestinians as a <strong>group of people</strong>.</p>
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(10930 * scale)">
         <Narration
           :offsetBottom="`${350 * scale}px`"
         >
-          <p>The crime of genocide can be committed by killing or harming members of a group, as well as inflicting on it <strong>conditions of life</strong> that will bring about its destruction.</p>
+          <p>The crime of genocide is committed by killing or harming members of a group, as well as inflicting <strong>conditions of life</strong> that will bring about its destruction.</p>
           <p>Israel has starved the people of Gaza, destroyed life-sustaining infrastructure, and forcibly displaced and killed residents at a shocking rate, leading dozens of experts to conclude that Israel is committing genocide in Gaza.</p>
         </Narration>
       </PositionedContent>
@@ -206,7 +206,7 @@ onMounted(() => {
           size="lg"
           :offsetBottom="`${350 * scale}px`"
         >
-          <p>The following examples of incitement, from a database of more than 400 statements, show that israel <strong>intended to commit genocide</strong> in Gaza.</p>
+          <p>The following examples of incitement, from a database of more than 400 statements, show Israel's <strong>intent to commit genocide</strong> in Gaza.</p>
         </Narration>
       </PositionedContent>
     </template>

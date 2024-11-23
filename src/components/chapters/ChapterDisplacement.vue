@@ -79,7 +79,7 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
           date="Nov 29, 2023"
           :offsetBottom="`${100 * scale}px`"
         >
-          “The fighting will continue and expand to any place necessary in the Gaza strip. There will be <strong>no sanctuary</strong> cities.”
+          “The fighting will continue and expand to any place necessary in the Gaza Strip. There will be <strong>no sanctuary</strong> cities.”
         </Quote>
       </PositionedContent>
       <PositionedContent :left="(3550 * scale)">
@@ -144,7 +144,7 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
             class="road-car"
           >
             <div class="car-call">
-              Palestinians evacuating south along the road have been arrested, shot at and killed by Israeli forces, even though the army declared it a safe route.
+              Palestinians evacuating south along the road have been arrested, shot at, and killed by Israeli forces, even though the army declared it a safe route.
             </div>
             <blockquote class="car-response">
               <p>“You can follow the orders so that you aren’t exposed to danger, but the danger will still reach you wherever you are.”</p>
@@ -183,7 +183,7 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
               Days after they arrived at Tal al-Sultan camp, Israel bombed it, killing 45 Palestinians in what became known as the “<strong>tent massacre</strong>.”
             </div>
             <div class="car-call">
-              Many were burned alive in their tents as they slept.
+              Many were burned alive in their tents.
             </div>
             <blockquote class="car-response">
               <p>“All the children started screaming... The sound was terrifying.”</p>
@@ -200,7 +200,7 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
             class="second-tent-bombing"
           >
             <div class="car-call">
-              The family were unable to afford transportation, so they settled in another camp nearby.
+              The family could not afford transportation, so they settled in another camp nearby.
             </div>
             <div class="car-call">
               Two days later, on May 28, Israel bombed that camp, too, killing 15 members of the Al-Absi family.
@@ -246,18 +246,18 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
           :offsetBottom="`${100 * scale}px`"
         >
           <p>
-            Israelis continue to demand that Palestinians be sent into a <strong>permanent exile</strong>, a second Nakba.
+            Israelis continue to demand that Palestinians be sent into <strong>permanent exile</strong>, continuing the Nakba.
           </p>
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(26570 * scale)">
         <Quote
-          name="Gila Gamliel"
-          role="Israeli Minister of Intelligence"
-          date="Nov 11, 2023"
+          name="Itzik Cohen"
+          role="Brigadier General, Israeli Army"
+          date="Nov 5, 2024"
           :offsetBottom="`${100 * scale}px`"
         >
-          “Instead of funneling money to rebuild Gaza... the international community can assist in the costs of <strong>resettlement</strong>.”
+          “There is <strong>no return</strong> to the north [of Gaza], and there will not be.”
         </Quote>
       </PositionedContent>
     </template>

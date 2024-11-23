@@ -40,7 +40,7 @@ const cityWidth = computed(() => 20834 * props.scale)
           :offsetBottom="`${150 * scale}px`"
         >
           <p>
-            Israeli leaders revealed their genocidal intent through colonial tropes, racialized language, and the use of dehumanizing terms to describe <strong>Palestinians as a whole</strong>.
+            Israeli leaders sought to justify their genocidal intent through colonial tropes, racialized language, and the use of dehumanizing terms to describe <strong>Palestinians as a whole</strong>.
           </p>
         </Narration>
       </PositionedContent>
@@ -79,7 +79,7 @@ const cityWidth = computed(() => 20834 * props.scale)
           :offsetBottom="`${150 * scale}px`"
         >
           <p>
-            Their warning was <strong>born out</strong> in the months of bombing, invasion, starvation, and mass displacement unleashed by Israel.
+            The warning of genocide scholars was <strong>born out</strong> in the months of bombing, invasion, starvation, and mass displacement unleashed by Israel.
           </p>
         </Narration>
       </PositionedContent>
@@ -108,13 +108,13 @@ const cityWidth = computed(() => 20834 * props.scale)
       <PositionedContent :left="(11788 * scale)">
         <Narration
           size="lg"
-          :offsetBottom="`${150 * scale}px`"
+          offsetBottom="0"
         >
           <p>
-            A month later, human rights groups confirmed what everyone knew: <strong>Israel was defying the court.</strong>
+            Israel continues to obstruct aid, commit war crimes, and use starvation as a weapon of war.
           </p>
           <p>
-            It continued to obstruct aid, commit war crimes, and use starvation as a weapon of war.
+            In November 2024, a United Nations investigation found Israel's war in Gaza was “consistent with the <strong>characteristics of genocide</strong>.”
           </p>
         </Narration>
       </PositionedContent>
@@ -133,7 +133,7 @@ const cityWidth = computed(() => 20834 * props.scale)
           :offsetBottom="`${100 * scale}px`"
         >
           <p>
-            As Israel's genocide drags on, it has become increasingly difficult to count the dead.
+            As Israel's genocide rages on, it has become increasingly difficult to count the dead.
           </p>
           <p>
             Gaza's Ministry of Health reported 40,861 fatalities as of September 4, 2024, but experts project the direct and indirect death toll will be many times higher.
@@ -146,7 +146,7 @@ const cityWidth = computed(() => 20834 * props.scale)
           :offsetBottom="`${200 * scale}px`"
         >
           <p>
-            In the last year, Israel has shown the intent, capacity and determination to permanently extinguish the <strong>conditions of life</strong> in Gaza.
+            In the last year, Israel has shown the intent, capacity, and determination to permanently extinguish the <strong>conditions of life</strong> in Gaza.
           </p>
         </Narration>
       </PositionedContent>
@@ -155,10 +155,10 @@ const cityWidth = computed(() => 20834 * props.scale)
           :offsetBottom="`${100 * scale}px`"
         >
           <p>
-            They will not stop without a broad campaign of boycotts, divestment and sanctions that inhibit their ability to continue this genocide.
+            They will not stop without a broad campaign of boycotts, divestment and sanctions to prevent another genocide.
           </p>
           <p>
-            Yet the United States, Germany, and other allies continue to provide Israel's genocide with military, political and diplomatic protection. In doing so, they defy their own treaty obligations to prevent another genocide.
+            Yet the US, UK, Germany, and other states continue to provide Israel with military, political and diplomatic protection. By doing so, they are <strong>complicit</strong> in Israel's genocide — defying international law, ignoring their own treaty obligations, and undermining their basic humanity.
           </p>
         </Narration>
       </PositionedContent>

@@ -85,7 +85,7 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
           offsetBottom="0px"
         >
           <p>
-            Israeli forces didn’t spare a single life-sustaining sector in Gaza. Its housing, education, health, transportation, telecommunication, cultural, agricultural, and environmental systems <strong>all lie in rubble</strong>, the realization of genocidal intent.
+            Israeli forces didn’t spare a single life-sustaining sector in Gaza. Its housing, education, health, transportation, telecommunication, cultural, agricultural, and environmental systems <strong>all lie in rubble</strong>.
           </p>
           <div
             ref="allSectors"
@@ -226,7 +226,7 @@ const { isVisible: isShifaDestroyedVisible } = useIntersectionObserver(shifaDest
               Israel eventually invaded Al-Shifa, destroying much of its life-saving equipment and leaving large sections in ruins.
             </div>
             <div class="car-call">
-              After Palestinians got the facility partially up and running, Israel invaded again the following year.
+              After Palestinians got the facility partially up and running, Israel invaded again a few months later.
             </div>
             <blockquote class="car-response">
               <p>

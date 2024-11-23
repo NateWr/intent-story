@@ -92,7 +92,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           “There is no place for any humanitarian gestures — we must <strong>erase the memory of Amalek.</strong>”
           <template #footer>
             <Narration>
-              <p>In the Torah, the ancient Israelites were said to be commanded by God to commit genocide against the people of “Amalek”.</p>
+              <p>In the Torah, the ancient Israelites were said to be commanded by God to destroy the people of “Amalek”.</p>
             </Narration>
           </template>
         </Quote>
@@ -108,7 +108,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
               These attacks, combined with indiscriminate aerial bombardment, made Gaza the <strong>deadliest place in the world</strong> to be an aid worker. 
             </div>
             <blockquote class="car-response">
-              <p>At least 278 aid workers killed between Oct 7 and July 24, 2024.</p>
+              <p>At least 326 aid workers killed between Oct 7, 2023 and Nov 12, 2024.</p>
               <cite class="car-response-cite">UN OCHA</cite>
             </blockquote>
           </CallAndResponse>
@@ -134,7 +134,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
     <template #front>
       <PositionedContent :left="(3205 * scale)">
         <Narration :offsetBottom="`${150 * scale}px`">
-          <p>Nine months after Gallant’s promise to control the flow of life-saving essentials, UN experts declared a <strong>state of famine</strong> across all of Gaza.</p>
+          <p>Nine months after Gallant’s promise to cease the flow of life-saving essentials, UN experts declared a <strong>state of famine</strong> across all of Gaza.</p>
           <p>During this campaign of starvation, Israeli occupation forces (IOF) burned food stocks, destroyed agricultural land, bombed flour mills, greenhouses, bakeries, and fisheries, allowed Israeli settlers to destroy aid bound for Gaza, and carried out targeted attacks on both aid seekers and aid workers.</p>
         </Narration>
       </PositionedContent>
@@ -175,7 +175,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           class="wck-massacre"
           :offsetBottom="`${200 * scale}px`"
         >
-          <p>On April 1, 2024,  a series of brutally precise Israeli strikes on a World Central Kitchen aid convoy killed 7 aid workers.</p>
+          <p>On April 1, 2024,  a series of Israeli strikes targeted a World Central Kitchen aid convoy, killing 7 aid workers.</p>
           <p>The attack forced the largest aid organizations to suspend their operations in Gaza at a point when 1.1 million people — or half the population of Gaza — were experiencing <strong>catastrophic levels of hunger</strong> and at least 28 children had died of starvation.</p>
           <div
             ref="wckMassacre"
@@ -191,7 +191,7 @@ const { isVisible: isDeadlyAidWorkVisible } = useIntersectionObserver(deadlyAidW
           :offsetBottom="`${250 * scale}px`"
         >
           <p>
-            The attack on the World Central Kitchen convoy is part of a <strong>documented pattern</strong> of the IOF knowingly targeting aid convoys and facilities.
+            The Israeli military has repeatedly attacked aid convoys and facilities, even when aid agencies shared their locations with the Israeli military.
           </p>
         </Narration>
       </PositionedContent>
