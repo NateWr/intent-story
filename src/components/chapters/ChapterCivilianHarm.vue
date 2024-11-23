@@ -40,8 +40,6 @@ const familyHome2 = ref<HTMLElement | null>(null)
 const { isVisible: isFamilyHome2Visible } = useIntersectionObserver(familyHome2)
 const familyHome3 = ref<HTMLElement | null>(null)
 const { isVisible: isFamilyHome3Visible } = useIntersectionObserver(familyHome3)
-const gunnedDown = ref<HTMLElement | null>(null)
-const { isVisible: isGunnedDownVisible } = useIntersectionObserver(gunnedDown)
 const orphans = ref<HTMLElement | null>(null)
 const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
 </script>
@@ -203,11 +201,10 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(12650 * scale)" class="positioned-anchor-bottom">
-        <Narration :offsetBottom="`${220 * scale}px`">
+        <Narration :offsetBottom="`${280 * scale}px`">
           <CallAndResponse
-            ref="gunnedDown"
-            :isVisible="isGunnedDownVisible"
-            class="gunned-down"
+            :line="false"
+            :isVisible="false"
           >
             <div class="car-call">
               Six members of the Abu Salah family were gunned down by Israeli forces on their way back from the cemetery, where they had just buried their teenage nephew.
@@ -315,11 +312,6 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
   .narration-center-line {
     height: 45vh;
   }
-}
-
-.gunned-down .car-line {
-  margin-top: -7rem;
-  height: 20vh;
 }
 
 .chapter-civilian-harm #civharm-tree {

@@ -20,7 +20,7 @@ defineProps({
     <image id="city-fg-36" href="city-fg-36.png" x="434" y="237" width="280" height="146" />
     <image id="city-fg-4" href="city-fg-4.png" x="684" y="135" width="271" height="255" />
     <image id="city-fg-8" href="city-fg-8.png" x="633" y="334" width="182" height="76" />
-    <image id="city-fg-30" href="city-fg-30.png" x="17341.3" y="276" width="142.855" height="124.866" transform="rotate(5.20931 17341.3 276)" />
+    <image id="city-fg-30" href="city-fg-30.png" x="17341.3" y="300" width="142.855" height="124.866" transform="rotate(5.20931 17341.3 276)" />
     <image id="city-fg-30" href="city-fg-30.png" x="1007.34" y="266" width="142.855" height="124.866" transform="rotate(5.20931 1007.34 266)" />
     <image id="city-fg-20" href="city-fg-20.png" x="926" y="135" width="328" height="229" />
     <image id="city-md-3" href="city-md-3.png" x="1086" y="44" width="259" height="375" />
@@ -29,12 +29,13 @@ defineProps({
     <image id="city-fg-22" href="city-fg-22.png" x="1470" y="143" width="120" height="259" />
     <image id="city-fg-26" href="city-fg-26.png" x="7945" y="226" width="333" height="230" />
     <image id="city-md-3" href="city-md-3.png" x="10487" y="154" width="204" height="296" />
+    <image id="city-fg-4" href="city-fg-4.png" x="17021" y="180" width="271" height="255" />
     <image id="city-md-3" href="city-md-3.png" x="6014" y="135" width="222" height="322" />
     <image id="city-fg-26" href="city-fg-26.png" width="333" height="230" transform="matrix(-1 0 0 1 8820 206)" />
     <image id="city-md-3" href="city-md-3.png" x="9750.94" y="179.559" width="173" height="251" transform="rotate(5.2903 9750.94 179.559)" />
     <image id="city-fg-20" href="city-fg-20.png" x="10071" y="238" width="260" height="183" />
     <image id="city-fg-8" href="city-fg-8.png" x="10060.1" y="349" width="191" height="79" transform="rotate(1.53679 10060.1 349)" />
-    <image id="city-md-2" href="city-md-2.png" x="3130" y="172" width="253" height="197" />
+    <image id="city-md-2" href="city-md-2.png" x="3130" y="192" width="253" height="197" />
     <image id="city-fg-36" href="city-fg-36.png" x="3372" y="271" width="217" height="114" />
     <image id="city-md-1" href="city-md-1.png" x="2290" y="37" width="250" height="377" />
     <image id="city-fg-18" href="city-fg-18.png" x="2041" y="139" width="374" height="284" />
@@ -51,31 +52,26 @@ defineProps({
     <image id="city-fg-23" href="city-fg-23.png" x="10698" y="243" width="243" height="191" />
     <image id="city-fg-11" href="city-fg-11.png" x="3560" y="183" width="276" height="284" />
     <image id="city-fg-19" href="city-fg-19.png" x="11320" y="170" width="70" height="300" />
-    <image id="city-md-4" href="city-md-4.png" x="12947" y="207" width="133" height="201" />
-    <image id="city-md-3" href="city-md-3.png" x="6628" y="227" width="99" height="144" />
-    <image id="city-md-2" href="city-md-2.png" x="19467" y="175" width="253" height="197" />
-    <image id="city-md-1" href="city-md-1.png" x="18627" y="40" width="250" height="377" />
-    <image id="city-md-2" href="city-md-2.png" x="20485" y="140" width="284" height="288" />
-    <image id="city-md-3" href="city-md-3.png" x="16329" y="228" width="120" height="176" />
-    <image id="city-fg-20" href="city-fg-20.png" x="17250" y="110" width="328" height="229" />
+    <image id="city-md-4" href="city-md-4.png" x="12947" y="227" width="133" height="201" />
+    <image id="city-md-1" href="city-md-1.png" x="18627" y="60" width="250" height="377" />
+    <image id="city-md-3" href="city-md-3.png" x="16329" y="228" width="120" height="216" />
+    <image id="city-fg-20" href="city-fg-20.png" x="17250" y="150" width="328" height="229" />
     <image id="city-md-1" href="city-md-1.png" x="16029" y="234" width="126" height="190" />
     <image id="city-fg-14" href="city-fg-14.png" width="340" height="282" transform="matrix(-1 0 0 1 16778 166)" />
-    <image id="city-fg-30" href="city-fg-30.png" x="20713.3" y="254.406" width="214" height="185" transform="rotate(5.36222 20713.3 254.406)" />
-    <image id="city-fg-11" href="city-fg-11.png" x="19929" y="150" width="259" height="267" />
-    <image id="city-fg-20" href="city-fg-20.png" x="20003" y="171" width="284" height="201" />
+    <image id="city-fg-20" href="city-fg-20.png" x="20003" y="230" width="284" height="201" />
     <image id="city-fg-18" href="city-fg-18.png" x="18378" y="142" width="374" height="284" />
     <image id="city-fg-35" href="city-fg-35.png" x="18170" y="271" width="508" height="200" />
     <image id="city-fg-36" href="city-fg-36.png" x="19709" y="274" width="217" height="114" />
     <image id="city-fg-22" href="city-fg-22.png" x="19146" y="124" width="159" height="341" />
-    <image id="city-fg-22" href="city-fg-22.png" x="17807" y="146" width="120" height="259" />
-    <image id="city-fg-30" href="city-fg-30.png" width="164.957" height="144.184" transform="matrix(-0.99587 0.0907944 0.0907944 0.99587 18077.3 258)" />
+    <image id="city-fg-22" href="city-fg-22.png" x="17807" y="186" width="120" height="259" />
+    <image id="city-fg-30" href="city-fg-30.png" width="164.957" height="144.184" transform="matrix(-0.99587 0.0907944 0.0907944 0.99587 18077.3 300)" />
     <image id="city-fg-19" href="city-fg-19.png" x="14645" y="167" width="59" height="246" />
-    <image id="city-fg-8" href="city-fg-8.png" x="16970" y="337" width="182" height="76" />
-    <image id="city-md-3" href="city-md-3.png" x="17423" y="47" width="259" height="375" />
-    <image id="city-md-3" href="city-md-3.png" x="18057" y="167" width="162" height="235" />
-    <image id="city-fg-33" href="city-fg-33.png" x="17553" y="289" width="188" height="113" />
-    <image id="city-fg-36" href="city-fg-36.png" x="16771" y="240" width="280" height="146" />
-    <image id="city-fg-4" href="city-fg-4.png" x="17021" y="138" width="271" height="255" />
+    <image id="city-fg-8" href="city-fg-8.png" x="16970" y="350" width="182" height="76" />
+    <image id="city-md-3" href="city-md-3.png" x="17423" y="85" width="259" height="375" />
+    <image id="city-md-3" href="city-md-3.png" x="18057" y="197" width="162" height="235" />
+    <image id="city-fg-33" href="city-fg-33.png" x="17553" y="320" width="188" height="113" />
+    <image id="city-fg-36" href="city-fg-36.png" x="16771" y="290" width="280" height="146" />
+    <image id="city-fg-23" href="city-fg-23.png" x="13895" y="210" width="309" height="242" />
     <image id="city-fg-30" href="city-fg-30.png" x="11557.1" y="295.527" width="167.432" height="143.933" transform="rotate(3.40651 11557.1 295.527)" />
     <image id="city-fg-30" href="city-fg-30.png" x="10900" y="327" width="116.692" height="100.314" transform="rotate(3.40651 10900 327)" />
     <image id="city-fg-33" href="city-fg-33.png" x="8460" y="337" width="189" height="113" />
@@ -88,9 +84,9 @@ defineProps({
     <image id="city-fg-36" href="city-fg-36.png" x="13659" y="265" width="345" height="180" />
     <image id="city-fg-35" href="city-fg-35.png" x="13028" y="270" width="493" height="193" />
     <image id="city-fg-26" href="city-fg-26.png" x="13680" y="229" width="333" height="230" />
-    <image id="city-fg-38" href="city-fg-38.png" x="12275" y="228" width="391" height="160" />
-    <image id="civharm-cemetery" href="civharm-cemetery.png" x="12241" y="239" width="773" height="244" />
-    <image id="city-fg-36" href="city-fg-36.png" x="12762" y="361" width="193" height="101" />
+    <image id="city-fg-38" href="city-fg-38.png" x="12275" y="235" width="391" height="160" />
+    <image id="civharm-cemetery" href="civharm-cemetery.png" x="12241" y="260" width="773" height="244" />
+    <image id="city-fg-36" href="city-fg-36.png" x="12762" y="381" width="193" height="101" />
     <image id="city-fg-37" href="city-fg-37.png" x="11912" y="239" width="228" height="188" />
     <image id="city-fg-22" href="city-fg-22.png" x="12093" y="163" width="127" height="271" />
     <image id="city-fg-32" href="city-fg-32.png" x="11190" y="327" width="165" height="91" />
@@ -149,8 +145,7 @@ defineProps({
     <image id="city-fg-24" href="city-fg-24.png" x="8795" y="200" width="351" height="263" />
     <image id="city-fg-21" href="city-fg-21.png" x="10250" y="168" width="314" height="305" />
     <image id="city-fg-5" href="city-fg-5.png" x="8262" y="220.146" width="157.825" height="250.091" transform="rotate(-4.77795 8262 220.146)" />
-    <image id="city-fg-19" href="city-fg-19.png" x="17519" y="92" width="88" height="379" />
-    <image id="city-fg-23" href="city-fg-23.png" x="13895" y="153" width="309" height="242" />
+    <image id="city-fg-19" href="city-fg-19.png" x="17519" y="130" width="88" height="379" />
     <image id="city-fg-30" href="city-fg-30.png" x="15079.9" y="336" width="134.277" height="115.431" transform="rotate(3.40651 15079.9 336)" />
     <image id="city-fg-30" href="city-fg-30.png" x="14213.9" y="336" width="134.277" height="115.431" transform="rotate(3.40651 14213.9 336)" />
     <image id="city-fg-34" href="city-fg-34.png" x="13974" y="306" width="303" height="162" />
