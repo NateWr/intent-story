@@ -26,12 +26,6 @@ const cityWidth = computed(() => 20834 * props.scale)
   <Chapter
     class="chapter-end"
     :cityWidth="cityWidth"
-    :style="{
-      '--color-narration': 'var(--slate-light)',
-      '--color-highlight': 'var(--slate-light)',
-      '--color-title': 'var(--slate-light)',
-      '--color-subtitle-highlight': 'var(--slate-light)',
-    }"
   >
     <template #back>
       <PositionedContent :left="(1011 * scale)">
@@ -44,7 +38,7 @@ const cityWidth = computed(() => 20834 * props.scale)
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(3053 * scale)">
+      <PositionedContent :left="(3153 * scale)">
         <Quote
           name="Benjamin Netanyahu"
           role="Israeli Prime Minister"
@@ -95,7 +89,7 @@ const cityWidth = computed(() => 20834 * props.scale)
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(10295 * scale)">
+      <PositionedContent :left="(10345 * scale)">
         <Quote
           name="Yoav Gallant"
           role="Minister of Defense"
@@ -164,13 +158,19 @@ const cityWidth = computed(() => 20834 * props.scale)
       </PositionedContent>
     </template>
 
-    <CityEnd :scale="scale" />
+    <CityEnd
+      :width="cityWidth"
+    />
 
   </Chapter>
 </template>
 
 <style>
 .chapter-end {
+  --color-narration: var(--slate-light);
+  --color-highlight: var(--slate-light);
+  --color-title: var(--slate-light);
+  --color-subtitle-highlight: var(--slate-light);
   background: var(--end-gradient);
 }
 </style>
