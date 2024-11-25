@@ -11,7 +11,7 @@ export const usePerformance = () => {
   const set = () => {
     progress.value = (performance.now() - start.value) / 1000
     frames.value = frames.value + 1
-    if (frames.value > 20) {
+    if (frames.value > 10) {
       fps.value = frames.value / progress.value
       frames.value = 0
       start.value = performance.now()

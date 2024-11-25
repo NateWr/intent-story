@@ -4,6 +4,7 @@ import IconShare from './IconShare.vue'
 import IconInfo from './IconInfo.vue'
 import type { Chapter } from '../types/chapter'
 import type { I18N } from '../types/i18n'
+import { usePerformance } from '../utilities/usePerformance'
 
 const props = defineProps({
   chapters: {
@@ -19,8 +20,11 @@ const props = defineProps({
 defineEmits(['open-about', 'open-share'])
 
 const show = computed(() => {
-  return props.chapters[0].progress > 0.99
+  return true
+  // return props.chapters[0].progress > 0.99
 })
+
+const { fps } = usePerformance();
 </script>
 
 
@@ -35,6 +39,9 @@ const show = computed(() => {
     </div>
     <slot />
     <div class="header-buttons">
+      <span style="max-width: 0.75rem;font-size:0.75rem;overflow:visible;">
+        {{ fps.toFixed(0) }}
+      </span>
       <button class="header-button" @click="$emit('open-share')">
         <IconShare aria-hidden="true" />
         <span class="sr-only">{{ i18n.share }}</span>
