@@ -38,9 +38,9 @@ defineProps({
     <image id="city-fg-29" href="city-fg-29.png" x="14786" y="324" width="315" height="76" />
     <image id="city-md-1" href="city-md-1.png" x="14979" y="227" width="128" height="193" />
     <image id="city-fg-33" href="city-fg-33.png" width="211" height="127" transform="matrix(-1 0 0 1 2761 359)" />
-    <image id="city-fg-38" href="city-fg-38.png" x="2662" y="378" width="281" height="116" />
-    <image id="starvation-farm" href="starvation-farm.png" x="3020" y="154" width="816" height="348" />
+    <image id="starvation-food-stocks" href="starvation-food-stocks.png" x="3020" y="154" width="816" height="348" />
     <image id="city-fg-2" href="city-fg-2.png" x="2816" y="40" width="359" height="462" />
+    <image id="city-fg-38" href="city-fg-38.png" x="2662" y="378" width="281" height="116" />
     <image id="city-md-2" href="city-md-2.png" x="3996" y="138" width="284" height="288" />
     <image id="city-md-4" href="city-md-4.png" x="4725" y="154" width="170" height="257" />
     <image id="city-md-1" href="city-md-1.png" x="6312" y="184" width="154" height="232" />
@@ -136,6 +136,7 @@ defineProps({
     <image id="city-fg-14" href="city-fg-14.png" x="4025" y="172" width="364" height="303" />
     <image id="city-fg-38" href="city-fg-38.png" x="4468" y="278" width="560" height="229" />
     <image id="city-fg-4" href="city-fg-4.png" x="3747" y="209" width="310" height="291" />
+    <image id="city-fg-15" href="city-fg-15.png" x="3723" y="400" width="206" height="107" />
     <image id="city-fg-24" href="city-fg-24.png" width="411" height="308" transform="matrix(-1 0 0 1 2510 194)" />
     <image id="city-fg-37" href="city-fg-37.png" x="14223" y="230" width="284" height="234" />
     <image id="city-fg-19" href="city-fg-19.png" x="15412" y="118" width="83" height="355" />
