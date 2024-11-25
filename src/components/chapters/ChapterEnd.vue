@@ -79,7 +79,7 @@ const cityWidth = computed(() => 20834 * props.scale)
           :offsetBottom="`${150 * scale}px`"
         >
           <p>
-            The warning of genocide scholars was <strong>born out</strong> in the months of bombing, invasion, starvation, and mass displacement unleashed by Israel.
+            The warning of genocide scholars was <strong>borne out</strong> in the months of bombing, invasion, starvation, and mass displacement unleashed by Israel.
           </p>
         </Narration>
       </PositionedContent>
