@@ -124,7 +124,7 @@ const cityWidth = computed(() => 20834 * props.scale)
       </PositionedContent>
       <PositionedContent :left="(15448 * scale)">
         <Narration
-          :offsetBottom="`${100 * scale}px`"
+          :offsetBottom="`${200 * scale}px`"
         >
           <p>
             As Israel's genocide rages on, it has become increasingly difficult to count the dead.
