@@ -180,52 +180,6 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
           </p>
         </Narration>
       </PositionedContent>
-      <PositionedContent :left="(21300 * scale)">
-        <Narration offsetBottom="0px">
-          <CallAndResponse
-            :line="false"
-            :isVisible="false"
-          >
-            <div class="car-call">
-              Hundreds of staff, 1,500 displaced people, and 600 patients, including 39 premature babies, were trapped inside.
-            </div>
-            <div class="car-call">
-              The hospital went days without power.
-            </div>
-            <blockquote class="car-response">
-              <p>
-                “We lost the life of one baby today. Yesterday we lost two.”
-              </p>
-              <cite class="car-response-cite">
-                Dr. Marwan Abu Sada, Al-Shifa Hospital
-              </cite>
-            </blockquote>
-          </CallAndResponse>
-        </Narration>
-      </PositionedContent>
-      <PositionedContent :left="(23000 * scale)">
-        <Narration offsetBottom="0px">
-          <CallAndResponse
-            :line="false"
-            :isVisible="false"
-          >
-            <div class="car-call">
-              Israel eventually invaded Al-Shifa, destroying much of its life-saving equipment and leaving large sections in ruins.
-            </div>
-            <div class="car-call">
-              After Palestinians got the facility partially up and running, Israel invaded again a few months later.
-            </div>
-            <blockquote class="car-response">
-              <p>
-                “[Al-Shifa hospital] is now an empty shell with human graves.”
-              </p>
-              <cite class="car-response-cite">
-                Director-General, World Health Organization
-              </cite>
-            </blockquote>
-          </CallAndResponse>
-        </Narration>
-      </PositionedContent>
       <PositionedContent :left="(24910 * scale)">
         <Narration
           :offsetBottom="`${150 & scale}px`"
@@ -272,6 +226,56 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
         :width="cityWidth"
         :speed="FG_SPEED"
       />
+    </template>
+
+    <template #front>
+
+      <PositionedContent :left="(21300 * scale)">
+        <Narration :offsetBottom="`${100 * scale}px`">
+          <CallAndResponse
+            :line="false"
+            :isVisible="false"
+          >
+            <div class="car-call">
+              Hundreds of staff, 1,500 displaced people, and 600 patients, including 39 premature babies, were trapped inside.
+            </div>
+            <div class="car-call">
+              The hospital went days without power.
+            </div>
+            <blockquote class="car-response">
+              <p>
+                “We lost the life of one baby today. Yesterday we lost two.”
+              </p>
+              <cite class="car-response-cite">
+                Dr. Marwan Abu Sada, Al-Shifa Hospital
+              </cite>
+            </blockquote>
+          </CallAndResponse>
+        </Narration>
+      </PositionedContent>
+      <PositionedContent :left="(23000 * scale)">
+        <Narration :offsetBottom="`${100 * scale}px`">
+          <CallAndResponse
+            :line="false"
+            :isVisible="false"
+          >
+            <div class="car-call">
+              Israel eventually invaded Al-Shifa, destroying much of its life-saving equipment and leaving large sections in ruins.
+            </div>
+            <div class="car-call">
+              After Palestinians got the facility partially up and running, Israel invaded again a few months later.
+            </div>
+            <blockquote class="car-response">
+              <p>
+                “[Al-Shifa hospital] is now an empty shell with human graves.”
+              </p>
+              <cite class="car-response-cite">
+                Director-General, World Health Organization
+              </cite>
+            </blockquote>
+          </CallAndResponse>
+        </Narration>
+      </PositionedContent>
     </template>
 
   </Chapter>
