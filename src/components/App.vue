@@ -107,7 +107,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="outer-wrapper">
+  <main
+    class="outer-wrapper"
+    :style="{
+      '--scale': scale,
+    }"
+  >
     <div class="chapters-wrapper">
       <div class="chapters-bg-wrapper" :style="{'--offset': scrollProgress}">
         <AppBgFar class="chapters-bg" />
@@ -130,7 +135,6 @@ onMounted(() => {
         class="chapters"
         ref="chapterWrapper"
         :style="{
-          '--scale': scale,
           transform: `translateX(-${progress}%)`,
         }"
       >
@@ -258,8 +262,10 @@ body {
 .chapters-bg {
   position: fixed;
   bottom: 0;
+  bottom: calc(var(--scale) * 256px);
   left: 0;
-  transform: translateX(calc(calc(-100% * var(--offset)) + calc(100vw * var(--offset))));
+  transform: translateX(calc(calc(-100% * var(--offset)) + calc(100vw * var(--offset)))) scale(var(--scale));
+  transform-origin: bottom left;
 }
 
 .chapters-bg-wrapper {
