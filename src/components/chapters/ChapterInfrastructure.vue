@@ -187,7 +187,7 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
             :isVisible="false"
           >
             <div class="car-call">
-              Hundreds of staff, 1500 displaced people, and 600 patients, including 39 premature babies, were trapped inside.
+              Hundreds of staff, 1,500 displaced people, and 600 patients, including 39 premature babies, were trapped inside.
             </div>
             <div class="car-call">
               The hospital went days without power.
