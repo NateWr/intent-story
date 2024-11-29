@@ -195,9 +195,9 @@ onMounted(() => {
       </PositionedContent>
       <PositionedContent :left="(10930 * scale)">
         <Narration
-          :offsetBottom="`${350 * scale}px`"
+          :offsetBottom="`${150 * scale}px`"
         >
-          <p>The crime of genocide is committed by killing or harming members of a group, as well as inflicting <strong>conditions of life</strong> that will bring about its destruction.</p>
+          <p>The crime of genocide is committed by killing or harming members of a group or inflicting <strong>conditions of life</strong> that will bring about its destruction.</p>
           <p>Israel has starved the people of Gaza, destroyed life-sustaining infrastructure, and forcibly displaced and killed residents at a shocking rate, leading dozens of experts to conclude that Israel is committing genocide in Gaza.</p>
         </Narration>
       </PositionedContent>
@@ -222,7 +222,7 @@ onMounted(() => {
   --color-narration: var(--purple);
   --color-highlight: var(--purple);
   --color-title: var(--red);
-  --color-subtitle-highlight: var(--green-light);
+  --color-subtitle-highlight: var(--red-light);
   background: var(--intro-gradient);
 }
 
