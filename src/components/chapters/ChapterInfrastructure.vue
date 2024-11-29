@@ -153,7 +153,7 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
           offsetBottom="0"
         >
           <p>
-            Israel's destruction of housing is part of a campaign to dismantle the <strong>conditions of life</strong> in Gaza.
+            Israel's destruction of civilian infrastructure is part of a campaign to dismantle the <strong>conditions of life</strong> in Gaza.
           </p>
           <p>
             Nowhere is this clearer than in its persistent attacks on health facilities, which sustain not only present life, but also future life.
