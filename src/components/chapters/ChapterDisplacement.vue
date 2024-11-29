@@ -203,7 +203,7 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
               The family could not afford transportation, so they settled in another camp nearby.
             </div>
             <div class="car-call">
-              Two days later, on May 28, Israel bombed that camp, too, killing 15 members of the Al-Absi family.
+              Two days later, on May 28, 2024, Israel bombed that camp, too, killing 15 members of the Al-Absi family.
             </div>
             <blockquote class="car-response">
               <p>“I felt helpless watching my family dying and not able to help them.”</p>

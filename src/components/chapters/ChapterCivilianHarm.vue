@@ -115,7 +115,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
         >
           <div class="narration-dated">
             <div class="narration-dated-date">
-              Oct 14, 2024
+              Oct 14, 2023
             </div>
             <div>
               Israel bombed the Al-Herbawi family's home and adjacent residences, killing 34 civilians, including a 4-month old baby.
@@ -136,7 +136,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
         >
           <div class="narration-dated">
             <div class="narration-dated-date">
-              Oct 20, 2024
+              Oct 20, 2023
             </div>
             <div>
               Israel bombed the Al-Aqad family’s home, killing 12 family members, including well-known poet Heba Abu Nada.
@@ -157,7 +157,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
         >
           <div class="narration-dated">
             <div class="narration-dated-date">
-              Oct 22, 2024
+              Oct 22, 2023
             </div>
             <div>
               Israel bombed the Al-Naouq family’s home, killing 21 family members. Nine remained trapped under the rubble.
@@ -201,13 +201,13 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(12650 * scale)" class="positioned-anchor-bottom">
-        <Narration :offsetBottom="`${280 * scale}px`">
+        <Narration :offsetBottom="`${210 * scale}px`">
           <CallAndResponse
             :line="false"
             :isVisible="false"
           >
             <div class="car-call">
-              Six members of the Abu Salah family were gunned down by Israeli forces on their way back from the cemetery, where they had just buried their teenage nephew.
+              Six members of the Abu Salah family were gunned down in December, 2023 by Israeli forces on their way back from the cemetery, where they had just buried their teenage nephew.
             </div>
             <div class="car-call">
               Their remains were bulldozed into a pile of rubbish and only discovered after Israeli forces left.

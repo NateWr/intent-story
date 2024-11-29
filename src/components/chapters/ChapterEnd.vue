@@ -82,7 +82,7 @@ const cityWidth = computed(() => 20834 * props.scale)
           :offsetBottom="`${150 * scale}px`"
         >
           <p>
-            On January 26th, the International Court of Justice ordered “<strong>immediate and effective measures</strong>” to protect Palestinians in Gaza from the risk of genocide.
+            On January 26, 2024, the International Court of Justice ordered “<strong>immediate and effective measures</strong>” to protect Palestinians in Gaza from the risk of genocide.
           </p>
           <p>
             Israeli leaders ignored the demand and <strong>belittled the court</strong>.

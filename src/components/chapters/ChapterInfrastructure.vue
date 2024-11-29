@@ -56,7 +56,7 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
     </template>
 
     <template #back>
-      <PositionedContent :left="(1800 * scale)">
+      <PositionedContent :left="(2100 * scale)">
         <Quote
           name="Daniel Hagari"
           role="IDF spokesperson"
@@ -102,7 +102,7 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
           :offsetBottom="`${200 * scale}px`"
         >
           <p>
-            On October 31st, Israel imposed a <strong>total blackout</strong> on Gaza, cutting all telecommunication and internet services.
+            On October 31, 2023 Israel imposed a <strong>total blackout</strong> on Gaza, cutting all telecommunication and internet services.
           </p>
         </Narration>
       </PositionedContent>
