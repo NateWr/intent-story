@@ -213,7 +213,7 @@ watch(currentIndex, (newVal) => {
     }
 
     & li:not(:last-child) .app-nav-link {
-      padding-right: 3rem;
+      padding-right: 2rem;
     }
   }
 }

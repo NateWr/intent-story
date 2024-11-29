@@ -9,7 +9,7 @@ starvation: Starvation
 infrastructure: Infrastructure
 displacement: Displacement
 civilianHarm: Civilian Harm
-end: End
+end: Conclusion
 about: About
 producedBy: Produced By
 visualizingPalestine: Visualizing Palestine
