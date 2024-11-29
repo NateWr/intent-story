@@ -149,7 +149,7 @@ const cityWidth = computed(() => 20834 * props.scale)
           :offsetBottom="`${100 * scale}px`"
         >
           <p>
-            They will not stop without a broad campaign of boycotts, divestment and sanctions to prevent another genocide.
+            They will not stop without a broad campaign of boycotts, divestment and sanctions.
           </p>
           <p>
             Yet the US, UK, Germany, and other states continue to provide Israel with military, political and diplomatic protection. By doing so, they are <strong>complicit</strong> in Israel's genocide — defying international law, ignoring their own treaty obligations, and undermining their basic humanity.
