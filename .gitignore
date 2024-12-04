@@ -1,3 +1,6 @@
+# compresses images in public dir
+public/img/**.png
+
 # build output
 dist/
 

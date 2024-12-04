@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "npm run images && astro check --minimumSeverity warning && astro build",
     "preview": "astro preview",
+    "images": "node ./scripts/images.js",
     "astro": "astro"
   },
   "dependencies": {
@@ -21,5 +22,8 @@
     "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4",
     "vue": "^3.4.38"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
   }
 }
