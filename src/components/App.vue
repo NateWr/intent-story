@@ -264,7 +264,7 @@ body {
   bottom: 0;
   bottom: calc(var(--scale) * 256px);
   left: 0;
-  transform: translateX(calc(calc(-100% * var(--offset)) + calc(100vw * var(--offset)))) scale(var(--scale));
+  transform: scale(var(--scale)) translateX(calc(calc(-100% * var(--offset)) + calc(100vw * var(--offset))));
   transform-origin: bottom left;
 }
 
