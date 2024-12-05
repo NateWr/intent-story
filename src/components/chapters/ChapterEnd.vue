@@ -19,7 +19,7 @@ const props = defineProps({
   },
 })
 
-const cityWidth = computed(() => 20834 * props.scale)
+const cityWidth = computed(() => 26000 * props.scale)
 </script>
 
 <template>
@@ -153,6 +153,16 @@ const cityWidth = computed(() => 20834 * props.scale)
           </p>
           <p>
             Yet the US, UK, Germany, and other states continue to provide Israel with military, political and diplomatic protection. By doing so, they are <strong>complicit</strong> in Israel's genocide — defying international law, ignoring their own treaty obligations, and undermining their basic humanity.
+          </p>
+        </Narration>
+      </PositionedContent>
+      <PositionedContent :left="(23500 * scale)">
+        <Narration
+          size="lg"
+          :offsetBottom="`${200 * scale}px`"
+        >
+          <p>
+            It's not too late to <strong>stop the genocide</strong>.
           </p>
         </Narration>
       </PositionedContent>

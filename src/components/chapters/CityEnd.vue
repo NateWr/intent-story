@@ -6,9 +6,9 @@ defineProps({
 
 <template>
   <svg
-    width="20834"
+    width="26000"
     height="411"
-    viewBox="0 0 20834 411"
+    viewBox="0 0 26000 411"
     fill="none"
     :style="{
       width: `${width.toFixed()}px`,
@@ -16,7 +16,7 @@ defineProps({
     }"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="20834" height="65" y="346" fill="#080808"/>
+    <rect width="26000" height="65" y="346" fill="#080808"/>
     <image id="city-fg-8" href="img/city-fg-8.png" width="290" height="121" x="6330" y="233" />
     <image id="city-fg-8" href="img/city-fg-8.png" width="290" height="121" x="19819" y="220" />
     <image id="city-fg-30" href="img/city-fg-30.png" width="116.692" height="100.314" x="5247.96" y="252"  transform="rotate(3.407 5247.96 252)"/>
@@ -119,5 +119,10 @@ defineProps({
     <image id="city-fg-22" href="img/city-fg-22.png" width="109" height="233" x="9099" y="133" />
     <image id="city-fg-12" href="img/city-fg-12.png" width="338" height="330" x="13621" y="57" />
     <image id="city-fg-1" href="img/city-fg-1.png" width="418" height="132" x="12093" y="308" />
+    <image id="city-fg-6" href="img/city-fg-6.png" width="148" height="108" x="22669" y="283" />
+    <image id="displacement-people" href="img/displacement-people.png" width="2238" height="100" x="20805" y="315" />
+    <image id="city-fg-1" href="img/city-fg-1.png" width="418" height="132" x="20442" y="308" />
+    <image id="city-fg-15" href="img/city-fg-15.png" width="325" height="168" x="21489" y="299" />
+    <image id="city-fg-8" href="img/city-fg-8.png" width="447" height="188" x="21716" y="284" />
   </svg>
 </template>
