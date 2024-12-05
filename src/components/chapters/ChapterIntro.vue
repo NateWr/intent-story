@@ -11,6 +11,7 @@ import CityIntro from './CityIntro.vue'
 import type { I18N } from '../../types/i18n'
 import CityIntroBgFar from './CityIntroBgFar.vue'
 import CityIntroBg from './CityIntroBg.vue'
+import { useIntersectionObserver } from '../../utilities/useIntersectionObserver'
 
 const props = defineProps({
   i18n: {
@@ -34,6 +35,17 @@ const cityBgFarWidth = computed(() => 7007 * props.scale)
 const cityBgFarScrollDistance = computed(() => (cityWidth.value - cityBgFarWidth.value) / cityBgFarWidth.value)
 const cityBgWidth = computed(() => 8724 * props.scale)
 const cityBgScrollDistance = computed(() => (cityWidth.value - cityBgWidth.value) / cityBgWidth.value)
+
+
+
+const arrows1 = ref<HTMLElement | null>(null)
+const { isVisible: isArrows1Visible } = useIntersectionObserver(arrows1)
+const arrows2 = ref<HTMLElement | null>(null)
+const { isVisible: isArrows2Visible } = useIntersectionObserver(arrows2)
+const arrows3 = ref<HTMLElement | null>(null)
+const { isVisible: isArrows3Visible } = useIntersectionObserver(arrows3)
+const arrows4 = ref<HTMLElement | null>(null)
+const { isVisible: isArrows4Visible } = useIntersectionObserver(arrows4)
 
 onMounted(() => {
   setTimeout(() => {
@@ -107,73 +119,43 @@ onMounted(() => {
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(6300 * scale)">
-        <Arrow offsetTop="0" :layer="3" />
-      </PositionedContent>
-      <PositionedContent :left="(6600 * scale)">
-        <Arrow offsetTop="-40" :layer="3" />
-      </PositionedContent>
-      <PositionedContent :left="(6700 * scale)">
-        <Arrow offsetTop="-15" :layer="2" />
-      </PositionedContent>
-      <PositionedContent :left="(6740 * scale)">
-        <Arrow offsetTop="0" :layer="3" />
-      </PositionedContent>
-      <PositionedContent :left="(6810 * scale)">
-        <Arrow offsetTop="-20" :layer="3" />
+        <div ref="arrows1" class="arrows-group" :style="{width: `${410 * scale}px`}">
+          <Arrow :is-visible="isArrows1Visible" offsetTop="0" :layer="3" />
+          <Arrow :is-visible="isArrows1Visible" offsetTop="-40" :layer="3" :left="`${300 * scale}px`" />
+          <Arrow :is-visible="isArrows1Visible" offsetTop="-15" :layer="2" :left="`${400 * scale}px`" />
+          <Arrow :is-visible="isArrows1Visible" offsetTop="0" :layer="3" :left="`${340 * scale}px`" />
+          <Arrow :is-visible="isArrows1Visible" offsetTop="-20" :layer="3" :left="`${410 * scale}px`" />
+        </div>
       </PositionedContent>
       <PositionedContent :left="(7120 * scale)">
-        <Arrow offsetTop="-5" :layer="3" />
-      </PositionedContent>
-      <PositionedContent :left="(7150 * scale)">
-        <Arrow offsetTop="-30" :layer="3" />
-      </PositionedContent>
-      <PositionedContent :left="(7350 * scale)">
-        <Arrow offsetTop="15" :layer="3" />
-      </PositionedContent>
-      <PositionedContent :left="(7390 * scale)">
-        <Arrow offsetTop="28" :layer="3" />
-      </PositionedContent>
-      <PositionedContent :left="(7480 * scale)">
-        <Arrow offsetTop="-60" :layer="3" />
-      </PositionedContent>
-      <PositionedContent :left="(7510 * scale)">
-        <Arrow offsetTop="60" :layer="3" />
+        <div ref="arrows2" class="arrows-group" :style="{width: `${390 * scale}px`}">
+          <Arrow :is-visible="isArrows2Visible" offsetTop="-5" :layer="3" />
+          <Arrow :is-visible="isArrows2Visible" offsetTop="-30" :layer="3" :left="`${30 * scale}px`" />
+          <Arrow :is-visible="isArrows2Visible" offsetTop="15" :layer="3" :left="`${230 * scale}px`" />
+          <Arrow :is-visible="isArrows2Visible" offsetTop="28" :layer="3" :left="`${270 * scale}px`" />
+          <Arrow :is-visible="isArrows2Visible" offsetTop="-60" :layer="3" :left="`${360 * scale}px`" />
+          <Arrow :is-visible="isArrows2Visible" offsetTop="60" :layer="3" :left="`${390 * scale}px`" />
+        </div>
       </PositionedContent>
       <PositionedContent :left="(7670 * scale)">
-        <Arrow offsetTop="37" :layer="2" />
-      </PositionedContent>
-      <PositionedContent :left="(7800 * scale)">
-        <Arrow offsetTop="-20" :layer="3" />
-      </PositionedContent>
-      <PositionedContent :left="(7830 * scale)">
-        <Arrow offsetTop="20" :layer="3" />
-      </PositionedContent>
-      <PositionedContent :left="(7940 * scale)">
-        <Arrow offsetTop="0" :layer="3" />
-      </PositionedContent>
-      <PositionedContent :left="(7960 * scale)">
-        <Arrow offsetTop="7" :layer="3" />
-      </PositionedContent>
-      <PositionedContent :left="(8100 * scale)">
-        <Arrow offsetTop="0" :layer="2" />
+        <div ref="arrows3" class="arrows-group" :style="{width: `${330 * scale}px`}">
+          <Arrow :is-visible="isArrows3Visible" offsetTop="37" :layer="2" />
+          <Arrow :is-visible="isArrows3Visible" offsetTop="-20" :layer="3" :left="`${130 * scale}px`"/>
+          <Arrow :is-visible="isArrows3Visible" offsetTop="20" :layer="3" :left="`${160 * scale}px`" />
+          <Arrow :is-visible="isArrows3Visible" offsetTop="0" :layer="3" :left="`${270 * scale}px`" />
+          <Arrow :is-visible="isArrows3Visible" offsetTop="7" :layer="3" :left="`${290 * scale}px`" />
+          <Arrow :is-visible="isArrows3Visible" offsetTop="0" :layer="2" :left="`${330 * scale}px`" />
+        </div>
       </PositionedContent>
       <PositionedContent :left="(8155 * scale)">
-        <Arrow offsetTop="-20" :layer="3" />
-      </PositionedContent>
-      <PositionedContent :left="(8300 * scale)">
-        <Arrow offsetTop="25" :layer="3" />
-      </PositionedContent>
-      <PositionedContent :left="(8350 * scale)">
-        <Arrow offsetTop="-60" :layer="3" />
-      </PositionedContent>
-      <PositionedContent :left="(8385 * scale)">
-        <Arrow offsetTop="25" :layer="2" />
-      </PositionedContent>
-      <PositionedContent :left="(8460 * scale)">
-        <Arrow offsetTop="-30" :layer="3" />
-      </PositionedContent>
-      <PositionedContent :left="(8550 * scale)">
-        <Arrow offsetTop="-10" :layer="3" />
+        <div ref="arrows4" class="arrows-group" :style="{width: `${395 * scale}px`}">
+          <Arrow :is-visible="isArrows4Visible" offsetTop="-20" :layer="3" />
+          <Arrow :is-visible="isArrows4Visible" offsetTop="25" :layer="3" :left="`${145 * scale}px`" />
+          <Arrow :is-visible="isArrows4Visible" offsetTop="-60" :layer="3" :left="`${195 * scale}px`" />
+          <Arrow :is-visible="isArrows4Visible" offsetTop="25" :layer="2" :left="`${230 * scale}px`" />
+          <Arrow :is-visible="isArrows4Visible" offsetTop="-30" :layer="3" :left="`${295 * scale}px`"/>
+          <Arrow :is-visible="isArrows4Visible" offsetTop="-10" :layer="3" :left="`${395 * scale}px`" />
+        </div>
       </PositionedContent>
       <PositionedContent :left="(7231 * scale)">
         <Quote

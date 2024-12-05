@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { useIntersectionObserver } from '../utilities/useIntersectionObserver'
 
 const props = defineProps({
   layer: {
@@ -12,6 +11,16 @@ const props = defineProps({
   offsetTop: {
     type: String,
     required: true,
+  },
+  isVisible: {
+    type: Boolean,
+    required: true,
+  },
+  left: {
+    type: String,
+    default() {
+      return '0px'
+    }
   }
 })
 
@@ -30,9 +39,6 @@ const scale = computed(() => {
       ? 0.75
       : 1
 })
-
-const el = ref<HTMLElement | null>(null)
-const { isVisible } = useIntersectionObserver(el)
 </script>
 
 <template>
@@ -46,6 +52,7 @@ const { isVisible } = useIntersectionObserver(el)
     ref="el"
     :style="{
       top: `${offsetTop}vh`,
+      left,
       transform: `scale(${scale})`,
       opacity,
     }"
@@ -101,6 +108,49 @@ const { isVisible } = useIntersectionObserver(el)
 
   & .arrow-head {
     opacity: 1;
+  }
+}
+
+.arrows-group {
+
+  & .arrow:nth-child(2) {
+
+    & .arrow-line,
+    & .arrow-head {
+      transition-delay: 0.45s;
+    }
+  }
+
+  & .arrow:nth-child(3) {
+
+    & .arrow-line,
+    & .arrow-head {
+      transition-delay: 0.6s;
+    }
+  }
+
+  & .arrow:nth-child(4) {
+
+    & .arrow-line,
+    & .arrow-head {
+      transition-delay: 0.75s;
+    }
+  }
+
+  & .arrow:nth-child(5) {
+
+    & .arrow-line,
+    & .arrow-head {
+      transition-delay: 0.9s;
+    }
+  }
+
+  & .arrow:nth-child(6) {
+
+    & .arrow-line,
+    & .arrow-head {
+      transition-delay: 1.05s;
+    }
   }
 }
 </style>
