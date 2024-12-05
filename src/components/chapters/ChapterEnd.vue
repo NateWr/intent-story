@@ -62,7 +62,7 @@ const cityWidth = computed(() => 26000 * props.scale)
               <p>
                 “Language used... appears to reproduce rhetoric and tropes associated with genocide and incitement to genocide.”
               </p>
-              <cite class="car-response-cite">15 Oct 2023</cite>
+              <cite class="car-response-cite">Public Statement, 15 Oct 2023</cite>
             </blockquote>
           </CallAndResponse>
         </Narration>
