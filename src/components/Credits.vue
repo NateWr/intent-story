@@ -87,6 +87,16 @@ defineEmits(['open-about', 'open-share'])
   width: auto;
   padding-right: 50vw;
   margin-right: -100vw;
+
+  & a,
+  & .credits-next-button {
+
+    &:focus-visible {
+      outline: 2px solid white;
+      outline-offset: 0.125em;
+      text-decoration: none;
+    }
+  }
 }
 
 .credits-list {
