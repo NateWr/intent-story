@@ -207,7 +207,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
             :isVisible="false"
           >
             <div class="car-call">
-              Six members of the Abu Salah family were gunned down in December, 2023 by Israeli forces on their way back from the cemetery, where they had just buried their teenage nephew.
+              Six members of the Abu Salah family were gunned down December 6, 2023 by Israeli forces on their way back from the cemetery, where they had just buried their teenage nephew.
             </div>
             <div class="car-call">
               Their remains were bulldozed into a pile of rubbish and only discovered after Israeli forces left.

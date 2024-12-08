@@ -102,7 +102,7 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
           :offsetBottom="`${200 * scale}px`"
         >
           <p>
-            On October 31, 2023 Israel imposed a <strong>total blackout</strong> on Gaza, cutting all telecommunication and internet services.
+            On October 27, 2023 Israel imposed a <strong>total blackout</strong> on Gaza, cutting all telecommunication and internet services.
           </p>
         </Narration>
       </PositionedContent>
@@ -176,7 +176,7 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
           :offsetBottom="`${150 * scale}px`"
         >
           <p>
-            Shortly after Barak’s statement, Israeli forces surrounded Gaza’s largest hospital, Al-Shifa, and held it <strong>under siege</strong> for two weeks.
+            Shortly after Barak’s statement, Israeli forces surrounded Gaza’s largest hospital, Al-Shifa, and held it <strong>under siege</strong>.
           </p>
         </Narration>
       </PositionedContent>

@@ -179,7 +179,7 @@ onMounted(() => {
         <Narration
           :offsetBottom="`${150 * scale}px`"
         >
-          <p>The crime of genocide is committed by killing or harming members of a group or inflicting <strong>conditions of life</strong> that will bring about its destruction.</p>
+          <p>Acts of genocide include killing or harming members of a group, inflicting <strong>conditions of life</strong> that will bring about its destruction, and more.</p>
           <p>Israel has starved the people of Gaza, destroyed life-sustaining infrastructure, and forcibly displaced and killed residents at a shocking rate, leading dozens of experts to conclude that Israel is committing genocide in Gaza.</p>
         </Narration>
       </PositionedContent>

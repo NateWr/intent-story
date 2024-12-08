@@ -152,14 +152,14 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
             :line="false"
           >
             <div class="car-call">
-              On February 29, 2024, a crowd of starving Palestinians gathered on Al-Rashid St. to meet an incoming aid convoy.
+              On February 29, 2024, a crowd of starving Palestinians gathered to meet an incoming aid convoy.
             </div>
             <blockquote class="car-response">
               <p>“There was a sense of hope and even joy that we would get flour to take back to our families.”</p>
               <cite class="car-response-cite">Abdel Jalil Al-Fayoumi, 22</cite>
             </blockquote>
             <div class="car-call">
-              Then, Israeli forces opened fire on the crowd, massacring 112 people and injuring 760. The attack is remembered as the <strong>flour massacre.</strong>
+              Israeli forces opened fire, killing 112 people and injuring 760. Palestinians remember the attack as the <strong>flour massacre.</strong>
             </div>
             <blockquote class="car-response">
               <p>“My 13-year-old cousin, Nidal, was shot dead while attempting to get a bag of flour from a truck.”</p>
@@ -197,7 +197,7 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
       <PositionedContent :left="(17660 * scale)">
         <Narration :offsetBottom="`${150 * scale}px`">
           <p>
-            Children under five, pregnant or breastfeeding women, the elderly, and people with disabilities suffer the most from Israel’s <strong>campaign of starvation</strong>.
+            Children under five, pregnant or breastfeeding women, the elderly, and people with disabilities are at the highest risk from Israel’s <strong>campaign of starvation</strong>.
           </p>
           <p>
             Israeli officials said they would weaponize food and they did, causing serious bodily and mental harm to Palestinians in Gaza and inflicting on them <strong>conditions of life</strong> intended to bring about their destruction as a group.

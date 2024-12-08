@@ -140,7 +140,7 @@ const cityWidth = computed(() => 26000 * props.scale)
           :offsetBottom="`${200 * scale}px`"
         >
           <p>
-            In the last year, Israel has shown the intent, capacity, and determination to permanently extinguish the <strong>conditions of life</strong> in Gaza.
+            Israel has shown the intent, capacity, and determination to permanently extinguish the <strong>conditions of life</strong> in Gaza.
           </p>
         </Narration>
       </PositionedContent>

@@ -58,7 +58,7 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
           <h2>{{ i18n.displacement }}</h2>
         </template>
         <template #subtitle>
-          More than <strong>four out of five</strong> Palestinians in Gaza were driven from their homes by Israeli forces in the first two months. Israeli leaders and public figures have called for their permanent exile.
+          More than <strong>four out of five</strong> Palestinians in Gaza were driven from their homes by Israeli forces in the first two months of the genocide. Israeli leaders and public figures have called for their permanent exile.
         </template>
       </ChapterCover>
     </template>
