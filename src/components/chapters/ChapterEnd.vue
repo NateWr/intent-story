@@ -130,7 +130,7 @@ const cityWidth = computed(() => 26000 * props.scale)
             As Israel's genocide rages on, it has become increasingly difficult to count the dead.
           </p>
           <p>
-            Gaza's Ministry of Health reported 40,861 fatalities as of September 4, 2024, but experts project the direct and indirect death toll will be many times higher.
+            Gaza's Ministry of Health reported 44,502 fatalities as of December 3, 2024, but experts project the direct and indirect death toll will be many times higher.
           </p>
         </Narration>
       </PositionedContent>

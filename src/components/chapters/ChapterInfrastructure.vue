@@ -185,7 +185,7 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
           :offsetBottom="`${150 & scale}px`"
         >
           <p>
-            Israel has repeatedly killed, maimed, and arrested health workers in more than 500 separate attacks on sites of care.
+            Israel has repeatedly killed, maimed, and arrested health workers in 568 separate attacks on sites of care.
           </p>
           <p>
             By June 1, 2024, 84% of health facilities in Gaza were damaged or destroyed. Less than half of all hospitals were partially functional, preventing Palestinians from accessing care amid bombardment, starvation, and disease.

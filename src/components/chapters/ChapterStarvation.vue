@@ -116,7 +116,7 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
               These attacks, combined with indiscriminate aerial bombardment, made Gaza the <strong>deadliest place in the world</strong> to be an aid worker. 
             </div>
             <blockquote class="car-response">
-              <p>At least 326 aid workers killed between Oct 7, 2023 and Nov 12, 2024.</p>
+              <p>At least 343 aid workers killed between Oct 7, 2023 and Dec 3, 2024.</p>
               <cite class="car-response-cite">UN OCHA</cite>
             </blockquote>
           </CallAndResponse>
