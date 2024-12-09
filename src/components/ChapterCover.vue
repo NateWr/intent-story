@@ -25,7 +25,9 @@
 }
 
 .chapter-cover-title {
-  font-size: 6rem;
+  position: relative;
+  left: -0.05em;
+  font-size: 7rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.1em;

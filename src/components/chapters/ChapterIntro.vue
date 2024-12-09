@@ -206,6 +206,10 @@ onMounted(() => {
   --color-title: var(--red);
   --color-subtitle-highlight: var(--red-light);
   background: var(--intro-gradient);
+
+  & .chapter-cover-title {
+    font-size: 20vw;
+  }
 }
 
 .scroll-prompt {
@@ -260,6 +264,15 @@ onMounted(() => {
 
   .scroll-prompt {
     margin-top: 4rem;
+  }
+}
+
+@media (--laptops-sm) {
+
+  .chapter-intro {
+    & .chapter-cover-title {
+      font-size: 20vh;;
+    }
   }
 }
 </style>
