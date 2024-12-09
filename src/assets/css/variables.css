@@ -19,7 +19,7 @@
   --displacement-gradient: linear-gradient(to bottom, rgba(255, 194, 82, 0.2), rgba(255, 194, 82, 0.01));
   --end-gradient: linear-gradient(to bottom, rgba(168, 168, 187, 0.2), rgba(168, 168, 187, 0.01));
 
-  --font-sans: "Libre Franklin", "ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "Effra", "ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif: "Lora", "ui-serif", "Georgia", "Cambria", "Times New Roman", "Times", "serif";
 
   @custom-media --phones-landscape (orientation: landscape);
