@@ -20,6 +20,7 @@ aboutVP: Visualizing Palestine uses data and research to visually communicate Pa
 aboutVP2: VP envisions a liberated future for Palestinians in a world free from oppression. <a href="https://visualizingpalestine.org/">Learn more</a>
 date: Dec 2024
 share: Share
+takeAction: Take Action
 facebook: Facebook
 twitter: Twitter
 email: Email

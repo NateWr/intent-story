@@ -20,6 +20,7 @@ export type I18N = {
   aboutVP2?: string,
   date?: string,
   share?: string,
+  takeAction?: string,
   facebook?: string,
   twitter?: string,
   email?: string,

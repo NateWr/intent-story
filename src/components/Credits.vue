@@ -50,7 +50,9 @@ defineEmits(['open-about', 'open-share'])
       <div class="credits-next-text">
         View the database of
         <a href="https://intent.law4palestine.org" target="_blank">hundreds of genocidal statements</a>
-        used in this piece.
+        used in this piece. Then join a
+        <a href="https://bdsmovement.net/get-involved/join-a-bds-campaign" target="_blank">BDS campaign</a>
+        in your country.
       </div>
       <button
         class="credits-next-button"

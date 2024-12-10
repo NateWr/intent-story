@@ -23,6 +23,17 @@ const { canCopy, copyMessage, copyToClipboard } = useClipboard(props.i18n?.copie
 <template>
   <div class="share">
     <div class="share-title">
+      {{ i18n.takeAction }}
+    </div>
+    <div class="share-action">
+      <p>
+        Join a campaign for
+        <a href="https://bdsmovement.net/get-involved/join-a-bds-campaign" target="_blank">
+          Boycott, Divestment, and Sanctions (BDS)
+        </a>
+        in your country.</p>
+    </div>
+    <div class="share-title">
       {{ i18n.share }}
     </div>
     <div class="share-links">
@@ -156,6 +167,15 @@ const { canCopy, copyMessage, copyToClipboard } = useClipboard(props.i18n?.copie
   border-radius: 0.25em;
   border: 2px solid #000;
 }
+
+.share-action {
+
+  & a {
+    font-weight: 800;
+    text-decoration: underline;
+  }
+}
+
 
 @media (--tablets) {
 
