@@ -4,7 +4,10 @@ import * as i18n from '../i18n/en.md';
 import App from '../components/App.vue';
 ---
 
-<Layout title={i18n.frontmatter.title}>
+<Layout
+	title={i18n.frontmatter.title}
+	description={i18n.frontmatter.description}
+>
 	<App
 		client:only="vue"
 		i18n={i18n.frontmatter}

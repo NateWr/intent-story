@@ -1,6 +1,7 @@
 ---
 locale: en
 title: The Road to Genocide
+description: How incitement from Israeli leaders led directly and deliberately to the continuing genocide of Palestinians in Gaza.
 intent: Intent
 titleWithHighlight: the road to <strong>genocide</strong>
 chapters: Chapters

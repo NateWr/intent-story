@@ -1,6 +1,7 @@
 export type I18N = {
   locale?: string,
   title?: string,
+  description?: string,
   intent?: string,
   titleWithHighlight?: string,
   chapters?: string,
