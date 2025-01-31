@@ -5,6 +5,7 @@ import { useIntersectionProgress } from '../utilities/useIntersectionProgress';
 
 defineProps({
   cityWidth: Number,
+  localeDir: String,
 })
 
 const root = ref<HTMLElement | null>(null)
@@ -23,7 +24,7 @@ const { progress } = useIntersectionProgress(city)
     }"
   >
     <slot name="cover" />
-    <div class="chapter-content">
+    <div class="chapter-content" :dir="localeDir">
       <div class="city-bg-far" v-if="isVisible">
         <slot name="bg-far" />
       </div>

@@ -291,4 +291,22 @@ const { isVisible } = useIntersectionObserver(el, {threshold: 0.25})
     max-width: 48rem;
   }
 }
+
+[dir="rtl"] {
+
+  .quote-wrapper {
+    padding-left: 0;
+    padding-right: var(--gap);
+  }
+
+  .quote-line {
+    left: auto;
+    right: 0;
+  }
+
+  .quote-line-head {
+    flex-direction: row-reverse;
+    transform: translate(7px, 20px);
+  }
+}
 </style>

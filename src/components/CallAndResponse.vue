@@ -56,7 +56,7 @@ defineProps({
 }
 
 .car-line {
-  margin-left: 2rem;
+  margin-inline-start: 2rem;
   margin-top: -4rem;
   width: 2px;
   height: 25vh;

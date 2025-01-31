@@ -1,8 +1,17 @@
 <script setup lang="ts">
+import { type PropType } from 'vue'
 import IconShare from './IconShare.vue'
 import IconInfo from './IconInfo.vue'
+import type { I18N } from '../types/i18n'
 
 defineEmits(['open-about', 'open-share'])
+
+defineProps({
+  i18n: {
+    type: Object as PropType<I18N>,
+    required: true,
+  },
+})
 </script>
 
 <template>
@@ -10,69 +19,54 @@ defineEmits(['open-about', 'open-share'])
     <div class="credits-list">
       <div class="credits-item credits-item-vp">
         <div class="credits-item-label">
-          Made By
+          {{ i18n.madeBy }}
         </div>
         <a
           class="credits-item-link"
           href="https://visualizingpalestine.org/"
           target="_blank"
         >
-          <img class="credits-vp-logo" src="/vp-logo.svg" alt="Visualizing Palestine Logo">
+          <img class="credits-vp-logo" src="/vp-logo.svg" :alt="i18n.vpLogo">
         </a>
       </div>
       <div class="credits-item credits-item-l4p">
-        <div class="credits-item-label">
-          Based on<br>
-          Research By
-        </div>
+        <div class="credits-item-label" v-html="i18n.researchBy" />
         <a
           class="credits-item-link"
           href="https://law4palestine.org/"
           target="_blank"
         >
-          <img class="credits-l4p-logo" src="/law4palestine-logo.svg" alt="Law for Palestine Logo">
+          <img class="credits-l4p-logo" src="/law4palestine-logo.svg" :alt="i18n.l4pLogo">
         </a>
       </div>
       <div class="credits-item credits-item-hadeel">
         <div class="credits-item-label">
-          Illustrations By
+          {{ i18n.illustrationsBy }}
         </div>
         <a
           class="credits-item-link"
           href="https://www.hadeelsaalok.com/"
           target="_blank"
         >
-          <img class="credits-hadeel-logo" src="/hadeel-saalok-logo.svg" alt="Hadeel Saalok Logo">
+          <img class="credits-hadeel-logo" src="/hadeel-saalok-logo.svg" :alt="i18n.hadeelLogo">
         </a>
       </div>
     </div>
     <div class="credits-next">
-      <div class="credits-next-text">
-        View the database of
-        <a href="https://intent.law4palestine.org" target="_blank">hundreds of genocidal statements</a>
-        used in this piece. Then join a
-        <a href="https://bdsmovement.net/get-involved/join-a-bds-campaign" target="_blank">BDS campaign</a>
-        in your country.
-      </div>
+      <div class="credits-next-text" v-html="i18n.viewDatabase" />
       <button
         class="credits-next-button"
         @click="$emit('open-share')"
       >
         <IconShare aria-hidden="true" />
-        <span>
-          Share & <br>
-          Take Action
-        </span>
+        <span v-html="i18n.shareAndTakeAction" />
       </button>
       <button
         class="credits-next-button"
         @click="$emit('open-about')"
       >
         <IconInfo aria-hidden="true" />
-        <span>
-          Sources &<br>
-          Credits
-        </span>
+        <span v-html="i18n.viewSources" />
       </button>
     </div>
   </div>

@@ -26,6 +26,7 @@ const cityWidth = computed(() => 26000 * props.scale)
   <Chapter
     class="chapter-end"
     :cityWidth="cityWidth"
+    :localeDir="i18n.dir"
   >
     <template #back>
       <PositionedContent :left="(1011 * scale)">
@@ -33,19 +34,17 @@ const cityWidth = computed(() => 26000 * props.scale)
           size="lg"
           :offsetBottom="`${150 * scale}px`"
         >
-          <p>
-            Israeli leaders sought to justify their genocidal intent through colonial tropes, racialized language, and the use of dehumanizing terms to describe <strong>Palestinians as a whole</strong>.
-          </p>
+          <p v-html="i18n.endJustify" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(3153 * scale)">
         <Quote
-          name="Benjamin Netanyahu"
-          role="Israeli Prime Minister"
-          date="Oct 25, 2023"
+          :name="i18n.endDarknessName"
+          :role="i18n.endDarknessRole"
+          :date="i18n.endDarknessDate"
           :offsetBottom="`${200 * scale}px`"
         >
-          “We are the people of the light, they are the <strong>people of darkness</strong>.”
+          <span v-html="i18n.endDarknessQuote" />
         </Quote>
       </PositionedContent>
       <PositionedContent :left="(4833 * scale)">
@@ -55,14 +54,10 @@ const cityWidth = computed(() => 26000 * props.scale)
             :line="false"
             :isVisible="false"
           >
-            <div class="car-call">
-              Their rhetoric was so alarming that 800 scholars of genocide studies and international law immediately spoke out.
-            </div>
+            <div class="car-call" v-html="i18n.endScholars1" />
             <blockquote class="car-response">
-              <p>
-                “Language used... appears to reproduce rhetoric and tropes associated with genocide and incitement to genocide.”
-              </p>
-              <cite class="car-response-cite">Public Statement, 15 Oct 2023</cite>
+              <p v-html="i18n.endScholars2" />
+              <cite class="car-response-cite" v-html="i18n.endScholars2Cite" />
             </blockquote>
           </CallAndResponse>
         </Narration>
@@ -72,31 +67,25 @@ const cityWidth = computed(() => 26000 * props.scale)
           size="lg"
           :offsetBottom="`${150 * scale}px`"
         >
-          <p>
-            The warning of genocide scholars was <strong>borne out</strong> in the months of bombing, invasion, starvation, and mass displacement unleashed by Israel.
-          </p>
+          <p v-html="i18n.endScholarsWarning" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(8723 * scale)">
         <Narration
           :offsetBottom="`${150 * scale}px`"
         >
-          <p>
-            On January 26, 2024, the International Court of Justice ordered “<strong>immediate and effective measures</strong>” to protect Palestinians in Gaza from the risk of genocide.
-          </p>
-          <p>
-            Israeli leaders ignored the demand and <strong>belittled the court</strong>.
-          </p>
+          <p v-html="i18n.endICJ1" />
+          <p v-html="i18n.endICJ2" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(10345 * scale)">
         <Quote
-          name="Yoav Gallant"
-          role="Minister of Defense"
-          date="Jan 26, 2024"
+          :name="i18n.endICJName"
+          :role="i18n.endICJRole"
+          :date="i18n.endICJDate"
           :offsetBottom="`${200 * scale}px`"
         >
-          “Whoever is looking for justice, will not find it on the leather chairs in The Hague.”
+          <span v-html="i18n.endICJQuote" />
         </Quote>
       </PositionedContent>
       <PositionedContent :left="(11788 * scale)">
@@ -104,34 +93,26 @@ const cityWidth = computed(() => 26000 * props.scale)
           size="lg"
           offsetBottom="0"
         >
-          <p>
-            Israel continues to obstruct aid, commit war crimes, and use starvation as a weapon of war.
-          </p>
-          <p>
-            In November 2024, a United Nations investigation found Israel's war in Gaza was “consistent with the <strong>characteristics of genocide</strong>.”
-          </p>
+          <p v-html="i18n.endContinued1" />
+          <p v-html="i18n.endContinued2" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(13621 * scale)">
         <Quote
-          name="Rami Igra"
-          role="Former Head, Mossad Hostages and MIA Unit"
-          date="Feb 14, 2024"
+          :name="i18n.endUninvolvedName"
+          :role="i18n.endUninvolvedRole"
+          :date="i18n.endUninvolvedDate"
           :offsetBottom="`${150 * scale}px`"
         >
-          “There are no uninvolved people in Gaza... <strong>everyone is involved</strong>.”
+          <span v-html="i18n.endUninvolvedQuote" />
         </Quote>
       </PositionedContent>
       <PositionedContent :left="(15448 * scale)">
         <Narration
           :offsetBottom="`${200 * scale}px`"
         >
-          <p>
-            As Israel's genocide rages on, it has become increasingly difficult to count the dead.
-          </p>
-          <p>
-            Gaza's Ministry of Health reported 44,502 fatalities as of December 3, 2024, but experts project the direct and indirect death toll will be many times higher.
-          </p>
+          <p v-html="i18n.endCountDead1" />
+          <p v-html="i18n.endCountDead2" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(17290 * scale)">
@@ -139,21 +120,15 @@ const cityWidth = computed(() => 26000 * props.scale)
           size="lg"
           :offsetBottom="`${200 * scale}px`"
         >
-          <p>
-            Israel has shown the intent, capacity, and determination to permanently extinguish the <strong>conditions of life</strong> in Gaza.
-          </p>
+          <p v-html="i18n.endConditions" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(19121 * scale)">
         <Narration
           :offsetBottom="`${100 * scale}px`"
         >
-          <p>
-            They will not stop without a broad campaign of boycotts, divestment and sanctions.
-          </p>
-          <p>
-            Yet the US, UK, Germany, and other states continue to provide Israel with military, political and diplomatic protection. By doing so, they are <strong>complicit</strong> in Israel's genocide — defying international law, ignoring their own treaty obligations, and undermining their basic humanity.
-          </p>
+          <p v-html="i18n.endStop1" />
+          <p v-html="i18n.endStop2" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(23500 * scale)">
@@ -161,9 +136,7 @@ const cityWidth = computed(() => 26000 * props.scale)
           size="lg"
           :offsetBottom="`${200 * scale}px`"
         >
-          <p>
-            It's not too late to <strong>stop the genocide</strong>.
-          </p>
+          <p v-html="i18n.endStop3" />
         </Narration>
       </PositionedContent>
     </template>

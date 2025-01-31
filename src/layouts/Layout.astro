@@ -4,13 +4,14 @@ import Fonts from '../components/Fonts.astro'
 interface Props {
 	title: string;
 	description: string;
+	locale: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, locale } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />

@@ -1,5 +1,14 @@
 <script setup lang="ts">
+import { type PropType } from 'vue'
 import IconClose from './IconClose.vue';
+import type { I18N } from '../types/i18n'
+
+defineProps({
+  i18n: {
+    type: Object as PropType<I18N>,
+    required: true,
+  },
+})
 
 defineEmits(['close'])
 </script>
@@ -8,7 +17,7 @@ defineEmits(['close'])
   <div class="modal">
     <div class="modal-content">
       <button class="modal-close" @click="$emit('close')">
-        <span class="sr-only">Close</span>
+        <span class="sr-only">{{ i18n.close }}</span>
         <IconClose aria-hidden="true" />
       </button>
       <slot />

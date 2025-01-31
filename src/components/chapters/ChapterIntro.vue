@@ -60,6 +60,7 @@ onMounted(() => {
   <Chapter
     class="chapter-intro"
     :cityWidth="cityWidth"
+    :localeDir="i18n.dir"
     :style="{
       '--city-bg-far-scroll-distance': `${(cityBgFarScrollDistance * 100).toFixed(0)}%`,
       '--city-bg-scroll-distance': `${(cityBgScrollDistance * 100).toFixed(0)}%`,
@@ -71,14 +72,14 @@ onMounted(() => {
           <h1>{{ i18n.intent }}</h1>
         </template>
         <template #subtitle>
-          Under international law, the crime of genocide requires <strong>acts of genocide</strong> and the <strong>intent</strong> to destroy a group of people, or a part of that group.
+          <span v-html="i18n.introCrime" />
         </template>
         <div
           class="scroll-prompt"
           :class="scrollPrompt && 'scroll-prompt-visible'"
         >
           <IconScroll aria-hidden="true" />
-          scroll down
+          {{ i18n.scrollDown }}
         </div>
       </ChapterCover>
     </template>
@@ -97,17 +98,19 @@ onMounted(() => {
           size="lg"
           :offsetBottom="`${350 * scale}px`"
         >
-          <p>Israeli leaders have made and continue to make <strong>clear statements</strong> of their intent to commit genocide against Palestinians.</p>
+          <p>
+            <span v-html="i18n.introStatements" />
+          </p>
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(3563 * scale)">
         <Quote
-          name="Yoav Gallant"
-          role="Israeli Defense Minister"
-          date="Oct 9, 2023"
+          :name="i18n.introRestraintsName"
+          :role="i18n.introRestraintsRole"
+          :date="i18n.introRestraintsDate"
           :offsetBottom="`${300 * scale}px`"
         >
-          “I have <strong>removed all restraints</strong>, [you’re allowed to] attack everything”
+          <span v-html="i18n.introRestraintsQuote" />
         </Quote>
       </PositionedContent>
       <PositionedContent :left="(5344 * scale)">
@@ -115,7 +118,7 @@ onMounted(() => {
           size="lg"
           :offsetBottom="`${350 * scale}px`"
         >
-          <p>This sentiment has been <strong>adopted and amplified</strong> by individual soldiers, journalists and public figures across Israeli society.</p>
+          <p v-html="i18n.introAmplified" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(6300 * scale)">
@@ -159,12 +162,12 @@ onMounted(() => {
       </PositionedContent>
       <PositionedContent :left="(7231 * scale)">
         <Quote
-          name="Yehuda Shlezinger"
-          role="Israeli Journalist"
-          date="Apr 19, 2024"
+          :name="i18n.introDeserveName"
+          :role="i18n.introDeserveRole"
+          :date="i18n.introDeserveDate"
           :offsetBottom="`${200 * scale}px`"
         >
-          “These people there [in Gaza] deserve death. A hard death, an agonizing death... There are <strong>no innocent people</strong> there.”
+          <span v-html="i18n.introDeserveQuote" />
         </Quote>
       </PositionedContent>
       <PositionedContent :left="(9156 * scale)">
@@ -172,15 +175,15 @@ onMounted(() => {
           size="lg"
           :offsetBottom="`${150 * scale}px`"
         >
-          <p>These statements attempt to justify the destruction of all Palestinians as a <strong>group of people</strong>.</p>
+          <p v-html="i18n.introJustify" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(10930 * scale)">
         <Narration
           :offsetBottom="`${150 * scale}px`"
         >
-          <p>Acts of genocide include killing or harming members of a group, inflicting <strong>conditions of life</strong> that will bring about its destruction, and more.</p>
-          <p>Israel has starved the people of Gaza, destroyed life-sustaining infrastructure, and forcibly displaced and killed residents at a shocking rate, leading dozens of experts to conclude that Israel is committing genocide in Gaza.</p>
+          <p v-html="i18n.introConditions" />
+          <p v-html="i18n.introConclude" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(12750 * scale)">
@@ -188,7 +191,7 @@ onMounted(() => {
           size="lg"
           :offsetBottom="`${350 * scale}px`"
         >
-          <p>The following examples of incitement, from a database of more than 400 statements, show Israel's <strong>intent to commit genocide</strong> in Gaza.</p>
+          <p v-html="i18n.introDatabase" />
         </Narration>
       </PositionedContent>
     </template>

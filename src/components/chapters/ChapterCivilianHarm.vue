@@ -48,6 +48,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
   <Chapter
     class="chapter-civilian-harm"
     :cityWidth="cityWidth"
+    :localeDir="i18n.dir"
     :style="{
       '--color-narration': 'var(--watermelon)',
       '--color-highlight': 'var(--watermelon)',
@@ -64,7 +65,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
           <h2>{{ i18n.civilianHarm }}</h2>
         </template>
         <template #subtitle>
-          Israeli forces made Gaza the deadliest place in the world to be a child, journalist, health worker, or aid worker. The mass killing has been encouraged by Israelis at every level of society.
+          {{ i18n.civHarmDescription }}
         </template>
       </ChapterCover>
     </template>
@@ -91,20 +92,20 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
       />
       <PositionedContent :left="(1900 * scale)">
         <Quote
-          name="Isaac Herzog"
-          role="Israeli President"
-          date="Oct 13, 2023"
+          :name="i18n.civHarmNationName"
+          :role="i18n.civHarmNationRole"
+          :date="i18n.civHarmNationDate"
           offsetBottom="0"
         >
-          “It’s an <strong>entire nation</strong> out there that is responsible.”
+          <span v-html="i18n.civHarmNationQuote" />
         </Quote>
       </PositionedContent>
       <PositionedContent :left="(3400 * scale)">
         <Narration
           :offsetBottom="`${150 * scale}px`"
         >
-          <p>In the first year of Israel's bombing campaign, more than 900 Palestinian families, from <strong>great-grandparents to infants</strong>, were killed in their entirety. Another 4,836 families were survived by one or two members.</p>
-          <p>Airwars documented hundreds of attacks on family homes and residential towers in the first few weeks alone.</p>
+          <p v-html="i18n.civHarmFamilies" />
+          <p v-html="i18n.civHarmAirwars" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(4910 * scale)" class="positioned-anchor-bottom">
@@ -115,10 +116,10 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
         >
           <div class="narration-dated">
             <div class="narration-dated-date">
-              Oct 14, 2023
+              {{ i18n.civHarmHerbawiDate }}
             </div>
             <div>
-              Israel bombed the Al-Herbawi family's home and adjacent residences, killing 34 civilians, including a 4-month old baby.
+              {{ i18n.civHarmHerbawi }}
             </div>
           </div>
           <div
@@ -136,10 +137,10 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
         >
           <div class="narration-dated">
             <div class="narration-dated-date">
-              Oct 20, 2023
+              {{ i18n.civHarmAqadDate }}
             </div>
             <div>
-              Israel bombed the Al-Aqad family’s home, killing 12 family members, including well-known poet Heba Abu Nada.
+              {{ i18n.civHarmAqad }}
             </div>
           </div>
           <div
@@ -157,10 +158,10 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
         >
           <div class="narration-dated">
             <div class="narration-dated-date">
-              Oct 22, 2023
+              {{ i18n.civHarmNaouqDate }}
             </div>
             <div>
-              Israel bombed the Al-Naouq family’s home, killing 21 family members. Nine remained trapped under the rubble.
+              {{ i18n.civHarmNaouq }}
             </div>
           </div>
           <div
@@ -175,19 +176,17 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
           size="lg"
           :offsetBottom="`${150 * scale}px`"
         >
-          <p>
-            There are <strong>thousands of stories</strong> like these.
-          </p>
+          <p v-html="i18n.civHarmThousands" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(9315 * scale)">
         <Quote
-          name="Israeli Intelligence Officer"
+          :name="i18n.civHarmNoBigDealName"
           role=""
           date=""
           :offsetBottom="`${100 * scale}px`"
         >
-          “When a 3-year-old girl is killed in a home in Gaza, it’s because someone in the army decided it <strong>wasn’t a big deal</strong> for her to be killed.”
+          <span v-html="i18n.civHarmNoBigDealQuote" />
         </Quote>
       </PositionedContent>
       <PositionedContent :left="(10895 * scale)">
@@ -195,9 +194,7 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
           size="lg"
           :offsetBottom="`${150 * scale}px`"
         >
-          <p>
-            Families are also targeted by Israeli ground forces, who set up <strong>free-fire zones</strong> in areas where civilians are sheltering.
-          </p>
+          <p v-html="i18n.civHarmFreeFire" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(12650 * scale)" class="positioned-anchor-bottom">
@@ -207,14 +204,14 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
             :isVisible="false"
           >
             <div class="car-call">
-              Six members of the Abu Salah family were gunned down December 6, 2023 by Israeli forces on their way back from the cemetery, where they had just buried their teenage nephew.
+              {{ i18n.civHarmAbuSalah1 }}
             </div>
             <div class="car-call">
-              Their remains were bulldozed into a pile of rubbish and only discovered after Israeli forces left.
+              {{ i18n.civHarmAbuSalah2 }}
             </div>
             <blockquote class="car-response">
-              <p>“There was total freedom of action... It’s permissible to shoot everyone, a young girl, an old woman.”</p>
-              <cite class="car-response-cite">Israeli Soldier</cite>
+              <p>{{ i18n.civHarmAbuSalahQuote }}</p>
+              <cite class="car-response-cite">{{ i18n.civHarmAbuSalahQuoteRole }}</cite>
             </blockquote>
           </CallAndResponse>
         </Narration>
@@ -224,28 +221,24 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
           size="lg"
           :offsetBottom="`${150 * scale}px`"
         >
-          <p>
-            Palestinians who <strong>survived</strong> faced the destruction of their homes and families, injury, disease, and starvation.
-          </p>
+          <p v-html="i18n.civHarmSurvivors" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(18000 * scale)">
         <Quote
-          name="Nissim Maturin"
-          role="Deputy Speaker of Knesset (Likud)"
-          date="Nov 13, 2023"
+          :name="i18n.civHarmBoyInGazaName"
+          :role="i18n.civHarmBoyInGazaRole"
+          :date="i18n.civHarmBoyInGazaDate"
           :offsetBottom="`${100 * scale}px`"
         >
-          “A ten-year-old boy [in Gaza] is a <strong>terrorist</strong> in 6 to 7 years.”
+          <span v-html="i18n.civHarmBoyInGazaQuote" />
         </Quote>
       </PositionedContent>
       <PositionedContent :left="(19720 * scale)">
         <Narration
           :offsetBottom="`${200 * scale}px`"
         >
-          <p>
-            Dehumanizing statements like this have been translated into civilian harm so irrefutably shocking that some of the world’s largest humanitarian organizations declared: “<strong>We have seen nothing like the siege of Gaza</strong>.”
-          </p>
+          <p v-html="i18n.civHarmNothingLikeIt" />
         </Narration>
       </PositionedContent>
     </template>
@@ -264,15 +257,11 @@ const { isVisible: isOrphansVisible } = useIntersectionObserver(orphans)
             ref="orphans"
             :isVisible="isOrphansVisible"
           >
-            <div class="car-call">
-              The Israeli military carried out "one of the most intense <strong>civilian punishment campaigns</strong> in history," according to military historian Robert Pape.
-            </div>
-            <div class="car-call">
-              UNICEF estimated that 17,000 Palestinian children were <strong>orphaned</strong> or separated from their parents by February 2024.
-            </div>
+            <div class="car-call" v-html="i18n.civHarmCampaign1" />
+            <div class="car-call" v-html="i18n.civHarmCampaign2" />
             <blockquote class="car-response">
-              <p>“My most fervent dream is simply to stay alive.”</p>
-              <cite class="car-response-cite">Ahmad, 14</cite>
+              <p>{{ i18n.civHarmCampaignQuote }}</p>
+              <cite class="car-response-cite">{{ i18n.civHarmCampaignQuoteCite }}</cite>
             </blockquote>
           </CallAndResponse>
         </Narration>

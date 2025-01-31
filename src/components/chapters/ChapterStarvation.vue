@@ -38,6 +38,7 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
   <Chapter
     class="chapter-starvation"
     :cityWidth="cityWidth"
+    :localeDir="i18n.dir"
     :style="{
       '--city-bg-far-scroll-distance': `${(cityBgFarScrollDistance * 100).toFixed(0)}%`,
       '--city-bg-scroll-distance': `${(cityBgScrollDistance * 100).toFixed(0)}%`,
@@ -51,13 +52,13 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
           <h2>{{ i18n.starvation }}</h2>
         </template>
         <template #subtitle>
-          “Never in post-war history had a population been made to go hungry so quickly and so completely as was the case for the 2.3 million Palestinians living in Gaza.”
+          <span v-html="i18n.starveDescription" />
         </template>
         <div class="chapter-starvation-cover-article">
-          Michael Fakhri
+          <span v-html="i18n.starveDescriptionName" />
         </div>
         <div class="chapter-starvation-cover-convention">
-          UN Special Rapporteur on the Right to Food
+          <span v-html="i18n.starveDescriptionRole" />
         </div>
       </ChapterCover>
     </template>
@@ -73,35 +74,35 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
     <template #back>
       <PositionedContent :left="(1580 * scale)">
         <Quote
-          name="Yoav Gallant"
-          role="Israeli Defense Minister"
-          date="Oct 9, 2023"
+          :name="i18n.starveSiegeName"
+          :role="i18n.starveSiegeRole"
+          :date="i18n.starveSiegeDate"
           :offsetBottom="`${200 * scale}px`"
         >
-          “I have ordered a <strong>complete siege</strong> on the Gaza Strip. There will be no electricity, no food, no fuel, everything is closed.”
+          <span v-html="i18n.starveSiegeQuote" />
         </Quote>
       </PositionedContent>
       <PositionedContent :left="(5400 * scale)">
         <Quote
-          name="Itamar Ben Gvir"
-          role="Israeli Minister of National Security"
-          date="Oct 17, 2023"
+          :name="i18n.starveEnterGazaName"
+          :role="i18n.starveEnterGazaRole"
+          :date="i18n.starveEnterGazaDate"
           :offsetBottom="`${200 * scale}px`"
         >
-          “The only thing that needs to enter Gaza is hundreds of tons of explosives by the Air Force, and <strong>not an ounce of humanitarian aid.</strong>”
+          <span v-html="i18n.starveEnterGazaQuote" />
         </Quote>
       </PositionedContent>
       <PositionedContent :left="(10628 * scale)">
         <Quote
-          name="Boaz Bismuth"
-          role="Member of the Israeli Knesset (Likud)"
-          date="Oct 16, 2023"
+          :name="i18n.starveAmalekName"
+          :role="i18n.starveAmalekRole"
+          :date="i18n.starveAmalekDate"
           :offsetBottom="`${150 * scale}px`"
         >
-          “There is no place for any humanitarian gestures — we must <strong>erase the memory of Amalek.</strong>”
+          <span v-html="i18n.starveAmalekQuote" />
           <template #footer>
             <Narration>
-              <p>In the Torah, the ancient Israelites were said to be commanded by God to destroy the people of “Amalek”.</p>
+              <p v-html="i18n.starveAmalekDesc" />
             </Narration>
           </template>
         </Quote>
@@ -112,24 +113,22 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
             :line="false"
             :isVisible="false"
           >
-            <div class="car-call">
-              These attacks, combined with indiscriminate aerial bombardment, made Gaza the <strong>deadliest place in the world</strong> to be an aid worker. 
-            </div>
+            <div class="car-call" v-html="i18n.starveAidWorkers" />
             <blockquote class="car-response">
-              <p>At least 343 aid workers killed between Oct 7, 2023 and Dec 3, 2024.</p>
-              <cite class="car-response-cite">UN OCHA</cite>
+              <p v-html="i18n.starveAidWorkersCount" />
+              <cite class="car-response-cite" v-html="i18n.starveAidWorkersCite" />
             </blockquote>
           </CallAndResponse>
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(19370 * scale)">
         <Quote
-          name="Revital Gotliv"
-          role="Member of the Israeli Knesset (Likud)"
-          date="Oct 23, 2023"
+          :name="i18n.starveSucceedName"
+          :role="i18n.starveSucceedRole"
+          :date="i18n.starveSucceedDate"
           :offsetBottom="`${250 * scale}px`"
         >
-          “Without <strong>hunger and thirst</strong> among the Gazan population, we will not succeed…”
+          <span v-html="i18n.starveSucceedQuote" />
         </Quote>
       </PositionedContent>
     </template>
@@ -141,8 +140,8 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
     <template #front>
       <PositionedContent :left="(3405 * scale)">
         <Narration :offsetBottom="`${150 * scale}px`">
-          <p>Nine months after Gallant’s promise to cease the flow of life-saving essentials, UN experts declared a <strong>state of famine</strong> across all of Gaza.</p>
-          <p>During this campaign of starvation, Israeli occupation forces (IOF) burned food stocks, destroyed agricultural land, bombed flour mills, greenhouses, bakeries, and fisheries, allowed Israeli settlers to destroy aid bound for Gaza, and carried out targeted attacks on both aid seekers and aid workers.</p>
+          <p v-html="i18n.starveFamine1" />
+          <p v-html="i18n.starveFamine2" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(6900 * scale)" style="align-items: flex-end">
@@ -151,19 +150,15 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
             :isVisible="false"
             :line="false"
           >
-            <div class="car-call">
-              On February 29, 2024, a crowd of starving Palestinians gathered to meet an incoming aid convoy.
-            </div>
+            <div class="car-call" v-html="i18n.starveFlour1" />
             <blockquote class="car-response">
-              <p>“There was a sense of hope and even joy that we would get flour to take back to our families.”</p>
-              <cite class="car-response-cite">Abdel Jalil Al-Fayoumi, 22</cite>
+              <p v-html="i18n.starveFlour2" />
+              <cite class="car-response-cite" v-html="i18n.starveFlour2Cite" />
             </blockquote>
-            <div class="car-call">
-              Israeli forces opened fire, killing 112 people and injuring 760. Palestinians remember the attack as the <strong>flour massacre.</strong>
-            </div>
+            <div class="car-call" v-html="i18n.starveFlour3" />
             <blockquote class="car-response">
-              <p>“My 13-year-old cousin, Nidal, was shot dead while attempting to get a bag of flour from a truck.”</p>
-              <cite class="car-response-cite">Salameh Rafiq Obeid, 22</cite>
+              <p v-html="i18n.starveFlour4" />
+              <cite class="car-response-cite" v-html="i18n.starveFlour4Cite" />
             </blockquote>
           </CallAndResponse>
         </Narration>
@@ -173,15 +168,15 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
           size="lg"
           :offsetBottom="`${350 * scale}px`"
         >
-          <p>The flour massacre represents a <strong>pattern of incidents</strong> of Israeli forces targeting desperate aid seekers in Gaza.</p>
+          <p v-html="i18n.starvePattern" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(12370 * scale)">
         <Narration
           :offsetBottom="`${200 * scale}px`"
         >
-          <p>On April 1, 2024,  a series of Israeli strikes targeted a World Central Kitchen aid convoy, killing 7 aid workers.</p>
-          <p>The attack forced the largest aid organizations to suspend their operations in Gaza at a point when 1.1 million people — or half the population of Gaza — were experiencing <strong>catastrophic levels of hunger</strong> and at least 28 children had died of starvation.</p>
+          <p v-html="i18n.starveWck1" />
+          <p v-html="i18n.starveWck2" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(13970 * scale)">
@@ -189,19 +184,13 @@ const cityFgScrollDistance = computed(() => (cityFgWidth.value - cityWidth.value
           size="lg"
           :offsetBottom="`${250 * scale}px`"
         >
-          <p>
-            The Israeli military has repeatedly attacked aid convoys and facilities, even when aid agencies shared their locations with the Israeli military.
-          </p>
+          <p v-html="i18n.starveAidAttacks" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(17660 * scale)">
         <Narration :offsetBottom="`${150 * scale}px`">
-          <p>
-            Children under five, pregnant or breastfeeding women, the elderly, and people with disabilities are at the highest risk from Israel’s <strong>campaign of starvation</strong>.
-          </p>
-          <p>
-            Israeli officials said they would weaponize food and they did, causing serious bodily and mental harm to Palestinians in Gaza and inflicting on them <strong>conditions of life</strong> intended to bring about their destruction as a group.
-          </p>
+          <p v-html="i18n.starveCampaign" />
+          <p v-html="i18n.starveConditions" />
         </Narration>
       </PositionedContent>
     </template>

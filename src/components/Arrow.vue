@@ -153,4 +153,12 @@ const scale = computed(() => {
     }
   }
 }
+
+[dir="rtl"] {
+
+  .arrow-head {
+    flex-direction: row-reverse;
+    transform: translate(9px, 20px);
+  }
+}
 </style>

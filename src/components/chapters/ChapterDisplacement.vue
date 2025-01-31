@@ -46,6 +46,7 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
   <Chapter
     class="chapter-displacement"
     :cityWidth="cityWidth"
+    :localeDir="i18n.dir"
     :style="{
       '--city-bg-far-scroll-distance': `${(cityBgFarScrollDistance * 100).toFixed(0)}%`,
       '--city-bg-scroll-distance': `${(cityBgScrollDistance * 100).toFixed(0)}%`,
@@ -58,7 +59,7 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
           <h2>{{ i18n.displacement }}</h2>
         </template>
         <template #subtitle>
-          More than <strong>four out of five</strong> Palestinians in Gaza were driven from their homes by Israeli forces in the first two months of the genocide. Israeli leaders and public figures have called for their permanent exile.
+          <span v-html="i18n.displacementDescription" />
         </template>
       </ChapterCover>
     </template>
@@ -74,21 +75,19 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
     <template #back>
       <PositionedContent :left="(1780 * scale)">
         <Quote
-          name="Benny Gantz"
-          role="War Cabinet Member, Former Israeli Deputy Prime Minister and Minister of Defense"
-          date="Nov 29, 2023"
+          :name="i18n.displacementNoSanctuaryName"
+          :role="i18n.displacementNoSanctuaryRole"
+          :date="i18n.displacementNoSanctuaryDate"
           :offsetBottom="`${100 * scale}px`"
         >
-          “The fighting will continue and expand to any place necessary in the Gaza Strip. There will be <strong>no sanctuary</strong> cities.”
+          <span v-html="i18n.displacementNoSanctuaryQuote" />
         </Quote>
       </PositionedContent>
       <PositionedContent :left="(3550 * scale)">
         <Narration
           :offsetBottom="`${150 * scale}px`"
         >
-          <p>
-            Two months after the Israeli military issued the first of dozens of mass displacement orders to residents of Gaza, 85% of the population had been <strong>driven from their homes</strong>, many being forced to move repeatedly.
-          </p>
+          <p v-html="i18n.displacementDrivenAway" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(5488 * scale)" class="positioned-anchor-bottom">
@@ -96,9 +95,7 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
           class="narration-center"
           offsetBottom="0"
         >
-          <p>
-            Those who were <strong>unable or unwilling to leave</strong> north Gaza, or who tried to return to their homes, were labeled “accomplices in a terrorist organization” by the Israeli military and subjected to denial of aid, execution-style killings, and mass arbitrary arrests.
-          </p>
+          <p v-html="i18n.displacementRemainers" />
           <div
             ref="massArrest"
             class="narration-center-line"
@@ -113,16 +110,12 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
             :line="false"
             :isVisible="false"
           >
-            <div class="car-call">
-              They sought shelter at the UN-run Al-Fakhoura school, but Israeli forces bombed it within weeks, killing two members of his family.
-            </div>
+            <div class="car-call" v-html="i18n.displacementUNSchool1" />
             <blockquote class="car-response">
-              <p>“Nowhere is safe in Gaza, not even our schools.”</p>
-              <cite class="car-response-cite">Tamara Alrifai, UNRWA</cite>
+              <p v-html="i18n.displacementUNSchool2" />
+              <cite class="car-response-cite" v-html="i18n.displacementUNSchool2Cite" />
             </blockquote>
-            <div class="car-call">
-              The Al-Absi family fled again, this time making the perilous journey south.
-            </div>
+            <div class="car-call" v-html="i18n.displacementUNSchool3" />
           </CallAndResponse>
         </Narration>
       </PositionedContent>
@@ -131,9 +124,7 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
           size="lg"
           :offsetBottom="`${150 * scale}px`"
         >
-          <p>
-            Salah Al-Din road, one of two routes from north to south Gaza, became known to Palestinians as a “<strong>death corridor</strong>”.
-          </p>
+          <p v-html="i18n.displacementSalahAlDin1" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(12450 * scale)" class="positioned-anchor-bottom">
@@ -143,33 +134,29 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
             :isVisible="isRoadVisible"
             class="road-car"
           >
-            <div class="car-call">
-              Palestinians evacuating south along the road have been arrested, shot at, and killed by Israeli forces, even though the army declared it a safe route.
-            </div>
+            <div class="car-call" v-html="i18n.displacementSalahAlDin2" />
             <blockquote class="car-response">
-              <p>“You can follow the orders so that you aren’t exposed to danger, but the danger will still reach you wherever you are.”</p>
-              <cite class="car-response-cite">Raji Al-Ajrami</cite>
+              <p v-html="i18n.displacementSalahAlDin3" />
+              <cite class="car-response-cite" v-html="i18n.displacementSalahAlDin3Cite" />
             </blockquote>
           </CallAndResponse>
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(14160 * scale)">
         <Quote
-          name="Ayelet Shaked"
-          role="Former Israeli Minister of Interior"
-          date="Nov 22, 2023"
+          :name="i18n.displacementSolutionName"
+          :role="i18n.displacementSolutionRole"
+          :date="i18n.displacementSolutionDate"
           :offsetBottom="`${100 * scale}px`"
         >
-          “We need <strong>all 2 million to leave</strong>. That's the solution for Gaza.”
+          <span v-html="i18n.displacementSolutionQuote" />
         </Quote>
       </PositionedContent>
       <PositionedContent :left="(15946 * scale)">
         <Narration
           :offsetBottom="`${200 * scale}px`"
         >
-          <p>
-            Mohammad Al-Absi made it south with the surviving members of his family. They settled in a warehouse in Rafah before moving to a tent camp closer to a United Nations base.
-          </p>
+          <p v-html="i18n.displacementWarehouse" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(17950 * scale)">
@@ -179,15 +166,11 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
             :line="false"
             class="tent-massacre"
           >
-            <div class="car-call">
-              Days after they arrived at Tal al-Sultan camp, Israel bombed it, killing 45 Palestinians in what became known as the “<strong>tent massacre</strong>.”
-            </div>
-            <div class="car-call">
-              Many were burned alive in their tents.
-            </div>
+            <div class="car-call" v-html="i18n.displacementTentMassacre1" />
+            <div class="car-call" v-html="i18n.displacementTentMassacre2" />
             <blockquote class="car-response">
-              <p>“All the children started screaming... The sound was terrifying.”</p>
-              <cite class="car-response-cite">Umm Mohamed Al-Attar</cite>
+              <p v-html="i18n.displacementTentMassacre3" />
+              <cite class="car-response-cite" v-html="i18n.displacementTentMassacre3Cite" />
             </blockquote>
           </CallAndResponse>
         </Narration>
@@ -199,15 +182,11 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
             :isVisible="isSecondTentBombingVisible"
             class="second-tent-bombing"
           >
-            <div class="car-call">
-              The family could not afford transportation, so they settled in another camp nearby.
-            </div>
-            <div class="car-call">
-              Two days later, on May 28, 2024, Israel bombed that camp, too, killing 15 members of the Al-Absi family.
-            </div>
+            <div class="car-call" v-html="i18n.displacementAlAbsiKilled1" />
+            <div class="car-call" v-html="i18n.displacementAlAbsiKilled2" />
             <blockquote class="car-response">
-              <p>“I felt helpless watching my family dying and not able to help them.”</p>
-              <cite class="car-response-cite">Mohammad Al-Absi</cite>
+              <p v-html="i18n.displacementAlAbsiKilled3" />
+              <cite class="car-response-cite" v-html="i18n.displacementAlAbsiKilled3Cite" />
             </blockquote>
           </CallAndResponse>
         </Narration>
@@ -217,9 +196,7 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
           size="lg"
           :offsetBottom="`${100 * scale}px`"
         >
-          <p>
-            Mohammad and his brother are the <strong>only surviving members</strong> of their family.
-          </p>
+          <p v-html="i18n.displacementSurvivors" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(23140 * scale)">
@@ -228,14 +205,10 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
             :line="false"
             :isVisible="false"
           >
-            <div class="car-call">
-              The Israeli military has attacked displaced people in tents, hospitals, schools, mosques, churches, UN shelters, along evacuation routes, and in designated “safe” areas.
-            </div>
+            <div class="car-call" v-html="i18n.displacementSafeAreas1" />
             <blockquote class="car-response">
-              <p>
-                “Have you ever felt like a toy, being played with left and right, east and west, pushed from one place to another – south to Khan Younis, out of Rafah, back to Khan Younis, then to Nuseirat, only to be driven out again?”
-              </p>
-              <cite class="car-response-cite">Maram Humaid</cite>
+              <p v-html="i18n.displacementSafeAreas2" />
+              <cite class="car-response-cite" v-html="i18n.displacementSafeAreas2Cite" />
             </blockquote>
           </CallAndResponse>
         </Narration>
@@ -245,19 +218,17 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
           size="lg"
           :offsetBottom="`${100 * scale}px`"
         >
-          <p>
-            Israelis continue to demand that Palestinians be sent into <strong>permanent exile</strong>, continuing the Nakba.
-          </p>
+          <p v-html="i18n.displacementExile" />
         </Narration>
       </PositionedContent>
       <PositionedContent :left="(26570 * scale)">
         <Quote
-          name="Itzik Cohen"
-          role="Brigadier General, Israeli Army"
-          date="Nov 5, 2024"
+          :name="i18n.displacementNoReturnName"
+          :role="i18n.displacementNoReturnRole"
+          :date="i18n.displacementNoReturnDate"
           :offsetBottom="`${100 * scale}px`"
         >
-          “There is <strong>no return</strong> to the north [of Gaza], and there will not be.”
+          <span v-html="i18n.displacementNoReturnQuote" />
         </Quote>
       </PositionedContent>
     </template>
@@ -273,9 +244,7 @@ const { isVisible: isSecondTentBombingVisible } = useIntersectionObserver(second
           size="lg"
           offsetBottom="0"
         >
-          <p>
-            In October 2023, Mohammad Al-Absi fled with his family from their home in Jabalia refugee camp.
-          </p>
+          <p v-html="i18n.displacementAlAbsiFled" />
         </Narration>
       </PositionedContent>
     </template>

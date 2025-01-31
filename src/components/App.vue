@@ -152,7 +152,7 @@ onMounted(() => {
             '--to': 'var(--civilian-harm-gradient)',
           }"
         >
-          Chapter I
+          {{ i18n.chapter1 }}
         </ChapterBridge>
         <ChapterCivilianHarm
           ref="civilianHarm"
@@ -166,7 +166,7 @@ onMounted(() => {
             '--to': 'var(--starvation-gradient)',
           }"
         >
-          Chapter II
+          {{ i18n.chapter2 }}
         </ChapterBridge>
         <ChapterStarvation
           ref="starvation"
@@ -180,7 +180,7 @@ onMounted(() => {
             '--to': 'var(--infrastructure-gradient)',
           }"
         >
-          Chapter III
+          {{ i18n.chapter3 }}
         </ChapterBridge>
         <ChapterInfrastructure
           ref="infrastructure"
@@ -194,7 +194,7 @@ onMounted(() => {
             '--to': 'var(--displacement-gradient)',
           }"
         >
-          Chapter IV
+          {{ i18n.chapter4 }}
         </ChapterBridge>
         <ChapterDisplacement
           ref="displacement"
@@ -221,18 +221,27 @@ onMounted(() => {
           }"
         />
         <Credits
+          :i18n="i18n"
           @open-about="aboutOpen = true"
           @open-share="shareOpen = true"
         />
       </div>
     </div>
     <Transition appear>
-      <Modal v-if="shareOpen" @close="shareOpen = false">
+      <Modal
+        v-if="shareOpen"
+        :i18n="i18n"
+        @close="shareOpen = false"
+      >
         <ShareOptions :i18n="i18n" :url="shareUrl" />
       </Modal>
     </Transition>
     <Transition appear>
-      <Modal v-if="aboutOpen" @close="aboutOpen = false">
+      <Modal
+        v-if="aboutOpen"
+        :i18n="i18n"
+        @close="aboutOpen = false"
+      >
         <AboutModal :i18n="i18n" />
       </Modal>
     </Transition>
