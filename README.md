@@ -15,7 +15,7 @@ This project uses [Astro](https://astro.build) and [Vue](https://vuejs.org/). On
 
 ## Translations
 
-> Are you a translator? Read our [translation guide](./docs/translation) guide instead.
+> Are you a translator? Read our [translation guide](./docs/translation.md) guide instead.
 
 Follow these steps to implement a new translation.
 
