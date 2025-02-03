@@ -1,6 +1,6 @@
 ## Translation
 
-To translate this story, download a copy of the [English translation](https://github.com/NateWr/intent-story/blob/main/src/i18n/en.md), by clicking the link and then clicking the download button indicated in the image below.
+To translate this story, download a copy of the [English translation](https://github.com/NateWr/intent-story/blob/main/src/i18n/en.md) by clicking the link and then clicking the download button indicated in the image below.
 
 ![Screenshot showing the download button](./download-file.png)
 
