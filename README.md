@@ -13,3 +13,11 @@ This project uses [Astro](https://astro.build) and [Vue](https://vuejs.org/). On
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
 
+## Translations
+
+> Are you a translator? Read our [./docs/translation] guide instead.
+
+Follow these steps to implement a new translation.
+
+1. Add the new translation using the two-letter language code to `src/i18n/`.
+2. Copy `src/i18n/index.astro` to a new page using the two-letter language code.
