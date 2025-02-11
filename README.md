@@ -20,4 +20,4 @@ This project uses [Astro](https://astro.build) and [Vue](https://vuejs.org/). On
 Follow these steps to implement a new translation.
 
 1. Add the new translation using the two-letter language code to `src/i18n/`.
-2. Copy `src/i18n/index.astro` to a new page using the two-letter language code.
+2. Copy `src/pages/index.astro` to a new page using the two-letter language code.
