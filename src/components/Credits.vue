@@ -39,18 +39,6 @@ defineProps({
           <img class="credits-l4p-logo" src="/law4palestine-logo.svg" :alt="i18n.l4pLogo">
         </a>
       </div>
-      <div class="credits-item credits-item-hadeel">
-        <div class="credits-item-label">
-          {{ i18n.illustrationsBy }}
-        </div>
-        <a
-          class="credits-item-link"
-          href="https://www.hadeelsaalok.com/"
-          target="_blank"
-        >
-          <img class="credits-hadeel-logo" src="/hadeel-saalok-logo.svg" :alt="i18n.hadeelLogo">
-        </a>
-      </div>
     </div>
     <div class="credits-next">
       <div class="credits-next-text" v-html="i18n.viewDatabase" />
@@ -113,10 +101,6 @@ defineProps({
   align-self: center;
 }
 
-.credits-item-hadeel {
-  align-self: flex-end;
-}
-
 .credits-item-label {
   position: relative;
   top: 0.25em;
@@ -133,8 +117,7 @@ defineProps({
   flex-shrink: 0;
 }
 
-.credits-vp-logo,
-.credits-hadeel-logo {
+.credits-vp-logo {
   width: auto;
   height: 3rem;
 }

@@ -43,8 +43,6 @@ export type I18N = {
   vpLogo?: string,
   researchBy?: string,
   l4pLogo?: string,
-  illustrationsBy?: string,
-  hadeelLogo?: string,
   viewDatabase?: string,
   viewSources?: string,
   chapter1?: string,

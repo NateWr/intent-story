@@ -43,8 +43,6 @@ madeBy: Made By
 vpLogo: Visualizing Palestine Logo
 researchBy: Based on<br>Research by
 l4pLogo: Law for Palestine Logo
-illustrationsBy: Illustrations By
-hadeelLogo: Hadeel Saalok Logo
 viewDatabase:  View the database of <a href="https://intent.law4palestine.org" target="_blank">hundreds of genocidal statements</a> used in this piece. Then join a <a href="https://bdsmovement.net/get-involved/join-a-bds-campaign" target="_blank">BDS campaign</a> in your country.
 viewSources: Sources &<br>Credits
 chapter1: Chapter I
